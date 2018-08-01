@@ -1,10 +1,10 @@
 rm(list=ls())
-setwd('C:/Users/A097092/Desktop/Extra/HS Football')
+setwd('C:/Users/Owner/Documents/GitHub/SWAER')
 
-teams_df <- read.csv('output/JoeEitel Teams.csv',stringsAsFactors=F)
-JE_games <- read.csv('output/JoeEitel GameLog.csv',stringsAsFactors=F)
-JE_games_nonOH <- read.csv('output/JoeEitel GameLog NON_OH.csv',stringsAsFactors=F)
-nonOH_div <- read.csv('output/nonOH_div.csv',stringsAsFactors=F)
+teams_df <- read.csv('data sets/JoeEitel Teams.csv',stringsAsFactors=F)
+JE_games <- read.csv('data sets/JoeEitel GameLog.csv',stringsAsFactors=F)
+JE_games_nonOH <- read.csv('data sets/JoeEitel GameLog NON_OH.csv',stringsAsFactors=F)
+nonOH_div <- read.csv('elo/nonOH_div.csv',stringsAsFactors=F)
 
 nonOH_div$nonOH_div[which(nonOH_div$nonOH_div==0 & as.numeric(substr(nonOH_div$X,1,4))>=2013)] <- 7
 nonOH_div$nonOH_div[which(nonOH_div$nonOH_div==0 & as.numeric(substr(nonOH_div$X,1,4))<2013)] <- 6
@@ -196,6 +196,8 @@ term_list$elo_d <- ifelse(term_list$elo_d>=800,800,ifelse(term_list$elo_d<=-800,
 return(term_list$elo_d^3/(term_list$t3*10^term_list$t3p)+term_list$elo_d^2/ifelse(term_list$elo_d>0,(term_list$t2*10^term_list$t2p),-(term_list$t2*10^term_list$t2p))+term_list$elo_d/(term_list$t1*10^term_list$t1p))
 }
 log_odds <- function(x) 1/(1+exp(-x))
+main <- 1.7
+pwr <- .84
 ############################
 ###elo default parms
 ############################
@@ -206,7 +208,7 @@ elo_def <- function(K = 0, K_mar = 30, home_adv_flat = 20, home_adv_var = .25, h
 	Div_start = c(1700,1600,1550,1460,1410,1280),
 	K_mult = FALSE,
 	wk_slope = slope_lin(x=0.08,y=1.25,p=.85),
-	margin_adj = function(mar, elo_d) ifelse(mar>(ifelse(elo_d>0,main,-main) * (abs(elo_d)/17)^pwr),1,-1) * abs(mar-ifelse(elo_d>0,main,-main) * (abs(elo_d)/17)^pwr)/7,
+	margin_adj = function(mar, elo_d) ifelse(mar>(ifelse(elo_d>0,main,-main) * (abs(elo_d)/18)^pwr),1,-1) * abs(mar-ifelse(elo_d>0,main,-main) * (abs(elo_d)/18)^pwr)/7,
 	auto_corr_adj = function(elo_d) 0,
 	ST_adj = c('OH'=1),
 	return_me = 'cycle') {
@@ -396,7 +398,7 @@ elo_def(pl_adj=F,mod_player_adj=0)
 #all-district adjustment
 library(reshape)
 
-all_dist <- read.csv('Player Adjustments/All District.csv',stringsAsFactors=F)
+all_dist <- read.csv('data sets/All District.csv',stringsAsFactors=F)
 
 all_dist$Graduating <- ifelse(all_dist$Year=='sr','Done','Back')
 all_dist$Pos[which(all_dist$Pos=='AP-D')] <- 'WRDB'
@@ -455,7 +457,7 @@ season <- season[which(season$Change!=0),]
 player_adj <- lm(Change ~ ., data=season[,c('Change',pos_names,div_pos_names)])
 summary(player_adj)
 player_adj_pred <- predict(player_adj,season)
-player_adj_pred[is.na(player_adj_pred)] <- 1
+player_adj_pred[is.na(player_adj_pred)] <- 0
 
 ###
 season15$End - player_adj_pred[which(season$Season==2014)] * 
@@ -464,7 +466,7 @@ length(which(season$Season==2014))
 
 ### still working on below
 player_adj_pred_18 <- predict(player_adj,season18_df)
-player_adj_pred_18[is.na(player_adj_pred_18)] <- 1
+player_adj_pred_18[is.na(player_adj_pred_18)] <- 0
 sort((season18_df$End * player_adj_pred_18) - 1500)/19.4
 
 sort(player_adj_pred_18)
@@ -553,6 +555,21 @@ lines(new_res[,2],col='blue')
 mean(abs(new_res[,2]))
 
 
+####
+
+
+###calib
+#pred_all <- elo_def(return_me='log')[[1]]
+
+pred_all$pred <- round(pred_all$elo_win, 2)
+pred_all$pred[pred_all$pred==1] <- .99
+pred_all$pred[pred_all$pred==0] <- .01
+pred_all$pred[which(pred_all$Excl_Elo==1)] <- NA
+my_calib <- aggregate(Win~pred,pred_all,mean,subset= Season>=2007)
+#my_calib <- aggregate(Win~pred,pred_all,mean,subset= Season==2017)
+
+plot(my_calib,type='l')
+lines(my_calib[,1],my_calib[,1],col='red')
 
 
 
@@ -754,22 +771,7 @@ write.csv(all_hist,'output/hist rankings.csv')
 best_att_nonOH <- elo_def(return_me='log')[[3]]
 best_att_nonOH$SchoolST <- paste0(best_att_nonOH$School,' (',best_att_nonOH$ST,')')
 
-####
 
-
-###calib
-pred_all <- elo_def(return_me='log')[[1]]
-
-pred_all$pred <- round(pred_all$elo_win, 2)
-pred_all$pred[pred_all$pred==1] <- .99
-pred_all$pred[pred_all$pred==0] <- .01
-pred_all$pred[which(pred_all$Excl_Elo==1)] <- NA
-my_calib <- aggregate(Win~pred,pred_all,mean,subset= Season>=2007)
-my_calib <- aggregate(Win~pred,pred_all,mean,subset= Season==2017)
-
-plot(my_calib,type='l')
-lines(my_calib[,1],my_calib[,1],col='red')
-#str(pred_all)
 ###
 
 

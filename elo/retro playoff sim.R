@@ -1,7 +1,7 @@
 ###Figure out ties
 ###multi week games
 ###week 0 games
-
+begin <- proc.time()
 #begin sim
 dyn_sim <- function(wkst,yr,sim_df,region,match_id,opp_id_mx,L1_mx,games_cnt_L1,games_cnt_L2,game_cnt,my_auto_fun,OH_teams,model_elos,Conf,bracket,k_mar,wk_slope,non_OHSAA_adj,std_dev) {
 
@@ -100,10 +100,10 @@ playoffs_df$Dog <- NULL
 for (p in max(c(wkst-10),1):5) {
 playoffs_df$elo_diff <- playoffs_df$Fav_elo - playoffs_df$Dog_elo + ifelse(p==1,25,0)
 playoffs_df$Win_Prob <- 1/(1+10^(-playoffs_df$elo_diff/400))
-playoffs_df$spread <- playoffs_df$elo_diff/spred_adj
+playoffs_df$spread <- ifelse(playoffs_df$elo_diff>0,main,-main) * (abs(playoffs_df$elo_diff)/spred_adj)^pwr
 playoffs_df$Std_dev <- (playoffs_df$elo_diff/spred_adj)/qnorm(playoffs_df$Win_Prob)
 playoffs_df$Score_pred <- rnorm(nrow(playoffs_df)) * playoffs_df$Std_dev + playoffs_df$spread
-playoffs_df$elo_change <- (pnorm(playoffs_df$Score_pred/playoffs_df$Std_dev)-playoffs_df$Win_Prob) * k_mar * wk_slope[p+10] + my_auto_fun(playoffs_df$elo_diff)
+playoffs_df$elo_change <- ifelse(playoffs_df$Score_pred>playoffs_df$spread,1,-1) * (abs(playoffs_df$Score_pred-playoffs_df$spread)/7) * k_mar * wk_slope[p+10]
 
 advance_df <- data.frame(ifelse(matrix(playoffs_df$Score_pred > 0 ,game_cnt[p],5),
 	as.matrix(cbind(playoffs_df[,c('FavID','FavID2','Fav_elo','elo_change')],1)),
@@ -159,9 +159,9 @@ final_elos <- elo_def(return_me='log')[[2]]
 final_elos_nonOH <- elo_def(return_me='log')[[3]]
 final_elos_nonOH[,names(final_elos)[-c(which(names(final_elos) %in% names(final_elos_nonOH)))]] <- NA
 final_elos[,names(final_elos_nonOH)[-c(which(names(final_elos_nonOH) %in% names(final_elos)))]] <- NA
-bracket <- read.csv('output/Playoffs Bracket.csv',stringsAsFactors=F)
+bracket <- read.csv('data sets/Playoffs Bracket.csv',stringsAsFactors=F)
 
-spred_adj <- 16.4
+spred_adj <- 18
 std_dev <- 0
 home_adv_flat <- 20
 home_adv_var <- .25
@@ -288,7 +288,7 @@ po_odds[which(po_odds==1)] <- .99
 po_odds[which(po_odds==0)] <- .01
 po_odds <- 1-seeding[,'miss']
 -mean(c(log(po_odds[which(names(po_odds) %in% playoff_tms)]),log(1-po_odds[-c(which(names(po_odds) %in% playoff_tms))])))
-
+proc.time() - begin
 
 playoffs[which(row.names(playoffs)=='306'),]
 t(szn_po_dist)[which(row.names(t(szn_po_dist))=='306'),]
@@ -306,11 +306,11 @@ all_seasons[[1]][[2]][which(row.names(all_seasons[[1]][[2]])=='306'),]
 
 str(all_seasons)
 
-begin <- proc.time()
 
 
 
-proc.time() - begin
+
+
 
 
 
