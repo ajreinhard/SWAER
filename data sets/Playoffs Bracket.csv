@@ -1,0 +1,2202 @@
+Fav,Reg,Dog,FavID,FavID2,Fav_elo,DogID,DogID2,Dog_elo,Season,Week
+1,1,8,1016,Mentor,NA,1312,Riverside,NA,2007,11
+4,1,5,1428,Solon,NA,1154,North Royalton,NA,2007,11
+2,1,7,1354,St Ignatius,NA,652,Glenville,NA,2007,11
+3,1,6,540,Euclid,NA,238,Boardman,NA,2007,11
+1,2,8,268,Brunswick,NA,650,GlenOak,NA,2007,11
+4,2,5,1704,Whitmer,NA,1606,Wadsworth,NA,2007,11
+2,2,7,730,Hoover,NA,1360,St John's Jesuit,NA,2007,11
+3,2,6,1116,Nordonia,NA,1248,Perrysburg,NA,2007,11
+1,3,8,717,Hilliard Darby,NA,1572,Upper Arlington,NA,2007,11
+4,3,5,258,Brookhaven,NA,682,Groveport-Madison,NA,2007,11
+2,3,7,1254,Pickerington Central,NA,838,Lancaster,NA,2007,11
+3,3,6,474,Dublin Coffman,NA,876,Gahanna-Lincoln,NA,2007,11
+1,4,8,1388,St Xavier,NA,522,Elder,NA,2007,11
+4,4,5,336,Centerville,NA,1274,Princeton,NA,2007,11
+2,4,7,396,Colerain,NA,1142,Northmont,NA,2007,11
+3,4,6,1508,Sycamore,NA,1056,Archbishop Moeller,NA,2007,11
+1,5,8,736,Howland,NA,922,Madison,NA,2007,11
+4,5,5,1224,Padua Franciscan,NA,980,Mayfield,NA,2007,11
+2,5,7,1522,Tallmadge,NA,592,Firestone,NA,2007,11
+3,5,6,1118,Normandy,NA,1434,South,NA,2007,11
+1,6,8,152,Avon Lake,NA,1030,Midview,NA,2007,11
+4,6,5,138,Ashland,NA,1203,Olentangy Liberty,NA,2007,11
+2,6,7,1512,Sylvania Southview,NA,856,Lexington,NA,2007,11
+3,6,6,342,Central Catholic,NA,1258,Piqua,NA,2007,11
+1,7,8,1348,Columbus St Francis DeSales,NA,1750,Zanesville,NA,2007,11
+4,7,5,304,Canfield,NA,962,Marion-Franklin,NA,2007,11
+2,7,7,902,Louisville,NA,822,Lake,NA,2007,11
+3,7,6,888,Logan,NA,1544,Tri-Valley,NA,2007,11
+1,8,8,1554,Turpin,NA,1719,Winton Woods,NA,2007,11
+4,8,5,516,Edgewood,NA,1550,Trotwood-Madison,NA,2007,11
+2,8,7,118,Anderson,NA,810,Kings,NA,2007,11
+3,8,6,1720,Withrow,NA,320,Carroll,NA,2007,11
+1,9,8,1614,Walsh Jesuit,NA,584,Field,NA,2007,11
+4,9,5,146,Aurora,NA,828,Lakeview,NA,2007,11
+2,9,7,1320,Rocky River,NA,738,Hubbard,NA,2007,11
+3,9,6,824,Lake Catholic,NA,1281,Ravenna,NA,2007,11
+1,10,8,214,Big Walnut,NA,1332,Rossford,NA,2007,11
+4,10,5,188,Bellefontaine,NA,1416,Shelby,NA,2007,11
+2,10,7,1080,Napoleon,NA,1578,Urbana,NA,2007,11
+3,10,6,1534,Tippecanoe,NA,392,Clyde,NA,2007,11
+1,11,8,1162,Northwest,NA,1264,Poland Seminary,NA,2007,11
+4,11,5,472,Dover,NA,1432,Canton South,NA,2007,11
+2,11,7,870,Licking Valley,NA,666,Granville,NA,2007,11
+3,11,6,1658,West Branch,NA,788,John Glenn,NA,2007,11
+1,12,8,752,Indian Hill,NA,510,Eaton,NA,2007,11
+4,12,5,1626,Washington,NA,370,Circleville,NA,2007,11
+2,12,7,302,Canal Winchester,NA,1590,Valley View,NA,2007,11
+3,12,6,658,Goshen,NA,1062,Lemon-Monroe,NA,2007,11
+1,13,8,310,Cardinal Mooney,NA,426,Coshocton,NA,2007,11
+4,13,5,1384,St Vincent-St Mary,NA,1246,Perry,NA,2007,11
+2,13,7,1488,Steubenville,NA,448,Cuyahoga Valley Christian Academy,NA,2007,11
+3,13,6,340,Canton Central Catholic,NA,1558,Tuscarawas Valley,NA,2007,11
+1,14,8,508,Eastwood,NA,534,Elyria Catholic,NA,2007,11
+4,14,5,712,Highland,NA,636,Genoa Area,NA,2007,11
+2,14,7,606,Fostoria,NA,1214,Ottawa-Glandorf,NA,2007,11
+3,14,6,1260,Pleasant,NA,1184,Oak Harbor,NA,2007,11
+1,15,8,1344,St Clairsville,NA,1318,Rock Hill,NA,2007,11
+4,15,5,868,Licking Heights,NA,1268,Portsmouth,NA,2007,11
+2,15,7,1676,Westfall,NA,1100,New Lexington,NA,2007,11
+3,15,6,1636,Waverly,NA,1566,Union Local,NA,2007,11
+1,16,8,132,Archbishop Alter,NA,1190,Oakwood,NA,2007,11
+4,16,5,796,Jonathan Alder,NA,394,Coldwater,NA,2007,11
+2,16,7,1042,Milton-Union,NA,264,Brookville,NA,2007,11
+3,16,6,388,Clinton-Massie,NA,1744,Wyoming,NA,2007,11
+1,17,8,1460,South Range,NA,812,Kirtland,NA,2007,11
+4,17,5,642,Gilmour Academy,NA,974,Mathews,NA,2007,11
+2,17,7,1580,Ursuline,NA,356,St Peter Chanel,NA,2007,11
+3,17,6,1640,Waynedale,NA,1170,Northwestern,NA,2007,11
+1,18,8,1234,Patrick Henry,NA,864,Liberty Center,NA,2007,11
+4,18,5,874,Lima Central Catholic,NA,1742,Wynford,NA,2007,11
+2,18,7,862,Liberty-Benton,NA,134,Archbold,NA,2007,11
+3,18,6,572,Fairview,NA,1532,Tinora,NA,2007,11
+1,19,8,220,Bishop Ready,NA,194,Belpre,NA,2007,11
+4,19,5,794,Johnstown-Monroe,NA,1048,Minford,NA,2007,11
+2,19,7,284,Buckeye Trail,NA,614,Fredericktown,NA,2007,11
+3,19,6,1696,Wheelersburg,NA,1300,Ridgewood,NA,2007,11
+1,20,8,1682,West Jefferson,NA,544,Fairbanks,NA,2007,11
+4,20,5,1688,West Liberty-Salem,NA,1644,Waynesville,NA,2007,11
+2,20,7,958,Marion Local,NA,1018,Miami East,NA,2007,11
+3,20,6,462,Deer Park,NA,369,Cincinnati Hills Christian Academy,NA,2007,11
+1,21,8,732,Hopewell-Loudon,NA,850,Leetonia,NA,2007,11
+4,21,5,1058,Mogadore,NA,408,Columbiana,NA,2007,11
+2,21,7,1374,St Paul,NA,1064,Monroeville,NA,2007,11
+3,21,6,786,John F Kennedy,NA,992,McDonald,NA,2007,11
+1,22,8,990,McComb,NA,343,Toledo Christian,NA,2007,11
+4,22,5,136,Arlington,NA,722,Hilltop,NA,2007,11
+2,22,7,316,Carey,NA,154,Ayersville,NA,2007,11
+3,22,6,100,Ada,NA,126,Antwerp,NA,2007,11
+1,23,8,1090,Newark Catholic,NA,204,Berne Union,NA,2007,11
+4,23,5,454,Danville,NA,934,Malvern,NA,2007,11
+2,23,7,1406,Shadyside,NA,326,Catholic Central,NA,2007,11
+3,23,6,1306,River,NA,172,Beallsville,NA,2007,11
+1,24,8,430,Covington,NA,1178,Notre Dame,NA,2007,11
+4,24,5,886,Lockland,NA,852,Lehman Catholic,NA,2007,11
+2,24,7,324,Catholic Central,NA,1642,Waynesfield-Goshen,NA,2007,11
+3,24,6,484,Sciotoville Community School,NA,1004,Mechanicsburg,NA,2007,11
+1,1,8,1354,St Ignatius,NA,1346,St Edward,NA,2008,11
+4,1,5,652,Glenville,NA,248,Brecksville-Broadview Heights,NA,2008,11
+2,1,7,1498,Strongsville,NA,540,Euclid,NA,2008,11
+3,1,6,1016,Mentor,NA,1440,South,NA,2008,11
+1,2,8,730,Hoover,NA,1624,Massillon Washington,NA,2008,11
+4,2,5,350,Twinsburg,NA,1486,Steele,NA,2008,11
+2,2,7,650,GlenOak,NA,306,Canton McKinley,NA,2008,11
+3,2,6,268,Brunswick,NA,1116,Nordonia,NA,2008,11
+1,3,8,716,Hilliard Davidson,NA,680,Grove City,NA,2008,11
+4,3,5,258,Brookhaven,NA,1741,Worthington Kilbourne,NA,2008,11
+2,3,7,1572,Upper Arlington,NA,970,Marysville,NA,2008,11
+3,3,6,1254,Pickerington Central,NA,704,Delaware Hayes,NA,2008,11
+1,4,8,396,Colerain,NA,1056,Archbishop Moeller,NA,2008,11
+4,4,5,1638,Wayne,NA,1732,Woodward,NA,2008,11
+2,4,7,1142,Northmont,NA,807,Kettering Fairmont,NA,2008,11
+3,4,6,522,Elder,NA,336,Centerville,NA,2008,11
+1,5,8,980,Mayfield,NA,1326,Roosevelt,NA,2008,11
+4,5,5,736,Howland,NA,724,Archbishop Hoban,NA,2008,11
+2,5,7,1410,Shaw,NA,922,Madison,NA,2008,11
+3,5,6,1224,Padua Franciscan,NA,1522,Tallmadge,NA,2008,11
+1,6,8,342,Central Catholic,NA,1203,Olentangy Liberty,NA,2008,11
+4,6,5,710,Highland,NA,152,Avon Lake,NA,2008,11
+2,6,7,1512,Sylvania Southview,NA,1202,Olentangy,NA,2008,11
+3,6,6,856,Lexington,NA,390,Cloverleaf,NA,2008,11
+1,7,8,1348,Columbus St Francis DeSales,NA,224,Bishop Watterson,NA,2008,11
+4,7,5,962,Marion-Franklin,NA,186,Beechcroft,NA,2008,11
+2,7,7,902,Louisville,NA,748,Independence,NA,2008,11
+3,7,6,888,Logan,NA,486,Dublin Jerome,NA,2008,11
+1,8,8,1719,Winton Woods,NA,476,Dunbar,NA,2008,11
+4,8,5,1554,Turpin,NA,810,Kings,NA,2008,11
+2,8,7,1528,Tecumseh,NA,1664,Western Brown,NA,2008,11
+3,8,6,118,Anderson,NA,516,Edgewood,NA,2008,11
+1,9,8,1614,Walsh Jesuit,NA,584,Field,NA,2008,11
+4,9,5,860,Liberty,NA,346,Chagrin Falls,NA,2008,11
+2,9,7,146,Aurora,NA,1180,Notre Dame-Cathedral Latin,NA,2008,11
+3,9,6,738,Hubbard,NA,1281,Ravenna,NA,2008,11
+1,10,8,150,Avon,NA,464,Defiance,NA,2008,11
+4,10,5,190,Bellevue,NA,406,Columbian,NA,2008,11
+2,10,7,392,Clyde,NA,214,Big Walnut,NA,2008,11
+3,10,6,1534,Tippecanoe,NA,1012,Memorial,NA,2008,11
+1,11,8,472,Dover,NA,1106,New Philadelphia,NA,2008,11
+4,11,5,1432,Canton South,NA,1162,Northwest,NA,2008,11
+2,11,7,870,Licking Valley,NA,282,Buckeye Local,NA,2008,11
+3,11,6,1264,Poland Seminary,NA,666,Granville,NA,2008,11
+1,12,8,1420,Sheridan,NA,608,Franklin,NA,2008,11
+4,12,5,502,Eastmoor Academy,NA,1590,Valley View,NA,2008,11
+2,12,7,890,Logan Elm,NA,212,Bexley,NA,2008,11
+3,12,6,364,Chillicothe,NA,302,Canal Winchester,NA,2008,11
+1,13,8,1488,Steubenville,NA,426,Coshocton,NA,2008,11
+4,13,5,310,Cardinal Mooney,NA,448,Cuyahoga Valley Christian Academy,NA,2008,11
+2,13,7,1560,Tuslaw,NA,818,LaBrae,NA,2008,11
+3,13,6,1246,Perry,NA,1548,Triway,NA,2008,11
+1,14,8,606,Fostoria,NA,712,Highland,NA,2008,11
+4,14,5,636,Genoa Area,NA,746,Huron,NA,2008,11
+2,14,7,380,Clearview,NA,1214,Ottawa-Glandorf,NA,2008,11
+3,14,6,1260,Pleasant,NA,508,Eastwood,NA,2008,11
+1,15,8,968,Martins Ferry,NA,218,Bishop Hartley,NA,2008,11
+4,15,5,1566,Union Local,NA,1344,St Clairsville,NA,2008,11
+2,15,7,1100,New Lexington,NA,1008,Meigs,NA,2008,11
+3,15,6,760,Ironton,NA,1676,Westfall,NA,2008,11
+1,16,8,394,Coldwater,NA,1134,North College Hill,NA,2008,11
+4,16,5,796,Jonathan Alder,NA,1190,Oakwood,NA,2008,11
+2,16,7,388,Clinton-Massie,NA,158,Badin,NA,2008,11
+3,16,6,264,Brookville,NA,132,Archbishop Alter,NA,2008,11
+1,17,8,1580,Ursuline,NA,446,Cuyahoga Heights,NA,2008,11
+4,17,5,642,Gilmour Academy,NA,1174,Norwayne,NA,2008,11
+2,17,7,436,Crestview,NA,1640,Waynedale,NA,2008,11
+3,17,6,812,Kirtland,NA,1460,South Range,NA,2008,11
+1,18,8,1234,Patrick Henry,NA,434,Crestview,NA,2008,11
+4,18,5,572,Fairview,NA,1742,Wynford,NA,2008,11
+2,18,7,862,Liberty-Benton,NA,772,Jefferson,NA,2008,11
+3,18,6,864,Liberty Center,NA,134,Archbold,NA,2008,11
+1,19,8,1270,Portsmouth West,NA,1300,Ridgewood,NA,2008,11
+4,19,5,794,Johnstown-Monroe,NA,220,Bishop Ready,NA,2008,11
+2,19,7,1696,Wheelersburg,NA,1048,Minford,NA,2008,11
+3,19,6,1084,Nelsonville-York,NA,866,Liberty Union,NA,2008,11
+1,20,8,369,Cincinnati Hills Christian Academy,NA,490,East Clinton,NA,2008,11
+4,20,5,1682,West Jefferson,NA,1018,Miami East,NA,2008,11
+2,20,7,120,Anna,NA,958,Marion Local,NA,2008,11
+3,20,6,1644,Waynesville,NA,1688,West Liberty-Salem,NA,2008,11
+1,21,8,732,Hopewell-Loudon,NA,408,Columbiana,NA,2008,11
+4,21,5,1058,Mogadore,NA,850,Leetonia,NA,2008,11
+2,21,7,1374,St Paul,NA,488,East Canton,NA,2008,11
+3,21,6,992,McDonald,NA,1668,Western Reserve,NA,2008,11
+1,22,8,100,Ada,NA,722,Hilltop,NA,2008,11
+4,22,5,1228,Pandora-Gilboa,NA,1308,Riverdale,NA,2008,11
+2,22,7,316,Carey,NA,990,McComb,NA,2008,11
+3,22,6,1358,St John's,NA,136,Arlington,NA,2008,11
+1,23,8,1306,River,NA,222,Bishop Rosecrans,NA,2008,11
+4,23,5,1540,Trimble,NA,296,Caldwell,NA,2008,11
+2,23,7,934,Malvern,NA,250,Bridgeport,NA,2008,11
+3,23,6,1406,Shadyside,NA,172,Beallsville,NA,2008,11
+1,24,8,1004,Mechanicsburg,NA,1104,New Miami,NA,2008,11
+4,24,5,430,Covington,NA,886,Lockland,NA,2008,11
+2,24,7,852,Lehman Catholic,NA,122,Ansonia,NA,2008,11
+3,24,6,484,Sciotoville Community School,NA,324,Catholic Central,NA,2008,11
+1,1,8,1354,St Ignatius,NA,238,Boardman,NA,2009,11
+4,1,5,1154,North Royalton,NA,652,Glenville,NA,2009,11
+2,1,7,1428,Solon,NA,540,Euclid,NA,2009,11
+3,1,6,980,Mayfield,NA,1232,Parma,NA,2009,11
+1,2,8,1704,Whitmer,NA,306,Canton McKinley,NA,2009,11
+4,2,5,650,GlenOak,NA,1606,Wadsworth,NA,2009,11
+2,2,7,350,Twinsburg,NA,268,Brunswick,NA,2009,11
+3,2,6,1624,Massillon Washington,NA,730,Hoover,NA,2009,11
+1,3,8,474,Dublin Coffman,NA,1480,Springfield,NA,2009,11
+4,3,5,1674,Westerville South,NA,1203,Olentangy Liberty,NA,2009,11
+2,3,7,716,Hilliard Davidson,NA,838,Lancaster,NA,2009,11
+3,3,6,1254,Pickerington Central,NA,1255,Pickerington North,NA,2009,11
+1,4,8,1388,St Xavier,NA,336,Centerville,NA,2009,11
+4,4,5,522,Elder,NA,1638,Wayne,NA,2009,11
+2,4,7,1056,Archbishop Moeller,NA,1026,Middletown,NA,2009,11
+3,4,6,118,Anderson,NA,837,Lakota West,NA,2009,11
+1,5,8,824,Lake Catholic,NA,1281,Ravenna,NA,2009,11
+4,5,5,304,Canfield,NA,146,Aurora,NA,2009,11
+2,5,7,736,Howland,NA,710,Highland,NA,2009,11
+3,5,6,138,Ashland,NA,1678,West Geauga,NA,2009,11
+1,6,8,1350,Toledo St Francis DeSales,NA,1152,North Ridgeville,NA,2009,11
+4,6,5,976,Maumee,NA,152,Avon Lake,NA,2009,11
+2,6,7,342,Central Catholic,NA,1320,Rocky River,NA,2009,11
+3,6,6,1324,Rogers,NA,944,Maple Heights,NA,2009,11
+1,7,8,902,Louisville,NA,962,Marion-Franklin,NA,2009,11
+4,7,5,1211,Olentangy Orange,NA,1544,Tri-Valley,NA,2009,11
+2,7,7,888,Logan,NA,302,Canal Winchester,NA,2009,11
+3,7,6,258,Brookhaven,NA,1612,Walnut Ridge,NA,2009,11
+1,8,8,1554,Turpin,NA,1714,Wilmington,NA,2009,11
+4,8,5,1550,Trotwood-Madison,NA,1074,Mount Healthy,NA,2009,11
+2,8,7,1719,Winton Woods,NA,1330,Ross,NA,2009,11
+3,8,6,1528,Tecumseh,NA,1660,West Carrollton,NA,2009,11
+1,9,8,310,Cardinal Mooney,NA,584,Field,NA,2009,11
+4,9,5,738,Hubbard,NA,276,Buckeye,NA,2009,11
+2,9,7,1264,Poland Seminary,NA,1384,St Vincent-St Mary,NA,2009,11
+3,9,6,724,Archbishop Hoban,NA,1224,Padua Franciscan,NA,2009,11
+1,10,8,1348,Columbus St Francis DeSales,NA,272,Bryan,NA,2009,11
+4,10,5,1240,Perkins,NA,1534,Tippecanoe,NA,2009,11
+2,10,7,224,Bishop Watterson,NA,188,Bellefontaine,NA,2009,11
+3,10,6,1080,Napoleon,NA,502,Eastmoor Academy,NA,2009,11
+1,11,8,1488,Steubenville,NA,964,Marlington,NA,2009,11
+4,11,5,666,Granville,NA,1392,Salem,NA,2009,11
+2,11,7,472,Dover,NA,294,Harrison Central,NA,2009,11
+3,11,6,282,Buckeye Local,NA,1162,Northwest,NA,2009,11
+1,12,8,658,Goshen,NA,1414,Shawnee,NA,2009,11
+4,12,5,890,Logan Elm,NA,1108,New Richmond,NA,2009,11
+2,12,7,1744,Wyoming,NA,510,Eaton,NA,2009,11
+3,12,6,352,Chaminade-Julienne,NA,1062,Lemon-Monroe,NA,2009,11
+1,13,8,346,Chagrin Falls,NA,1010,Memorial,NA,2009,11
+4,13,5,936,Manchester,NA,828,Lakeview,NA,2009,11
+2,13,7,644,Girard,NA,448,Cuyahoga Valley Christian Academy,NA,2009,11
+3,13,6,968,Martins Ferry,NA,1724,Woodridge,NA,2009,11
+1,14,8,620,Galion,NA,508,Eastwood,NA,2009,11
+4,14,5,1548,Triway,NA,1214,Ottawa-Glandorf,NA,2009,11
+2,14,7,636,Genoa Area,NA,518,Edison,NA,2009,11
+3,14,6,1210,Orrville,NA,378,Clear Fork,NA,2009,11
+1,15,8,114,Amanda-Clearcreek,NA,108,Alexander,NA,2009,11
+4,15,5,1690,West Muskingum,NA,426,Coshocton,NA,2009,11
+2,15,7,760,Ironton,NA,712,Highland,NA,2009,11
+3,15,6,706,Heath,NA,1752,Zane Trace,NA,2009,11
+1,16,8,388,Clinton-Massie,NA,1644,Waynesville,NA,2009,11
+4,16,5,804,Kenton,NA,1590,Valley View,NA,2009,11
+2,16,7,132,Archbishop Alter,NA,796,Jonathan Alder,NA,2009,11
+3,16,6,1134,North College Hill,NA,318,Carlisle,NA,2009,11
+1,17,8,446,Cuyahoga Heights,NA,1640,Waynedale,NA,2009,11
+4,17,5,750,Independence,NA,702,Hawken,NA,2009,11
+2,17,7,436,Crestview,NA,504,East Palestine,NA,2009,11
+3,17,6,1580,Ursuline,NA,1542,Trinity,NA,2009,11
+1,18,8,1234,Patrick Henry,NA,1172,Northwood,NA,2009,11
+4,18,5,434,Crestview,NA,720,Hillsdale,NA,2009,11
+2,18,7,1532,Tinora,NA,572,Fairview,NA,2009,11
+3,18,6,874,Lima Central Catholic,NA,708,Hicksville,NA,2009,11
+1,19,8,614,Fredericktown,NA,296,Caldwell,NA,2009,11
+4,19,5,1063,Monroe Central,NA,1696,Wheelersburg,NA,2009,11
+2,19,7,1186,Oak Hill,NA,458,Dawson-Bryant,NA,2009,11
+3,19,6,1048,Minford,NA,1300,Ridgewood,NA,2009,11
+1,20,8,1156,North Union,NA,1352,St Henry,NA,2009,11
+4,20,5,1688,West Liberty-Salem,NA,1682,West Jefferson,NA,2009,11
+2,20,7,394,Coldwater,NA,158,Badin,NA,2009,11
+3,20,6,220,Bishop Ready,NA,120,Anna,NA,2009,11
+1,21,8,992,McDonald,NA,732,Hopewell-Loudon,NA,2009,11
+4,21,5,1742,Wynford,NA,450,Dalton,NA,2009,11
+2,21,7,1374,St Paul,NA,1668,Western Reserve,NA,2009,11
+3,21,6,1058,Mogadore,NA,786,John F Kennedy,NA,2009,11
+1,22,8,1358,St John's,NA,136,Arlington,NA,2009,11
+4,22,5,854,Leipsic,NA,1370,St Joseph Central Catholic,NA,2009,11
+2,22,7,100,Ada,NA,424,Cory-Rawson,NA,2009,11
+3,22,6,316,Carey,NA,412,Columbus Grove,NA,2009,11
+1,23,8,934,Malvern,NA,1514,Symmes Valley,NA,2009,11
+4,23,5,250,Bridgeport,NA,1556,Tuscarawas Central Catholic,NA,2009,11
+2,23,7,408,Columbiana,NA,1406,Shadyside,NA,2009,11
+3,23,6,222,Bishop Rosecrans,NA,681,Grove City Christian,NA,2009,11
+1,24,8,122,Ansonia,NA,430,Covington,NA,2009,11
+4,24,5,852,Lehman Catholic,NA,958,Marion Local,NA,2009,11
+2,24,7,886,Lockland,NA,602,Fort Loramie,NA,2009,11
+3,24,6,1642,Waynesfield-Goshen,NA,1452,Southeastern Local,NA,2009,11
+1,1,8,1428,Solon,NA,248,Brecksville-Broadview Heights,NA,2010,11
+4,1,5,148,Austintown-Fitch,NA,1440,South,NA,2010,11
+2,1,7,652,Glenville,NA,692,Warren G Harding,NA,2010,11
+3,1,6,1346,St Edward,NA,1016,Mentor,NA,2010,11
+1,2,8,306,Canton McKinley,NA,1006,Medina,NA,2010,11
+4,2,5,1360,St John's Jesuit,NA,616,Fremont Ross,NA,2010,11
+2,2,7,1512,Sylvania Southview,NA,350,Twinsburg,NA,2010,11
+3,2,6,1704,Whitmer,NA,1624,Massillon Washington,NA,2010,11
+1,3,8,1254,Pickerington Central,NA,1552,Troy,NA,2010,11
+4,3,5,1674,Westerville South,NA,474,Dublin Coffman,NA,2010,11
+2,3,7,716,Hilliard Davidson,NA,1140,Northland,NA,2010,11
+3,3,6,1480,Springfield,NA,717,Hilliard Darby,NA,2010,11
+1,4,8,1026,Middletown,NA,1638,Wayne,NA,2010,11
+4,4,5,1056,Archbishop Moeller,NA,336,Centerville,NA,2010,11
+2,4,7,396,Colerain,NA,685,Hamilton,NA,2010,11
+3,4,6,842,La Salle,NA,1388,St Xavier,NA,2010,11
+1,5,8,1522,Tallmadge,NA,1326,Roosevelt,NA,2010,11
+4,5,5,138,Ashland,NA,146,Aurora,NA,2010,11
+2,5,7,824,Lake Catholic,NA,802,Kenston,NA,2010,11
+3,5,6,422,Copley,NA,736,Howland,NA,2010,11
+1,6,8,150,Avon,NA,1394,Sandusky,NA,2010,11
+4,6,5,342,Central Catholic,NA,944,Maple Heights,NA,2010,11
+2,6,7,152,Avon Lake,NA,976,Maumee,NA,2010,11
+3,6,6,1204,Olmsted Falls,NA,784,John F Kennedy,NA,2010,11
+1,7,8,962,Marion-Franklin,NA,1750,Zanesville,NA,2010,11
+4,7,5,302,Canal Winchester,NA,214,Big Walnut,NA,2010,11
+2,7,7,1086,New Albany,NA,1544,Tri-Valley,NA,2010,11
+3,7,6,822,Lake,NA,1342,St Charles,NA,2010,11
+1,8,8,1719,Winton Woods,NA,320,Carroll,NA,2010,11
+4,8,5,1550,Trotwood-Madison,NA,696,Harrison,NA,2010,11
+2,8,7,810,Kings,NA,1528,Tecumseh,NA,2010,11
+3,8,6,1554,Turpin,NA,1074,Mount Healthy,NA,2010,11
+1,9,8,1224,Padua Franciscan,NA,1571,University School,NA,2010,11
+4,9,5,274,Buchtel,NA,1264,Poland Seminary,NA,2010,11
+2,9,7,738,Hubbard,NA,1384,St Vincent-St Mary,NA,2010,11
+3,9,6,584,Field,NA,310,Cardinal Mooney,NA,2010,11
+1,10,8,224,Bishop Watterson,NA,1348,Columbus St Francis DeSales,NA,2010,11
+4,10,5,1534,Tippecanoe,NA,526,Elida,NA,2010,11
+2,10,7,392,Clyde,NA,1416,Shelby,NA,2010,11
+3,10,6,406,Columbian,NA,502,Eastmoor Academy,NA,2010,11
+1,11,8,964,Marlington,NA,1046,Minerva,NA,2010,11
+4,11,5,500,East Liverpool,NA,870,Licking Valley,NA,2010,11
+2,11,7,1488,Steubenville,NA,472,Dover,NA,2010,11
+3,11,6,1420,Sheridan,NA,1392,Salem,NA,2010,11
+1,12,8,1414,Shawnee,NA,1626,Washington,NA,2010,11
+4,12,5,510,Eaton,NA,762,Jackson,NA,2010,11
+2,12,7,998,Archbishop McNicholas,NA,476,Dunbar,NA,2010,11
+3,12,6,1322,Roger Bacon,NA,1744,Wyoming,NA,2010,11
+1,13,8,936,Manchester,NA,1246,Perry,NA,2010,11
+4,13,5,968,Martins Ferry,NA,1010,Memorial,NA,2010,11
+2,13,7,346,Chagrin Falls,NA,630,Garfield,NA,2010,11
+3,13,6,1344,St Clairsville,NA,828,Lakeview,NA,2010,11
+1,14,8,378,Clear Fork,NA,1206,Ontario,NA,2010,11
+4,14,5,636,Genoa Area,NA,1214,Ottawa-Glandorf,NA,2010,11
+2,14,7,534,Elyria Catholic,NA,746,Huron,NA,2010,11
+3,14,6,1210,Orrville,NA,1548,Triway,NA,2010,11
+1,15,8,760,Ironton,NA,426,Coshocton,NA,2010,11
+4,15,5,712,Highland,NA,1270,Portsmouth West,NA,2010,11
+2,15,7,706,Heath,NA,108,Alexander,NA,2010,11
+3,15,6,218,Bishop Hartley,NA,114,Amanda-Clearcreek,NA,2010,11
+1,16,8,388,Clinton-Massie,NA,1518,Taft,NA,2010,11
+4,16,5,318,Carlisle,NA,804,Kenton,NA,2010,11
+2,16,7,796,Jonathan Alder,NA,1644,Waynesville,NA,2010,11
+3,16,6,1134,North College Hill,NA,132,Archbishop Alter,NA,2010,11
+1,17,8,1580,Ursuline,NA,1460,South Range,NA,2010,11
+4,17,5,436,Crestview,NA,1174,Norwayne,NA,2010,11
+2,17,7,812,Kirtland,NA,750,Independence,NA,2010,11
+3,17,6,446,Cuyahoga Heights,NA,1570,United,NA,2010,11
+1,18,8,134,Archbold,NA,1172,Northwood,NA,2010,11
+4,18,5,874,Lima Central Catholic,NA,1532,Tinora,NA,2010,11
+2,18,7,1670,Western Reserve,NA,720,Hillsdale,NA,2010,11
+3,18,6,1234,Patrick Henry,NA,404,Columbia,NA,2010,11
+1,19,8,1186,Oak Hill,NA,458,Dawson-Bryant,NA,2010,11
+4,19,5,1048,Minford,NA,1084,Nelsonville-York,NA,2010,11
+2,19,7,614,Fredericktown,NA,1063,Monroe Central,NA,2010,11
+3,19,6,1696,Wheelersburg,NA,1300,Ridgewood,NA,2010,11
+1,20,8,1156,North Union,NA,158,Badin,NA,2010,11
+4,20,5,120,Anna,NA,394,Coldwater,NA,2010,11
+2,20,7,1682,West Jefferson,NA,1504,Summit Country Day,NA,2010,11
+3,20,6,369,Cincinnati Hills Christian Academy,NA,490,East Clinton,NA,2010,11
+1,21,8,1742,Wynford,NA,450,Dalton,NA,2010,11
+4,21,5,1668,Western Reserve,NA,992,McDonald,NA,2010,11
+2,21,7,1058,Mogadore,NA,278,Buckeye Central,NA,2010,11
+3,21,6,848,Ledgemont,NA,1064,Monroeville,NA,2010,11
+1,22,8,1358,St John's,NA,512,Edgerton,NA,2010,11
+4,22,5,100,Ada,NA,854,Leipsic,NA,2010,11
+2,22,7,990,McComb,NA,1370,St Joseph Central Catholic,NA,2010,11
+3,22,6,1060,Mohawk,NA,343,Toledo Christian,NA,2010,11
+1,23,8,1406,Shadyside,NA,1540,Trimble,NA,2010,11
+4,23,5,1514,Symmes Valley,NA,934,Malvern,NA,2010,11
+2,23,7,250,Bridgeport,NA,1456,Southern,NA,2010,11
+3,23,6,1090,Newark Catholic,NA,553,Fairfield Christian Academy,NA,2010,11
+1,24,8,324,Catholic Central,NA,1052,Minster,NA,2010,11
+4,24,5,602,Fort Loramie,NA,958,Marion Local,NA,2010,11
+2,24,7,852,Lehman Catholic,NA,886,Lockland,NA,2010,11
+3,24,6,430,Covington,NA,122,Ansonia,NA,2010,11
+1,1,8,1016,Mentor,NA,784,John F Kennedy,NA,2011,11
+4,1,5,1440,South,NA,1428,Solon,NA,2011,11
+2,1,7,1354,St Ignatius,NA,238,Boardman,NA,2011,11
+3,1,6,385,Cleveland Heights,NA,1346,St Edward,NA,2011,11
+1,2,8,1704,Whitmer,NA,124,Anthony Wayne,NA,2011,11
+4,2,5,1512,Sylvania Southview,NA,306,Canton McKinley,NA,2011,11
+2,2,7,650,GlenOak,NA,1606,Wadsworth,NA,2011,11
+3,2,6,740,Hudson,NA,586,Findlay,NA,2011,11
+1,3,8,716,Hilliard Davidson,NA,1211,Olentangy Orange,NA,2011,11
+4,3,5,1572,Upper Arlington,NA,1552,Troy,NA,2011,11
+2,3,7,1254,Pickerington Central,NA,474,Dublin Coffman,NA,2011,11
+3,3,6,1671,Westerville Central,NA,876,Gahanna-Lincoln,NA,2011,11
+1,4,8,1026,Middletown,NA,336,Centerville,NA,2011,11
+4,4,5,1056,Archbishop Moeller,NA,1508,Sycamore,NA,2011,11
+2,4,7,396,Colerain,NA,1610,Walnut Hills,NA,2011,11
+3,4,6,1388,St Xavier,NA,972,Mason,NA,2011,11
+1,5,8,1614,Walsh Jesuit,NA,1678,West Geauga,NA,2011,11
+4,5,5,1326,Roosevelt,NA,736,Howland,NA,2011,11
+2,5,7,1522,Tallmadge,NA,1106,New Philadelphia,NA,2011,11
+3,5,6,146,Aurora,NA,922,Madison,NA,2011,11
+1,6,8,150,Avon,NA,710,Highland,NA,2011,11
+4,6,5,342,Central Catholic,NA,1204,Olmsted Falls,NA,2011,11
+2,6,7,1394,Sandusky,NA,406,Columbian,NA,2011,11
+3,6,6,944,Maple Heights,NA,1410,Shaw,NA,2011,11
+1,7,8,962,Marion-Franklin,NA,258,Brookhaven,NA,2011,11
+4,7,5,214,Big Walnut,NA,186,Beechcroft,NA,2011,11
+2,7,7,1544,Tri-Valley,NA,1528,Tecumseh,NA,2011,11
+3,7,6,1086,New Albany,NA,138,Ashland,NA,2011,11
+1,8,8,1550,Trotwood-Madison,NA,1330,Ross,NA,2011,11
+4,8,5,608,Franklin,NA,1616,Wapakoneta,NA,2011,11
+2,8,7,810,Kings,NA,696,Harrison,NA,2011,11
+3,8,6,1534,Tippecanoe,NA,1554,Turpin,NA,2011,11
+1,9,8,346,Chagrin Falls,NA,590,Firelands,NA,2011,11
+4,9,5,1281,Ravenna,NA,1448,Southeast,NA,2011,11
+2,9,7,824,Lake Catholic,NA,196,Benedictine,NA,2011,11
+3,9,6,1571,University School,NA,1384,St Vincent-St Mary,NA,2011,11
+1,10,8,1348,Columbus St Francis DeSales,NA,1314,River Valley,NA,2011,11
+4,10,5,190,Bellevue,NA,526,Elida,NA,2011,11
+2,10,7,392,Clyde,NA,1080,Napoleon,NA,2011,11
+3,10,6,502,Eastmoor Academy,NA,1578,Urbana,NA,2011,11
+1,11,8,1488,Steubenville,NA,751,Indian Creek,NA,2011,11
+4,11,5,310,Cardinal Mooney,NA,1162,Northwest,NA,2011,11
+2,11,7,472,Dover,NA,1420,Sheridan,NA,2011,11
+3,11,6,1046,Minerva,NA,1264,Poland Seminary,NA,2011,11
+1,12,8,1414,Shawnee,NA,1518,Taft,NA,2011,11
+4,12,5,402,Thurgood Marshall,NA,132,Archbishop Alter,NA,2011,11
+2,12,7,144,Athens,NA,762,Jackson,NA,2011,11
+3,12,6,796,Jonathan Alder,NA,890,Logan Elm,NA,2011,11
+1,13,8,644,Girard,NA,340,Canton Central Catholic,NA,2011,11
+4,13,5,226,Black River,NA,936,Manchester,NA,2011,11
+2,13,7,1210,Orrville,NA,818,LaBrae,NA,2011,11
+3,13,6,1174,Norwayne,NA,256,Brookfield,NA,2011,11
+1,14,8,804,Kenton,NA,1650,Wellington,NA,2011,11
+4,14,5,636,Genoa Area,NA,746,Huron,NA,2011,11
+2,14,7,508,Eastwood,NA,1214,Ottawa-Glandorf,NA,2011,11
+3,14,6,218,Bishop Hartley,NA,1156,North Union,NA,2011,11
+1,15,8,1344,St Clairsville,NA,362,Chesapeake,NA,2011,11
+4,15,5,968,Martins Ferry,NA,426,Coshocton,NA,2011,11
+2,15,7,794,Johnstown-Monroe,NA,758,Indian Valley,NA,2011,11
+3,15,6,114,Amanda-Clearcreek,NA,760,Ironton,NA,2011,11
+1,16,8,1644,Waynesville,NA,1042,Milton-Union,NA,2011,11
+4,16,5,1676,Westfall,NA,352,Chaminade-Julienne,NA,2011,11
+2,16,7,920,Madeira,NA,369,Cincinnati Hills Christian Academy,NA,2011,11
+3,16,6,388,Clinton-Massie,NA,1134,North College Hill,NA,2011,11
+1,17,8,812,Kirtland,NA,408,Columbiana,NA,2011,11
+4,17,5,624,Garaway,NA,1478,Springfield,NA,2011,11
+2,17,7,1063,Monroe Central,NA,1378,St Thomas Aquinas,NA,2011,11
+3,17,6,436,Crestview,NA,446,Cuyahoga Heights,NA,2011,11
+1,18,8,864,Liberty Center,NA,316,Carey,NA,2011,11
+4,18,5,1172,Northwood,NA,1234,Patrick Henry,NA,2011,11
+2,18,7,732,Hopewell-Loudon,NA,708,Hicksville,NA,2011,11
+3,18,6,874,Lima Central Catholic,NA,862,Liberty-Benton,NA,2011,11
+1,19,8,1742,Wynford,NA,1426,Smithville,NA,2011,11
+4,19,5,1084,Nelsonville-York,NA,1270,Portsmouth West,NA,2011,11
+2,19,7,1586,Valley,NA,1300,Ridgewood,NA,2011,11
+3,19,6,664,Grandview Heights,NA,434,Crestview,NA,2011,11
+1,20,8,1688,West Liberty-Salem,NA,1600,Versailles,NA,2011,11
+4,20,5,430,Covington,NA,394,Coldwater,NA,2011,11
+2,20,7,1260,Pleasant,NA,1504,Summit Country Day,NA,2011,11
+3,20,6,102,Adena,NA,1682,West Jefferson,NA,2011,11
+1,21,8,1668,Western Reserve,NA,1364,Villa Angela-St Joseph,NA,2011,11
+4,21,5,848,Ledgemont,NA,934,Malvern,NA,2011,11
+2,21,7,1406,Shadyside,NA,1654,Wellsville,NA,2011,11
+3,21,6,1751,Youngstown Christian,NA,1058,Mogadore,NA,2011,11
+1,22,8,854,Leipsic,NA,128,Arcadia,NA,2011,11
+4,22,5,512,Edgerton,NA,990,McComb,NA,2011,11
+2,22,7,1358,St John's,NA,1216,Ottawa Hills,NA,2011,11
+3,22,6,298,Calvert,NA,520,Edon,NA,2011,11
+1,23,8,1514,Symmes Valley,NA,1540,Trimble,NA,2011,11
+4,23,5,484,Sciotoville Community School,NA,172,Beallsville,NA,2011,11
+2,23,7,278,Buckeye Central,NA,1453,South Gallia,NA,2011,11
+3,23,6,454,Danville,NA,222,Bishop Rosecrans,NA,2011,11
+1,24,8,958,Marion Local,NA,886,Lockland,NA,2011,11
+4,24,5,1562,Tri-County North,NA,100,Ada,NA,2011,11
+2,24,7,602,Fort Loramie,NA,368,Cincinnati Country Day,NA,2011,11
+3,24,6,324,Catholic Central,NA,1052,Minster,NA,2011,11
+1,1,8,1346,St Edward,NA,980,Mayfield,NA,2012,11
+4,1,5,1016,Mentor,NA,692,Warren G Harding,NA,2012,11
+2,1,7,1354,St Ignatius,NA,148,Austintown-Fitch,NA,2012,11
+3,1,6,1440,South,NA,1154,North Royalton,NA,2012,11
+1,2,8,1624,Massillon Washington,NA,1116,Nordonia,NA,2012,11
+4,2,5,730,Hoover,NA,306,Canton McKinley,NA,2012,11
+2,2,7,1704,Whitmer,NA,152,Avon Lake,NA,2012,11
+3,2,6,650,GlenOak,NA,740,Hudson,NA,2012,11
+1,3,8,717,Hilliard Darby,NA,1674,Westerville South,NA,2012,11
+4,3,5,1255,Pickerington North,NA,1254,Pickerington Central,NA,2012,11
+2,3,7,474,Dublin Coffman,NA,716,Hilliard Davidson,NA,2012,11
+3,3,6,1202,Olentangy,NA,475,Dublin Scioto,NA,2012,11
+1,4,8,396,Colerain,NA,1388,St Xavier,NA,2012,11
+4,4,5,522,Elder,NA,1508,Sycamore,NA,2012,11
+2,4,7,1470,Springboro,NA,836,Lakota East,NA,2012,11
+3,4,6,1056,Archbishop Moeller,NA,1638,Wayne,NA,2012,11
+1,5,8,1522,Tallmadge,NA,802,Kenston,NA,2012,11
+4,5,5,360,Chardon,NA,736,Howland,NA,2012,11
+2,5,7,1326,Roosevelt,NA,528,Ellet,NA,2012,11
+3,5,6,146,Aurora,NA,1106,New Philadelphia,NA,2012,11
+1,6,8,406,Columbian,NA,940,Mansfield,NA,2012,11
+4,6,5,150,Avon,NA,1248,Perrysburg,NA,2012,11
+2,6,7,342,Central Catholic,NA,1030,Midview,NA,2012,11
+3,6,6,1684,Westlake,NA,926,Madison Comprehensive,NA,2012,11
+1,7,8,1544,Tri-Valley,NA,1528,Tecumseh,NA,2012,11
+4,7,5,1086,New Albany,NA,186,Beechcroft,NA,2012,11
+2,7,7,1750,Zanesville,NA,302,Canal Winchester,NA,2012,11
+3,7,6,962,Marion-Franklin,NA,868,Licking Heights,NA,2012,11
+1,8,8,1554,Turpin,NA,1534,Tippecanoe,NA,2012,11
+4,8,5,608,Franklin,NA,1164,Northwest,NA,2012,11
+2,8,7,1719,Winton Woods,NA,516,Edgewood,NA,2012,11
+3,8,6,1074,Mount Healthy,NA,1550,Trotwood-Madison,NA,2012,11
+1,9,8,346,Chagrin Falls,NA,1724,Woodridge,NA,2012,11
+4,9,5,790,John Hay,NA,1281,Ravenna,NA,2012,11
+2,9,7,994,Niles McKinley,NA,738,Hubbard,NA,2012,11
+3,9,6,1180,Notre Dame-Cathedral Latin,NA,1384,St Vincent-St Mary,NA,2012,11
+1,10,8,1080,Napoleon,NA,1314,River Valley,NA,2012,11
+4,10,5,272,Bryan,NA,224,Bishop Watterson,NA,2012,11
+2,10,7,190,Bellevue,NA,526,Elida,NA,2012,11
+3,10,6,1578,Urbana,NA,1240,Perkins,NA,2012,11
+1,11,8,964,Marlington,NA,1264,Poland Seminary,NA,2012,11
+4,11,5,472,Dover,NA,666,Granville,NA,2012,11
+2,11,7,1680,West Holmes,NA,751,Indian Creek,NA,2012,11
+3,11,6,1488,Steubenville,NA,982,Maysville,NA,2012,11
+1,12,8,402,Thurgood Marshall,NA,890,Logan Elm,NA,2012,11
+4,12,5,622,Gallia Academy,NA,998,Archbishop McNicholas,NA,2012,11
+2,12,7,132,Archbishop Alter,NA,1414,Shawnee,NA,2012,11
+3,12,6,144,Athens,NA,370,Circleville,NA,2012,11
+1,13,8,256,Brookfield,NA,514,Edgewood,NA,2012,11
+4,13,5,936,Manchester,NA,702,Hawken,NA,2012,11
+2,13,7,1174,Norwayne,NA,1170,Northwestern,NA,2012,11
+3,13,6,1496,Streetsboro,NA,860,Liberty,NA,2012,11
+1,14,8,218,Bishop Hartley,NA,1574,Upper Sandusky,NA,2012,11
+4,14,5,1156,North Union,NA,620,Galion,NA,2012,11
+2,14,7,1214,Ottawa-Glandorf,NA,380,Clearview,NA,2012,11
+3,14,6,636,Genoa Area,NA,220,Bishop Ready,NA,2012,11
+1,15,8,1344,St Clairsville,NA,294,Harrison Central,NA,2012,11
+4,15,5,1048,Minford,NA,1256,Piketon,NA,2012,11
+2,15,7,760,Ironton,NA,232,Bloom-Carroll,NA,2012,11
+3,15,6,794,Johnstown-Monroe,NA,758,Indian Valley,NA,2012,11
+1,16,8,388,Clinton-Massie,NA,920,Madeira,NA,2012,11
+4,16,5,164,Batavia,NA,369,Cincinnati Hills Christian Academy,NA,2012,11
+2,16,7,1676,Westfall,NA,1042,Milton-Union,NA,2012,11
+3,16,6,1176,Norwood,NA,582,Bishop Fenwick,NA,2012,11
+1,17,8,812,Kirtland,NA,598,Fort Frye,NA,2012,11
+4,17,5,436,Crestview,NA,1378,St Thomas Aquinas,NA,2012,11
+2,17,7,624,Garaway,NA,1580,Ursuline,NA,2012,11
+3,17,6,446,Cuyahoga Heights,NA,182,Bellaire,NA,2012,11
+1,18,8,874,Lima Central Catholic,NA,1670,Western Reserve,NA,2012,11
+4,18,5,862,Liberty-Benton,NA,864,Liberty Center,NA,2012,11
+2,18,7,1172,Northwood,NA,1234,Patrick Henry,NA,2012,11
+3,18,6,404,Columbia,NA,134,Archbold,NA,2012,11
+1,19,8,1586,Valley,NA,458,Dawson-Bryant,NA,2012,11
+4,19,5,1742,Wynford,NA,900,Loudonville,NA,2012,11
+2,19,7,1186,Oak Hill,NA,720,Hillsdale,NA,2012,11
+3,19,6,1696,Wheelersburg,NA,866,Liberty Union,NA,2012,11
+1,20,8,394,Coldwater,NA,1018,Miami East,NA,2012,11
+4,20,5,1688,West Liberty-Salem,NA,460,Dayton Christian,NA,2012,11
+2,20,7,1504,Summit Country Day,NA,1538,Triad,NA,2012,11
+3,20,6,430,Covington,NA,470,Dixie,NA,2012,11
+1,21,8,1058,Mogadore,NA,326,Catholic Central,NA,2012,11
+4,21,5,1406,Shadyside,NA,1668,Western Reserve,NA,2012,11
+2,21,7,934,Malvern,NA,566,Fairport Harding,NA,2012,11
+3,21,6,786,John F Kennedy,NA,1751,Youngstown Christian,NA,2012,11
+1,22,8,990,McComb,NA,136,Arlington,NA,2012,11
+4,22,5,1374,St Paul,NA,298,Calvert,NA,2012,11
+2,22,7,1370,St Joseph Central Catholic,NA,1216,Ottawa Hills,NA,2012,11
+3,22,6,854,Leipsic,NA,1358,St John's,NA,2012,11
+1,23,8,454,Danville,NA,1306,River,NA,2012,11
+4,23,5,222,Bishop Rosecrans,NA,1514,Symmes Valley,NA,2012,11
+2,23,7,1090,Newark Catholic,NA,553,Fairfield Christian Academy,NA,2012,11
+3,23,6,1540,Trimble,NA,400,Colonel Crawford,NA,2012,11
+1,24,8,100,Ada,NA,1642,Waynesfield-Goshen,NA,2012,11
+4,24,5,1352,St Henry,NA,602,Fort Loramie,NA,2012,11
+2,24,7,1052,Minster,NA,1562,Tri-County North,NA,2012,11
+3,24,6,958,Marion Local,NA,246,Bradford,NA,2012,11
+1,3,8,652,Glenville,NA,270,Brush,NA,2013,11
+4,3,5,1326,Roosevelt,NA,180,Bedford,NA,2013,11
+2,3,7,248,Brecksville-Broadview Heights,NA,1312,Riverside,NA,2013,11
+3,3,6,1440,South,NA,922,Madison,NA,2013,11
+1,4,8,710,Highland,NA,152,Avon Lake,NA,2013,11
+4,4,5,1624,Massillon Washington,NA,1116,Nordonia,NA,2013,11
+2,4,7,150,Avon,NA,1350,Toledo St Francis DeSales,NA,2013,11
+3,4,6,528,Ellet,NA,1248,Perrysburg,NA,2013,11
+1,5,8,1086,New Albany,NA,1140,Northland,NA,2013,11
+4,5,5,940,Mansfield,NA,868,Licking Heights,NA,2013,11
+2,5,7,1741,Worthington Kilbourne,NA,475,Dublin Scioto,NA,2013,11
+3,5,6,1750,Zanesville,NA,1342,St Charles,NA,2013,11
+1,6,8,904,Loveland,NA,292,Butler,NA,2013,11
+4,6,5,1164,Northwest,NA,696,Harrison,NA,2013,11
+2,6,7,1074,Mount Healthy,NA,1720,Withrow,NA,2013,11
+3,6,6,1719,Winton Woods,NA,810,Kings,NA,2013,11
+1,7,8,1384,St Vincent-St Mary,NA,802,Kenston,NA,2013,11
+4,7,5,1678,West Geauga,NA,1264,Poland Seminary,NA,2013,11
+2,7,7,738,Hubbard,NA,964,Marlington,NA,2013,11
+3,7,6,902,Louisville,NA,146,Aurora,NA,2013,11
+1,8,8,342,Central Catholic,NA,464,Defiance,NA,2013,11
+4,8,5,406,Columbian,NA,1160,Norwalk,NA,2013,11
+2,8,7,392,Clyde,NA,276,Buckeye,NA,2013,11
+3,8,6,1240,Perkins,NA,1080,Napoleon,NA,2013,11
+1,9,8,144,Athens,NA,890,Logan Elm,NA,2013,11
+4,9,5,1544,Tri-Valley,NA,1106,New Philadelphia,NA,2013,11
+2,9,7,962,Marion-Franklin,NA,472,Dover,NA,2013,11
+3,9,6,258,Brookhaven,NA,364,Chillicothe,NA,2013,11
+1,10,8,1534,Tippecanoe,NA,806,Kenton Ridge,NA,2013,11
+4,10,5,1664,Western Brown,NA,402,Thurgood Marshall,NA,2013,11
+2,10,7,608,Franklin,NA,1550,Trotwood-Madison,NA,2013,11
+3,10,6,1616,Wapakoneta,NA,1414,Shawnee,NA,2013,11
+1,11,8,346,Chagrin Falls,NA,384,Cleveland Central Catholic,NA,2013,11
+4,11,5,1724,Woodridge,NA,196,Benedictine,NA,2013,11
+2,11,7,1500,Struthers,NA,828,Lakeview,NA,2013,11
+3,11,6,310,Cardinal Mooney,NA,790,John Hay,NA,2013,11
+1,12,8,1314,River Valley,NA,820,Lake,NA,2013,11
+4,12,5,636,Genoa Area,NA,272,Bryan,NA,2013,11
+2,12,7,804,Kenton,NA,620,Galion,NA,2013,11
+3,12,6,1548,Triway,NA,1634,Wauseon,NA,2013,11
+1,13,8,870,Licking Valley,NA,1488,Steubenville,NA,2013,11
+4,13,5,982,Maysville,NA,212,Bexley,NA,2013,11
+2,13,7,758,Indian Valley,NA,232,Bloom-Carroll,NA,2013,11
+3,13,6,1252,Philo,NA,788,John Glenn,NA,2013,11
+1,14,8,132,Archbishop Alter,NA,1744,Wyoming,NA,2013,11
+4,14,5,1590,Valley View,NA,370,Circleville,NA,2013,11
+2,14,7,388,Clinton-Massie,NA,1022,Miami Trace,NA,2013,11
+3,14,6,998,Archbishop McNicholas,NA,1578,Urbana,NA,2013,11
+1,15,8,936,Manchester,NA,1580,Ursuline,NA,2013,11
+4,15,5,226,Black River,NA,560,Fairless,NA,2013,11
+2,15,7,436,Crestview,NA,860,Liberty,NA,2013,11
+3,15,6,642,Gilmour Academy,NA,170,Beachwood,NA,2013,11
+1,16,8,404,Columbia,NA,366,Chippewa,NA,2013,11
+4,16,5,508,Eastwood,NA,394,Coldwater,NA,2013,11
+2,16,7,862,Liberty-Benton,NA,746,Huron,NA,2013,11
+3,16,6,1170,Northwestern,NA,900,Loudonville,NA,2013,11
+1,17,8,218,Bishop Hartley,NA,1752,Zane Trace,NA,2013,11
+4,17,5,1344,St Clairsville,NA,866,Liberty Union,NA,2013,11
+2,17,7,968,Martins Ferry,NA,1676,Westfall,NA,2013,11
+3,17,6,1696,Wheelersburg,NA,556,Fairland,NA,2013,11
+1,18,8,1682,West Jefferson,NA,1644,Waynesville,NA,2013,11
+4,18,5,1156,North Union,NA,352,Chaminade-Julienne,NA,2013,11
+2,18,7,369,Cincinnati Hills Christian Academy,NA,920,Madeira,NA,2013,11
+3,18,6,158,Badin,NA,954,Mariemont,NA,2013,11
+1,19,8,812,Kirtland,NA,992,McDonald,NA,2013,11
+4,19,5,256,Brookfield,NA,1378,St Thomas Aquinas,NA,2013,11
+2,19,7,1460,South Range,NA,446,Cuyahoga Heights,NA,2013,11
+3,19,6,1058,Mogadore,NA,1364,Villa Angela-St Joseph,NA,2013,11
+1,20,8,1532,Tinora,NA,1172,Northwood,NA,2013,11
+4,20,5,400,Colonel Crawford,NA,1646,Wayne Trace,NA,2013,11
+2,20,7,772,Jefferson,NA,100,Ada,NA,2013,11
+3,20,6,874,Lima Central Catholic,NA,438,Crestview,NA,2013,11
+1,21,8,1586,Valley,NA,598,Fort Frye,NA,2013,11
+4,21,5,1090,Newark Catholic,NA,182,Bellaire,NA,2013,11
+2,21,7,220,Bishop Ready,NA,1186,Oak Hill,NA,2013,11
+3,21,6,334,Centerburg,NA,1063,Monroe Central,NA,2013,11
+1,22,8,1018,Miami East,NA,1562,Tri-County North,NA,2013,11
+4,22,5,1004,Mechanicsburg,NA,1082,National Trail,NA,2013,11
+2,22,7,368,Cincinnati Country Day,NA,1504,Summit Country Day,NA,2013,11
+3,22,6,1712,Williamsburg,NA,1688,West Liberty-Salem,NA,2013,11
+1,23,8,1668,Western Reserve,NA,1542,Trinity,NA,2013,11
+4,23,5,454,Danville,NA,906,Lowellville,NA,2013,11
+2,23,7,1374,St Paul,NA,348,Chalker,NA,2013,11
+3,23,6,1654,Wellsville,NA,946,Mapleton,NA,2013,11
+1,24,8,854,Leipsic,NA,1358,St John's,NA,2013,11
+4,24,5,298,Calvert,NA,520,Edon,NA,2013,11
+2,24,7,990,McComb,NA,708,Hicksville,NA,2013,11
+3,24,6,1370,St Joseph Central Catholic,NA,136,Arlington,NA,2013,11
+1,25,8,1540,Trimble,NA,172,Beallsville,NA,2013,11
+4,25,5,326,Catholic Central,NA,1454,Southern,NA,2013,11
+2,25,7,1406,Shadyside,NA,553,Fairfield Christian Academy,NA,2013,11
+3,25,6,934,Malvern,NA,296,Caldwell,NA,2013,11
+1,26,8,1538,Triad,NA,328,Cedarville,NA,2013,11
+4,26,5,852,Lehman Catholic,NA,1226,Paint Valley,NA,2013,11
+2,26,7,430,Covington,NA,1178,Notre Dame,NA,2013,11
+3,26,6,958,Marion Local,NA,602,Fort Loramie,NA,2013,11
+1,1,16,1346,St Edward,NA,1408,Shaker Heights,NA,2013,11
+8,1,9,1606,Wadsworth,NA,385,Cleveland Heights,NA,2013,11
+4,1,13,148,Austintown-Fitch,NA,970,Marysville,NA,2013,11
+5,1,12,1671,Westerville Central,NA,1428,Solon,NA,2013,11
+3,1,14,740,Hudson,NA,1704,Whitmer,NA,2013,11
+6,1,11,306,Canton McKinley,NA,1354,St Ignatius,NA,2013,11
+7,1,10,1492,Stow-Munroe Falls,NA,532,Elyria,NA,2013,11
+2,1,15,1016,Mentor,NA,268,Brunswick,NA,2013,11
+1,2,16,716,Hilliard Davidson,NA,1020,Miamisburg,NA,2013,11
+8,2,9,1255,Pickerington North,NA,550,Fairfield,NA,2013,11
+4,2,13,336,Centerville,NA,474,Dublin Coffman,NA,2013,11
+5,2,12,1638,Wayne,NA,717,Hilliard Darby,NA,2013,11
+3,2,14,837,Lakota West,NA,1254,Pickerington Central,NA,2013,11
+6,2,11,396,Colerain,NA,1470,Springboro,NA,2013,11
+7,2,10,522,Elder,NA,1142,Northmont,NA,2013,11
+2,2,15,1056,Archbishop Moeller,NA,1388,St Xavier,NA,2013,11
+1,3,8,180,Bedford,NA,632,Garfield Heights,NA,2014,11
+4,3,5,1440,South,NA,652,Glenville,NA,2014,11
+2,3,7,980,Mayfield,NA,944,Maple Heights,NA,2014,11
+3,3,6,922,Madison,NA,248,Brecksville-Broadview Heights,NA,2014,11
+1,4,8,1030,Midview,NA,1614,Walsh Jesuit,NA,2014,11
+4,4,5,710,Highland,NA,150,Avon,NA,2014,11
+2,4,7,1116,Nordonia,NA,616,Fremont Ross,NA,2014,11
+3,4,6,1248,Perrysburg,NA,1624,Massillon Washington,NA,2014,11
+1,5,8,1202,Olentangy,NA,138,Ashland,NA,2014,11
+4,5,5,1736,Wooster,NA,686,Hamilton Township,NA,2014,11
+2,5,7,1526,Teays Valley,NA,475,Dublin Scioto,NA,2014,11
+3,5,6,1632,Watkins Memorial,NA,1741,Worthington Kilbourne,NA,2014,11
+1,6,8,842,La Salle,NA,646,Glen Este,NA,2014,11
+4,6,5,872,Lima Senior,NA,696,Harrison,NA,2014,11
+2,6,7,1074,Mount Healthy,NA,1528,Tecumseh,NA,2014,11
+3,6,6,810,Kings,NA,1164,Northwest,NA,2014,11
+1,7,8,738,Hubbard,NA,1522,Tallmadge,NA,2014,11
+4,7,5,146,Aurora,NA,802,Kenston,NA,2014,11
+2,7,7,1384,St Vincent-St Mary,NA,360,Chardon,NA,2014,11
+3,7,6,902,Louisville,NA,1264,Poland Seminary,NA,2014,11
+1,8,8,342,Central Catholic,NA,1320,Rocky River,NA,2014,11
+4,8,5,242,Bowling Green,NA,276,Buckeye,NA,2014,11
+2,8,7,392,Clyde,NA,926,Madison Comprehensive,NA,2014,11
+3,8,6,1160,Norwalk,NA,1240,Perkins,NA,2014,11
+1,9,8,1544,Tri-Valley,NA,1106,New Philadelphia,NA,2014,11
+4,9,5,144,Athens,NA,666,Granville,NA,2014,11
+2,9,7,472,Dover,NA,1348,Columbus St Francis DeSales,NA,2014,11
+3,9,6,762,Jackson,NA,890,Logan Elm,NA,2014,11
+1,10,8,1616,Wapakoneta,NA,1520,Talawanda,NA,2014,11
+4,10,5,806,Kenton Ridge,NA,1534,Tippecanoe,NA,2014,11
+2,10,7,188,Bellefontaine,NA,184,Bellbrook,NA,2014,11
+3,10,6,1550,Trotwood-Madison,NA,1664,Western Brown,NA,2014,11
+1,11,8,196,Benedictine,NA,1246,Perry,NA,2014,11
+4,11,5,1724,Woodridge,NA,310,Cardinal Mooney,NA,2014,11
+2,11,7,440,Crestwood,NA,168,Bay,NA,2014,11
+3,11,6,584,Field,NA,1180,Notre Dame-Cathedral Latin,NA,2014,11
+1,12,8,1548,Triway,NA,620,Galion,NA,2014,11
+4,12,5,804,Kenton,NA,1266,Port Clinton,NA,2014,11
+2,12,7,190,Bellevue,NA,808,Keystone,NA,2014,11
+3,12,6,1634,Wauseon,NA,636,Genoa Area,NA,2014,11
+1,13,8,186,Beechcroft,NA,212,Bexley,NA,2014,11
+4,13,5,870,Licking Valley,NA,982,Maysville,NA,2014,11
+2,13,7,962,Marion-Franklin,NA,114,Amanda-Clearcreek,NA,2014,11
+3,13,6,1488,Steubenville,NA,794,Johnstown-Monroe,NA,2014,11
+1,14,8,132,Archbishop Alter,NA,1022,Miami Trace,NA,2014,11
+4,14,5,1744,Wyoming,NA,1524,Taylor,NA,2014,11
+2,14,7,388,Clinton-Massie,NA,1062,Monroe,NA,2014,11
+3,14,6,998,Archbishop McNicholas,NA,1176,Norwood,NA,2014,11
+1,15,8,340,Canton Central Catholic,NA,170,Beachwood,NA,2014,11
+4,15,5,436,Crestview,NA,644,Girard,NA,2014,11
+2,15,7,860,Liberty,NA,642,Gilmour Academy,NA,2014,11
+3,15,6,1580,Ursuline,NA,1570,United,NA,2014,11
+1,16,8,746,Huron,NA,404,Columbia,NA,2014,11
+4,16,5,394,Coldwater,NA,366,Chippewa,NA,2014,11
+2,16,7,862,Liberty-Benton,NA,466,Delta,NA,2014,11
+3,16,6,1260,Pleasant,NA,508,Eastwood,NA,2014,11
+1,17,8,218,Bishop Hartley,NA,1270,Portsmouth West,NA,2014,11
+4,17,5,1344,St Clairsville,NA,426,Coshocton,NA,2014,11
+2,17,7,1696,Wheelersburg,NA,866,Liberty Union,NA,2014,11
+3,17,6,760,Ironton,NA,968,Martins Ferry,NA,2014,11
+1,18,8,369,Cincinnati Hills Christian Academy,NA,1644,Waynesville,NA,2014,11
+4,18,5,672,Greeneview,NA,954,Mariemont,NA,2014,11
+2,18,7,1421,Shroder,NA,158,Badin,NA,2014,11
+3,18,6,920,Madeira,NA,1682,West Jefferson,NA,2014,11
+1,19,8,900,Loudonville,NA,1478,Springfield,NA,2014,11
+4,19,5,1058,Mogadore,NA,992,McDonald,NA,2014,11
+2,19,7,624,Garaway,NA,1364,Villa Angela-St Joseph,NA,2014,11
+3,19,6,812,Kirtland,NA,720,Hillsdale,NA,2014,11
+1,20,8,1532,Tinora,NA,1646,Wayne Trace,NA,2014,11
+4,20,5,438,Crestview,NA,1468,Spencerville,NA,2014,11
+2,20,7,874,Lima Central Catholic,NA,1592,Van Buren,NA,2014,11
+3,20,6,1742,Wynford,NA,772,Jefferson,NA,2014,11
+1,21,8,614,Fredericktown,NA,194,Belpre,NA,2014,11
+4,21,5,334,Centerburg,NA,1300,Ridgewood,NA,2014,11
+2,21,7,1586,Valley,NA,1084,Nelsonville-York,NA,2014,11
+3,21,6,664,Grandview Heights,NA,1063,Monroe Central,NA,2014,11
+1,22,8,1562,Tri-County North,NA,1504,Summit Country Day,NA,2014,11
+4,22,5,1688,West Liberty-Salem,NA,368,Cincinnati Country Day,NA,2014,11
+2,22,7,1018,Miami East,NA,1600,Versailles,NA,2014,11
+3,22,6,1052,Minster,NA,1004,Mechanicsburg,NA,2014,11
+1,23,8,1374,St Paul,NA,974,Mathews,NA,2014,11
+4,23,5,946,Mapleton,NA,1654,Wellsville,NA,2014,11
+2,23,7,1668,Western Reserve,NA,1536,Toronto,NA,2014,11
+3,23,6,1262,Plymouth,NA,908,Lucas,NA,2014,11
+1,24,8,136,Arlington,NA,1358,St John's,NA,2014,11
+4,24,5,990,McComb,NA,343,Toledo Christian,NA,2014,11
+2,24,7,298,Calvert,NA,854,Leipsic,NA,2014,11
+3,24,6,412,Columbus Grove,NA,1228,Pandora-Gilboa,NA,2014,11
+1,25,8,1406,Shadyside,NA,454,Danville,NA,2014,11
+4,25,5,1226,Paint Valley,NA,1556,Tuscarawas Central Catholic,NA,2014,11
+2,25,7,1540,Trimble,NA,1514,Symmes Valley,NA,2014,11
+3,25,6,296,Caldwell,NA,1737,Harvest Prep,NA,2014,11
+1,26,8,958,Marion Local,NA,1538,Triad,NA,2014,11
+4,26,5,602,Fort Loramie,NA,604,Fort Recovery,NA,2014,11
+2,26,7,852,Lehman Catholic,NA,430,Covington,NA,2014,11
+3,26,6,1023,Miami Valley Christian Academy,NA,1553,Troy Christian,NA,2014,11
+1,1,16,740,Hudson,NA,1244,Perry,NA,2014,11
+8,1,9,1354,St Ignatius,NA,532,Elyria,NA,2014,11
+4,1,13,1016,Mentor,NA,894,Lorain,NA,2014,11
+5,1,12,200,Berea-Midpark,NA,650,GlenOak,NA,2014,11
+3,1,14,1671,Westerville Central,NA,1428,Solon,NA,2014,11
+6,1,11,148,Austintown-Fitch,NA,1606,Wadsworth,NA,2014,11
+7,1,10,1203,Olentangy Liberty,NA,1704,Whitmer,NA,2014,11
+2,1,15,1346,St Edward,NA,268,Brunswick,NA,2014,11
+1,2,16,336,Centerville,NA,837,Lakota West,NA,2014,11
+8,2,9,1470,Springboro,NA,836,Lakota East,NA,2014,11
+4,2,13,474,Dublin Coffman,NA,716,Hilliard Davidson,NA,2014,11
+5,2,12,1638,Wayne,NA,522,Elder,NA,2014,11
+3,2,14,1254,Pickerington Central,NA,876,Gahanna-Lincoln,NA,2014,11
+6,2,11,1056,Archbishop Moeller,NA,1020,Miamisburg,NA,2014,11
+7,2,10,717,Hilliard Darby,NA,396,Colerain,NA,2014,11
+2,2,15,1388,St Xavier,NA,345,Central Crossing,NA,2014,11
+1,3,8,146,Aurora,NA,1116,Nordonia,NA,2015,11
+4,3,5,422,Copley,NA,740,Hudson,NA,2015,11
+2,3,7,922,Madison,NA,692,Warren G Harding,NA,2015,11
+3,3,6,980,Mayfield,NA,360,Chardon,NA,2015,11
+1,4,8,1030,Midview,NA,1204,Olmsted Falls,NA,2015,11
+4,4,5,652,Glenville,NA,1476,Springfield,NA,2015,11
+2,4,7,1248,Perrysburg,NA,1152,North Ridgeville,NA,2015,11
+3,4,6,150,Avon,NA,710,Highland,NA,2015,11
+1,5,8,1244,Perry,NA,940,Mansfield,NA,2015,11
+4,5,5,238,Boardman,NA,1544,Tri-Valley,NA,2015,11
+2,5,7,868,Licking Heights,NA,1736,Wooster,NA,2015,11
+3,5,6,1741,Worthington Kilbourne,NA,822,Lake,NA,2015,11
+1,6,8,842,La Salle,NA,292,Butler,NA,2015,11
+4,6,5,1020,Miamisburg,NA,872,Lima Senior,NA,2015,11
+2,6,7,810,Kings,NA,1526,Teays Valley,NA,2015,11
+3,6,6,1554,Turpin,NA,646,Glen Este,NA,2015,11
+1,7,8,724,Archbishop Hoban,NA,1106,New Philadelphia,NA,2015,11
+4,7,5,1264,Poland Seminary,NA,902,Louisville,NA,2015,11
+2,7,7,1384,St Vincent-St Mary,NA,304,Canfield,NA,2015,11
+3,7,6,276,Buckeye,NA,1678,West Geauga,NA,2015,11
+1,8,8,196,Benedictine,NA,242,Bowling Green,NA,2015,11
+4,8,5,138,Ashland,NA,168,Bay,NA,2015,11
+2,8,7,342,Central Catholic,NA,1320,Rocky River,NA,2015,11
+3,8,6,392,Clyde,NA,1240,Perkins,NA,2015,11
+1,9,8,686,Hamilton Township,NA,224,Bishop Watterson,NA,2015,11
+4,9,5,762,Jackson,NA,212,Bexley,NA,2015,11
+2,9,7,1348,Columbus St Francis DeSales,NA,364,Chillicothe,NA,2015,11
+3,9,6,1750,Zanesville,NA,186,Beechcroft,NA,2015,11
+1,10,8,1616,Wapakoneta,NA,192,Belmont,NA,2015,11
+4,10,5,1074,Mount Healthy,NA,1108,New Richmond,NA,2015,11
+2,10,7,1534,Tippecanoe,NA,1258,Piqua,NA,2015,11
+3,10,6,1550,Trotwood-Madison,NA,330,Celina,NA,2015,11
+1,11,8,1724,Woodridge,NA,590,Firelands,NA,2015,11
+4,11,5,1180,Notre Dame-Cathedral Latin,NA,1580,Ursuline,NA,2015,11
+2,11,7,1246,Perry,NA,728,Holy Name,NA,2015,11
+3,11,6,440,Crestwood,NA,828,Lakeview,NA,2015,11
+1,12,8,218,Bishop Hartley,NA,1266,Port Clinton,NA,2015,11
+4,12,5,754,Indian Lake,NA,1214,Ottawa-Glandorf,NA,2015,11
+2,12,7,1634,Wauseon,NA,190,Bellevue,NA,2015,11
+3,12,6,796,Jonathan Alder,NA,806,Kenton Ridge,NA,2015,11
+1,13,8,1488,Steubenville,NA,751,Indian Creek,NA,2015,11
+4,13,5,758,Indian Valley,NA,1392,Salem,NA,2015,11
+2,13,7,794,Johnstown-Monroe,NA,1000,Meadowbrook,NA,2015,11
+3,13,6,1344,St Clairsville,NA,870,Licking Valley,NA,2015,11
+1,14,8,582,Bishop Fenwick,NA,158,Badin,NA,2015,11
+4,14,5,132,Archbishop Alter,NA,1284,Reading,NA,2015,11
+2,14,7,752,Indian Hill,NA,1744,Wyoming,NA,2015,11
+3,14,6,388,Clinton-Massie,NA,1518,Taft,NA,2015,11
+1,15,8,436,Crestview,NA,202,Berkshire,NA,2015,11
+4,15,5,662,Grand Valley,NA,818,LaBrae,NA,2015,11
+2,15,7,1396,Sandy Valley,NA,504,East Palestine,NA,2015,11
+3,15,6,340,Canton Central Catholic,NA,702,Hawken,NA,2015,11
+1,16,8,518,Edison,NA,620,Galion,NA,2015,11
+4,16,5,1506,Swanton,NA,1640,Waynedale,NA,2015,11
+2,16,7,1174,Norwayne,NA,1332,Rossford,NA,2015,11
+3,16,6,820,Lake,NA,366,Chippewa,NA,2015,11
+1,17,8,1696,Wheelersburg,NA,760,Ironton,NA,2015,11
+4,17,5,1300,Ridgewood,NA,294,Harrison Central,NA,2015,11
+2,17,7,1752,Zane Trace,NA,816,River Valley,NA,2015,11
+3,17,6,108,Alexander,NA,1318,Rock Hill,NA,2015,11
+1,18,8,264,Brookville,NA,318,Carlisle,NA,2015,11
+4,18,5,1042,Milton-Union,NA,672,Greeneview,NA,2015,11
+2,18,7,369,Cincinnati Hills Christian Academy,NA,1156,North Union,NA,2015,11
+3,18,6,394,Coldwater,NA,208,Bethel-Tate,NA,2015,11
+1,19,8,812,Kirtland,NA,1668,Western Reserve,NA,2015,11
+4,19,5,456,David Anderson,NA,256,Brookfield,NA,2015,11
+2,19,7,404,Columbia,NA,1426,Smithville,NA,2015,11
+3,19,6,408,Columbiana,NA,446,Cuyahoga Heights,NA,2015,11
+1,20,8,1742,Wynford,NA,466,Delta,NA,2015,11
+4,20,5,640,Gibsonburg,NA,1592,Van Buren,NA,2015,11
+2,20,7,1532,Tinora,NA,1400,Seneca East,NA,2015,11
+3,20,6,400,Colonel Crawford,NA,154,Ayersville,NA,2015,11
+1,21,8,598,Fort Frye,NA,614,Fredericktown,NA,2015,11
+4,21,5,1226,Paint Valley,NA,1090,Newark Catholic,NA,2015,11
+2,21,7,1586,Valley,NA,362,Chesapeake,NA,2015,11
+3,21,6,664,Grandview Heights,NA,1306,River,NA,2015,11
+1,22,8,958,Marion Local,NA,1018,Miami East,NA,2015,11
+4,22,5,368,Cincinnati Country Day,NA,1688,West Liberty-Salem,NA,2015,11
+2,22,7,1004,Mechanicsburg,NA,1712,Williamsburg,NA,2015,11
+3,22,6,772,Jefferson,NA,1468,Spencerville,NA,2015,11
+1,23,8,786,John F Kennedy,NA,1372,St Mary Central Catholic,NA,2015,11
+4,23,5,1536,Toronto,NA,974,Mathews,NA,2015,11
+2,23,7,1058,Mogadore,NA,768,Jackson-Milton,NA,2015,11
+3,23,6,1374,St Paul,NA,1064,Monroeville,NA,2015,11
+1,24,8,990,McComb,NA,438,Crestview,NA,2015,11
+4,24,5,854,Leipsic,NA,136,Arlington,NA,2015,11
+2,24,7,708,Hicksville,NA,298,Calvert,NA,2015,11
+3,24,6,908,Lucas,NA,722,Hilltop,NA,2015,11
+1,25,8,454,Danville,NA,1453,South Gallia,NA,2015,11
+4,25,5,1737,Harvest Prep,NA,194,Belpre,NA,2015,11
+2,25,7,296,Caldwell,NA,484,Sciotoville Community,NA,2015,11
+3,25,6,1540,Trimble,NA,1406,Shadyside,NA,2015,11
+1,26,8,1052,Minster,NA,602,Fort Loramie,NA,2015,11
+4,26,5,1310,Riverside,NA,100,Ada,NA,2015,11
+2,26,7,430,Covington,NA,852,Lehman Catholic,NA,2015,11
+3,26,6,604,Fort Recovery,NA,1023,Miami Valley Christian Academy,NA,2015,11
+1,1,16,1346,St Edward,NA,385,Cleveland Heights,NA,2015,11
+8,1,9,1016,Mentor,NA,650,GlenOak,NA,2015,11
+4,1,13,1671,Westerville Central,NA,1482,Start,NA,2015,11
+5,1,12,540,Euclid,NA,148,Austintown-Fitch,NA,2015,11
+3,1,14,1202,Olentangy,NA,532,Elyria,NA,2015,11
+6,1,11,1704,Whitmer,NA,306,Canton McKinley,NA,2015,11
+7,1,10,1428,Solon,NA,1203,Olentangy Liberty,NA,2015,11
+2,1,15,1492,Stow-Munroe Falls,NA,200,Berea-Midpark,NA,2015,11
+1,2,16,396,Colerain,NA,474,Dublin Coffman,NA,2015,11
+8,2,9,876,Gahanna-Lincoln,NA,1388,St Xavier,NA,2015,11
+4,2,13,838,Lancaster,NA,717,Hilliard Darby,NA,2015,11
+5,2,12,522,Elder,NA,550,Fairfield,NA,2015,11
+3,2,14,1638,Wayne,NA,1290,Reynoldsburg,NA,2015,11
+6,2,11,972,Mason,NA,1470,Springboro,NA,2015,11
+7,2,10,1254,Pickerington Central,NA,1572,Upper Arlington,NA,2015,11
+2,2,15,716,Hilliard Davidson,NA,345,Central Crossing,NA,2015,11
+1,1,8,1428,Solon,NA,650,GlenOak,NA,2016,11
+4,1,5,1354,St Ignatius,NA,764,Jackson,NA,2016,11
+2,1,7,1346,St Edward,NA,540,Euclid,NA,2016,11
+3,1,6,1492,Stow-Munroe Falls,NA,306,Canton McKinley,NA,2016,11
+1,2,8,1203,Olentangy Liberty,NA,1211,Olentangy Orange,NA,2016,11
+4,2,5,1704,Whitmer,NA,1006,Medina,NA,2016,11
+2,2,7,486,Dublin Jerome,NA,586,Findlay,NA,2016,11
+3,2,6,894,Lorain,NA,1202,Olentangy,NA,2016,11
+1,3,8,1638,Wayne,NA,838,Lancaster,NA,2016,11
+4,3,5,474,Dublin Coffman,NA,716,Hilliard Davidson,NA,2016,11
+2,3,7,713,Hilliard Bradley,NA,1255,Pickerington North,NA,2016,11
+3,3,6,1254,Pickerington Central,NA,1480,Springfield,NA,2016,11
+1,4,8,396,Colerain,NA,1470,Springboro,NA,2016,11
+4,4,5,550,Fairfield,NA,1388,St Xavier,NA,2016,11
+2,4,7,846,Lebanon,NA,1508,Sycamore,NA,2016,11
+3,4,6,972,Mason,NA,522,Elder,NA,2016,11
+1,5,8,146,Aurora,NA,160,Barberton,NA,2016,11
+4,5,5,740,Hudson,NA,422,Copley,NA,2016,11
+2,5,7,360,Chardon,NA,180,Bedford,NA,2016,11
+3,5,6,692,Warren G Harding,NA,248,Brecksville-Broadview Heights,NA,2016,11
+1,6,8,150,Avon,NA,152,Avon Lake,NA,2016,11
+4,6,5,124,Anthony Wayne,NA,652,Glenville,NA,2016,11
+2,6,7,1476,Springfield,NA,1684,Westlake,NA,2016,11
+3,6,6,1030,Midview,NA,1204,Olmsted Falls,NA,2016,11
+1,7,8,1244,Perry,NA,822,Lake,NA,2016,11
+4,7,5,610,Franklin Heights,NA,868,Licking Heights,NA,2016,11
+2,7,7,1624,Massillon Washington,NA,475,Dublin Scioto,NA,2016,11
+3,7,6,1086,New Albany,NA,1656,West,NA,2016,11
+1,8,8,1552,Troy,NA,118,Anderson,NA,2016,11
+4,8,5,1020,Miamisburg,NA,810,Kings,NA,2016,11
+2,8,7,1554,Turpin,NA,696,Harrison,NA,2016,11
+3,8,6,842,La Salle,NA,516,Edgewood,NA,2016,11
+1,9,8,964,Marlington,NA,478,East,NA,2016,11
+4,9,5,276,Buckeye,NA,1106,New Philadelphia,NA,2016,11
+2,9,7,724,Archbishop Hoban,NA,736,Howland,NA,2016,11
+3,9,6,472,Dover,NA,1384,St Vincent-St Mary,NA,2016,11
+1,10,8,342,Central Catholic,NA,168,Bay,NA,2016,11
+4,10,5,242,Bowling Green,NA,1571,University School,NA,2016,11
+2,10,7,1394,Sandusky,NA,138,Ashland,NA,2016,11
+3,10,6,392,Clyde,NA,856,Lexington,NA,2016,11
+1,11,8,1348,St Francis DeSales,NA,1420,Sheridan,NA,2016,11
+4,11,5,502,Eastmoor Academy,NA,186,Beechcroft,NA,2016,11
+2,11,7,212,Bexley,NA,1700,Whitehall-Yearling,NA,2016,11
+3,11,6,686,Hamilton Township,NA,364,Chillicothe,NA,2016,11
+1,12,8,608,Franklin,NA,1534,Tippecanoe,NA,2016,11
+4,12,5,1012,St Marys Memorial,NA,192,Belmont,NA,2016,11
+2,12,7,1616,Wapakoneta,NA,1550,Trotwood-Madison,NA,2016,11
+3,12,6,1108,New Richmond,NA,1074,Mount Healthy,NA,2016,11
+1,13,8,1246,Perry,NA,728,Holy Name,NA,2016,11
+4,13,5,1724,Woodridge,NA,1500,Struthers,NA,2016,11
+2,13,7,440,Crestwood,NA,1180,Notre Dame-Cathedral Latin,NA,2016,11
+3,13,6,310,Cardinal Mooney,NA,738,Hubbard,NA,2016,11
+1,14,8,1266,Port Clinton,NA,198,Benjamin Logan,NA,2016,11
+4,14,5,796,Jonathan Alder,NA,218,Bishop Hartley,NA,2016,11
+2,14,7,1214,Ottawa-Glandorf,NA,190,Bellevue,NA,2016,11
+3,14,6,754,Indian Lake,NA,1314,River Valley,NA,2016,11
+1,15,8,706,Heath,NA,1252,Philo,NA,2016,11
+4,15,5,1416,Shelby,NA,232,Bloom-Carroll,NA,2016,11
+2,15,7,1488,Steubenville,NA,751,Indian Creek,NA,2016,11
+3,15,6,794,Johnstown-Monroe,NA,300,Cambridge,NA,2016,11
+1,16,8,1744,Wyoming,NA,1568,Unioto,NA,2016,11
+4,16,5,1636,Waverly,NA,1590,Valley View,NA,2016,11
+2,16,7,388,Clinton-Massie,NA,1518,Taft,NA,2016,11
+3,16,6,132,Archbishop Alter,NA,752,Indian Hill,NA,2016,11
+1,17,8,1460,South Range,NA,630,Garfield,NA,2016,11
+4,17,5,818,LaBrae,NA,1706,Wickliffe,NA,2016,11
+2,17,7,662,Grand Valley,NA,226,Black River,NA,2016,11
+3,17,6,340,Canton Central Catholic,NA,936,Manchester,NA,2016,11
+1,18,8,1174,Norwayne,NA,636,Genoa Area,NA,2016,11
+4,18,5,1170,Northwestern,NA,1506,Swanton,NA,2016,11
+2,18,7,508,Eastwood,NA,1260,Pleasant,NA,2016,11
+3,18,6,518,Edison,NA,410,Columbus Academy,NA,2016,11
+1,19,8,1696,Wheelersburg,NA,1300,Ridgewood,NA,2016,11
+4,19,5,1084,Nelsonville-York,NA,1752,Zane Trace,NA,2016,11
+2,19,7,624,Garaway,NA,866,Liberty Union,NA,2016,11
+3,19,6,426,Coshocton,NA,760,Ironton,NA,2016,11
+1,20,8,369,Cincinnati Hills Christian Academy,NA,228,Blanchester,NA,2016,11
+4,20,5,1042,Milton-Union,NA,106,Aiken,NA,2016,11
+2,20,7,394,Coldwater,NA,264,Brookville,NA,2016,11
+3,20,6,318,Carlisle,NA,672,Greeneview,NA,2016,11
+1,21,8,446,Cuyahoga Heights,NA,720,Hillsdale,NA,2016,11
+4,21,5,1378,St Thomas Aquinas,NA,456,Lisbon David Anderson,NA,2016,11
+2,21,7,1478,Springfield,NA,404,Columbia,NA,2016,11
+3,21,6,812,Kirtland,NA,450,Dalton,NA,2016,11
+1,22,8,1234,Patrick Henry,NA,1532,Tinora,NA,2016,11
+4,22,5,864,Liberty Center,NA,400,Colonel Crawford,NA,2016,11
+2,22,7,1742,Wynford,NA,640,Gibsonburg,NA,2016,11
+3,22,6,154,Ayersville,NA,1400,Seneca East,NA,2016,11
+1,23,8,1306,River,NA,220,Bishop Ready,NA,2016,11
+4,23,5,182,Bellaire,NA,1090,Newark Catholic,NA,2016,11
+2,23,7,598,Fort Frye,NA,334,Centerburg,NA,2016,11
+3,23,6,362,Chesapeake,NA,162,Barnesville,NA,2016,11
+1,24,8,958,Marion Local,NA,1688,West Liberty-Salem,NA,2016,11
+4,24,5,1468,Spencerville,NA,1352,St Henry,NA,2016,11
+2,24,7,772,Jefferson,NA,1504,Summit Country Day,NA,2016,11
+3,24,6,1004,Mechanicsburg,NA,1018,Miami East,NA,2016,11
+1,25,8,1374,St Paul,NA,488,East Canton,NA,2016,11
+4,25,5,1064,Monroeville,NA,1716,Windham,NA,2016,11
+2,25,7,1058,Mogadore,NA,768,Jackson-Milton,NA,2016,11
+3,25,6,786,John F Kennedy,NA,1536,Toronto,NA,2016,11
+1,26,8,990,McComb,NA,452,Danbury,NA,2016,11
+4,26,5,708,Hicksville,NA,854,Leipsic,NA,2016,11
+2,26,7,136,Arlington,NA,908,Lucas,NA,2016,11
+3,26,6,298,Calvert,NA,438,Crestview,NA,2016,11
+1,27,8,1628,Waterford,NA,222,Bishop Rosecrans,NA,2016,11
+4,27,5,1540,Trimble,NA,1454,Southern,NA,2016,11
+2,27,7,1406,Shadyside,NA,1737,Harvest Prep,NA,2016,11
+3,27,6,484,Sciotoville Community,NA,454,Danville,NA,2016,11
+1,28,8,430,Covington,NA,715,Hillcrest Academy,NA,2016,11
+4,28,5,100,Ada,NA,604,Fort Recovery,NA,2016,11
+2,28,7,1553,Troy Christian,NA,1576,Upper Scioto Valley,NA,2016,11
+3,28,6,1052,Minster,NA,852,Lehman Catholic,NA,2016,11
+1,1,8,1354,St Ignatius,NA,1244,Perry,NA,2017,11
+4,1,5,540,Euclid,NA,764,Jackson,NA,2017,11
+2,1,7,1346,St Edward,NA,306,Canton McKinley,NA,2017,11
+3,1,6,1016,Mentor,NA,1492,Stow-Munroe Falls,NA,2017,11
+1,2,8,1704,Whitmer,NA,894,Lorain,NA,2017,11
+4,2,5,474,Dublin Coffman,NA,1202,Olentangy,NA,2017,11
+2,2,7,1203,Olentangy Liberty,NA,486,Dublin Jerome,NA,2017,11
+3,2,6,1211,Olentangy Orange,NA,876,Gahanna Lincoln,NA,2017,11
+1,3,8,336,Centerville,NA,717,Hilliard Darby,NA,2017,11
+4,3,5,1638,Wayne,NA,1255,Pickerington North,NA,2017,11
+2,3,7,713,Hilliard Bradley,NA,807,Kettering Fairmont,NA,2017,11
+3,3,6,1254,Pickerington Central,NA,1142,Northmont,NA,2017,11
+1,4,8,1388,St Xavier,NA,550,Fairfield,NA,2017,11
+4,4,5,1508,Sycamore,NA,1034,Milford,NA,2017,11
+2,4,7,396,Colerain,NA,1056,Archbishop Moeller,NA,2017,11
+3,4,6,972,Mason,NA,1677,West Clermont,NA,2017,11
+1,5,8,724,Archbishop Hoban,NA,980,Mayfield,NA,2017,11
+4,5,5,270,Brush,NA,740,Hudson,NA,2017,11
+2,5,7,160,Barberton,NA,196,Benedictine,NA,2017,11
+3,5,6,180,Bedford,NA,1122,North,NA,2017,11
+1,6,8,150,Avon,NA,1360,St John's Jesuit,NA,2017,11
+4,6,5,710,Highland,NA,124,Anthony Wayne,NA,2017,11
+2,6,7,1606,Wadsworth,NA,1510,Sylvania Northview,NA,2017,11
+3,6,6,1204,Olmsted Falls,NA,1030,Midview,NA,2017,11
+1,7,8,1612,Walnut Ridge,NA,302,Canal Winchester,NA,2017,11
+4,7,5,1700,Whitehall-Yearling,NA,1086,New Albany,NA,2017,11
+2,7,7,1624,Massillon Washington,NA,238,Boardman,NA,2017,11
+3,7,6,1032,Mifflin,NA,138,Ashland,NA,2017,11
+1,8,8,842,La Salle,NA,696,Harrison,NA,2017,11
+4,8,5,1422,Sidney,NA,192,Belmont,NA,2017,11
+2,8,7,1719,Winton Woods,NA,364,Chillicothe,NA,2017,11
+3,8,6,118,Anderson,NA,1552,Troy,NA,2017,11
+1,9,8,304,Canfield,NA,146,Aurora,NA,2017,11
+4,9,5,1180,Notre Dame-Cathedral Latin,NA,112,Alliance,NA,2017,11
+2,9,7,276,Buckeye,NA,1522,Tallmadge,NA,2017,11
+3,9,6,1724,Woodridge,NA,1384,St Vincent-St Mary,NA,2017,11
+1,10,8,342,Central Catholic,NA,652,Glenville,NA,2017,11
+4,10,5,1394,Sandusky,NA,392,Clyde,NA,2017,11
+2,10,7,168,Bay,NA,940,Mansfield,NA,2017,11
+3,10,6,1224,Padua Franciscan,NA,1571,University School,NA,2017,11
+1,11,8,188,Bellefontaine,NA,666,Granville,NA,2017,11
+4,11,5,962,Marion-Franklin,NA,1544,Tri-Valley,NA,2017,11
+2,11,7,748,Independence,NA,762,Jackson,NA,2017,11
+3,11,6,218,Bishop Hartley,NA,1106,New Philadelphia,NA,2017,11
+1,12,8,1550,Trotwood-Madison,NA,526,Elida,NA,2017,11
+4,12,5,658,Goshen,NA,476,Dunbar,NA,2017,11
+2,12,7,132,Archbishop Alter,NA,352,Chaminade Julienne,NA,2017,11
+3,12,6,608,Franklin,NA,1108,New Richmond,NA,2017,11
+1,13,8,1488,Steubenville,NA,1392,Salem,NA,2017,11
+4,13,5,1264,Poland Seminary,NA,310,Cardinal Mooney,NA,2017,11
+2,13,7,1246,Perry,NA,1500,Struthers,NA,2017,11
+3,13,6,828,Lakeview,NA,644,Girard,NA,2017,11
+1,14,8,378,Clear Fork,NA,380,Clearview,NA,2017,11
+4,14,5,1208,Orange,NA,190,Bellevue,NA,2017,11
+2,14,7,1416,Shelby,NA,1634,Wauseon,NA,2017,11
+3,14,6,1012,St Marys Memorial,NA,712,Highland,NA,2017,11
+1,15,8,870,Licking Valley,NA,1568,Unioto,NA,2017,11
+4,15,5,232,Bloom-Carroll,NA,788,John Glenn,NA,2017,11
+2,15,7,1344,St Clairsville,NA,1252,Philo,NA,2017,11
+3,15,6,758,Indian Valley,NA,1000,Meadowbrook,NA,2017,11
+1,16,8,1590,Valley View,NA,1636,Waverly,NA,2017,11
+4,16,5,388,Clinton-Massie,NA,796,Jonathan Alder,NA,2017,11
+2,16,7,1744,Wyoming,NA,892,London,NA,2017,11
+3,16,6,1518,Taft,NA,752,Indian Hill,NA,2017,11
+1,17,8,1460,South Range,NA,436,Crestview,NA,2017,11
+4,17,5,936,Manchester,NA,560,Fairless,NA,2017,11
+2,17,7,662,Grand Valley,NA,1706,Wickliffe,NA,2017,11
+3,17,6,226,Black River,NA,642,Gilmour Academy,NA,2017,11
+1,18,8,508,Eastwood,NA,1506,Swanton,NA,2017,11
+4,18,5,518,Edison,NA,1212,Otsego,NA,2017,11
+2,18,7,1260,Pleasant,NA,636,Genoa Area,NA,2017,11
+3,18,6,134,Archbold,NA,754,Indian Lake,NA,2017,11
+1,19,8,1696,Wheelersburg,NA,220,Bishop Ready,NA,2017,11
+4,19,5,1566,Union Local,NA,410,Columbus Academy,NA,2017,11
+2,19,7,1270,Portsmouth West,NA,968,Martins Ferry,NA,2017,11
+3,19,6,794,Johnstown-Monroe,NA,1186,Oak Hill,NA,2017,11
+1,20,8,1018,Miami East,NA,1284,Reading,NA,2017,11
+4,20,5,208,Bethel-Tate,NA,1682,West Jefferson,NA,2017,11
+2,20,7,924,Madison,NA,120,Anna,NA,2017,11
+3,20,6,369,Cincinnati Hills Christian Academy,NA,672,Greeneview,NA,2017,11
+1,21,8,1328,Rootstown,NA,408,Columbiana,NA,2017,11
+4,21,5,1174,Norwayne,NA,1668,Western Reserve,NA,2017,11
+2,21,7,1058,Mogadore,NA,504,East Palestine,NA,2017,11
+3,21,6,812,Kirtland,NA,860,Liberty,NA,2017,11
+1,22,8,862,Liberty-Benton,NA,100,Ada,NA,2017,11
+4,22,5,708,Hicksville,NA,640,Gibsonburg,NA,2017,11
+2,22,7,1742,Wynford,NA,316,Carey,NA,2017,11
+3,22,6,1400,Seneca East,NA,720,Hillsdale,NA,2017,11
+1,23,8,1084,Nelsonville-York,NA,1406,Shadyside,NA,2017,11
+4,23,5,598,Fort Frye,NA,1144,Northmor,NA,2017,11
+2,23,7,1450,Southeastern,NA,326,Catholic Central,NA,2017,11
+3,23,6,458,Dawson-Bryant,NA,1418,Shenandoah,NA,2017,11
+1,24,8,874,Lima Central Catholic,NA,460,Dayton Christian,NA,2017,11
+4,24,5,394,Coldwater,NA,206,Bethel,NA,2017,11
+2,24,7,958,Marion Local,NA,604,Fort Recovery,NA,2017,11
+3,24,6,1468,Spencerville,NA,1004,Mechanicsburg,NA,2017,11
+1,25,8,450,Dalton,NA,974,Mathews,NA,2017,11
+4,25,5,1716,Windham,NA,456,Lisbon David Anderson,NA,2017,11
+2,25,7,446,Cuyahoga Heights,NA,786,John F Kennedy,NA,2017,11
+3,25,6,488,East Canton,NA,1751,Valley Christian School,NA,2017,11
+1,26,8,1374,St Paul,NA,1646,Wayne Trace,NA,2017,11
+4,26,5,512,Edgerton,NA,298,Calvert,NA,2017,11
+2,26,7,990,McComb,NA,854,Leipsic,NA,2017,11
+3,26,6,1228,Pandora-Gilboa,NA,1060,Mohawk,NA,2017,11
+1,27,8,454,Danville,NA,222,Bishop Rosecrans,NA,2017,11
+4,27,5,908,Lucas,NA,1540,Trimble,NA,2017,11
+2,27,7,1628,Waterford,NA,484,Sciotoville Community,NA,2017,11
+3,27,6,1737,Harvest Prep,NA,1306,River,NA,2017,11
+1,28,8,438,Crestview,NA,122,Ansonia,NA,2017,11
+4,28,5,1052,Minster,NA,602,Fort Loramie,NA,2017,11
+2,28,7,852,Lehman Catholic,NA,1242,Perry,NA,2017,11
+3,28,6,1358,St John's,NA,1310,Riverside,NA,2017,11
+NA,NA,NA,1016,Mentor,NA,1428,Solon,NA,2007,12
+NA,NA,NA,652,Glenville,NA,238,Boardman,NA,2007,12
+NA,NA,NA,268,Brunswick,NA,1704,Whitmer,NA,2007,12
+NA,NA,NA,730,Hoover,NA,1116,Nordonia,NA,2007,12
+NA,NA,NA,717,Hilliard Darby,NA,682,Groveport-Madison,NA,2007,12
+NA,NA,NA,1254,Pickerington Central,NA,474,Dublin Coffman,NA,2007,12
+NA,NA,NA,1388,St Xavier,NA,336,Centerville,NA,2007,12
+NA,NA,NA,396,Colerain,NA,1056,Archbishop Moeller,NA,2007,12
+NA,NA,NA,736,Howland,NA,980,Mayfield,NA,2007,12
+NA,NA,NA,1522,Tallmadge,NA,1118,Normandy,NA,2007,12
+NA,NA,NA,152,Avon Lake,NA,138,Ashland,NA,2007,12
+NA,NA,NA,1512,Sylvania Southview,NA,1258,Piqua,NA,2007,12
+NA,NA,NA,1348,Columbus St Francis DeSales,NA,304,Canfield,NA,2007,12
+NA,NA,NA,902,Louisville,NA,1544,Tri-Valley,NA,2007,12
+NA,NA,NA,1554,Turpin,NA,1550,Trotwood-Madison,NA,2007,12
+NA,NA,NA,118,Anderson,NA,320,Carroll,NA,2007,12
+NA,NA,NA,1614,Walsh Jesuit,NA,828,Lakeview,NA,2007,12
+NA,NA,NA,1320,Rocky River,NA,824,Lake Catholic,NA,2007,12
+NA,NA,NA,214,Big Walnut,NA,1416,Shelby,NA,2007,12
+NA,NA,NA,1080,Napoleon,NA,392,Clyde,NA,2007,12
+NA,NA,NA,1162,Northwest,NA,472,Dover,NA,2007,12
+NA,NA,NA,870,Licking Valley,NA,1658,West Branch,NA,2007,12
+NA,NA,NA,752,Indian Hill,NA,370,Circleville,NA,2007,12
+NA,NA,NA,302,Canal Winchester,NA,1062,Lemon-Monroe,NA,2007,12
+NA,NA,NA,310,Cardinal Mooney,NA,1384,St Vincent-St Mary,NA,2007,12
+NA,NA,NA,1488,Steubenville,NA,340,Canton Central Catholic,NA,2007,12
+NA,NA,NA,508,Eastwood,NA,636,Genoa Area,NA,2007,12
+NA,NA,NA,1214,Ottawa-Glandorf,NA,1260,Pleasant,NA,2007,12
+NA,NA,NA,1344,St Clairsville,NA,868,Licking Heights,NA,2007,12
+NA,NA,NA,1676,Westfall,NA,1636,Waverly,NA,2007,12
+NA,NA,NA,132,Archbishop Alter,NA,394,Coldwater,NA,2007,12
+NA,NA,NA,1042,Milton-Union,NA,388,Clinton-Massie,NA,2007,12
+NA,NA,NA,1460,South Range,NA,642,Gilmour Academy,NA,2007,12
+NA,NA,NA,1580,Ursuline,NA,1640,Waynedale,NA,2007,12
+NA,NA,NA,1234,Patrick Henry,NA,874,Lima Central Catholic,NA,2007,12
+NA,NA,NA,862,Liberty-Benton,NA,1532,Tinora,NA,2007,12
+NA,NA,NA,220,Bishop Ready,NA,794,Johnstown-Monroe,NA,2007,12
+NA,NA,NA,614,Fredericktown,NA,1696,Wheelersburg,NA,2007,12
+NA,NA,NA,1682,West Jefferson,NA,1688,West Liberty-Salem,NA,2007,12
+NA,NA,NA,958,Marion Local,NA,462,Deer Park,NA,2007,12
+NA,NA,NA,732,Hopewell-Loudon,NA,1058,Mogadore,NA,2007,12
+NA,NA,NA,1374,St Paul,NA,786,John F Kennedy,NA,2007,12
+NA,NA,NA,990,McComb,NA,136,Arlington,NA,2007,12
+NA,NA,NA,154,Ayersville,NA,100,Ada,NA,2007,12
+NA,NA,NA,1090,Newark Catholic,NA,454,Danville,NA,2007,12
+NA,NA,NA,1406,Shadyside,NA,1306,River,NA,2007,12
+NA,NA,NA,430,Covington,NA,852,Lehman Catholic,NA,2007,12
+NA,NA,NA,324,Catholic Central,NA,1004,Mechanicsburg,NA,2007,12
+NA,NA,NA,1354,St Ignatius,NA,652,Glenville,NA,2008,12
+NA,NA,NA,1498,Strongsville,NA,1016,Mentor,NA,2008,12
+NA,NA,NA,730,Hoover,NA,350,Twinsburg,NA,2008,12
+NA,NA,NA,650,GlenOak,NA,268,Brunswick,NA,2008,12
+NA,NA,NA,716,Hilliard Davidson,NA,1741,Worthington Kilbourne,NA,2008,12
+NA,NA,NA,1572,Upper Arlington,NA,1254,Pickerington Central,NA,2008,12
+NA,NA,NA,396,Colerain,NA,1638,Wayne,NA,2008,12
+NA,NA,NA,1142,Northmont,NA,522,Elder,NA,2008,12
+NA,NA,NA,980,Mayfield,NA,724,Archbishop Hoban,NA,2008,12
+NA,NA,NA,922,Madison,NA,1522,Tallmadge,NA,2008,12
+NA,NA,NA,1203,Olentangy Liberty,NA,710,Highland,NA,2008,12
+NA,NA,NA,1512,Sylvania Southview,NA,856,Lexington,NA,2008,12
+NA,NA,NA,1348,Columbus St Francis DeSales,NA,962,Marion-Franklin,NA,2008,12
+NA,NA,NA,902,Louisville,NA,888,Logan,NA,2008,12
+NA,NA,NA,1719,Winton Woods,NA,810,Kings,NA,2008,12
+NA,NA,NA,1528,Tecumseh,NA,118,Anderson,NA,2008,12
+NA,NA,NA,1614,Walsh Jesuit,NA,346,Chagrin Falls,NA,2008,12
+NA,NA,NA,146,Aurora,NA,738,Hubbard,NA,2008,12
+NA,NA,NA,150,Avon,NA,406,Columbian,NA,2008,12
+NA,NA,NA,214,Big Walnut,NA,1012,Memorial,NA,2008,12
+NA,NA,NA,472,Dover,NA,1432,Canton South,NA,2008,12
+NA,NA,NA,870,Licking Valley,NA,1264,Poland Seminary,NA,2008,12
+NA,NA,NA,1420,Sheridan,NA,502,Eastmoor Academy,NA,2008,12
+NA,NA,NA,890,Logan Elm,NA,364,Chillicothe,NA,2008,12
+NA,NA,NA,1488,Steubenville,NA,310,Cardinal Mooney,NA,2008,12
+NA,NA,NA,1560,Tuslaw,NA,1246,Perry,NA,2008,12
+NA,NA,NA,606,Fostoria,NA,636,Genoa Area,NA,2008,12
+NA,NA,NA,1214,Ottawa-Glandorf,NA,1260,Pleasant,NA,2008,12
+NA,NA,NA,968,Martins Ferry,NA,1566,Union Local,NA,2008,12
+NA,NA,NA,1100,New Lexington,NA,760,Ironton,NA,2008,12
+NA,NA,NA,394,Coldwater,NA,1190,Oakwood,NA,2008,12
+NA,NA,NA,158,Badin,NA,132,Archbishop Alter,NA,2008,12
+NA,NA,NA,1580,Ursuline,NA,642,Gilmour Academy,NA,2008,12
+NA,NA,NA,436,Crestview,NA,812,Kirtland,NA,2008,12
+NA,NA,NA,1234,Patrick Henry,NA,1742,Wynford,NA,2008,12
+NA,NA,NA,862,Liberty-Benton,NA,134,Archbold,NA,2008,12
+NA,NA,NA,1270,Portsmouth West,NA,220,Bishop Ready,NA,2008,12
+NA,NA,NA,1696,Wheelersburg,NA,866,Liberty Union,NA,2008,12
+NA,NA,NA,369,Cincinnati Hills Christian Academy,NA,1682,West Jefferson,NA,2008,12
+NA,NA,NA,958,Marion Local,NA,1644,Waynesville,NA,2008,12
+NA,NA,NA,732,Hopewell-Loudon,NA,1058,Mogadore,NA,2008,12
+NA,NA,NA,1374,St Paul,NA,992,McDonald,NA,2008,12
+NA,NA,NA,100,Ada,NA,1228,Pandora-Gilboa,NA,2008,12
+NA,NA,NA,316,Carey,NA,1358,St John's,NA,2008,12
+NA,NA,NA,1306,River,NA,1540,Trimble,NA,2008,12
+NA,NA,NA,934,Malvern,NA,1406,Shadyside,NA,2008,12
+NA,NA,NA,1004,Mechanicsburg,NA,430,Covington,NA,2008,12
+NA,NA,NA,852,Lehman Catholic,NA,324,Catholic Central,NA,2008,12
+NA,NA,NA,1354,St Ignatius,NA,652,Glenville,NA,2009,12
+NA,NA,NA,1428,Solon,NA,980,Mayfield,NA,2009,12
+NA,NA,NA,306,Canton McKinley,NA,650,GlenOak,NA,2009,12
+NA,NA,NA,350,Twinsburg,NA,1624,Massillon Washington,NA,2009,12
+NA,NA,NA,474,Dublin Coffman,NA,1674,Westerville South,NA,2009,12
+NA,NA,NA,716,Hilliard Davidson,NA,1254,Pickerington Central,NA,2009,12
+NA,NA,NA,1388,St Xavier,NA,522,Elder,NA,2009,12
+NA,NA,NA,1026,Middletown,NA,118,Anderson,NA,2009,12
+NA,NA,NA,824,Lake Catholic,NA,304,Canfield,NA,2009,12
+NA,NA,NA,736,Howland,NA,138,Ashland,NA,2009,12
+NA,NA,NA,1350,Toledo St Francis DeSales,NA,152,Avon Lake,NA,2009,12
+NA,NA,NA,342,Central Catholic,NA,944,Maple Heights,NA,2009,12
+NA,NA,NA,962,Marion-Franklin,NA,1211,Olentangy Orange,NA,2009,12
+NA,NA,NA,888,Logan,NA,258,Brookhaven,NA,2009,12
+NA,NA,NA,1554,Turpin,NA,1550,Trotwood-Madison,NA,2009,12
+NA,NA,NA,1719,Winton Woods,NA,1528,Tecumseh,NA,2009,12
+NA,NA,NA,310,Cardinal Mooney,NA,738,Hubbard,NA,2009,12
+NA,NA,NA,1264,Poland Seminary,NA,724,Archbishop Hoban,NA,2009,12
+NA,NA,NA,1348,Columbus St Francis DeSales,NA,1534,Tippecanoe,NA,2009,12
+NA,NA,NA,224,Bishop Watterson,NA,1080,Napoleon,NA,2009,12
+NA,NA,NA,1488,Steubenville,NA,1392,Salem,NA,2009,12
+NA,NA,NA,472,Dover,NA,1162,Northwest,NA,2009,12
+NA,NA,NA,1414,Shawnee,NA,890,Logan Elm,NA,2009,12
+NA,NA,NA,1744,Wyoming,NA,1062,Lemon-Monroe,NA,2009,12
+NA,NA,NA,346,Chagrin Falls,NA,828,Lakeview,NA,2009,12
+NA,NA,NA,644,Girard,NA,1724,Woodridge,NA,2009,12
+NA,NA,NA,508,Eastwood,NA,1214,Ottawa-Glandorf,NA,2009,12
+NA,NA,NA,636,Genoa Area,NA,1210,Orrville,NA,2009,12
+NA,NA,NA,114,Amanda-Clearcreek,NA,426,Coshocton,NA,2009,12
+NA,NA,NA,760,Ironton,NA,706,Heath,NA,2009,12
+NA,NA,NA,388,Clinton-Massie,NA,804,Kenton,NA,2009,12
+NA,NA,NA,132,Archbishop Alter,NA,318,Carlisle,NA,2009,12
+NA,NA,NA,446,Cuyahoga Heights,NA,702,Hawken,NA,2009,12
+NA,NA,NA,436,Crestview,NA,1580,Ursuline,NA,2009,12
+NA,NA,NA,1234,Patrick Henry,NA,720,Hillsdale,NA,2009,12
+NA,NA,NA,1532,Tinora,NA,874,Lima Central Catholic,NA,2009,12
+NA,NA,NA,614,Fredericktown,NA,1696,Wheelersburg,NA,2009,12
+NA,NA,NA,1186,Oak Hill,NA,1300,Ridgewood,NA,2009,12
+NA,NA,NA,1352,St Henry,NA,1688,West Liberty-Salem,NA,2009,12
+NA,NA,NA,394,Coldwater,NA,120,Anna,NA,2009,12
+NA,NA,NA,732,Hopewell-Loudon,NA,1742,Wynford,NA,2009,12
+NA,NA,NA,1374,St Paul,NA,1058,Mogadore,NA,2009,12
+NA,NA,NA,1358,St John's,NA,854,Leipsic,NA,2009,12
+NA,NA,NA,100,Ada,NA,316,Carey,NA,2009,12
+NA,NA,NA,934,Malvern,NA,250,Bridgeport,NA,2009,12
+NA,NA,NA,1406,Shadyside,NA,681,Grove City Christian,NA,2009,12
+NA,NA,NA,430,Covington,NA,958,Marion Local,NA,2009,12
+NA,NA,NA,602,Fort Loramie,NA,1452,Southeastern Local,NA,2009,12
+NA,NA,NA,1428,Solon,NA,148,Austintown-Fitch,NA,2010,12
+NA,NA,NA,652,Glenville,NA,1346,St Edward,NA,2010,12
+NA,NA,NA,1006,Medina,NA,1360,St John's Jesuit,NA,2010,12
+NA,NA,NA,350,Twinsburg,NA,1704,Whitmer,NA,2010,12
+NA,NA,NA,1254,Pickerington Central,NA,1674,Westerville South,NA,2010,12
+NA,NA,NA,716,Hilliard Davidson,NA,1480,Springfield,NA,2010,12
+NA,NA,NA,1638,Wayne,NA,336,Centerville,NA,2010,12
+NA,NA,NA,396,Colerain,NA,1388,St Xavier,NA,2010,12
+NA,NA,NA,1522,Tallmadge,NA,138,Ashland,NA,2010,12
+NA,NA,NA,824,Lake Catholic,NA,736,Howland,NA,2010,12
+NA,NA,NA,1394,Sandusky,NA,944,Maple Heights,NA,2010,12
+NA,NA,NA,976,Maumee,NA,1204,Olmsted Falls,NA,2010,12
+NA,NA,NA,962,Marion-Franklin,NA,214,Big Walnut,NA,2010,12
+NA,NA,NA,1544,Tri-Valley,NA,822,Lake,NA,2010,12
+NA,NA,NA,1719,Winton Woods,NA,1550,Trotwood-Madison,NA,2010,12
+NA,NA,NA,810,Kings,NA,1074,Mount Healthy,NA,2010,12
+NA,NA,NA,1224,Padua Franciscan,NA,274,Buchtel,NA,2010,12
+NA,NA,NA,1384,St Vincent-St Mary,NA,310,Cardinal Mooney,NA,2010,12
+NA,NA,NA,224,Bishop Watterson,NA,526,Elida,NA,2010,12
+NA,NA,NA,392,Clyde,NA,406,Columbian,NA,2010,12
+NA,NA,NA,964,Marlington,NA,870,Licking Valley,NA,2010,12
+NA,NA,NA,472,Dover,NA,1420,Sheridan,NA,2010,12
+NA,NA,NA,1414,Shawnee,NA,510,Eaton,NA,2010,12
+NA,NA,NA,998,Archbishop McNicholas,NA,1322,Roger Bacon,NA,2010,12
+NA,NA,NA,936,Manchester,NA,1010,Memorial,NA,2010,12
+NA,NA,NA,346,Chagrin Falls,NA,828,Lakeview,NA,2010,12
+NA,NA,NA,378,Clear Fork,NA,636,Genoa Area,NA,2010,12
+NA,NA,NA,534,Elyria Catholic,NA,1210,Orrville,NA,2010,12
+NA,NA,NA,760,Ironton,NA,712,Highland,NA,2010,12
+NA,NA,NA,706,Heath,NA,218,Bishop Hartley,NA,2010,12
+NA,NA,NA,388,Clinton-Massie,NA,804,Kenton,NA,2010,12
+NA,NA,NA,796,Jonathan Alder,NA,132,Archbishop Alter,NA,2010,12
+NA,NA,NA,1580,Ursuline,NA,1174,Norwayne,NA,2010,12
+NA,NA,NA,812,Kirtland,NA,446,Cuyahoga Heights,NA,2010,12
+NA,NA,NA,134,Archbold,NA,874,Lima Central Catholic,NA,2010,12
+NA,NA,NA,720,Hillsdale,NA,1234,Patrick Henry,NA,2010,12
+NA,NA,NA,1186,Oak Hill,NA,1048,Minford,NA,2010,12
+NA,NA,NA,614,Fredericktown,NA,1696,Wheelersburg,NA,2010,12
+NA,NA,NA,158,Badin,NA,394,Coldwater,NA,2010,12
+NA,NA,NA,1682,West Jefferson,NA,369,Cincinnati Hills Christian Academy,NA,2010,12
+NA,NA,NA,450,Dalton,NA,992,McDonald,NA,2010,12
+NA,NA,NA,1058,Mogadore,NA,848,Ledgemont,NA,2010,12
+NA,NA,NA,1358,St John's,NA,100,Ada,NA,2010,12
+NA,NA,NA,990,McComb,NA,1060,Mohawk,NA,2010,12
+NA,NA,NA,1406,Shadyside,NA,934,Malvern,NA,2010,12
+NA,NA,NA,250,Bridgeport,NA,1090,Newark Catholic,NA,2010,12
+NA,NA,NA,1052,Minster,NA,958,Marion Local,NA,2010,12
+NA,NA,NA,852,Lehman Catholic,NA,430,Covington,NA,2010,12
+NA,NA,NA,1016,Mentor,NA,1428,Solon,NA,2011,12
+NA,NA,NA,1354,St Ignatius,NA,1346,St Edward,NA,2011,12
+NA,NA,NA,1704,Whitmer,NA,306,Canton McKinley,NA,2011,12
+NA,NA,NA,1606,Wadsworth,NA,740,Hudson,NA,2011,12
+NA,NA,NA,716,Hilliard Davidson,NA,1572,Upper Arlington,NA,2011,12
+NA,NA,NA,1254,Pickerington Central,NA,876,Gahanna-Lincoln,NA,2011,12
+NA,NA,NA,1026,Middletown,NA,1056,Archbishop Moeller,NA,2011,12
+NA,NA,NA,396,Colerain,NA,1388,St Xavier,NA,2011,12
+NA,NA,NA,1614,Walsh Jesuit,NA,1326,Roosevelt,NA,2011,12
+NA,NA,NA,1522,Tallmadge,NA,146,Aurora,NA,2011,12
+NA,NA,NA,150,Avon,NA,342,Central Catholic,NA,2011,12
+NA,NA,NA,406,Columbian,NA,1410,Shaw,NA,2011,12
+NA,NA,NA,962,Marion-Franklin,NA,214,Big Walnut,NA,2011,12
+NA,NA,NA,1544,Tri-Valley,NA,1086,New Albany,NA,2011,12
+NA,NA,NA,1550,Trotwood-Madison,NA,1616,Wapakoneta,NA,2011,12
+NA,NA,NA,810,Kings,NA,1554,Turpin,NA,2011,12
+NA,NA,NA,346,Chagrin Falls,NA,1281,Ravenna,NA,2011,12
+NA,NA,NA,824,Lake Catholic,NA,1384,St Vincent-St Mary,NA,2011,12
+NA,NA,NA,1348,Columbus St Francis DeSales,NA,526,Elida,NA,2011,12
+NA,NA,NA,392,Clyde,NA,502,Eastmoor Academy,NA,2011,12
+NA,NA,NA,1488,Steubenville,NA,310,Cardinal Mooney,NA,2011,12
+NA,NA,NA,472,Dover,NA,1046,Minerva,NA,2011,12
+NA,NA,NA,1414,Shawnee,NA,402,Thurgood Marshall,NA,2011,12
+NA,NA,NA,762,Jackson,NA,796,Jonathan Alder,NA,2011,12
+NA,NA,NA,644,Girard,NA,226,Black River,NA,2011,12
+NA,NA,NA,1210,Orrville,NA,1174,Norwayne,NA,2011,12
+NA,NA,NA,804,Kenton,NA,636,Genoa Area,NA,2011,12
+NA,NA,NA,508,Eastwood,NA,218,Bishop Hartley,NA,2011,12
+NA,NA,NA,1344,St Clairsville,NA,426,Coshocton,NA,2011,12
+NA,NA,NA,794,Johnstown-Monroe,NA,760,Ironton,NA,2011,12
+NA,NA,NA,1644,Waynesville,NA,352,Chaminade-Julienne,NA,2011,12
+NA,NA,NA,369,Cincinnati Hills Christian Academy,NA,388,Clinton-Massie,NA,2011,12
+NA,NA,NA,812,Kirtland,NA,624,Garaway,NA,2011,12
+NA,NA,NA,1378,St Thomas Aquinas,NA,436,Crestview,NA,2011,12
+NA,NA,NA,864,Liberty Center,NA,1234,Patrick Henry,NA,2011,12
+NA,NA,NA,708,Hicksville,NA,862,Liberty-Benton,NA,2011,12
+NA,NA,NA,1742,Wynford,NA,1270,Portsmouth West,NA,2011,12
+NA,NA,NA,1586,Valley,NA,434,Crestview,NA,2011,12
+NA,NA,NA,1600,Versailles,NA,394,Coldwater,NA,2011,12
+NA,NA,NA,1260,Pleasant,NA,1682,West Jefferson,NA,2011,12
+NA,NA,NA,1668,Western Reserve,NA,934,Malvern,NA,2011,12
+NA,NA,NA,1406,Shadyside,NA,1751,Youngstown Christian,NA,2011,12
+NA,NA,NA,854,Leipsic,NA,990,McComb,NA,2011,12
+NA,NA,NA,1358,St John's,NA,298,Calvert,NA,2011,12
+NA,NA,NA,1514,Symmes Valley,NA,172,Beallsville,NA,2011,12
+NA,NA,NA,278,Buckeye Central,NA,222,Bishop Rosecrans,NA,2011,12
+NA,NA,NA,958,Marion Local,NA,100,Ada,NA,2011,12
+NA,NA,NA,602,Fort Loramie,NA,1052,Minster,NA,2011,12
+NA,NA,NA,1346,St Edward,NA,1016,Mentor,NA,2012,12
+NA,NA,NA,1354,St Ignatius,NA,1154,North Royalton,NA,2012,12
+NA,NA,NA,1624,Massillon Washington,NA,306,Canton McKinley,NA,2012,12
+NA,NA,NA,1704,Whitmer,NA,740,Hudson,NA,2012,12
+NA,NA,NA,717,Hilliard Darby,NA,1255,Pickerington North,NA,2012,12
+NA,NA,NA,716,Hilliard Davidson,NA,1202,Olentangy,NA,2012,12
+NA,NA,NA,396,Colerain,NA,522,Elder,NA,2012,12
+NA,NA,NA,836,Lakota East,NA,1056,Archbishop Moeller,NA,2012,12
+NA,NA,NA,802,Kenston,NA,360,Chardon,NA,2012,12
+NA,NA,NA,1326,Roosevelt,NA,146,Aurora,NA,2012,12
+NA,NA,NA,406,Columbian,NA,150,Avon,NA,2012,12
+NA,NA,NA,342,Central Catholic,NA,926,Madison Comprehensive,NA,2012,12
+NA,NA,NA,1544,Tri-Valley,NA,1086,New Albany,NA,2012,12
+NA,NA,NA,302,Canal Winchester,NA,962,Marion-Franklin,NA,2012,12
+NA,NA,NA,1554,Turpin,NA,608,Franklin,NA,2012,12
+NA,NA,NA,1719,Winton Woods,NA,1550,Trotwood-Madison,NA,2012,12
+NA,NA,NA,346,Chagrin Falls,NA,1281,Ravenna,NA,2012,12
+NA,NA,NA,738,Hubbard,NA,1384,St Vincent-St Mary,NA,2012,12
+NA,NA,NA,1080,Napoleon,NA,272,Bryan,NA,2012,12
+NA,NA,NA,190,Bellevue,NA,1240,Perkins,NA,2012,12
+NA,NA,NA,1264,Poland Seminary,NA,472,Dover,NA,2012,12
+NA,NA,NA,1680,West Holmes,NA,1488,Steubenville,NA,2012,12
+NA,NA,NA,402,Thurgood Marshall,NA,622,Gallia Academy,NA,2012,12
+NA,NA,NA,1414,Shawnee,NA,144,Athens,NA,2012,12
+NA,NA,NA,256,Brookfield,NA,936,Manchester,NA,2012,12
+NA,NA,NA,1174,Norwayne,NA,860,Liberty,NA,2012,12
+NA,NA,NA,218,Bishop Hartley,NA,1156,North Union,NA,2012,12
+NA,NA,NA,1214,Ottawa-Glandorf,NA,636,Genoa Area,NA,2012,12
+NA,NA,NA,1344,St Clairsville,NA,1256,Piketon,NA,2012,12
+NA,NA,NA,760,Ironton,NA,794,Johnstown-Monroe,NA,2012,12
+NA,NA,NA,388,Clinton-Massie,NA,164,Batavia,NA,2012,12
+NA,NA,NA,1042,Milton-Union,NA,1176,Norwood,NA,2012,12
+NA,NA,NA,812,Kirtland,NA,436,Crestview,NA,2012,12
+NA,NA,NA,1580,Ursuline,NA,446,Cuyahoga Heights,NA,2012,12
+NA,NA,NA,874,Lima Central Catholic,NA,862,Liberty-Benton,NA,2012,12
+NA,NA,NA,1234,Patrick Henry,NA,404,Columbia,NA,2012,12
+NA,NA,NA,1586,Valley,NA,1742,Wynford,NA,2012,12
+NA,NA,NA,1186,Oak Hill,NA,866,Liberty Union,NA,2012,12
+NA,NA,NA,394,Coldwater,NA,1688,West Liberty-Salem,NA,2012,12
+NA,NA,NA,1504,Summit Country Day,NA,430,Covington,NA,2012,12
+NA,NA,NA,1058,Mogadore,NA,1668,Western Reserve,NA,2012,12
+NA,NA,NA,934,Malvern,NA,1751,Youngstown Christian,NA,2012,12
+NA,NA,NA,990,McComb,NA,298,Calvert,NA,2012,12
+NA,NA,NA,1370,St Joseph Central Catholic,NA,1358,St John's,NA,2012,12
+NA,NA,NA,454,Danville,NA,222,Bishop Rosecrans,NA,2012,12
+NA,NA,NA,1090,Newark Catholic,NA,1540,Trimble,NA,2012,12
+NA,NA,NA,100,Ada,NA,1352,St Henry,NA,2012,12
+NA,NA,NA,1052,Minster,NA,958,Marion Local,NA,2012,12
+NA,NA,NA,652,Glenville,NA,180,Bedford,NA,2013,12
+NA,NA,NA,248,Brecksville-Broadview Heights,NA,922,Madison,NA,2013,12
+NA,NA,NA,710,Highland,NA,1624,Massillon Washington,NA,2013,12
+NA,NA,NA,150,Avon,NA,1248,Perrysburg,NA,2013,12
+NA,NA,NA,1086,New Albany,NA,940,Mansfield,NA,2013,12
+NA,NA,NA,1741,Worthington Kilbourne,NA,1750,Zanesville,NA,2013,12
+NA,NA,NA,904,Loveland,NA,1164,Northwest,NA,2013,12
+NA,NA,NA,1074,Mount Healthy,NA,1719,Winton Woods,NA,2013,12
+NA,NA,NA,1384,St Vincent-St Mary,NA,1264,Poland Seminary,NA,2013,12
+NA,NA,NA,738,Hubbard,NA,146,Aurora,NA,2013,12
+NA,NA,NA,342,Central Catholic,NA,406,Columbian,NA,2013,12
+NA,NA,NA,392,Clyde,NA,1240,Perkins,NA,2013,12
+NA,NA,NA,144,Athens,NA,1544,Tri-Valley,NA,2013,12
+NA,NA,NA,962,Marion-Franklin,NA,258,Brookhaven,NA,2013,12
+NA,NA,NA,1534,Tippecanoe,NA,402,Thurgood Marshall,NA,2013,12
+NA,NA,NA,1550,Trotwood-Madison,NA,1414,Shawnee,NA,2013,12
+NA,NA,NA,346,Chagrin Falls,NA,196,Benedictine,NA,2013,12
+NA,NA,NA,1500,Struthers,NA,310,Cardinal Mooney,NA,2013,12
+NA,NA,NA,1314,River Valley,NA,272,Bryan,NA,2013,12
+NA,NA,NA,804,Kenton,NA,1548,Triway,NA,2013,12
+NA,NA,NA,1488,Steubenville,NA,982,Maysville,NA,2013,12
+NA,NA,NA,758,Indian Valley,NA,1252,Philo,NA,2013,12
+NA,NA,NA,132,Archbishop Alter,NA,1590,Valley View,NA,2013,12
+NA,NA,NA,388,Clinton-Massie,NA,998,Archbishop McNicholas,NA,2013,12
+NA,NA,NA,936,Manchester,NA,560,Fairless,NA,2013,12
+NA,NA,NA,436,Crestview,NA,642,Gilmour Academy,NA,2013,12
+NA,NA,NA,366,Chippewa,NA,394,Coldwater,NA,2013,12
+NA,NA,NA,746,Huron,NA,900,Loudonville,NA,2013,12
+NA,NA,NA,218,Bishop Hartley,NA,866,Liberty Union,NA,2013,12
+NA,NA,NA,968,Martins Ferry,NA,1696,Wheelersburg,NA,2013,12
+NA,NA,NA,1682,West Jefferson,NA,1156,North Union,NA,2013,12
+NA,NA,NA,369,Cincinnati Hills Christian Academy,NA,158,Badin,NA,2013,12
+NA,NA,NA,812,Kirtland,NA,1378,St Thomas Aquinas,NA,2013,12
+NA,NA,NA,1460,South Range,NA,1058,Mogadore,NA,2013,12
+NA,NA,NA,1532,Tinora,NA,1646,Wayne Trace,NA,2013,12
+NA,NA,NA,100,Ada,NA,438,Crestview,NA,2013,12
+NA,NA,NA,1586,Valley,NA,1090,Newark Catholic,NA,2013,12
+NA,NA,NA,220,Bishop Ready,NA,1063,Monroe Central,NA,2013,12
+NA,NA,NA,1018,Miami East,NA,1004,Mechanicsburg,NA,2013,12
+NA,NA,NA,1504,Summit Country Day,NA,1688,West Liberty-Salem,NA,2013,12
+NA,NA,NA,1668,Western Reserve,NA,454,Danville,NA,2013,12
+NA,NA,NA,1374,St Paul,NA,1654,Wellsville,NA,2013,12
+NA,NA,NA,1358,St John's,NA,298,Calvert,NA,2013,12
+NA,NA,NA,708,Hicksville,NA,136,Arlington,NA,2013,12
+NA,NA,NA,1540,Trimble,NA,326,Catholic Central,NA,2013,12
+NA,NA,NA,1406,Shadyside,NA,296,Caldwell,NA,2013,12
+NA,NA,NA,1538,Triad,NA,852,Lehman Catholic,NA,2013,12
+NA,NA,NA,430,Covington,NA,958,Marion Local,NA,2013,12
+NA,NA,NA,1346,St Edward,NA,385,Cleveland Heights,NA,2013,12
+NA,NA,NA,148,Austintown-Fitch,NA,1671,Westerville Central,NA,2013,12
+NA,NA,NA,740,Hudson,NA,1354,St Ignatius,NA,2013,12
+NA,NA,NA,1492,Stow-Munroe Falls,NA,1016,Mentor,NA,2013,12
+NA,NA,NA,716,Hilliard Davidson,NA,1255,Pickerington North,NA,2013,12
+NA,NA,NA,474,Dublin Coffman,NA,1638,Wayne,NA,2013,12
+NA,NA,NA,1254,Pickerington Central,NA,396,Colerain,NA,2013,12
+NA,NA,NA,522,Elder,NA,1056,Archbishop Moeller,NA,2013,12
+NA,NA,NA,180,Bedford,NA,1440,South,NA,2014,12
+NA,NA,NA,980,Mayfield,NA,922,Madison,NA,2014,12
+NA,NA,NA,1030,Midview,NA,150,Avon,NA,2014,12
+NA,NA,NA,1116,Nordonia,NA,1248,Perrysburg,NA,2014,12
+NA,NA,NA,1202,Olentangy,NA,1736,Wooster,NA,2014,12
+NA,NA,NA,475,Dublin Scioto,NA,1741,Worthington Kilbourne,NA,2014,12
+NA,NA,NA,842,La Salle,NA,696,Harrison,NA,2014,12
+NA,NA,NA,1074,Mount Healthy,NA,810,Kings,NA,2014,12
+NA,NA,NA,738,Hubbard,NA,146,Aurora,NA,2014,12
+NA,NA,NA,1384,St Vincent-St Mary,NA,1264,Poland Seminary,NA,2014,12
+NA,NA,NA,342,Central Catholic,NA,242,Bowling Green,NA,2014,12
+NA,NA,NA,392,Clyde,NA,1160,Norwalk,NA,2014,12
+NA,NA,NA,1544,Tri-Valley,NA,144,Athens,NA,2014,12
+NA,NA,NA,1348,Columbus St Francis DeSales,NA,762,Jackson,NA,2014,12
+NA,NA,NA,1616,Wapakoneta,NA,1534,Tippecanoe,NA,2014,12
+NA,NA,NA,184,Bellbrook,NA,1550,Trotwood-Madison,NA,2014,12
+NA,NA,NA,196,Benedictine,NA,310,Cardinal Mooney,NA,2014,12
+NA,NA,NA,168,Bay,NA,1180,Notre Dame-Cathedral Latin,NA,2014,12
+NA,NA,NA,1548,Triway,NA,804,Kenton,NA,2014,12
+NA,NA,NA,190,Bellevue,NA,1634,Wauseon,NA,2014,12
+NA,NA,NA,186,Beechcroft,NA,982,Maysville,NA,2014,12
+NA,NA,NA,962,Marion-Franklin,NA,1488,Steubenville,NA,2014,12
+NA,NA,NA,132,Archbishop Alter,NA,1744,Wyoming,NA,2014,12
+NA,NA,NA,388,Clinton-Massie,NA,998,Archbishop McNicholas,NA,2014,12
+NA,NA,NA,340,Canton Central Catholic,NA,436,Crestview,NA,2014,12
+NA,NA,NA,860,Liberty,NA,1580,Ursuline,NA,2014,12
+NA,NA,NA,746,Huron,NA,394,Coldwater,NA,2014,12
+NA,NA,NA,862,Liberty-Benton,NA,1260,Pleasant,NA,2014,12
+NA,NA,NA,218,Bishop Hartley,NA,1344,St Clairsville,NA,2014,12
+NA,NA,NA,1696,Wheelersburg,NA,760,Ironton,NA,2014,12
+NA,NA,NA,369,Cincinnati Hills Christian Academy,NA,672,Greeneview,NA,2014,12
+NA,NA,NA,158,Badin,NA,1682,West Jefferson,NA,2014,12
+NA,NA,NA,900,Loudonville,NA,1058,Mogadore,NA,2014,12
+NA,NA,NA,624,Garaway,NA,812,Kirtland,NA,2014,12
+NA,NA,NA,1532,Tinora,NA,1468,Spencerville,NA,2014,12
+NA,NA,NA,1592,Van Buren,NA,1742,Wynford,NA,2014,12
+NA,NA,NA,614,Fredericktown,NA,334,Centerburg,NA,2014,12
+NA,NA,NA,1586,Valley,NA,664,Grandview Heights,NA,2014,12
+NA,NA,NA,1562,Tri-County North,NA,1688,West Liberty-Salem,NA,2014,12
+NA,NA,NA,1600,Versailles,NA,1052,Minster,NA,2014,12
+NA,NA,NA,1374,St Paul,NA,946,Mapleton,NA,2014,12
+NA,NA,NA,1668,Western Reserve,NA,908,Lucas,NA,2014,12
+NA,NA,NA,136,Arlington,NA,990,McComb,NA,2014,12
+NA,NA,NA,298,Calvert,NA,412,Columbus Grove,NA,2014,12
+NA,NA,NA,1406,Shadyside,NA,1226,Paint Valley,NA,2014,12
+NA,NA,NA,1540,Trimble,NA,296,Caldwell,NA,2014,12
+NA,NA,NA,958,Marion Local,NA,604,Fort Recovery,NA,2014,12
+NA,NA,NA,852,Lehman Catholic,NA,1553,Troy Christian,NA,2014,12
+NA,NA,NA,740,Hudson,NA,1354,St Ignatius,NA,2014,12
+NA,NA,NA,1016,Mentor,NA,650,GlenOak,NA,2014,12
+NA,NA,NA,1671,Westerville Central,NA,148,Austintown-Fitch,NA,2014,12
+NA,NA,NA,1203,Olentangy Liberty,NA,1346,St Edward,NA,2014,12
+NA,NA,NA,837,Lakota West,NA,836,Lakota East,NA,2014,12
+NA,NA,NA,474,Dublin Coffman,NA,1638,Wayne,NA,2014,12
+NA,NA,NA,1254,Pickerington Central,NA,1056,Archbishop Moeller,NA,2014,12
+NA,NA,NA,396,Colerain,NA,1388,St Xavier,NA,2014,12
+NA,NA,NA,1116,Nordonia,NA,740,Hudson,NA,2015,12
+NA,NA,NA,692,Warren G Harding,NA,980,Mayfield,NA,2015,12
+NA,NA,NA,1030,Midview,NA,652,Glenville,NA,2015,12
+NA,NA,NA,1248,Perrysburg,NA,150,Avon,NA,2015,12
+NA,NA,NA,1244,Perry,NA,1544,Tri-Valley,NA,2015,12
+NA,NA,NA,868,Licking Heights,NA,1741,Worthington Kilbourne,NA,2015,12
+NA,NA,NA,842,La Salle,NA,872,Lima Senior,NA,2015,12
+NA,NA,NA,810,Kings,NA,1554,Turpin,NA,2015,12
+NA,NA,NA,724,Archbishop Hoban,NA,902,Louisville,NA,2015,12
+NA,NA,NA,1384,St Vincent-St Mary,NA,1678,West Geauga,NA,2015,12
+NA,NA,NA,196,Benedictine,NA,168,Bay,NA,2015,12
+NA,NA,NA,342,Central Catholic,NA,392,Clyde,NA,2015,12
+NA,NA,NA,224,Bishop Watterson,NA,762,Jackson,NA,2015,12
+NA,NA,NA,1348,Columbus St Francis DeSales,NA,1750,Zanesville,NA,2015,12
+NA,NA,NA,1616,Wapakoneta,NA,1074,Mount Healthy,NA,2015,12
+NA,NA,NA,1534,Tippecanoe,NA,1550,Trotwood-Madison,NA,2015,12
+NA,NA,NA,1724,Woodridge,NA,1580,Ursuline,NA,2015,12
+NA,NA,NA,728,Holy Name,NA,440,Crestwood,NA,2015,12
+NA,NA,NA,218,Bishop Hartley,NA,1214,Ottawa-Glandorf,NA,2015,12
+NA,NA,NA,190,Bellevue,NA,806,Kenton Ridge,NA,2015,12
+NA,NA,NA,1488,Steubenville,NA,1392,Salem,NA,2015,12
+NA,NA,NA,794,Johnstown-Monroe,NA,1344,St Clairsville,NA,2015,12
+NA,NA,NA,582,Bishop Fenwick,NA,132,Archbishop Alter,NA,2015,12
+NA,NA,NA,752,Indian Hill,NA,388,Clinton-Massie,NA,2015,12
+NA,NA,NA,436,Crestview,NA,818,LaBrae,NA,2015,12
+NA,NA,NA,1396,Sandy Valley,NA,340,Canton Central Catholic,NA,2015,12
+NA,NA,NA,518,Edison,NA,1506,Swanton,NA,2015,12
+NA,NA,NA,1332,Rossford,NA,366,Chippewa,NA,2015,12
+NA,NA,NA,1696,Wheelersburg,NA,1300,Ridgewood,NA,2015,12
+NA,NA,NA,1752,Zane Trace,NA,108,Alexander,NA,2015,12
+NA,NA,NA,264,Brookville,NA,672,Greeneview,NA,2015,12
+NA,NA,NA,369,Cincinnati Hills Christian Academy,NA,394,Coldwater,NA,2015,12
+NA,NA,NA,812,Kirtland,NA,256,Brookfield,NA,2015,12
+NA,NA,NA,1426,Smithville,NA,446,Cuyahoga Heights,NA,2015,12
+NA,NA,NA,466,Delta,NA,1592,Van Buren,NA,2015,12
+NA,NA,NA,1532,Tinora,NA,400,Colonel Crawford,NA,2015,12
+NA,NA,NA,614,Fredericktown,NA,1226,Paint Valley,NA,2015,12
+NA,NA,NA,1586,Valley,NA,664,Grandview Heights,NA,2015,12
+NA,NA,NA,958,Marion Local,NA,1688,West Liberty-Salem,NA,2015,12
+NA,NA,NA,1004,Mechanicsburg,NA,772,Jefferson,NA,2015,12
+NA,NA,NA,786,John F Kennedy,NA,1536,Toronto,NA,2015,12
+NA,NA,NA,1058,Mogadore,NA,1374,St Paul,NA,2015,12
+NA,NA,NA,990,McComb,NA,854,Leipsic,NA,2015,12
+NA,NA,NA,298,Calvert,NA,908,Lucas,NA,2015,12
+NA,NA,NA,454,Danville,NA,1737,Harvest Prep,NA,2015,12
+NA,NA,NA,296,Caldwell,NA,1540,Trimble,NA,2015,12
+NA,NA,NA,1052,Minster,NA,1310,Riverside,NA,2015,12
+NA,NA,NA,852,Lehman Catholic,NA,604,Fort Recovery,NA,2015,12
+NA,NA,NA,1346,St Edward,NA,1016,Mentor,NA,2015,12
+NA,NA,NA,1671,Westerville Central,NA,540,Euclid,NA,2015,12
+NA,NA,NA,1202,Olentangy,NA,1704,Whitmer,NA,2015,12
+NA,NA,NA,1428,Solon,NA,1492,Stow-Munroe Falls,NA,2015,12
+NA,NA,NA,396,Colerain,NA,1388,St Xavier,NA,2015,12
+NA,NA,NA,717,Hilliard Darby,NA,522,Elder,NA,2015,12
+NA,NA,NA,1638,Wayne,NA,1470,Springboro,NA,2015,12
+NA,NA,NA,1572,Upper Arlington,NA,716,Hilliard Davidson,NA,2015,12
+NA,NA,NA,1428,Solon,NA,1354,St Ignatius,NA,2016,12
+NA,NA,NA,1346,St Edward,NA,1492,Stow-Munroe Falls,NA,2016,12
+NA,NA,NA,1203,Olentangy Liberty,NA,1006,Medina,NA,2016,12
+NA,NA,NA,486,Dublin Jerome,NA,894,Lorain,NA,2016,12
+NA,NA,NA,1638,Wayne,NA,474,Dublin Coffman,NA,2016,12
+NA,NA,NA,1255,Pickerington North,NA,1254,Pickerington Central,NA,2016,12
+NA,NA,NA,396,Colerain,NA,1388,St Xavier,NA,2016,12
+NA,NA,NA,1508,Sycamore,NA,972,Mason,NA,2016,12
+NA,NA,NA,146,Aurora,NA,740,Hudson,NA,2016,12
+NA,NA,NA,360,Chardon,NA,692,Warren G Harding,NA,2016,12
+NA,NA,NA,152,Avon Lake,NA,124,Anthony Wayne,NA,2016,12
+NA,NA,NA,1684,Westlake,NA,1204,Olmsted Falls,NA,2016,12
+NA,NA,NA,1244,Perry,NA,610,Franklin Heights,NA,2016,12
+NA,NA,NA,475,Dublin Scioto,NA,1086,New Albany,NA,2016,12
+NA,NA,NA,1552,Troy,NA,1020,Miamisburg,NA,2016,12
+NA,NA,NA,1554,Turpin,NA,842,La Salle,NA,2016,12
+NA,NA,NA,478,East,NA,1106,New Philadelphia,NA,2016,12
+NA,NA,NA,724,Archbishop Hoban,NA,1384,St Vincent-St Mary,NA,2016,12
+NA,NA,NA,342,Central Catholic,NA,1571,University School,NA,2016,12
+NA,NA,NA,1394,Sandusky,NA,856,Lexington,NA,2016,12
+NA,NA,NA,1348,St Francis DeSales,NA,186,Beechcroft,NA,2016,12
+NA,NA,NA,212,Bexley,NA,686,Hamilton Township,NA,2016,12
+NA,NA,NA,608,Franklin,NA,1012,St Marys Memorial,NA,2016,12
+NA,NA,NA,1550,Trotwood-Madison,NA,1108,New Richmond,NA,2016,12
+NA,NA,NA,1246,Perry,NA,1724,Woodridge,NA,2016,12
+NA,NA,NA,1180,Notre Dame-Cathedral Latin,NA,310,Cardinal Mooney,NA,2016,12
+NA,NA,NA,1266,Port Clinton,NA,218,Bishop Hartley,NA,2016,12
+NA,NA,NA,1214,Ottawa-Glandorf,NA,754,Indian Lake,NA,2016,12
+NA,NA,NA,1252,Philo,NA,1416,Shelby,NA,2016,12
+NA,NA,NA,1488,Steubenville,NA,794,Johnstown-Monroe,NA,2016,12
+NA,NA,NA,1744,Wyoming,NA,1590,Valley View,NA,2016,12
+NA,NA,NA,388,Clinton-Massie,NA,132,Archbishop Alter,NA,2016,12
+NA,NA,NA,630,Garfield,NA,818,LaBrae,NA,2016,12
+NA,NA,NA,226,Black River,NA,340,Canton Central Catholic,NA,2016,12
+NA,NA,NA,1174,Norwayne,NA,1506,Swanton,NA,2016,12
+NA,NA,NA,508,Eastwood,NA,518,Edison,NA,2016,12
+NA,NA,NA,1696,Wheelersburg,NA,1084,Nelsonville-York,NA,2016,12
+NA,NA,NA,624,Garaway,NA,426,Coshocton,NA,2016,12
+NA,NA,NA,369,Cincinnati Hills Christian Academy,NA,1042,Milton-Union,NA,2016,12
+NA,NA,NA,394,Coldwater,NA,672,Greeneview,NA,2016,12
+NA,NA,NA,446,Cuyahoga Heights,NA,1378,St Thomas Aquinas,NA,2016,12
+NA,NA,NA,1478,Springfield,NA,812,Kirtland,NA,2016,12
+NA,NA,NA,1234,Patrick Henry,NA,864,Liberty Center,NA,2016,12
+NA,NA,NA,1742,Wynford,NA,154,Ayersville,NA,2016,12
+NA,NA,NA,220,Bishop Ready,NA,1090,Newark Catholic,NA,2016,12
+NA,NA,NA,598,Fort Frye,NA,162,Barnesville,NA,2016,12
+NA,NA,NA,958,Marion Local,NA,1352,St Henry,NA,2016,12
+NA,NA,NA,772,Jefferson,NA,1004,Mechanicsburg,NA,2016,12
+NA,NA,NA,1374,St Paul,NA,1064,Monroeville,NA,2016,12
+NA,NA,NA,1058,Mogadore,NA,786,John F Kennedy,NA,2016,12
+NA,NA,NA,990,McComb,NA,708,Hicksville,NA,2016,12
+NA,NA,NA,136,Arlington,NA,438,Crestview,NA,2016,12
+NA,NA,NA,1628,Waterford,NA,1540,Trimble,NA,2016,12
+NA,NA,NA,1737,Harvest Prep,NA,454,Danville,NA,2016,12
+NA,NA,NA,430,Covington,NA,604,Fort Recovery,NA,2016,12
+NA,NA,NA,1576,Upper Scioto Valley,NA,1052,Minster,NA,2016,12
+NA,NA,NA,1354,St Ignatius,NA,540,Euclid,NA,2017,12
+NA,NA,NA,1346,St Edward,NA,1016,Mentor,NA,2017,12
+NA,NA,NA,1704,Whitmer,NA,1202,Olentangy,NA,2017,12
+NA,NA,NA,1203,Olentangy Liberty,NA,876,Gahanna Lincoln,NA,2017,12
+NA,NA,NA,336,Centerville,NA,1255,Pickerington North,NA,2017,12
+NA,NA,NA,713,Hilliard Bradley,NA,1254,Pickerington Central,NA,2017,12
+NA,NA,NA,1388,St Xavier,NA,1508,Sycamore,NA,2017,12
+NA,NA,NA,396,Colerain,NA,972,Mason,NA,2017,12
+NA,NA,NA,724,Archbishop Hoban,NA,270,Brush,NA,2017,12
+NA,NA,NA,160,Barberton,NA,180,Bedford,NA,2017,12
+NA,NA,NA,150,Avon,NA,710,Highland,NA,2017,12
+NA,NA,NA,1606,Wadsworth,NA,1204,Olmsted Falls,NA,2017,12
+NA,NA,NA,1612,Walnut Ridge,NA,1086,New Albany,NA,2017,12
+NA,NA,NA,1624,Massillon Washington,NA,138,Ashland,NA,2017,12
+NA,NA,NA,842,La Salle,NA,1422,Sidney,NA,2017,12
+NA,NA,NA,1719,Winton Woods,NA,118,Anderson,NA,2017,12
+NA,NA,NA,304,Canfield,NA,1180,Notre Dame-Cathedral Latin,NA,2017,12
+NA,NA,NA,1522,Tallmadge,NA,1384,St Vincent-St Mary,NA,2017,12
+NA,NA,NA,342,Central Catholic,NA,392,Clyde,NA,2017,12
+NA,NA,NA,168,Bay,NA,1224,Padua Franciscan,NA,2017,12
+NA,NA,NA,188,Bellefontaine,NA,1544,Tri-Valley,NA,2017,12
+NA,NA,NA,748,Independence,NA,218,Bishop Hartley,NA,2017,12
+NA,NA,NA,1550,Trotwood-Madison,NA,476,Dunbar,NA,2017,12
+NA,NA,NA,352,Chaminade Julienne,NA,1108,New Richmond,NA,2017,12
+NA,NA,NA,1488,Steubenville,NA,310,Cardinal Mooney,NA,2017,12
+NA,NA,NA,1246,Perry,NA,644,Girard,NA,2017,12
+NA,NA,NA,378,Clear Fork,NA,190,Bellevue,NA,2017,12
+NA,NA,NA,1416,Shelby,NA,1012,St Marys Memorial,NA,2017,12
+NA,NA,NA,870,Licking Valley,NA,788,John Glenn,NA,2017,12
+NA,NA,NA,1252,Philo,NA,758,Indian Valley,NA,2017,12
+NA,NA,NA,1590,Valley View,NA,388,Clinton-Massie,NA,2017,12
+NA,NA,NA,1744,Wyoming,NA,752,Indian Hill,NA,2017,12
+NA,NA,NA,1460,South Range,NA,936,Manchester,NA,2017,12
+NA,NA,NA,1706,Wickliffe,NA,226,Black River,NA,2017,12
+NA,NA,NA,508,Eastwood,NA,1212,Otsego,NA,2017,12
+NA,NA,NA,1260,Pleasant,NA,134,Archbold,NA,2017,12
+NA,NA,NA,1696,Wheelersburg,NA,410,Columbus Academy,NA,2017,12
+NA,NA,NA,1270,Portsmouth West,NA,794,Johnstown-Monroe,NA,2017,12
+NA,NA,NA,1284,Reading,NA,1682,West Jefferson,NA,2017,12
+NA,NA,NA,924,Madison,NA,369,Cincinnati Hills Christian Academy,NA,2017,12
+NA,NA,NA,1328,Rootstown,NA,1174,Norwayne,NA,2017,12
+NA,NA,NA,1058,Mogadore,NA,812,Kirtland,NA,2017,12
+NA,NA,NA,862,Liberty-Benton,NA,708,Hicksville,NA,2017,12
+NA,NA,NA,316,Carey,NA,720,Hillsdale,NA,2017,12
+NA,NA,NA,1084,Nelsonville-York,NA,598,Fort Frye,NA,2017,12
+NA,NA,NA,1450,Southeastern,NA,458,Dawson-Bryant,NA,2017,12
+NA,NA,NA,874,Lima Central Catholic,NA,394,Coldwater,NA,2017,12
+NA,NA,NA,958,Marion Local,NA,1468,Spencerville,NA,2017,12
+NA,NA,NA,450,Dalton,NA,1716,Windham,NA,2017,12
+NA,NA,NA,446,Cuyahoga Heights,NA,488,East Canton,NA,2017,12
+NA,NA,NA,1374,St Paul,NA,298,Calvert,NA,2017,12
+NA,NA,NA,990,McComb,NA,1228,Pandora-Gilboa,NA,2017,12
+NA,NA,NA,454,Danville,NA,1540,Trimble,NA,2017,12
+NA,NA,NA,484,Sciotoville Community,NA,1306,River,NA,2017,12
+NA,NA,NA,438,Crestview,NA,1052,Minster,NA,2017,12
+NA,NA,NA,852,Lehman Catholic,NA,1358,St John's,NA,2017,12
+NA,NA,NA,1016,Mentor,NA,652,Glenville,NA,2007,13
+NA,NA,NA,268,Brunswick,NA,730,Hoover,NA,2007,13
+NA,NA,NA,717,Hilliard Darby,NA,474,Dublin Coffman,NA,2007,13
+NA,NA,NA,1388,St Xavier,NA,396,Colerain,NA,2007,13
+NA,NA,NA,980,Mayfield,NA,1118,Normandy,NA,2007,13
+NA,NA,NA,138,Ashland,NA,1512,Sylvania Southview,NA,2007,13
+NA,NA,NA,1348,Columbus St Francis DeSales,NA,902,Louisville,NA,2007,13
+NA,NA,NA,1554,Turpin,NA,118,Anderson,NA,2007,13
+NA,NA,NA,828,Lakeview,NA,824,Lake Catholic,NA,2007,13
+NA,NA,NA,214,Big Walnut,NA,392,Clyde,NA,2007,13
+NA,NA,NA,1162,Northwest,NA,870,Licking Valley,NA,2007,13
+NA,NA,NA,752,Indian Hill,NA,1062,Lemon-Monroe,NA,2007,13
+NA,NA,NA,310,Cardinal Mooney,NA,1488,Steubenville,NA,2007,13
+NA,NA,NA,508,Eastwood,NA,1260,Pleasant,NA,2007,13
+NA,NA,NA,1344,St Clairsville,NA,1676,Westfall,NA,2007,13
+NA,NA,NA,394,Coldwater,NA,388,Clinton-Massie,NA,2007,13
+NA,NA,NA,1460,South Range,NA,1580,Ursuline,NA,2007,13
+NA,NA,NA,1234,Patrick Henry,NA,862,Liberty-Benton,NA,2007,13
+NA,NA,NA,220,Bishop Ready,NA,614,Fredericktown,NA,2007,13
+NA,NA,NA,1682,West Jefferson,NA,958,Marion Local,NA,2007,13
+NA,NA,NA,732,Hopewell-Loudon,NA,1374,St Paul,NA,2007,13
+NA,NA,NA,136,Arlington,NA,100,Ada,NA,2007,13
+NA,NA,NA,1090,Newark Catholic,NA,1406,Shadyside,NA,2007,13
+NA,NA,NA,852,Lehman Catholic,NA,324,Catholic Central,NA,2007,13
+NA,NA,NA,1354,St Ignatius,NA,1498,Strongsville,NA,2008,13
+NA,NA,NA,730,Hoover,NA,650,GlenOak,NA,2008,13
+NA,NA,NA,716,Hilliard Davidson,NA,1254,Pickerington Central,NA,2008,13
+NA,NA,NA,396,Colerain,NA,522,Elder,NA,2008,13
+NA,NA,NA,724,Archbishop Hoban,NA,1522,Tallmadge,NA,2008,13
+NA,NA,NA,710,Highland,NA,1512,Sylvania Southview,NA,2008,13
+NA,NA,NA,1348,Columbus St Francis DeSales,NA,902,Louisville,NA,2008,13
+NA,NA,NA,1719,Winton Woods,NA,118,Anderson,NA,2008,13
+NA,NA,NA,1614,Walsh Jesuit,NA,146,Aurora,NA,2008,13
+NA,NA,NA,150,Avon,NA,214,Big Walnut,NA,2008,13
+NA,NA,NA,472,Dover,NA,870,Licking Valley,NA,2008,13
+NA,NA,NA,502,Eastmoor Academy,NA,890,Logan Elm,NA,2008,13
+NA,NA,NA,1488,Steubenville,NA,1246,Perry,NA,2008,13
+NA,NA,NA,636,Genoa Area,NA,1214,Ottawa-Glandorf,NA,2008,13
+NA,NA,NA,968,Martins Ferry,NA,1100,New Lexington,NA,2008,13
+NA,NA,NA,394,Coldwater,NA,132,Archbishop Alter,NA,2008,13
+NA,NA,NA,1580,Ursuline,NA,812,Kirtland,NA,2008,13
+NA,NA,NA,1234,Patrick Henry,NA,862,Liberty-Benton,NA,2008,13
+NA,NA,NA,220,Bishop Ready,NA,866,Liberty Union,NA,2008,13
+NA,NA,NA,1682,West Jefferson,NA,958,Marion Local,NA,2008,13
+NA,NA,NA,732,Hopewell-Loudon,NA,1374,St Paul,NA,2008,13
+NA,NA,NA,100,Ada,NA,1358,St John's,NA,2008,13
+NA,NA,NA,1306,River,NA,934,Malvern,NA,2008,13
+NA,NA,NA,1004,Mechanicsburg,NA,852,Lehman Catholic,NA,2008,13
+NA,NA,NA,652,Glenville,NA,1428,Solon,NA,2009,13
+NA,NA,NA,306,Canton McKinley,NA,1624,Massillon Washington,NA,2009,13
+NA,NA,NA,474,Dublin Coffman,NA,716,Hilliard Davidson,NA,2009,13
+NA,NA,NA,522,Elder,NA,118,Anderson,NA,2009,13
+NA,NA,NA,824,Lake Catholic,NA,138,Ashland,NA,2009,13
+NA,NA,NA,1350,Toledo St Francis DeSales,NA,944,Maple Heights,NA,2009,13
+NA,NA,NA,962,Marion-Franklin,NA,258,Brookhaven,NA,2009,13
+NA,NA,NA,1550,Trotwood-Madison,NA,1719,Winton Woods,NA,2009,13
+NA,NA,NA,310,Cardinal Mooney,NA,1264,Poland Seminary,NA,2009,13
+NA,NA,NA,1348,Columbus St Francis DeSales,NA,224,Bishop Watterson,NA,2009,13
+NA,NA,NA,1488,Steubenville,NA,472,Dover,NA,2009,13
+NA,NA,NA,1414,Shawnee,NA,1744,Wyoming,NA,2009,13
+NA,NA,NA,346,Chagrin Falls,NA,1724,Woodridge,NA,2009,13
+NA,NA,NA,1214,Ottawa-Glandorf,NA,1210,Orrville,NA,2009,13
+NA,NA,NA,426,Coshocton,NA,760,Ironton,NA,2009,13
+NA,NA,NA,388,Clinton-Massie,NA,132,Archbishop Alter,NA,2009,13
+NA,NA,NA,446,Cuyahoga Heights,NA,1580,Ursuline,NA,2009,13
+NA,NA,NA,1234,Patrick Henry,NA,1532,Tinora,NA,2009,13
+NA,NA,NA,614,Fredericktown,NA,1300,Ridgewood,NA,2009,13
+NA,NA,NA,1352,St Henry,NA,394,Coldwater,NA,2009,13
+NA,NA,NA,1742,Wynford,NA,1374,St Paul,NA,2009,13
+NA,NA,NA,1358,St John's,NA,100,Ada,NA,2009,13
+NA,NA,NA,934,Malvern,NA,681,Grove City Christian,NA,2009,13
+NA,NA,NA,958,Marion Local,NA,602,Fort Loramie,NA,2009,13
+NA,NA,NA,1428,Solon,NA,1346,St Edward,NA,2010,13
+NA,NA,NA,1360,St John's Jesuit,NA,1704,Whitmer,NA,2010,13
+NA,NA,NA,1254,Pickerington Central,NA,716,Hilliard Davidson,NA,2010,13
+NA,NA,NA,1638,Wayne,NA,1388,St Xavier,NA,2010,13
+NA,NA,NA,138,Ashland,NA,824,Lake Catholic,NA,2010,13
+NA,NA,NA,944,Maple Heights,NA,1204,Olmsted Falls,NA,2010,13
+NA,NA,NA,214,Big Walnut,NA,822,Lake,NA,2010,13
+NA,NA,NA,1550,Trotwood-Madison,NA,810,Kings,NA,2010,13
+NA,NA,NA,274,Buchtel,NA,310,Cardinal Mooney,NA,2010,13
+NA,NA,NA,224,Bishop Watterson,NA,406,Columbian,NA,2010,13
+NA,NA,NA,964,Marlington,NA,472,Dover,NA,2010,13
+NA,NA,NA,510,Eaton,NA,998,Archbishop McNicholas,NA,2010,13
+NA,NA,NA,936,Manchester,NA,346,Chagrin Falls,NA,2010,13
+NA,NA,NA,636,Genoa Area,NA,1210,Orrville,NA,2010,13
+NA,NA,NA,760,Ironton,NA,218,Bishop Hartley,NA,2010,13
+NA,NA,NA,804,Kenton,NA,132,Archbishop Alter,NA,2010,13
+NA,NA,NA,1580,Ursuline,NA,812,Kirtland,NA,2010,13
+NA,NA,NA,874,Lima Central Catholic,NA,720,Hillsdale,NA,2010,13
+NA,NA,NA,1186,Oak Hill,NA,614,Fredericktown,NA,2010,13
+NA,NA,NA,394,Coldwater,NA,1682,West Jefferson,NA,2010,13
+NA,NA,NA,992,McDonald,NA,1058,Mogadore,NA,2010,13
+NA,NA,NA,1358,St John's,NA,990,McComb,NA,2010,13
+NA,NA,NA,1406,Shadyside,NA,250,Bridgeport,NA,2010,13
+NA,NA,NA,1052,Minster,NA,852,Lehman Catholic,NA,2010,13
+NA,NA,NA,1016,Mentor,NA,1354,St Ignatius,NA,2011,13
+NA,NA,NA,1704,Whitmer,NA,1606,Wadsworth,NA,2011,13
+NA,NA,NA,716,Hilliard Davidson,NA,1254,Pickerington Central,NA,2011,13
+NA,NA,NA,1056,Archbishop Moeller,NA,1388,St Xavier,NA,2011,13
+NA,NA,NA,1614,Walsh Jesuit,NA,146,Aurora,NA,2011,13
+NA,NA,NA,150,Avon,NA,406,Columbian,NA,2011,13
+NA,NA,NA,962,Marion-Franklin,NA,1544,Tri-Valley,NA,2011,13
+NA,NA,NA,1550,Trotwood-Madison,NA,810,Kings,NA,2011,13
+NA,NA,NA,346,Chagrin Falls,NA,1384,St Vincent-St Mary,NA,2011,13
+NA,NA,NA,526,Elida,NA,502,Eastmoor Academy,NA,2011,13
+NA,NA,NA,310,Cardinal Mooney,NA,472,Dover,NA,2011,13
+NA,NA,NA,1414,Shawnee,NA,796,Jonathan Alder,NA,2011,13
+NA,NA,NA,644,Girard,NA,1174,Norwayne,NA,2011,13
+NA,NA,NA,804,Kenton,NA,218,Bishop Hartley,NA,2011,13
+NA,NA,NA,426,Coshocton,NA,794,Johnstown-Monroe,NA,2011,13
+NA,NA,NA,352,Chaminade-Julienne,NA,388,Clinton-Massie,NA,2011,13
+NA,NA,NA,812,Kirtland,NA,436,Crestview,NA,2011,13
+NA,NA,NA,1234,Patrick Henry,NA,708,Hicksville,NA,2011,13
+NA,NA,NA,1742,Wynford,NA,1586,Valley,NA,2011,13
+NA,NA,NA,394,Coldwater,NA,1682,West Jefferson,NA,2011,13
+NA,NA,NA,1668,Western Reserve,NA,1406,Shadyside,NA,2011,13
+NA,NA,NA,854,Leipsic,NA,1358,St John's,NA,2011,13
+NA,NA,NA,172,Beallsville,NA,278,Buckeye Central,NA,2011,13
+NA,NA,NA,958,Marion Local,NA,1052,Minster,NA,2011,13
+NA,NA,NA,1016,Mentor,NA,1354,St Ignatius,NA,2012,13
+NA,NA,NA,1624,Massillon Washington,NA,1704,Whitmer,NA,2012,13
+NA,NA,NA,1255,Pickerington North,NA,716,Hilliard Davidson,NA,2012,13
+NA,NA,NA,396,Colerain,NA,1056,Archbishop Moeller,NA,2012,13
+NA,NA,NA,360,Chardon,NA,146,Aurora,NA,2012,13
+NA,NA,NA,150,Avon,NA,342,Central Catholic,NA,2012,13
+NA,NA,NA,1086,New Albany,NA,962,Marion-Franklin,NA,2012,13
+NA,NA,NA,1554,Turpin,NA,1550,Trotwood-Madison,NA,2012,13
+NA,NA,NA,346,Chagrin Falls,NA,1384,St Vincent-St Mary,NA,2012,13
+NA,NA,NA,1080,Napoleon,NA,190,Bellevue,NA,2012,13
+NA,NA,NA,472,Dover,NA,1680,West Holmes,NA,2012,13
+NA,NA,NA,402,Thurgood Marshall,NA,144,Athens,NA,2012,13
+NA,NA,NA,256,Brookfield,NA,1174,Norwayne,NA,2012,13
+NA,NA,NA,218,Bishop Hartley,NA,1214,Ottawa-Glandorf,NA,2012,13
+NA,NA,NA,1344,St Clairsville,NA,794,Johnstown-Monroe,NA,2012,13
+NA,NA,NA,388,Clinton-Massie,NA,1042,Milton-Union,NA,2012,13
+NA,NA,NA,812,Kirtland,NA,1580,Ursuline,NA,2012,13
+NA,NA,NA,862,Liberty-Benton,NA,1234,Patrick Henry,NA,2012,13
+NA,NA,NA,1586,Valley,NA,866,Liberty Union,NA,2012,13
+NA,NA,NA,394,Coldwater,NA,430,Covington,NA,2012,13
+NA,NA,NA,1058,Mogadore,NA,1751,Youngstown Christian,NA,2012,13
+NA,NA,NA,990,McComb,NA,1358,St John's,NA,2012,13
+NA,NA,NA,454,Danville,NA,1090,Newark Catholic,NA,2012,13
+NA,NA,NA,1352,St Henry,NA,958,Marion Local,NA,2012,13
+NA,NA,NA,652,Glenville,NA,922,Madison,NA,2013,13
+NA,NA,NA,710,Highland,NA,150,Avon,NA,2013,13
+NA,NA,NA,1086,New Albany,NA,1750,Zanesville,NA,2013,13
+NA,NA,NA,904,Loveland,NA,1074,Mount Healthy,NA,2013,13
+NA,NA,NA,1384,St Vincent-St Mary,NA,738,Hubbard,NA,2013,13
+NA,NA,NA,342,Central Catholic,NA,392,Clyde,NA,2013,13
+NA,NA,NA,144,Athens,NA,962,Marion-Franklin,NA,2013,13
+NA,NA,NA,1534,Tippecanoe,NA,1550,Trotwood-Madison,NA,2013,13
+NA,NA,NA,196,Benedictine,NA,310,Cardinal Mooney,NA,2013,13
+NA,NA,NA,272,Bryan,NA,804,Kenton,NA,2013,13
+NA,NA,NA,1488,Steubenville,NA,758,Indian Valley,NA,2013,13
+NA,NA,NA,132,Archbishop Alter,NA,388,Clinton-Massie,NA,2013,13
+NA,NA,NA,936,Manchester,NA,436,Crestview,NA,2013,13
+NA,NA,NA,394,Coldwater,NA,746,Huron,NA,2013,13
+NA,NA,NA,218,Bishop Hartley,NA,1696,Wheelersburg,NA,2013,13
+NA,NA,NA,1682,West Jefferson,NA,158,Badin,NA,2013,13
+NA,NA,NA,812,Kirtland,NA,1058,Mogadore,NA,2013,13
+NA,NA,NA,1646,Wayne Trace,NA,100,Ada,NA,2013,13
+NA,NA,NA,1090,Newark Catholic,NA,220,Bishop Ready,NA,2013,13
+NA,NA,NA,1004,Mechanicsburg,NA,1688,West Liberty-Salem,NA,2013,13
+NA,NA,NA,1668,Western Reserve,NA,1374,St Paul,NA,2013,13
+NA,NA,NA,1358,St John's,NA,136,Arlington,NA,2013,13
+NA,NA,NA,1540,Trimble,NA,1406,Shadyside,NA,2013,13
+NA,NA,NA,1538,Triad,NA,958,Marion Local,NA,2013,13
+NA,NA,NA,1346,St Edward,NA,148,Austintown-Fitch,NA,2013,13
+NA,NA,NA,1354,St Ignatius,NA,1016,Mentor,NA,2013,13
+NA,NA,NA,716,Hilliard Davidson,NA,1638,Wayne,NA,2013,13
+NA,NA,NA,396,Colerain,NA,1056,Archbishop Moeller,NA,2013,13
+NA,NA,NA,180,Bedford,NA,980,Mayfield,NA,2014,13
+NA,NA,NA,1030,Midview,NA,1116,Nordonia,NA,2014,13
+NA,NA,NA,1202,Olentangy,NA,475,Dublin Scioto,NA,2014,13
+NA,NA,NA,842,La Salle,NA,1074,Mount Healthy,NA,2014,13
+NA,NA,NA,738,Hubbard,NA,1384,St Vincent-St Mary,NA,2014,13
+NA,NA,NA,342,Central Catholic,NA,392,Clyde,NA,2014,13
+NA,NA,NA,144,Athens,NA,1348,Columbus St Francis DeSales,NA,2014,13
+NA,NA,NA,1616,Wapakoneta,NA,1550,Trotwood-Madison,NA,2014,13
+NA,NA,NA,196,Benedictine,NA,168,Bay,NA,2014,13
+NA,NA,NA,804,Kenton,NA,1634,Wauseon,NA,2014,13
+NA,NA,NA,186,Beechcroft,NA,1488,Steubenville,NA,2014,13
+NA,NA,NA,132,Archbishop Alter,NA,388,Clinton-Massie,NA,2014,13
+NA,NA,NA,340,Canton Central Catholic,NA,1580,Ursuline,NA,2014,13
+NA,NA,NA,394,Coldwater,NA,862,Liberty-Benton,NA,2014,13
+NA,NA,NA,218,Bishop Hartley,NA,1696,Wheelersburg,NA,2014,13
+NA,NA,NA,369,Cincinnati Hills Christian Academy,NA,1682,West Jefferson,NA,2014,13
+NA,NA,NA,900,Loudonville,NA,812,Kirtland,NA,2014,13
+NA,NA,NA,1532,Tinora,NA,1742,Wynford,NA,2014,13
+NA,NA,NA,334,Centerburg,NA,1586,Valley,NA,2014,13
+NA,NA,NA,1688,West Liberty-Salem,NA,1052,Minster,NA,2014,13
+NA,NA,NA,1374,St Paul,NA,1668,Western Reserve,NA,2014,13
+NA,NA,NA,136,Arlington,NA,412,Columbus Grove,NA,2014,13
+NA,NA,NA,1406,Shadyside,NA,1540,Trimble,NA,2014,13
+NA,NA,NA,958,Marion Local,NA,852,Lehman Catholic,NA,2014,13
+NA,NA,NA,740,Hudson,NA,1016,Mentor,NA,2014,13
+NA,NA,NA,1671,Westerville Central,NA,1346,St Edward,NA,2014,13
+NA,NA,NA,837,Lakota West,NA,1638,Wayne,NA,2014,13
+NA,NA,NA,1056,Archbishop Moeller,NA,1388,St Xavier,NA,2014,13
+NA,NA,NA,740,Hudson,NA,980,Mayfield,NA,2015,13
+NA,NA,NA,652,Glenville,NA,1248,Perrysburg,NA,2015,13
+NA,NA,NA,1244,Perry,NA,1741,Worthington Kilbourne,NA,2015,13
+NA,NA,NA,842,La Salle,NA,810,Kings,NA,2015,13
+NA,NA,NA,724,Archbishop Hoban,NA,1384,St Vincent-St Mary,NA,2015,13
+NA,NA,NA,196,Benedictine,NA,342,Central Catholic,NA,2015,13
+NA,NA,NA,762,Jackson,NA,1750,Zanesville,NA,2015,13
+NA,NA,NA,1616,Wapakoneta,NA,1550,Trotwood-Madison,NA,2015,13
+NA,NA,NA,1580,Ursuline,NA,440,Crestwood,NA,2015,13
+NA,NA,NA,218,Bishop Hartley,NA,190,Bellevue,NA,2015,13
+NA,NA,NA,1488,Steubenville,NA,794,Johnstown-Monroe,NA,2015,13
+NA,NA,NA,582,Bishop Fenwick,NA,388,Clinton-Massie,NA,2015,13
+NA,NA,NA,436,Crestview,NA,340,Canton Central Catholic,NA,2015,13
+NA,NA,NA,518,Edison,NA,366,Chippewa,NA,2015,13
+NA,NA,NA,1696,Wheelersburg,NA,1752,Zane Trace,NA,2015,13
+NA,NA,NA,264,Brookville,NA,394,Coldwater,NA,2015,13
+NA,NA,NA,812,Kirtland,NA,446,Cuyahoga Heights,NA,2015,13
+NA,NA,NA,1592,Van Buren,NA,1532,Tinora,NA,2015,13
+NA,NA,NA,614,Fredericktown,NA,664,Grandview Heights,NA,2015,13
+NA,NA,NA,958,Marion Local,NA,1004,Mechanicsburg,NA,2015,13
+NA,NA,NA,786,John F Kennedy,NA,1058,Mogadore,NA,2015,13
+NA,NA,NA,990,McComb,NA,908,Lucas,NA,2015,13
+NA,NA,NA,454,Danville,NA,296,Caldwell,NA,2015,13
+NA,NA,NA,1052,Minster,NA,604,Fort Recovery,NA,2015,13
+NA,NA,NA,1346,St Edward,NA,540,Euclid,NA,2015,13
+NA,NA,NA,1202,Olentangy,NA,1492,Stow-Munroe Falls,NA,2015,13
+NA,NA,NA,396,Colerain,NA,522,Elder,NA,2015,13
+NA,NA,NA,1638,Wayne,NA,716,Hilliard Davidson,NA,2015,13
+NA,NA,NA,1354,St Ignatius,NA,1346,St Edward,NA,2016,13
+NA,NA,NA,1203,Olentangy Liberty,NA,894,Lorain,NA,2016,13
+NA,NA,NA,1638,Wayne,NA,1254,Pickerington Central,NA,2016,13
+NA,NA,NA,1388,St Xavier,NA,1508,Sycamore,NA,2016,13
+NA,NA,NA,740,Hudson,NA,692,Warren G Harding,NA,2016,13
+NA,NA,NA,124,Anthony Wayne,NA,1204,Olmsted Falls,NA,2016,13
+NA,NA,NA,1244,Perry,NA,1086,New Albany,NA,2016,13
+NA,NA,NA,1020,Miamisburg,NA,842,La Salle,NA,2016,13
+NA,NA,NA,1106,New Philadelphia,NA,724,Archbishop Hoban,NA,2016,13
+NA,NA,NA,342,Central Catholic,NA,856,Lexington,NA,2016,13
+NA,NA,NA,1348,St Francis DeSales,NA,686,Hamilton Township,NA,2016,13
+NA,NA,NA,1012,St Marys Memorial,NA,1550,Trotwood-Madison,NA,2016,13
+NA,NA,NA,1246,Perry,NA,1180,Notre Dame-Cathedral Latin,NA,2016,13
+NA,NA,NA,218,Bishop Hartley,NA,1214,Ottawa-Glandorf,NA,2016,13
+NA,NA,NA,1416,Shelby,NA,1488,Steubenville,NA,2016,13
+NA,NA,NA,1744,Wyoming,NA,132,Archbishop Alter,NA,2016,13
+NA,NA,NA,630,Garfield,NA,340,Canton Central Catholic,NA,2016,13
+NA,NA,NA,1174,Norwayne,NA,518,Edison,NA,2016,13
+NA,NA,NA,1696,Wheelersburg,NA,426,Coshocton,NA,2016,13
+NA,NA,NA,369,Cincinnati Hills Christian Academy,NA,394,Coldwater,NA,2016,13
+NA,NA,NA,446,Cuyahoga Heights,NA,812,Kirtland,NA,2016,13
+NA,NA,NA,1234,Patrick Henry,NA,154,Ayersville,NA,2016,13
+NA,NA,NA,1090,Newark Catholic,NA,598,Fort Frye,NA,2016,13
+NA,NA,NA,958,Marion Local,NA,1004,Mechanicsburg,NA,2016,13
+NA,NA,NA,1374,St Paul,NA,786,John F Kennedy,NA,2016,13
+NA,NA,NA,990,McComb,NA,438,Crestview,NA,2016,13
+NA,NA,NA,1628,Waterford,NA,1737,Harvest Prep,NA,2016,13
+NA,NA,NA,604,Fort Recovery,NA,1052,Minster,NA,2016,13
+NA,NA,NA,1354,St Ignatius,NA,1016,Mentor,NA,2017,13
+NA,NA,NA,1704,Whitmer,NA,1203,Olentangy Liberty,NA,2017,13
+NA,NA,NA,1255,Pickerington North,NA,1254,Pickerington Central,NA,2017,13
+NA,NA,NA,1388,St Xavier,NA,396,Colerain,NA,2017,13
+NA,NA,NA,724,Archbishop Hoban,NA,160,Barberton,NA,2017,13
+NA,NA,NA,150,Avon,NA,1204,Olmsted Falls,NA,2017,13
+NA,NA,NA,1086,New Albany,NA,1624,Massillon Washington,NA,2017,13
+NA,NA,NA,842,La Salle,NA,1719,Winton Woods,NA,2017,13
+NA,NA,NA,304,Canfield,NA,1384,St Vincent-St Mary,NA,2017,13
+NA,NA,NA,342,Central Catholic,NA,168,Bay,NA,2017,13
+NA,NA,NA,1544,Tri-Valley,NA,218,Bishop Hartley,NA,2017,13
+NA,NA,NA,1550,Trotwood-Madison,NA,352,Chaminade Julienne,NA,2017,13
+NA,NA,NA,1488,Steubenville,NA,1246,Perry,NA,2017,13
+NA,NA,NA,190,Bellevue,NA,1416,Shelby,NA,2017,13
+NA,NA,NA,788,John Glenn,NA,1252,Philo,NA,2017,13
+NA,NA,NA,388,Clinton-Massie,NA,1744,Wyoming,NA,2017,13
+NA,NA,NA,1460,South Range,NA,226,Black River,NA,2017,13
+NA,NA,NA,508,Eastwood,NA,1260,Pleasant,NA,2017,13
+NA,NA,NA,1696,Wheelersburg,NA,794,Johnstown-Monroe,NA,2017,13
+NA,NA,NA,1682,West Jefferson,NA,924,Madison,NA,2017,13
+NA,NA,NA,1328,Rootstown,NA,812,Kirtland,NA,2017,13
+NA,NA,NA,862,Liberty-Benton,NA,720,Hillsdale,NA,2017,13
+NA,NA,NA,1084,Nelsonville-York,NA,458,Dawson-Bryant,NA,2017,13
+NA,NA,NA,394,Coldwater,NA,958,Marion Local,NA,2017,13
+NA,NA,NA,450,Dalton,NA,446,Cuyahoga Heights,NA,2017,13
+NA,NA,NA,1374,St Paul,NA,1228,Pandora-Gilboa,NA,2017,13
+NA,NA,NA,454,Danville,NA,1306,River,NA,2017,13
+NA,NA,NA,1052,Minster,NA,1358,St John's,NA,2017,13
+NA,NA,NA,268,Brunswick,NA,1016,Mentor,NA,2007,14
+NA,NA,NA,474,Dublin Coffman,NA,1388,St Xavier,NA,2007,14
+NA,NA,NA,980,Mayfield,NA,902,Louisville,NA,2007,14
+NA,NA,NA,138,Ashland,NA,118,Anderson,NA,2007,14
+NA,NA,NA,870,Licking Valley,NA,824,Lake Catholic,NA,2007,14
+NA,NA,NA,214,Big Walnut,NA,1062,Lemon-Monroe,NA,2007,14
+NA,NA,NA,310,Cardinal Mooney,NA,1260,Pleasant,NA,2007,14
+NA,NA,NA,394,Coldwater,NA,1676,Westfall,NA,2007,14
+NA,NA,NA,220,Bishop Ready,NA,1580,Ursuline,NA,2007,14
+NA,NA,NA,958,Marion Local,NA,1234,Patrick Henry,NA,2007,14
+NA,NA,NA,732,Hopewell-Loudon,NA,100,Ada,NA,2007,14
+NA,NA,NA,324,Catholic Central,NA,1090,Newark Catholic,NA,2007,14
+NA,NA,NA,730,Hoover,NA,1354,St Ignatius,NA,2008,14
+NA,NA,NA,522,Elder,NA,1254,Pickerington,NA,2008,14
+NA,NA,NA,724,Archbishop Hoban,NA,1512,Sylvania Southview,NA,2008,14
+NA,NA,NA,1348,St Francis DeSales,NA,118,Anderson,NA,2008,14
+NA,NA,NA,214,Big Walnut,NA,146,Aurora,NA,2008,14
+NA,NA,NA,870,Licking Valley,NA,502,Eastmoor Academy,NA,2008,14
+NA,NA,NA,1488,Steubenville,NA,1100,New Lexington,NA,2008,14
+NA,NA,NA,636,Genoa Area,NA,132,Archbishop Alter,NA,2008,14
+NA,NA,NA,866,Liberty Union,NA,1580,Ursuline,NA,2008,14
+NA,NA,NA,958,Marion Local,NA,862,Liberty-Benton,NA,2008,14
+NA,NA,NA,934,Malvern,NA,732,Hopewell-Loudon,NA,2008,14
+NA,NA,NA,852,Lehman Catholic,NA,1358,St John's,NA,2008,14
+NA,NA,NA,652,Glenville,NA,1624,Washington,NA,2009,14
+NA,NA,NA,716,Hilliard Davidson,NA,522,Elder,NA,2009,14
+NA,NA,NA,944,Maple Heights,NA,824,Lake Catholic,NA,2009,14
+NA,NA,NA,962,Marion-Franklin,NA,1719,Winton Woods,NA,2009,14
+NA,NA,NA,310,Cardinal Mooney,NA,1488,Steubenville,NA,2009,14
+NA,NA,NA,1744,Wyoming,NA,1348,St Francis DeSales,NA,2009,14
+NA,NA,NA,346,Chagrin Falls,NA,1214,Ottawa-Glandorf,NA,2009,14
+NA,NA,NA,426,Coshocton,NA,132,Archbishop Alter,NA,2009,14
+NA,NA,NA,1580,Ursuline,NA,1300,Ridgewood,NA,2009,14
+NA,NA,NA,394,Coldwater,NA,1234,Patrick Henry,NA,2009,14
+NA,NA,NA,681,Grove City Christian,NA,1374,St Paul,NA,2009,14
+NA,NA,NA,958,Marion Local,NA,1358,St John's,NA,2009,14
+NA,NA,NA,1704,Whitmer,NA,1346,St Edward,NA,2010,14
+NA,NA,NA,716,Hilliard Davidson,NA,1638,Wayne,NA,2010,14
+NA,NA,NA,944,Maple Heights,NA,824,Lake Catholic,NA,2010,14
+NA,NA,NA,822,Lake,NA,1550,Trotwood-Madison,NA,2010,14
+NA,NA,NA,964,Marlington,NA,274,Buchtel,NA,2010,14
+NA,NA,NA,998,Archbishop McNicholas,NA,224,Bishop Watterson,NA,2010,14
+NA,NA,NA,346,Chagrin Falls,NA,1210,Orrville,NA,2010,14
+NA,NA,NA,218,Bishop Hartley,NA,132,Archbishop Alter,NA,2010,14
+NA,NA,NA,874,Lima Central Catholic,NA,1580,Ursuline,NA,2010,14
+NA,NA,NA,614,Fredericktown,NA,394,Coldwater,NA,2010,14
+NA,NA,NA,1406,Shadyside,NA,1058,Mogadore,NA,2010,14
+NA,NA,NA,852,Lehman Catholic,NA,1358,St John's,NA,2010,14
+NA,NA,NA,1704,Whitmer,NA,1354,St Ignatius,NA,2011,14
+NA,NA,NA,1388,St Xavier,NA,1254,Pickerington,NA,2011,14
+NA,NA,NA,150,Avon,NA,146,Aurora,NA,2011,14
+NA,NA,NA,962,Marion-Franklin,NA,1550,Trotwood-Madison,NA,2011,14
+NA,NA,NA,346,Chagrin Falls,NA,310,Cardinal Mooney,NA,2011,14
+NA,NA,NA,526,Elida,NA,1414,Shawnee,NA,2011,14
+NA,NA,NA,794,Johnstown-Monroe,NA,1174,Norwayne,NA,2011,14
+NA,NA,NA,804,Kenton,NA,388,Clinton-Massie,NA,2011,14
+NA,NA,NA,812,Kirtland,NA,1742,Wynford,NA,2011,14
+NA,NA,NA,708,Hicksville,NA,394,Coldwater,NA,2011,14
+NA,NA,NA,278,Buckeye Central,NA,1668,Western Reserve,NA,2011,14
+NA,NA,NA,958,Marion Local,NA,1358,St John's,NA,2011,14
+NA,NA,NA,1704,Whitmer,NA,1016,Mentor,NA,2012,14
+NA,NA,NA,1255,Pickerington North,NA,1056,Archbishop Moeller,NA,2012,14
+NA,NA,NA,342,Central Catholic,NA,146,Aurora,NA,2012,14
+NA,NA,NA,1550,Trotwood-Madison,NA,1086,New Albany,NA,2012,14
+NA,NA,NA,472,Dover,NA,1384,St Vincent-St Mary,NA,2012,14
+NA,NA,NA,402,Colonel White,NA,190,Bellevue,NA,2012,14
+NA,NA,NA,1344,St Clairsville,NA,1174,Norwayne,NA,2012,14
+NA,NA,NA,388,Clinton-Massie,NA,218,Bishop Hartley,NA,2012,14
+NA,NA,NA,866,Liberty Union,NA,812,Kirtland,NA,2012,14
+NA,NA,NA,862,Liberty-Benton,NA,394,Coldwater,NA,2012,14
+NA,NA,NA,1090,Newark Catholic,NA,1058,Mogadore,NA,2012,14
+NA,NA,NA,990,McComb,NA,958,Marion Local,NA,2012,14
+NA,NA,NA,710,Highland,NA,652,Glenville,NA,2013,14
+NA,NA,NA,904,Loveland,NA,1750,Zanesville,NA,2013,14
+NA,NA,NA,962,Marion-Franklin,NA,1384,St Vincent-St Mary,NA,2013,14
+NA,NA,NA,392,Clyde,NA,1550,Trotwood-Madison,NA,2013,14
+NA,NA,NA,310,Cardinal Mooney,NA,1488,Steubenville,NA,2013,14
+NA,NA,NA,804,Kenton,NA,388,Clinton-Massie,NA,2013,14
+NA,NA,NA,936,Manchester,NA,218,Bishop Hartley,NA,2013,14
+NA,NA,NA,394,Coldwater,NA,1682,West Jefferson,NA,2013,14
+NA,NA,NA,812,Kirtland,NA,220,Bishop Ready,NA,2013,14
+NA,NA,NA,1646,Wayne Trace,NA,1004,Mechanicsburg,NA,2013,14
+NA,NA,NA,1668,Western Reserve,NA,1540,Trimble,NA,2013,14
+NA,NA,NA,958,Marion Local,NA,1358,St John's,NA,2013,14
+NA,NA,NA,1346,St Edward,NA,1016,Mentor,NA,2013,14
+NA,NA,NA,716,Hilliard Davidson,NA,1056,Archbishop Moeller,NA,2013,14
+NA,NA,NA,980,Mayfield,NA,1116,Nordonia,NA,2014,14
+NA,NA,NA,842,La Salle,NA,1202,Olentangy,NA,2014,14
+NA,NA,NA,144,Athens,NA,1384,St Vincent-St Mary,NA,2014,14
+NA,NA,NA,342,Central Catholic,NA,1550,Trotwood-Madison,NA,2014,14
+NA,NA,NA,196,Benedictine,NA,1488,Steubenville,NA,2014,14
+NA,NA,NA,804,Kenton,NA,132,Archbishop Alter,NA,2014,14
+NA,NA,NA,340,Canton Central Catholic,NA,218,Bishop Hartley,NA,2014,14
+NA,NA,NA,394,Coldwater,NA,369,Cincinnati Hills Christian Academy,NA,2014,14
+NA,NA,NA,812,Kirtland,NA,1586,Valley,NA,2014,14
+NA,NA,NA,1532,Tinora,NA,1052,Minster,NA,2014,14
+NA,NA,NA,1540,Trimble,NA,1374,St Paul,NA,2014,14
+NA,NA,NA,958,Marion Local,NA,412,Columbus Grove,NA,2014,14
+NA,NA,NA,740,Hudson,NA,1346,St Edward,NA,2014,14
+NA,NA,NA,1638,Wayne,NA,1056,Archbishop Moeller,NA,2014,14
+NA,NA,NA,740,Hudson,NA,1244,Perry,NA,2015,14
+NA,NA,NA,842,La Salle,NA,1248,Perrysburg,NA,2015,14
+NA,NA,NA,724,Archbishop Hoban,NA,1750,Zanesville,NA,2015,14
+NA,NA,NA,342,Central Catholic,NA,1550,Trotwood-Madison,NA,2015,14
+NA,NA,NA,1580,Ursuline,NA,1488,Steubenville,NA,2015,14
+NA,NA,NA,582,Bishop Fenwick,NA,218,Bishop Hartley,NA,2015,14
+NA,NA,NA,518,Edison,NA,340,Canton Central Catholic,NA,2015,14
+NA,NA,NA,394,Coldwater,NA,1696,Wheelersburg,NA,2015,14
+NA,NA,NA,812,Kirtland,NA,664,Grandview Heights,NA,2015,14
+NA,NA,NA,958,Marion Local,NA,1532,Tinora,NA,2015,14
+NA,NA,NA,454,Danville,NA,1058,Mogadore,NA,2015,14
+NA,NA,NA,990,McComb,NA,604,Fort Recovery,NA,2015,14
+NA,NA,NA,1492,Stow-Munroe Falls,NA,1346,St Edward,NA,2015,14
+NA,NA,NA,396,Colerain,NA,1638,Wayne,NA,2015,14
+NA,NA,NA,1354,St Ignatius,NA,1203,Olentangy Liberty,NA,2016,14
+NA,NA,NA,1388,St Xavier,NA,1254,Pickerington,NA,2016,14
+NA,NA,NA,740,Hudson,NA,1244,Perry,NA,2016,14
+NA,NA,NA,842,La Salle,NA,124,Anthony Wayne,NA,2016,14
+NA,NA,NA,724,Archbishop Hoban,NA,1348,St Francis DeSales,NA,2016,14
+NA,NA,NA,342,Central Catholic,NA,1550,Trotwood-Madison,NA,2016,14
+NA,NA,NA,1488,Steubenville,NA,1246,Perry,NA,2016,14
+NA,NA,NA,218,Bishop Hartley,NA,132,Archbishop Alter,NA,2016,14
+NA,NA,NA,518,Edison,NA,340,Canton Central Catholic,NA,2016,14
+NA,NA,NA,426,Coshocton,NA,394,Coldwater,NA,2016,14
+NA,NA,NA,446,Cuyahoga Heights,NA,1090,Newark Catholic,NA,2016,14
+NA,NA,NA,958,Marion Local,NA,1234,Patrick Henry,NA,2016,14
+NA,NA,NA,786,John F Kennedy,NA,1737,World Harvest Christian,NA,2016,14
+NA,NA,NA,990,McComb,NA,1052,Minster,NA,2016,14
+NA,NA,NA,1203,Olentangy Liberty,NA,1016,Mentor,NA,2017,14
+NA,NA,NA,396,Colerain,NA,1254,Pickerington,NA,2017,14
+NA,NA,NA,724,Archbishop Hoban,NA,150,Avon,NA,2017,14
+NA,NA,NA,1719,Winton Woods,NA,1624,Washington,NA,2017,14
+NA,NA,NA,1544,Tri-Valley,NA,1384,St Vincent-St Mary,NA,2017,14
+NA,NA,NA,342,Central Catholic,NA,1550,Trotwood-Madison,NA,2017,14
+NA,NA,NA,1488,Steubenville,NA,1416,Shelby,NA,2017,14
+NA,NA,NA,788,John Glenn,NA,388,Clinton-Massie,NA,2017,14
+NA,NA,NA,508,Eastwood,NA,1460,South Range,NA,2017,14
+NA,NA,NA,924,Madison,NA,1696,Wheelersburg,NA,2017,14
+NA,NA,NA,812,Kirtland,NA,1084,Nelsonville-York,NA,2017,14
+NA,NA,NA,958,Marion Local,NA,862,Liberty-Benton,NA,2017,14
+NA,NA,NA,454,Danville,NA,446,Cuyahoga Heights,NA,2017,14
+NA,NA,NA,1374,St Paul,NA,1052,Minster,NA,2017,14
+NA,NA,NA,1016,Mentor,NA,1388,St Xavier,NA,2007,15
+NA,NA,NA,902,Louisville,NA,118,Anderson,NA,2007,15
+NA,NA,NA,870,Licking Valley,NA,214,Big Walnut,NA,2007,15
+NA,NA,NA,310,Cardinal Mooney,NA,394,Coldwater,NA,2007,15
+NA,NA,NA,1580,Ursuline,NA,958,Marion Local,NA,2007,15
+NA,NA,NA,732,Hopewell-Loudon,NA,1090,Newark Catholic,NA,2007,15
+NA,NA,NA,1354,St Ignatius,NA,522,Elder,NA,2008,15
+NA,NA,NA,1512,Sylvania Southview,NA,118,Anderson,NA,2008,15
+NA,NA,NA,146,Aurora,NA,502,Eastmoor Academy,NA,2008,15
+NA,NA,NA,1488,Steubenville,NA,132,Archbishop Alter,NA,2008,15
+NA,NA,NA,1580,Ursuline,NA,862,Liberty-Benton,NA,2008,15
+NA,NA,NA,732,Hopewell-Loudon,NA,1358,St John's,NA,2008,15
+NA,NA,NA,652,Glenville,NA,716,Hilliard Davidson,NA,2009,15
+NA,NA,NA,944,Maple Heights,NA,1719,Winton Woods,NA,2009,15
+NA,NA,NA,310,Cardinal Mooney,NA,1348,St Francis DeSales,NA,2009,15
+NA,NA,NA,346,Chagrin Falls,NA,132,Archbishop Alter,NA,2009,15
+NA,NA,NA,1580,Ursuline,NA,394,Coldwater,NA,2009,15
+NA,NA,NA,1374,St Paul,NA,1358,St John's,NA,2009,15
+NA,NA,NA,1346,St Edward,NA,1638,Wayne,NA,2010,15
+NA,NA,NA,944,Maple Heights,NA,1550,Trotwood-Madison,NA,2010,15
+NA,NA,NA,274,Buchtel,NA,224,Bishop Watterson,NA,2010,15
+NA,NA,NA,346,Chagrin Falls,NA,218,Bishop Hartley,NA,2010,15
+NA,NA,NA,1580,Ursuline,NA,394,Coldwater,NA,2010,15
+NA,NA,NA,1406,Shadyside,NA,1358,St John's,NA,2010,15
+NA,NA,NA,1354,St Ignatius,NA,1254,Pickerington,NA,2011,15
+NA,NA,NA,150,Avon,NA,1550,Trotwood-Madison,NA,2011,15
+NA,NA,NA,310,Cardinal Mooney,NA,1414,Shawnee,NA,2011,15
+NA,NA,NA,1174,Norwayne,NA,804,Kenton,NA,2011,15
+NA,NA,NA,812,Kirtland,NA,394,Coldwater,NA,2011,15
+NA,NA,NA,278,Buckeye Central,NA,958,Marion Local,NA,2011,15
+NA,NA,NA,1704,Whitmer,NA,1056,Archbishop Moeller,NA,2012,15
+NA,NA,NA,342,Central Catholic,NA,1550,Trotwood-Madison,NA,2012,15
+NA,NA,NA,1384,St Vincent-St Mary,NA,190,Bellevue,NA,2012,15
+NA,NA,NA,1344,St Clairsville,NA,388,Clinton-Massie,NA,2012,15
+NA,NA,NA,812,Kirtland,NA,394,Coldwater,NA,2012,15
+NA,NA,NA,1090,Newark Catholic,NA,958,Marion Local,NA,2012,15
+NA,NA,NA,652,Glenville,NA,904,Loveland,NA,2013,15
+NA,NA,NA,1384,St Vincent-St Mary,NA,1550,Trotwood-Madison,NA,2013,15
+NA,NA,NA,310,Cardinal Mooney,NA,388,Clinton-Massie,NA,2013,15
+NA,NA,NA,218,Bishop Hartley,NA,394,Coldwater,NA,2013,15
+NA,NA,NA,812,Kirtland,NA,1646,Wayne Trace,NA,2013,15
+NA,NA,NA,1540,Trimble,NA,958,Marion Local,NA,2013,15
+NA,NA,NA,1016,Mentor,NA,1056,Archbishop Moeller,NA,2013,15
+NA,NA,NA,1116,Nordonia,NA,842,La Salle,NA,2014,15
+NA,NA,NA,144,Athens,NA,342,Central Catholic,NA,2014,15
+NA,NA,NA,196,Benedictine,NA,132,Archbishop Alter,NA,2014,15
+NA,NA,NA,340,Canton Central Catholic,NA,394,Coldwater,NA,2014,15
+NA,NA,NA,812,Kirtland,NA,1052,Minster,NA,2014,15
+NA,NA,NA,1374,St Paul,NA,958,Marion Local,NA,2014,15
+NA,NA,NA,1346,St Edward,NA,1638,Wayne,NA,2014,15
+NA,NA,NA,1244,Perry,NA,842,La Salle,NA,2015,15
+NA,NA,NA,724,Archbishop Hoban,NA,342,Central Catholic,NA,2015,15
+NA,NA,NA,1488,Steubenville,NA,218,Bishop Hartley,NA,2015,15
+NA,NA,NA,340,Canton Central Catholic,NA,394,Coldwater,NA,2015,15
+NA,NA,NA,812,Kirtland,NA,958,Marion Local,NA,2015,15
+NA,NA,NA,1058,Mogadore,NA,604,Fort Recovery,NA,2015,15
+NA,NA,NA,1346,St Edward,NA,1638,Wayne,NA,2015,15
+NA,NA,NA,1354,St Ignatius,NA,1388,St Xavier,NA,2016,15
+NA,NA,NA,1244,Perry,NA,842,La Salle,NA,2016,15
+NA,NA,NA,724,Archbishop Hoban,NA,1550,Trotwood-Madison,NA,2016,15
+NA,NA,NA,1488,Steubenville,NA,218,Bishop Hartley,NA,2016,15
+NA,NA,NA,340,Canton Central Catholic,NA,394,Coldwater,NA,2016,15
+NA,NA,NA,446,Cuyahoga Heights,NA,958,Marion Local,NA,2016,15
+NA,NA,NA,786,John F Kennedy,NA,1052,Minster,NA,2016,15
+NA,NA,NA,1016,Mentor,NA,1254,Pickerington,NA,2017,15
+NA,NA,NA,724,Archbishop Hoban,NA,1719,Winton Woods,NA,2017,15
+NA,NA,NA,1544,Tri-Valley,NA,1550,Trotwood-Madison,NA,2017,15
+NA,NA,NA,1488,Steubenville,NA,388,Clinton-Massie,NA,2017,15
+NA,NA,NA,508,Eastwood,NA,1696,Wheelersburg,NA,2017,15
+NA,NA,NA,812,Kirtland,NA,958,Marion Local,NA,2017,15
+NA,NA,NA,446,Cuyahoga Heights,NA,1052,Minster,NA,2017,15
