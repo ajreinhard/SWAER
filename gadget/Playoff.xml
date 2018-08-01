@@ -1,0 +1,204 @@
+<Module>
+<ModulePrefs title="Playoff Gadget" title_url="http://sites.google.com/" description="Gather info needed to generate Playoff Brackets" height="800" width="600" author="AJ Reinhard">
+<Require feature="dynamic-height"/>
+</ModulePrefs>
+<UserPref name="Year" display_name="Include the year" required="false"/>
+<Content type="html" view="default,canvas">
+<![CDATA[
+<head>
+  <base target="_blank">
+</head>
+<body>
+<div id="top"></div>
+<br>
+<div>
+<select id="year_dd" onchange="new_bracket()">
+	<option value="2017" selected="selected">2017</option>
+	<option value="2016">2016</option>
+	<option value="2015">2015</option>
+	<option value="2014">2014</option>
+	<option value="2013">2013</option>
+	<option value="2012">2012</option>
+	<option value="2011">2011</option>
+	<option value="2010">2010</option>
+	<option value="2009">2009</option>
+	<option value="2008">2008</option>
+	<option value="2007">2007</option>
+</select>
+
+<select id="div_dd" onchange="new_bracket()">
+	<option value=1 selected="selected">1</option>
+	<option value=2>2</option>
+	<option value=3>3</option>
+	<option value=4>4</option>
+	<option value=5>5</option>
+	<option value=6>6</option>
+	<option value=7>7</option>
+</select>
+</div>
+
+<h2 id="my-label-State"></h2>
+<main id="region-State"></main>
+<h2 id="my-label-0"></h2>
+<main id="region-0"></main>
+<h2 id="my-label-1"></h2>
+<main id="region-1"></main>
+<h2 id="my-label-2"></h2>
+<main id="region-2"></main>
+<h2 id="my-label-3"></h2>
+<main id="region-3"></main>
+
+
+<script type="text/javascript">
+link_read();
+
+
+function link_read() {
+var full_url = document.referrer;
+if (full_url.length > 55) {
+	var year = full_url.substring(55,59);
+	var div = full_url.substring(64,65);
+	document.getElementById("year_dd").value = year;
+	document.getElementById("div_dd").value = div;
+	make_bracket(div,year);
+} else {
+	make_bracket(1,'2017');
+};
+};
+
+  function new_bracket() {
+	var year = document.getElementById("year_dd").value;
+	var div = document.getElementById("div_dd").value;
+	make_bracket(div,year);
+  };
+
+  function make_bracket(div,year) {
+    var params = {};
+    var url = "https://sites.google.com/site/swaermodel/Playoff%20Brackets.json?revision=2";
+    params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
+    gadgets.io.makeRequest(url, function(obj) {response(obj,div,year);}, params);
+  };
+  
+  function response(obj,div_sel,year_sel) {               
+    //var prefs = new gadgets.Prefs();
+
+    var responseText = obj.data;  
+
+    var html = "";
+    var label_id = "";
+    var cnt = 0;
+	
+	html = '<h1>' + year_sel + ' Division ' + div_sel + ' OHSAA Football Tournament</h1>';
+	document.getElementById("top").innerHTML = html;
+
+    for (var k in responseText[year_sel][Number(div_sel)-1]) {
+	html = "";
+	if (k == 'State') {
+		label_id = 'State Tournament';
+		document.getElementById("my-label-State").innerHTML = label_id;
+	} else {
+		label_id = 'Region ' + k + ' Tournament';
+		document.getElementById("my-label-" + cnt).innerHTML = label_id;
+	}
+	for (var i in responseText[year_sel][Number(div_sel)-1][k]) {
+	html += '<ul class="round round-' + (Number(i)+1) + '">';
+	for (var j in responseText[year_sel][Number(div_sel)-1][k][i].Top_Winner) {
+		var rnd = responseText[year_sel][Number(div_sel)-1][k][i];
+		html += '<li class="spacer">&nbsp;</li>';
+		html += '<li class="game game-top ' + rnd.Top_Winner[j] + '">';
+		html += '<img height=30 src="' + rnd.Top_Helm[j] + '"> #' + rnd.Top_DivRank[j] + ' ';
+		html += '<a href=https://sites.google.com/site/swaermodel/teams/' + rnd.Top_HyTek[j] + '>';
+		html += rnd.Top_Team[j] + '</a> (' + rnd.Fav[j] + ')<span>' + rnd.Top_Score[j] + '</span></li>';
+
+		html += '<li class="game game-spacer">&nbsp;</li>';
+
+		html += '<li class="game game-bottom ' + rnd.Bottom_Winner[j] + '">';
+		html += '<img height=30 src="' + rnd.Bottom_Helm[j] + '"> #' + rnd.Bottom_DivRank[j] + ' ';
+		html += '<a href=https://sites.google.com/site/swaermodel/teams/' + rnd.Bottom_HyTek[j] + '>';
+		html += rnd.Bottom_Team[j] + '</a> (' + rnd.Dog[j] + ')<span>' + rnd.Bottom_Score[j] + '</span></li>';
+	}
+	html += '<li class="spacer">&nbsp;</li>';
+	html += '</ul>';
+	}
+    if (k == 'State') {
+	document.getElementById("region-State").innerHTML = html;	
+    } else {
+	document.getElementById("region-" + cnt).innerHTML = html;
+    }
+    cnt = cnt + 1;
+    gadgets.window.adjustHeight();
+    }
+if (div_sel==1 & Number(year_sel) >= 2013 & Number(year_sel) <= 2015) {
+	document.getElementById("region-2").innerHTML = "";
+	document.getElementById("region-3").innerHTML = "";
+	document.getElementById("my-label-2").innerHTML = "";
+	document.getElementById("my-label-3").innerHTML = "";
+}
+  };
+
+</script>
+<style>
+/*
+ *  Flex Layout Specifics
+*/
+main{
+  display:flex;
+  flex-direction:row;
+}
+.round{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  width:250px;
+  list-style:none;
+  padding:0;
+}
+  .round .spacer{ flex-grow:1; }
+  .round .spacer:first-child,
+  .round .spacer:last-child{ flex-grow:.5; }
+
+  .round .game-spacer{
+    flex-grow:1;
+  }
+
+/*
+ *  General Styles
+*/
+body{
+  font-family:sans-serif;
+  font-size:small;
+  padding:10px;
+  line-height:1.4em;
+}
+
+li.game{
+  padding-left:20px;
+}
+
+  li.game.winner{
+    font-weight:bold;
+  }
+  li.game span{
+    float:right;
+    margin-right:5px;
+  }
+
+  li.game-top{ border-bottom:1px solid #aaa; }
+
+  li.game-spacer{ 
+    border-right:1px solid #aaa;
+    min-height:40px;
+  }
+
+  li.game-bottom{ 
+    border-top:1px solid #aaa;
+  }
+
+
+</style>	
+
+</body>
+]]>
+</Content>
+</Module>
+

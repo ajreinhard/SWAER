@@ -1,0 +1,265 @@
+<Module>
+<ModulePrefs title="Team Page Gadget" title_url="http://sites.google.com/" description="Gather info needed to generate team pages" height="800" width="600" author="AJ Reinhard">
+<Require feature="dynamic-height"/>
+</ModulePrefs>
+<UserPref name="TeamHyTek" display_name="Include the HyTek Code of your team" required="true"/>
+<Content type="html" view="default,canvas">
+<![CDATA[
+<head>
+  <base target="_parent">
+</head>
+<body>
+  <div id="tm-info"></div>
+  <div id="2017"></div>
+  <div id="2016"></div>
+  <div id="2015"></div>
+  <div id="2014"></div>
+  <div id="2013"></div>
+  <div id="2012"></div>
+  <div id="2011"></div>
+  <div id="2010"></div>
+  <div id="2009"></div>
+  <div id="2008"></div>
+  <div id="2007"></div>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div id="mod-txt"></div>
+  </div>
+
+</div> 
+
+  <script type="text/javascript">
+	games_tbl("https://sites.google.com/site/swaermodel/TmPgs_2015-17.json?revision=2");
+	games_tbl("https://sites.google.com/site/swaermodel/TmPgs_2011-14.json?revision=2");
+	games_tbl("https://sites.google.com/site/swaermodel/TmPgs_2007-10.json?revision=2");
+	tm_info("https://sites.google.com/site/swaermodel/Tm_Info.json?revision=2");
+
+  function tm_info(url) {
+    var params = {};  
+    params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
+    gadgets.io.makeRequest(url, response2, params);
+  };
+
+  function response2(obj) {               
+    var prefs = new gadgets.Prefs();
+    var TeamHyTek = prefs.getString('TeamHyTek');
+
+    var responseText = obj.data;  
+
+    var html = "";
+
+    html += '<div>';
+    if (responseText[TeamHyTek][0]['Helm.Left'] != null) {html += '<img height=150 src="' + responseText[TeamHyTek][0]['Helm.Left'] + '">'};
+    if (responseText[TeamHyTek][0]['Helm.Right'] != null) {html += '<img height=150 src="' + responseText[TeamHyTek][0]['Helm.Right'] + '">'};
+
+    html += '</div>';
+    html += '<div>';
+    if (responseText[TeamHyTek][0]['Div.2017'] != null) {
+	    html += 'The ' + responseText[TeamHyTek][0].Mascot + ' are a ';
+	    html += responseText[TeamHyTek][0].Public + ' school with an enrolloment of';
+	    html += responseText[TeamHyTek][0].Enrollment + ' male students.';
+	    html += ' They are in OHSAA Region ' + responseText[TeamHyTek][0]['Reg.2017'] + ' of Division' + responseText[TeamHyTek][0]['Div.2017'] + ' for post-season play.';
+	    html += ' They are a member of ' + responseText[TeamHyTek][0]['ConfSub.2017'] + '.';
+	    html += ' The school is located in ' + responseText[TeamHyTek][0].City + ' which is in ' + responseText[TeamHyTek][0].GenArea + ' Ohio (' + responseText[TeamHyTek][0].County + ' County).';
+	    if (responseText[TeamHyTek][0].StadID != null) {
+		    html += ' Their home field is <a href=http://ohiostadiums.com/stadium.php?id=' + responseText[TeamHyTek][0].StadID + ' target="_blank">' + responseText[TeamHyTek][0].Stadium + '</a>';
+		    html += ' (' + responseText[TeamHyTek][0].Surface + ', Capacity of ' + responseText[TeamHyTek][0].Capacity + ').';
+	   }
+	   html += '</div><br><div>';
+	   html += '<a href=http://www.fantastic50.net/team' + responseText[TeamHyTek][0].Fan50_ID + '.html target="_blank">Drew Pasteur\'s Fantastic 50 Team Page</a>';
+    }
+    html +=  '</div><br><hr>';
+    document.getElementById('tm-info').innerHTML = html;
+    gadgets.window.adjustHeight();
+  }
+
+  function games_tbl(url) {
+    var params = {};  
+    params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
+    gadgets.io.makeRequest(url, response, params);
+  };
+  
+  function response(obj) {               
+    var prefs = new gadgets.Prefs();
+    var TeamHyTek = prefs.getString('TeamHyTek');
+
+    var responseText = obj.data;  
+
+    var html = "";
+    var po_mod = "";
+
+    for (var i in responseText[TeamHyTek]) {
+	html = "<h2>" + responseText[TeamHyTek][i].Team.Season + " (";
+	html += responseText[TeamHyTek][i].Team.Record + ")</h2><ul>";
+	html += "<li>Competed in OHSAA Division " + responseText[TeamHyTek][i].Team['Finish.Div'] + ", Region " + responseText[TeamHyTek][i].Team['Finish.Reg'] + "</li>";
+	if (responseText[TeamHyTek][i].Team.Conf != null) {html += "<li>Member of " + responseText[TeamHyTek][i].Team.Conf + "</li>"};
+	html += "<li>Ranked #" + responseText[TeamHyTek][i].Team['Finish.DivRank'] + " in Div " + responseText[TeamHyTek][i].Team['Finish.Div'] + ", #" + responseText[TeamHyTek][i].Team['Finish.OvrRank'] + " overall</li>";
+	html += "<li>Joe Eitel's <a href=http://www.joeeitel.com/hsfoot/teams.jsp?teamID=" + responseText[TeamHyTek][i].Team['Finish.TeamID'] + "&year=" + responseText[TeamHyTek][i].Team.Season + " target=\"_blank\">Team Page</a> and ";
+	html += "<a href=http://www.joeeitel.com/hsfoot/region.jsp?region=" + responseText[TeamHyTek][i].Team['Finish.Reg'] + "&year=" + responseText[TeamHyTek][i].Team.Season + " target=\"_blank\">Harbin Playoff Standings</a></li>";
+	html += "<li>View <a href=https://sites.google.com/site/swaermodel/playoffs?year=" + responseText[TeamHyTek][i].Team.Season + "&div=" + responseText[TeamHyTek][i].Team['Finish.Div'] + ">Playoff Bracket</a></li>";
+	html += "</ul><table>";
+	html += '<col width="20"><col width="40"><col width="170"><col width="400"><col width="80"><col width="60"><col width="60"><col width="60"><col width="60"><col width="60">'
+	html += '<thead><tr><td>Wk</td><td>Date</td><td>Ovr / Div / SWAER</td><td>Opponent</td><td>Result</td><td>Spread</td><td>Win%</td><td>Conf%</td><td>Playoff%</td><td>State%</td></tr></thead>';
+    for (var j in responseText[TeamHyTek][i].Games.Opp) {
+	var gms = responseText[TeamHyTek][i].Games;
+	html += '<tr';
+	if (gms.Playoff[j] == 1) {html += ' bgcolor="#FFFF99"'};
+	if (gms.Conf_Matchup[j] != null & gms.Conf_Matchup[j] != "") {html += ' bgcolor="LightGray"'};
+	if (gms.Excl_Harbin[j] == 1) {html += ' bgcolor="LightBlue"'};
+	html += '><td>' + gms.Week[j] + '</td>';
+	html += '<td>' + gms.Q_date[j] + '</td>';
+	html += '<td>' + gms.tm_info[j] + '</td>';
+	if (gms.Opp[j] == "BYE WEEK") {
+		html += '<td colspan="4">BYE WEEK</td>'
+	} else {
+	if (gms.Opp_Helm[j] == "#N/A" || gms.Opp_Helm[j] == "") {
+		html += '<td>';
+	} else {
+		html += '<td><img height=25 src="' + gms.Opp_Helm[j] + '"> ';
+	}
+	if (gms.Opp_Div_Rank[j] == null) {
+		html += gms.Q_Loc[j] + ' <a href=http://www.joeeitel.com/hsfoot/teams.jsp?teamID=' + gms.Opp_Code[j] + '&year=' + responseText[TeamHyTek][i].Team.Season + '>' + gms.Opp[j] + '</a>';
+		html += '<sup>' + gms.Q_Opp_Div[j] + '</sup></td>';
+	} else {
+		html += gms.Q_Loc[j] + ' #' + gms.Opp_Rank[j];
+		html += ' <a href=https://sites.google.com/site/swaermodel/teams/' + gms.Opp_Code[j] + '>' + gms.Opp[j] + '</a>';
+		html += '<sup>' + gms.Q_Opp_Div[j] + '</sup><sub>#' + gms.Opp_Div_Rank[j] + '</sub></td>';
+	}
+	html += '<td';
+	if (gms.Q_score[j].substring(0,1) == "W") {html += ' style="color:green";'};
+	if (gms.Q_score[j].substring(0,1) == "L") {html += ' style="color:red";'};
+	html += '>' + gms.Q_score[j] + '</td>';
+	html += '<td';
+	if (gms.spread[j] > 0) {html += ' style="color:green";'};
+	if (gms.spread[j] < 0) {html += ' style="color:red";'};
+	html += '>' + gms.spread[j] + '</td>';
+	html += '<td>' + gms.Q_pred[j] + '</td>';
+	}
+	html += '<td>' + gms.Conf[j] + '</td>';
+	po_mod = '<h3>Probability of...</h3><table>';
+	po_mod += '<tr><td>Making the Playoffs:</td><td>' + gms.In[j] + '</td></tr>'
+	po_mod += '<tr><td>Home Field Adv in Rnd 1:</td><td>' + gms.Home11[j] + '</td></tr>'
+	po_mod += '<tr><td>Advancing to Final Four:</td><td>' + gms.Final4[j] + '</td></tr>'
+	po_mod += '</table>'
+	html += '<td><a onclick="open_mod(\'' + po_mod + '\');">' + gms.In[j] + '</a></td>';
+	html += '<td>' + gms.Champ[j] + '</td>';
+	html += '</tr>';
+    }
+	html += "</table><br><hr>";
+    document.getElementById(responseText[TeamHyTek][i].Team.Season).innerHTML = html;
+    gadgets.window.adjustHeight();
+    }
+  }
+
+
+// Get the modal
+var modal = document.getElementById('myModal');
+var box = document.getElementsByClassName('modal-content')[0];
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal 
+function open_mod(mod_says) {
+    modal.style.display = "block";
+    box.style.top = event.clientY;
+    box.style.left = event.clientX - 200;
+    document.getElementById('mod-txt').innerHTML = mod_says;
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+} 
+
+
+
+
+ </script>
+ <style>
+	table		{
+     		border-collapse: collapse;
+		table-layout: fixed;
+	}
+	table tr td	{
+		border: 1px solid black;
+		text-align: center;
+
+	}
+	thead td	{
+		background: buttonface;
+		font: menu;
+		border: 5px outset white;
+	}
+	td		{
+		color: windowtext;
+		font: menu;
+		padding: 1px;
+		padding-left: 5px;
+		padding-right: 5px; 
+		width=fixed;
+		text-wrap:normal;
+		font-size: 15px;
+	}
+	table tr td:nth-of-type(4) {
+
+		text-align: left;
+	}
+
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    border: 1px solid #888;
+    width: fit-content;
+    position: absolute;
+    margin: 2%;
+}
+
+/* The Close Button */
+ .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+ .close:hover,
+ .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ </style>	
+</body>
+]]>
+</Content>
+</Module>
