@@ -244,22 +244,22 @@ OH_teams <- row.names(model_elos)[which(!is.na(model_elos$Reg))]
 ####end season prep
 
 ###full retro sim
-j_odds <- lapply(1:1, function(z) {
-sim_done <- sapply(1:100,function(x) dyn_sim(z,y,sim_df,region,match_id,opp_id_mx,L1_mx,games_cnt_L1,games_cnt_L2,game_cnt,my_auto_fun,OH_teams,model_elos,Conf,bracket,k_mar,wk_slope,non_OHSAA_adj,std_dev))
+j_odds <- lapply(1:15, function(z) {
+sim_done <- sapply(1:1000,function(x) dyn_sim(z,y,sim_df,region,match_id,opp_id_mx,L1_mx,games_cnt_L1,games_cnt_L2,game_cnt,my_auto_fun,OH_teams,model_elos,Conf,bracket,k_mar,wk_slope,non_OHSAA_adj,std_dev))
 split_at <- nrow(sim_done)/3
 playoffs <- sim_done[1:split_at,]
 wins <- sim_done[(split_at+1):(split_at*2),]
 conf <- sim_done[(split_at*2+1):(split_at*3),]
-win_dist <- apply(wins,1,function(x) table(factor(x,1:8)))/100
-po_dist <- apply(playoffs,1,function(x) table(factor(x,0:6)))/100
-conf_dist <- apply(conf,1,sum)/100
+win_dist <- apply(wins,1,function(x) table(factor(x,1:8)))/1000
+po_dist <- apply(playoffs,1,function(x) table(factor(x,0:6)))/1000
+conf_dist <- apply(conf,1,sum)/1000
 
 return(list(win_dist,po_dist,conf_dist))
 })
 
-szn_win_dist <- do.call(cbind,lapply(1:1, function(j) rbind(Season=y,Week=j, j_odds[[j]][[1]])))
-szn_po_dist <- do.call(cbind,lapply(1:1, function(j) rbind(Season=y,Week=j, j_odds[[j]][[2]])))
-conf_po_dist <- do.call(cbind,lapply(1:1, function(j) rbind(Season=y,Week=j, j_odds[[j]][[3]])))
+szn_win_dist <- do.call(cbind,lapply(1:15, function(j) rbind(Season=y,Week=j, j_odds[[j]][[1]])))
+szn_po_dist <- do.call(cbind,lapply(1:15, function(j) rbind(Season=y,Week=j, j_odds[[j]][[2]])))
+conf_po_dist <- do.call(cbind,lapply(1:15, function(j) rbind(Season=y,Week=j, j_odds[[j]][[3]])))
 
 return(list(t(szn_win_dist),t(szn_po_dist),t(conf_po_dist)))
 })
@@ -274,10 +274,16 @@ miss <- 1-apply(seeding[,3:10],1,sum)
 home <- apply(seeding[,3:6],1,sum)
 seeding <- cbind(seeding,miss,home)
 
+write.csv(seeding, 'C:/Users/Owner/Desktop/SWAER/output/seeding1.csv')
+write.csv(playoffs, 'C:/Users/Owner/Desktop/SWAER/output/playoffs1.csv')
+write.csv(conf, 'C:/Users/Owner/Desktop/SWAER/output/conf1.csv')
 
-write.csv(seeding,'output/seeding2.csv')
-write.csv(playoffs ,'output/playoffs2.csv')
-write.csv(conf,'output/conf.csv')
+
+
+
+
+
+
 
 head(seeding)
 seeding <- read.csv('output/seeding.csv',stringsAsFactors=F)

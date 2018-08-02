@@ -289,7 +289,6 @@ margin_adj(-10,20*30)
 
 ####elo to point spread conversion
 pred_all <- elo_def(return_me='log')[[1]]
-#pred_all$elo_diff_exp <- ifelse(pred_all$elo_diff<0,exp(pred_all$elo_diff),exp(pred_all$elo_diff))
 elo_val <- lm(Score_diff ~ elo_diff-1, data=pred_all,subset= Season>=2007 & pred_all$Tm_OH==1 & pred_all$nonOHSAA==0)
 summary(elo_val)
 1/elo_val$coeff[1]
