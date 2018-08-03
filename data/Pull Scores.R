@@ -286,8 +286,49 @@ write.csv(mxp_df,'output/max preps ID.csv',row.names=F)
 
 ifelse(all_oh_gms$Tm_ID>all_oh_gms$Opp_ID,paste0(all_oh_gms$Tm_ID,'_',all_oh_gms$Opp_ID),paste0(all_oh_gms$Opp_ID,'_'all_oh_gms$Tm_ID)
 
+############OH Helm Links
+
+#can be from any page on OH_Helmets
+title <- xpathSApply(the_tree, '//ul/li/a/@title')
+link <- xpathSApply(the_tree, '//ul/li/a/@href')
+OH_helm_df <- data.frame(title,link,stringsAsFactors=F)
+
+files1 <- dir('OH Helmets/main',full.name=T)
+files2 <- dir('OH Helmets/second',full.name=T)
+
+OH_pgs1 <- lapply(files1, function(z) {
+the_tree <- htmlTreeParse(z, useInternal=T)
+pg_title <- sapply(xpathSApply(the_tree, '//title/text()'),function(y) xmlValue(y, trim=T))
+tm_id <- substr(z,17,nchar(z)-4)
+c(tm_id,pg_title)
+})
+
+OH_pgs2 <- lapply(files2, function(z) {
+the_tree <- htmlTreeParse(z, useInternal=T)
+pg_title <- sapply(xpathSApply(the_tree, '//title/text()'),function(y) xmlValue(y, trim=T))
+tm_id <- substr(z,19,nchar(z)-4)
+c(tm_id,pg_title)
+})
+
+OH_pgs <- data.frame(rbind(do.call(rbind,OH_pgs1),do.call(rbind,OH_pgs2)),stringsAsFactors=F)
+names(OH_pgs) <- c('TeamID','Title')
+OH_pgs$actual_title <- sapply(strsplit(OH_pgs$Title,' - '),function(x) x[2])
+OH_pgs$link <- OH_helm_df$link[match(OH_pgs$actual_title,OH_helm_df$title)]
+OH_pgs$Helm_ID <- substr(OH_pgs$link,31,nchar(OH_pgs$link))
 
 
+OHSAA_df <- read.csv('output/OHSAA ALL.csv',stringsAsFactors=F)
+mxp_df <- read.csv('output/max preps ID.csv',stringsAsFactors=F)
+
+OHSAA_df$oh_helm <- OH_pgs$Helm_ID[match(OHSAA_df$OHSAA.ID,OH_pgs$TeamID)]
+OHSAA_df$maxpreps_ugly <- mxp_df$mxp_ID[match(OHSAA_df$OHSAA.ID,mxp_df$Tm_ID)]
+
+
+z <- files1[2]
+the_tree <- htmlTreeParse(z, useInternal=T)
+helmets <- matrix(xpathSApply(the_tree, '//div[@class="webs-parent webs-parent-2 webs-row"]//img/@src'),nrow=2)
+yr_head <- matrix(sapply(xpathSApply(the_tree, '//div[@class="webs-text "]'),function(y) xmlValue(y, trim=T)),nrow=2)[2,]
+rbind(yr_head,helmets)
 
 
 
