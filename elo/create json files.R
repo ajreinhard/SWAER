@@ -1,11 +1,13 @@
 library(RJSONIO)
-setwd('C:/Users/A097092/Desktop/Extra/HS Football')
-OHSAA_df <- read.csv('output/OHSAA ALL.csv',stringsAsFactors=F)
+setwd('C:/Users/Owner/Documents/GitHub/SWAER')
+OHSAA_df <- read.csv('data sets/OHSAA ALL.csv',stringsAsFactors=F)
 
 
 #create json files for Team Pages
-records <- read.csv('output/rec rankings.csv',stringsAsFactors=F)
-rankings <- read.csv('output/hist rankings.csv',stringsAsFactors=F)
+records <- read.csv('C:/Users/Owner/Desktop/SWAER/output/rec rankings.csv',stringsAsFactors=F)
+rankings <- read.csv('C:/Users/Owner/Desktop/SWAER/output/hist rankings.csv',stringsAsFactors=F)
+records$Week[which(records$Season==2018)] <- 15
+rankings$Week[which(rankings$Season==2018)] <- 15
 
 records <- records[which(records$Week==15),]
 records$Total <- ifelse(records$T==0, paste0(records$W,'-',records$L),paste0(records$W,'-',records$L,'-',records$T))
@@ -16,28 +18,36 @@ records$Final <- ifelse(records$ConfR=='0-0',records$Total,paste0(records$Total,
 
 rankings <- rankings[which(rankings$Week==15),]
 
-df_names <- c('2015-17','2011-14','2007-10')
-for (k in 1:3) {
+
+final_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/final_df2.csv',stringsAsFactors=F)
+final_list <- list(
+	final_df[which(final_df$Season>=2007 & final_df$Season<=2009),],
+	final_df[which(final_df$Season>=2010 & final_df$Season<=2012),],
+	final_df[which(final_df$Season>=2013 & final_df$Season<=2015),],
+	final_df[which(final_df$Season>=2016 & final_df$Season<=2018),])
+df_names <- c('2007-09','2010-12','2013-15','2016-18')
+
+for (k in 1:4) {
 ###
-my_df <- read.csv(paste0('output/Exp ',df_names[k],'.csv'),stringsAsFactors=F)
+my_df <- final_list[[k]]
 
 Team_IDs <- OHSAA_df$OHSAA.ID[match(unique(my_df$Tm_Code),OHSAA_df$HyTek)]
 
-list1 <- lapply(unique(my_df$Tm_Code), function(x) my_df[which(my_df$Tm_Code==x),c(2:24)])
+list1 <- lapply(unique(my_df$Tm_Code), function(x) my_df[which(my_df$Tm_Code==x),c(2:29)])
 by_yr <- lapply(1:length(list1), function(x) {
-lapply(2002:2017, function(y) {
+lapply(2002:2018, function(y) {
 list('Team'=c('Season'=y, 
 'Conf'=records$Conf[which(records$Tm_ID==Team_IDs[x] & records$Season==y)],
 'Record'=records$Final[which(records$Tm_ID==Team_IDs[x] & records$Season==y)],
-'Finish'=rankings[which(rankings$TeamID==Team_IDs[x] & rankings$Season==y),c('Div','Reg','DivRank','OvrRank','TeamID')]
+'Finish'=rankings[which(rankings$Tm_ID==Team_IDs[x] & rankings$Season==y),c('Div','Reg','DivRank','OvrRank','Tm_ID')]
 ),
-'Games'=list1[[x]][which(list1[[x]]$Season==y),c(2:23)])
+'Games'=list1[[x]][which(list1[[x]]$Season==y),c(2:28)])
 })
 })
 row_cnt <- sapply(by_yr,function(x) sapply(x,nrow))
 
 for (i in 1:length(by_yr)) {
-for (j in 16:1) {
+for (j in 17:1) {
 if (nrow(by_yr[[i]][[j]][[2]])==0) {
 by_yr[[i]][[j]] <- NULL
 } else {
@@ -47,7 +57,7 @@ names(by_yr[[i]])[j] <- 2001 + j
 names(by_yr) <- unique(my_df$Tm_Code)
 
 exportJson <- toJSON(by_yr)
-write(exportJson, paste0('TmPgs_',df_names[k],'.json'))
+write(exportJson, paste0('C:/Users/Owner/Desktop/SWAER/output/TmPgs_',df_names[k],'.json'))
 }
 #
 
@@ -58,10 +68,11 @@ names(tm_list) <- OHSAA_df$HyTek
 exportJson2 <- toJSON(tm_list)
 write(exportJson2, paste0('Tm_Info.json'))
 
+
+
 ##
 ###Start with Brackets DF
 ##
-
 playoffs_df <- read.csv('output/Playoffs Bracket.csv',stringsAsFactors=F)
 JE_games <- read.csv('output/JoeEitel GameLog.csv',stringsAsFactors=F)
 JE_games <- JE_games[which(JE_games$Playoff==1),]
@@ -256,7 +267,7 @@ write(exportJson1, paste0('RankList_2007-10.json'))
 write(exportJson2, paste0('RankList_2011-14.json'))
 write(exportJson3, paste0('RankList_2015-17.json'))
 
-head(rankings)
+
 
 ###make some shapes for regions
 library(grDevices)

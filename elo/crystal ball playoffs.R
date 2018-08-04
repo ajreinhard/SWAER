@@ -1,19 +1,4 @@
-###get data from current model
-final_elos <- elo_def(return_me='log')[[2]]
-final_elos_nonOH <- elo_def(return_me='log')[[3]]
-final_elos_nonOH[,names(final_elos)[-c(which(names(final_elos) %in% names(final_elos_nonOH)))]] <- NA
-final_elos[,names(final_elos_nonOH)[-c(which(names(final_elos_nonOH) %in% names(final_elos)))]] <- NA
-spred_adj <- 19.4
-bracket <- read.csv('output/Playoffs Bracket.csv',stringsAsFactors=F)
-
-model_elos <- rbind(final_elos, final_elos_nonOH)
-model_elos <- model_elos[order(model_elos$Reg),]
-model_elos$TeamID <- row.names(model_elos)
-
-Reg_Season <- rbind(JE_games,JE_games_nonOH)
-Reg_Season['131232','Multi_Week'] <- 1
-Reg_Season['88046','Multi_Week'] <- 1
-Reg_Season['83261','Multi_Week'] <- 1
+###run directly after retro playoff sim
 
 ####begin season prep
 all_seedings <- lapply(2017:2007,function(y) {
@@ -21,7 +6,6 @@ all_seedings <- lapply(2017:2007,function(y) {
 Reg_Season <- Reg_Season[which(Reg_Season$Season==y & Reg_Season$Playoff==0),]
 Reg_Season <- Reg_Season[order(Reg_Season$Week),]
 
-Reg_Season$home_adv <- ifelse(Reg_Season$Loc=='H',25,ifelse(Reg_Season$Loc=='A',-25,0))
 Reg_Season$Game_ID <- paste0(ifelse(Reg_Season$Tm_ID<Reg_Season$Opp_ID,paste0(Reg_Season$Tm_ID,'_',Reg_Season$Opp_ID),paste0(Reg_Season$Opp_ID,'_',Reg_Season$Tm_ID)),'_',Reg_Season$Week)
 Reg_Season$WinID <- ifelse(Reg_Season$Win==1,Reg_Season$Tm_ID,Reg_Season$Opp_ID)
 Reg_Season <- Reg_Season[which(Reg_Season$Excl_Harbin==0 & is.na(Reg_Season$Multi_Week)),]
@@ -53,10 +37,7 @@ L1_mx <- (7-matrix(model_elos[paste0(opp_id_mx),'Div'],10))/2 + 3.5 - pts_adj
 L1_mx[,which(is.na(model_elos$Reg))] <- (7-ifelse(!is.na(opp_id_mx[,which(is.na(model_elos$Reg))]),matrix(rep(model_elos$Div[which(is.na(model_elos$Reg))],10),10,byrow=T),NA))/2 + 3.5 - pts_adj
 games_cnt_L1 <- apply(opp_id_mx,2,function(x) length(which(!is.na(x))))
 games_cnt_L2 <- apply(matrix(games_cnt_L1[paste0(opp_id_mx)],10),2,sum,na.rm=T)
-my_auto_fun = function(elo_d) easy_auto_fun(list(elo_d=elo_d,
-		t5 = 3.76, t4 = 2.7, t3 = -3.53, t2 = -6.58, t1 = 1.16,
-		t5p = 12, t4p = 11, t3p = 6, t2p = 5, t1p = 1
-			))
+my_auto_fun = function(elo_d) 0
 OH_teams <- row.names(model_elos)[which(!is.na(model_elos$Reg))]
 ####end season prep
 
@@ -73,7 +54,7 @@ wk_df$Tm_elo_pre <- curr_elos[paste0(wk_df$Tm_ID),'Current']
 wk_df$Opp_elo_pre <- curr_elos[paste0(wk_df$Opp_ID),'Current']
 wk_df$Opp_elo_pre <- ifelse(is.na(wk_df$Opp_elo_pre), Div_repl[wk_df$Opp_Div,2], wk_df$Opp_elo_pre)
 wk_df$elo_diff <- wk_df$Tm_elo_pre-wk_df$Opp_elo_pre+wk_df$home_adv
-wk_df$spread <- wk_df$elo_diff/spred_adj
+wk_df$spread <- ifelse(wk_df$elo_diff>0,main,-main) * (abs(wk_df$elo_diff)/spred_adj)^pwr
 wk_df$Win_Prob <- 1/(1+10^(-wk_df$elo_diff/400))
 wk_df$Win <- NA
 wk_df$Over <- NA
@@ -98,11 +79,12 @@ L1_pts_curr <- apply(tm_win_prob * L1_mx * matrix(full_pred$Over[match_id],10),2
 L2_pts_curr <- apply(tm_win_prob * matrix(L1_pts_curr[paste0(opp_id_mx)],10) * matrix(full_pred$Over[match_id],10),2,sum,na.rm=T)
 L1_pts_curr_avg <- apply(tm_win_prob * L1_mx * matrix(full_pred$Over[match_id],10),2,mean,na.rm=T)
 total_avg_curr <- L1_pts_curr_avg+(L2_pts_curr/games_cnt_L2)*10
+total_avg_curr <- ifelse(is.na(total_avg_curr),0,total_avg_curr)
 
 seed_unordered <- unlist(lapply(region, function(rg) rank(-total_avg[rg],ties.method='random')))
 seed <- seed_unordered[paste0(row.names(curr_elos))]
 
-seed_unordered_curr <- unlist(lapply(region, function(rg) rank(-total_avg_curr[rg],ties.method='min')))
+seed_unordered_curr <- unlist(lapply(region, function(rg) rank(-total_avg_curr[rg],ties.method='min',na.last = TRUE)))
 seed_curr <- seed_unordered_curr[paste0(row.names(curr_elos))]
 
 seed_df <- curr_elos[,c('School','TeamID','Reg','Div')]
@@ -119,7 +101,4 @@ po_yr
 })
 
 crystal_df <- do.call(rbind,all_seedings)
-write.csv(crystal_df,'output/crystal.csv',row.names=F)
-
-
-
+write.csv(crystal_df,'C:/Users/Owner/Desktop/SWAER/output/crystal.csv',row.names=F)

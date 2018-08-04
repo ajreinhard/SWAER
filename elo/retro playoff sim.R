@@ -197,7 +197,7 @@ Reg_Season['83261','Multi_Week'] <- 1
 #Reg_Season[which(Reg_Season$Opp_ID=='31999'),]
 
 ####begin season prep
-all_seasons <- lapply(2017:2017,function(y) {
+all_seasons <- lapply(2017:2007,function(y) {
 
 Reg_Season <- Reg_Season[which(Reg_Season$Season==y & Reg_Season$Playoff==0),]
 Reg_Season <- Reg_Season[order(Reg_Season$Week),]
@@ -274,9 +274,9 @@ miss <- 1-apply(seeding[,3:10],1,sum)
 home <- apply(seeding[,3:6],1,sum)
 seeding <- cbind(seeding,miss,home)
 
-write.csv(seeding, 'C:/Users/Owner/Desktop/SWAER/output/seeding1.csv')
-write.csv(playoffs, 'C:/Users/Owner/Desktop/SWAER/output/playoffs1.csv')
-write.csv(conf, 'C:/Users/Owner/Desktop/SWAER/output/conf1.csv')
+write.csv(seeding, 'C:/Users/Owner/Desktop/SWAER/output/seeding_all.csv')
+write.csv(playoffs, 'C:/Users/Owner/Desktop/SWAER/output/playoffs_all.csv')
+write.csv(conf, 'C:/Users/Owner/Desktop/SWAER/output/conf_all.csv')
 
 
 

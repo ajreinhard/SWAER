@@ -444,13 +444,11 @@ season[,pos_names] <- ifelse(is.na(season[,pos_names]),0,as.matrix(season[,pos_n
 
 div_pos_names <- paste0('Div_',pos_names)
 season[,c(paste0(div_pos_names))] <- season[,pos_names] * season$Div
-
 season$Season <- sapply(strsplit(row.names(season),'_'),function(x) x[1])
 gap <- aggregate(Change~Season,season,mean)
 season$Change <- season$Change - gap$Change[match(season$Season,gap$Season)]
 
-
-season18_df <- season[which(season$Season==2017),]
+season18_df <- season[which(season$Season==2018),]
 season <- season[which(season$Change!=0),]
 
 player_adj <- lm(Change ~ ., data=season[,c('Change',pos_names,div_pos_names)])
@@ -458,25 +456,10 @@ summary(player_adj)
 player_adj_pred <- predict(player_adj,season)
 player_adj_pred[is.na(player_adj_pred)] <- 0
 
-###
-season15$End - player_adj_pred[which(season$Season==2014)] * 
-length(season15$End)
-length(which(season$Season==2014))
-
-### still working on below
-player_adj_pred_18 <- predict(player_adj,season18_df)
-player_adj_pred_18[is.na(player_adj_pred_18)] <- 0
-sort((season18_df$End * player_adj_pred_18) - 1500)/19.4
-
-sort(player_adj_pred_18)
-
-ratings <- elo_def(return_me='log')[[2]]
-ratings[,c(paste0(2017:2014,' Week 15'),'sched_avg')]
 
 #elo_def()
 #elo_def(pl_adj=F)
-summary(player_adj_pred)
-
+summary(player_adj_pred)/spread_adj
 
 pos_only <- matrix(player_adj$coeff[paste0(pos_names)],7,length(pos_names),byrow=T)
 pos_div <- matrix(player_adj$coeff[paste0(div_pos_names)],7,length(pos_names),byrow=T) * 1:7
@@ -828,15 +811,15 @@ head(ratings)
 ###make a rank df
 #read in HyTek & Best Att before
 best_att <- elo_def(return_me='log')[[2]]
-spread_adj <- 20.7
+spread_adj <- 18
 
 ranks_df <- lapply(2017:2002, function(yr) {
 best_att$Div <- teams_df$Div[match(paste0(yr,'_',row.names(best_att)),teams_df$YrID)]
 
 SZN_SWAER <- best_att[which(!is.na(best_att$Div)),paste0(yr,' Week ',0:15)]
-SZN_SWAER <- (SZN_SWAER-1500)/spread_adj
+SZN_avg <- apply(SZN_SWAER,2,mean)
+SZN_SWAER <- (SZN_SWAER-SZN_avg)/spread_adj
 SZN_Rank <- apply(-SZN_SWAER,2,rank,ties.method='first')
-
 tms_div <- best_att$Div[which(!is.na(best_att$Div))]
 div_avg <- aggregate(.~tms_div,SZN_SWAER,mean)[,-c(1)]
 SZN_iSWAER <- SZN_SWAER - div_avg[tms_div,]
@@ -855,14 +838,12 @@ ranks_all <- do.call(rbind,ranks_df)
 ranks_all$iSWAER <- unlist(ranks_all$iSWAER)
 ranks_all$SWAER <- unlist(ranks_all$SWAER)
 
-#ranks_all <- rankings
 ranks_all$Reg <- teams_df$Reg[match(paste0(ranks_all$Season,'_',ranks_all$Tm_ID),teams_df$YrID)]
 
-write.csv(ranks_all,'output/hist rankings2.csv',row.names=F)
+write.csv(ranks_all,'C:/Users/Owner/Desktop/SWAER/output/hist rankings.csv',row.names=F)
 
 tm_avg <- aggregate(iSWAER~Tm_ID,ranks_all,mean)
 tm_avg <- tm_avg[order(-tm_avg[,2]),]
-head(tm_avg)
 ###end rank df
 
 ###start record df
@@ -880,12 +861,11 @@ pred_all$C_T <- ifelse(pred_all$Rec_Result=='T' & !is.na(pred_all$Conf_Matchup) 
 rec_list <- lapply(1:15, function(wk) cbind(Week=wk,aggregate(cbind(W,L,T,C_W,C_L,C_T)~Tm_ID+Season,pred_all,sum,subset= Week<=wk)))
 rec_df <- do.call(rbind,rec_list)
 
-#rec_df <- records 
 rec_df$Conf <- pred_all$Tm_Conf[match(paste0(rec_df$Season,'_',rec_df$Tm_ID),paste0(pred_all$Season,'_',pred_all$Tm_ID))]
 rec_df[which(rec_df$Conf=='IND' || rec_df$Conf=='OH VAL'),c('C_W','C_L','C_T')] <- 0
 
-
-write.csv(rec_df,'output/rec rankings2.csv',row.names=F)
+write.csv(rec_df,'C:/Users/Owner/Desktop/SWAER/output/rec rankings.csv',row.names=F)
+head(rec_df)
 
 ###end record df
 
@@ -972,13 +952,23 @@ full_pg <- cbind(both_helmets,tm_hist)
 #######
 #move out of above loop because it takes too long
 ####Create csv file to save in google sheets
-HyTek <- read.csv('output/OHSAA ALL.csv',stringsAsFactors=F)
+HyTek <- read.csv('data sets/OHSAA ALL.csv',stringsAsFactors=F)
 pred_all <- elo_def(return_me='log')[[1]]
 
-pred_all$Q_score <- paste0(ifelse(pred_all$Win==1,'W ','L '),pred_all$Tm_score,'-',pred_all$Opp_score)
+JE_games_all$Tm_elo.curr <- elo_df18_full[paste0(JE_games_all$Tm_ID),'Current']
+JE_games_all$Opp_elo.curr <- elo_df18_full[paste0(JE_games_all$Opp_ID),'Current']
+JE_games_all$elo_diff <- JE_games_all$Tm_elo.curr-JE_games_all$Opp_elo.curr+JE_games_all$home_adv
+JE_games_all$elo_win <- 1/(1+10^(-JE_games_all$elo_diff/400))
+JE_games_all[,c('Tm_elo.new','adj_amount')] <- NA
+JE_games_all$opp_startElo <- NULL
+
+pred_all <- rbind(pred_all,JE_games_all)
+spred_adj <- 18
+
+pred_all$Q_score <- ifelse(pred_all$Result=='','',paste0(ifelse(pred_all$Win==1,'W ','L '),pred_all$Tm_score,'-',pred_all$Opp_score))
 pred_all$Q_date <- paste0(as.numeric(substr(pred_all$Date,6,7)),'/',as.numeric(substr(pred_all$Date,9,10)))
 pred_all$Q_pred <- sprintf('%.1f',round(pred_all$elo_win,3)*100)
-pred_all$spread <- round(pred_all$elo_diff/19.4,1)
+pred_all$spread <- round(pred_all$elo_diff/spred_adj,1)
 
 pred_all$Tm <- HyTek$Best.Name[match(pred_all$Tm_ID,HyTek$OHSAA.ID)]
 pred_all$Opp <- HyTek$Best.Name[match(pred_all$Opp_ID,HyTek$OHSAA.ID)]
@@ -1034,23 +1024,29 @@ big_pred_all$Q_Loc[which(big_pred_all$Loc=='N')] <- '(N)'
 big_pred_all$spread[is.na(big_pred_all$spread)] <- ''
 pred_all <- big_pred_all
 
-rankings_df <- read.csv('output/hist rankings.csv',stringsAsFactors=F)
-seeding_df <- read.csv('output/seeding.csv',stringsAsFactors=F)
-playoffs_df <- read.csv('output/playoffs.csv',stringsAsFactors=F)
-conf_df <- read.csv('output/conf.csv',stringsAsFactors=F)
+rankings_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/hist rankings.csv',stringsAsFactors=F)
+seeding_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/seeding.csv',stringsAsFactors=F)
+playoffs_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/playoffs.csv',stringsAsFactors=F)
+conf_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/conf.csv',stringsAsFactors=F)
+crystal_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/crystal.csv',stringsAsFactors=F)
 
 rankings_df$Week <- rankings_df$Week + 1
+crystal_df$Week <- crystal_df$Week + 1
+
 playoffs_df$Final4 <- playoffs_df$X4+playoffs_df$X5+playoffs_df$X6
-row.names(rankings_df) <- paste0(rankings_df$Season,'_',rankings_df$Week,'_',rankings_df$TeamID)
+row.names(rankings_df) <- paste0(rankings_df$Season,'_',rankings_df$Week,'_',rankings_df$Tm_ID)
 row.names(seeding_df) <- paste0(seeding_df$Season,'_',seeding_df$Week,'_',seeding_df$X)
 row.names(conf_df) <- paste0(conf_df$Season,'_',conf_df$Week,'_',conf_df$X)
 row.names(playoffs_df) <- paste0(playoffs_df$Season,'_',playoffs_df$Week,'_',playoffs_df$X)
+row.names(crystal_df) <- paste0(crystal_df$Season,'_',crystal_df$Week,'_',crystal_df$TeamID)
 
 pred_all[,c('Div_Rank','Ovr_Rank','Tm_iSWAER','SWAER')] <- rankings_df[paste0(pred_all$Season,'_',pred_all$Week,'_',pred_all$Tm_ID),c('DivRank','OvrRank','iSWAER','SWAER')]
 pred_all[,c('Opp_Div_Rank','Opp_Rank')] <- rankings_df[paste0(pred_all$Season,'_',pred_all$Week,'_',pred_all$Opp_ID),c('DivRank','OvrRank')]
-pred_all[,c('Out','Home11')] <- seeding_df[paste0(pred_all$Season,'_',pred_all$Week,'_',pred_all$Tm_ID),c('miss','home')]
+pred_all[,c('Home11')] <- seeding_df[paste0(pred_all$Season,'_',pred_all$Week,'_',pred_all$Tm_ID),c('home')]
 pred_all[,c('Conf')] <- conf_df[paste0(pred_all$Season,'_',pred_all$Week,'_',pred_all$Tm_ID),c('X.1')]
-pred_all[,c('Final4','Champ')] <- playoffs_df[paste0(pred_all$Season,'_',pred_all$Week,'_',pred_all$Tm_ID),c('Final4','X6')]
+pred_all[,c('Out','Final4','Champ')] <- playoffs_df[paste0(pred_all$Season,'_',pred_all$Week,'_',pred_all$Tm_ID),c('X1','Final4','X6')]
+pred_all[,c('Curr_Seed','Proj_Seed')] <- crystal_df[paste0(pred_all$Season,'_',pred_all$Week,'_',pred_all$Tm_ID),c('curr_seed','proj_seed')]
+
 
 pred_all$tm_info <- paste0('#',pred_all$Ovr_Rank,' / #',pred_all$Div_Rank,' / ',round(pred_all$SWAER,1))
 
@@ -1071,12 +1067,8 @@ big_pred_all$Conf <- paste0(sprintf('%.0f',round(big_pred_all$Conf,3)*100),'%')
 big_pred_all$Final4 <- paste0(sprintf('%.0f',round(big_pred_all$Final4,3)*100),'%')
 big_pred_all$Champ <- paste0(sprintf('%.0f',round(big_pred_all$Champ,3)*100),'%')
 
-final_df_1 <- big_pred_all[which(big_pred_all$Season<2011 & big_pred_all$Season>=2007),c('Tm_Code','Season','Q_date','tm_info','Opp_Helm','Opp_Rank','Opp_Code','Opp','Opp_Div','Q_score','spread','Q_pred','Week','Q_Loc','Q_Opp_Div','Opp_Div_Rank','Conf_Matchup','Playoff','Excl_Harbin','Conf','In','Home11','Final4','Champ')]
-final_df_2 <- big_pred_all[which(big_pred_all$Season<2015 & big_pred_all$Season>=2011),c('Tm_Code','Season','Q_date','tm_info','Opp_Helm','Opp_Rank','Opp_Code','Opp','Opp_Div','Q_score','spread','Q_pred','Week','Q_Loc','Q_Opp_Div','Opp_Div_Rank','Conf_Matchup','Playoff','Excl_Harbin','Conf','In','Home11','Final4','Champ')]
-final_df_3 <- big_pred_all[which(big_pred_all$Season<2018 & big_pred_all$Season>=2015),c('Tm_Code','Season','Q_date','tm_info','Opp_Helm','Opp_Rank','Opp_Code','Opp','Opp_Div','Q_score','spread','Q_pred','Week','Q_Loc','Q_Opp_Div','Opp_Div_Rank','Conf_Matchup','Playoff','Excl_Harbin','Conf','In','Home11','Final4','Champ')]
-write.csv(final_df_1,'output/Exp 2007-10.csv',row.names=F)
-write.csv(final_df_2,'output/Exp 2011-14.csv',row.names=F)
-write.csv(final_df_3,'output/Exp 2015-17.csv',row.names=F)
+final_df <- big_pred_all[,c('Tm_Code','Season','Q_date','Ovr_Rank','SWAER','Div_Rank','tm_info','Opp_Helm','Opp_Rank','Opp_Code','Opp','Opp_Div','Q_score','spread','Q_pred','Week','Q_Loc','Q_Opp_Div','Opp_Div_Rank','Conf_Matchup','Playoff','Excl_Harbin','Conf','Curr_Seed','Proj_Seed','In','Home11','Final4','Champ')]
+write.csv(final_df,'C:/Users/Owner/Desktop/SWAER/output/final_df.csv',row.names=F)
 
 
 

@@ -303,6 +303,7 @@ my_auto_fun = function(elo_d) 0
 OH_teams <- row.names(model_elos)[which(!is.na(model_elos$Reg))]
 ####end season prep
 
+
 begin <- proc.time()
 ###full retro sim
 j_odds <- lapply(1:1, function(z) {
@@ -327,7 +328,6 @@ playoffs <- t(szn_po_dist)
 conf <- t(conf_po_dist)
 row.names(conf) <- row.names(playoffs)
 
-
 miss <- 1-apply(seeding[,3:10],1,sum)
 home <- apply(seeding[,3:6],1,sum)
 seeding <- cbind(seeding,miss,home)
@@ -335,4 +335,138 @@ seeding <- cbind(seeding,miss,home)
 write.csv(seeding, 'C:/Users/Owner/Desktop/SWAER/output/2018/seeding1.csv')
 write.csv(playoffs, 'C:/Users/Owner/Desktop/SWAER/output/2018/playoffs1.csv')
 write.csv(conf, 'C:/Users/Owner/Desktop/SWAER/output/2018/conf1.csv')
+
+
+##start with weekly
+po_yr <- lapply(1:1, function(wkst) {
+curr_elos <- model_elos
+Div_repl <- aggregate(Current~Div,curr_elos,FUN=mean,subset= !is.na(Reg))
+
+wk_df <- sim_df[which(sim_df$Week>=wkst),]
+
+wk_df$Tm_elo_pre <- curr_elos[paste0(wk_df$Tm_ID),'Current']
+wk_df$Opp_elo_pre <- curr_elos[paste0(wk_df$Opp_ID),'Current']
+wk_df$Opp_elo_pre <- ifelse(is.na(wk_df$Opp_elo_pre), Div_repl[wk_df$Opp_Div,2], wk_df$Opp_elo_pre)
+wk_df$elo_diff <- wk_df$Tm_elo_pre-wk_df$Opp_elo_pre+wk_df$home_adv
+wk_df$spread <- ifelse(wk_df$elo_diff>0,main,-main) * (abs(wk_df$elo_diff)/spred_adj)^pwr
+wk_df$Win_Prob <- 1/(1+10^(-wk_df$elo_diff/400))
+wk_df$Win <- NA
+wk_df$Over <- NA
+full_pred <- wk_df
+
+if (wkst!=1) {
+played <- sim_df[which(sim_df$Week<wkst),]
+played[,names(full_pred)[-c(which(names(full_pred) %in% names(played)))]] <- NA
+played$Win <- played$WinID
+played$Win_Prob <- ifelse(played$Win==played$Tm_ID,1,0)
+played$Over <- 1
+full_pred <- rbind(played,full_pred)
+}
+
+
+tm_win_prob <- ifelse(matrix(full_pred$Tm_ID[match_id],10)==opp_id_mx, 1-matrix(full_pred$Win_Prob[match_id],10), matrix(full_pred$Win_Prob[match_id],10))
+L1_pts <- apply(tm_win_prob * L1_mx,2,sum,na.rm=T)
+L2_pts <- apply(tm_win_prob * matrix(L1_pts[paste0(opp_id_mx)],10),2,sum,na.rm=T)
+total_avg <- (L1_pts/games_cnt_L1)+(L2_pts/games_cnt_L2)*10
+
+L1_pts_curr <- apply(tm_win_prob * L1_mx * matrix(full_pred$Over[match_id],10),2,sum,na.rm=T)
+L2_pts_curr <- apply(tm_win_prob * matrix(L1_pts_curr[paste0(opp_id_mx)],10) * matrix(full_pred$Over[match_id],10),2,sum,na.rm=T)
+L1_pts_curr_avg <- apply(tm_win_prob * L1_mx * matrix(full_pred$Over[match_id],10),2,mean,na.rm=T)
+total_avg_curr <- L1_pts_curr_avg+(L2_pts_curr/games_cnt_L2)*10
+total_avg_curr <- ifelse(is.na(total_avg_curr),0,total_avg_curr)
+
+seed_unordered <- unlist(lapply(region, function(rg) rank(-total_avg[rg],ties.method='random')))
+seed <- seed_unordered[paste0(row.names(curr_elos))]
+
+seed_unordered_curr <- unlist(lapply(region, function(rg) rank(-total_avg_curr[rg],ties.method='min',na.last = TRUE)))
+seed_curr <- seed_unordered_curr[paste0(row.names(curr_elos))]
+
+seed_df <- curr_elos[,c('School','TeamID','Reg','Div')]
+seed_df$Season <- y
+seed_df$Week <- wkst-1
+seed_df$curr_seed <- seed_curr
+seed_df$proj_seed <- seed
+seed_df$curr_avg <- total_avg_curr
+seed_df$proj_avg <- total_avg
+seed_df[which(!is.na(seed_df$Reg)),]
+})
+po_yr <- do.call(rbind,po_yr)
+
+write.csv(po_yr,'C:/Users/Owner/Desktop/SWAER/output/2018/crystal1.csv',row.names=F)
+
 proc.time() - begin
+
+
+
+###pre-season 2018
+tm_list <- paste0('2018_1_',row.names(elo_df18_full)[which(!is.na(elo_df18_full$Reg))])
+tm_list_HT <- paste0('2018_1_',OHSAA_df$HyTek[match(row.names(elo_df18_full)[which(!is.na(elo_df18_full$Reg))],OHSAA_df$OHSAA.ID)])
+tm_list_no_wk <- paste0('2018_',OHSAA_df$HyTek[match(row.names(elo_df18_full)[which(!is.na(elo_df18_full$Reg))],OHSAA_df$OHSAA.ID)])
+
+master_tms_id <- paste0(final_df$Season,'_',final_df$Week,'_',OHSAA_df$OHSAA.ID[match(final_df$Tm_Code,OHSAA_df$HyTek)])
+master_opp_id <- paste0(final_df$Season,'_',final_df$Week,'_',OHSAA_df$OHSAA.ID[match(final_df$Opp_Code,OHSAA_df$HyTek)])
+master_tms <- paste0(final_df$Season,'_',final_df$Week,'_',final_df$Tm_Code)
+master_opp <- paste0(final_df$Season,'_',final_df$Opp_Code)
+
+SWAER <- (elo_df18_full[which(!is.na(elo_df18_full$Reg)),'Current']-mean(elo_df18_full[which(!is.na(elo_df18_full$Reg)),'Current']))/spread_adj
+div_avg <- aggregate(Current~Div,elo_df18_full,mean)
+iSWAER <- elo_df18_full$Current-div_avg[elo_df18_full$Div,2]
+iSWAER <- iSWAER[which(!is.na(elo_df18_full$Reg))]/spread_adj
+
+SZN_Rank <- rank(-SWAER[which(!is.na(elo_df18_full$Reg))],ties.method='first')
+SZN_DivRank <- unlist(lapply(1:7, function(x) rank(-SWAER[which(elo_df18_full$Div==x & !is.na(elo_df18_full$Reg))],ties.method='first')))
+SZN_DivRank <- SZN_DivRank[match(1:715,unlist(lapply(1:7, function(x) which(elo_df18_full$Div==x & !is.na(elo_df18_full$Reg)))))]
+
+rankings <- read.csv('C:/Users/Owner/Desktop/SWAER/output/hist rankings.csv',stringsAsFactors=F)
+hist_rank18 <- data.frame(Tm_ID=row.names(elo_df18_full)[which(!is.na(elo_df18_full$Reg))],Season=2018,Week=0,Div=elo_df18_full$Div[which(!is.na(elo_df18_full$Reg))],Reg=elo_df18_full$Reg[which(!is.na(elo_df18_full$Reg))],DivRank=SZN_DivRank,OvrRank=SZN_Rank,iSWAER=iSWAER,SWAER=SWAER)
+rankings <- rbind(rankings,hist_rank18)
+write.csv(rankings,'C:/Users/Owner/Desktop/SWAER/output/hist rankings.csv',row.names=F)
+
+records <- read.csv('C:/Users/Owner/Desktop/SWAER/output/rec rankings.csv',stringsAsFactors=F)
+hist_rec18 <- data.frame(Week=0,Tm_ID=row.names(elo_df18_full)[which(!is.na(elo_df18_full$Reg))],Season=2018)
+hist_rec18[,c('W','L','T','C_W','C_L','C_T')] <- 0
+hist_rec18$Conf <- OHSAA_df$ConfSub.2018[match(hist_rec18$Tm_ID,OHSAA_df$OHSAA.ID)]
+records <- rbind(records,hist_rec18)
+write.csv(records,'C:/Users/Owner/Desktop/SWAER/output/rec rankings.csv',row.names=F)
+
+
+final_df$Ovr_Rank <- ifelse(is.na(SZN_Rank[match(master_tms,tm_list_HT)]),final_df$Ovr_Rank,SZN_Rank[match(master_tms,tm_list_HT)])
+final_df$Div_Rank <- ifelse(is.na(SZN_DivRank[match(master_tms,tm_list_HT)]),final_df$Div_Rank,SZN_DivRank[match(master_tms,tm_list_HT)])
+final_df$SWAER <- ifelse(is.na(SWAER[match(master_tms,tm_list_HT)]),final_df$SWAER,SWAER[match(master_tms,tm_list_HT)])
+final_df$Opp_Div_Rank <- ifelse(is.na(SZN_DivRank[match(master_opp,tm_list_no_wk)]),final_df$Opp_Div_Rank,SZN_DivRank[match(master_opp,tm_list_no_wk)])
+final_df$Opp_Rank <- ifelse(is.na(SZN_Rank[match(master_opp,tm_list_no_wk)]),final_df$Opp_Rank,SZN_Rank[match(master_opp,tm_list_no_wk)])
+
+
+seeding_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/2018/seeding1.csv',stringsAsFactors=F)
+playoffs_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/2018/playoffs1.csv',stringsAsFactors=F)
+conf_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/2018/conf1.csv',stringsAsFactors=F)
+crystal_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/2018/crystal1.csv',stringsAsFactors=F)
+
+crystal_df$Week <- crystal_df$Week + 1
+
+playoffs_df$Final4 <- playoffs_df$X4+playoffs_df$X5+playoffs_df$X6
+row.names(seeding_df) <- paste0(seeding_df$Season,'_',seeding_df$Week,'_',seeding_df$X)
+row.names(conf_df) <- paste0(conf_df$Season,'_',conf_df$Week,'_',conf_df$X)
+row.names(playoffs_df) <- paste0(playoffs_df$Season,'_',playoffs_df$Week,'_',playoffs_df$X)
+row.names(crystal_df) <- paste0(crystal_df$Season,'_',crystal_df$Week,'_',crystal_df$TeamID)
+
+final_df$Home11 <- ifelse(is.na(match(master_tms_id,row.names(seeding_df))),final_df$Home11,paste0(sprintf('%.0f',round(seeding_df$home[match(master_tms_id,row.names(seeding_df))],3)*100),'%'))
+final_df$Conf <- ifelse(is.na(match(master_tms_id,row.names(conf_df))),final_df$Conf,paste0(sprintf('%.0f',round(conf_df$X.1[match(master_tms_id,row.names(conf_df))],3)*100),'%'))
+final_df$In <- ifelse(is.na(match(master_tms_id,row.names(playoffs_df))),final_df$In, paste0(sprintf('%.0f',round(1-playoffs_df$X0[match(master_tms_id,row.names(playoffs_df))],3)*100),'%'))
+final_df$Final4 <- ifelse(is.na(match(master_tms_id,row.names(playoffs_df))),final_df$Final4, paste0(sprintf('%.0f',round(playoffs_df$Final4[match(master_tms_id,row.names(playoffs_df))],3)*100),'%'))
+final_df$Champ <- ifelse(is.na(match(master_tms_id,row.names(playoffs_df))),final_df$Champ, paste0(sprintf('%.0f',round(playoffs_df$X6[match(master_tms_id,row.names(playoffs_df))],3)*100),'%'))
+final_df$Curr_Seed <- ifelse(is.na(match(master_tms_id,row.names(crystal_df))),final_df$Curr_Seed, crystal_df$curr_seed[match(master_tms_id,row.names(crystal_df))])
+final_df$Proj_Seed <- ifelse(is.na(match(master_tms_id,row.names(crystal_df))),final_df$Proj_Seed, crystal_df$proj_seed[match(master_tms_id,row.names(crystal_df))])
+
+write.csv(final_df,'C:/Users/Owner/Desktop/SWAER/output/final_df2.csv',row.names=F)
+
+
+
+###view quick rankings
+elo_df18_full[which(elo_df18_full$Div==1 & !is.na(elo_df18_full$Reg))[match(1:10,SZN_DivRank[which(elo_df18_full$Div==1 & !is.na(elo_df18_full$Reg))])],]
+elo_df18_full[which(SZN_DivRank==1),]
+elo_df18_full['666',]
+
+
+
+
