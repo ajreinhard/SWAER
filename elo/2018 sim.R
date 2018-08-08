@@ -207,12 +207,13 @@ unknown_div_opp <- sapply(remaining_div_pick,function(x) JE_games_all$Tm_ID[whic
 guess_div[match(names(unknown_div_opp),row.names(elo_df18_nonOH))] <- OHSAA_df$Div.2018[match(unknown_div_opp,OHSAA_df$OHSAA.ID)]
 
 elo_df18_nonOH$City <- NA
-elo_df18_nonOH$School <- final_elos_nonOH$School[match(row.names(elo_df18_nonOH),row.names(final_elos_nonOH))]
-elo_df18_nonOH$Div <- ifelse(is.na(JE_div),ifelse(is.na(last_div),guess_div,last_div),JE_div)
-elo_df18_nonOH$Begin <- final_elos_nonOH$Current[match(row.names(elo_df18_nonOH),row.names(final_elos_nonOH))]
-elo_df18_nonOH$Current <- elo_df18_nonOH$Begin
 elo_df18_nonOH$Reg <- NA
+elo_df18_nonOH$Div <- ifelse(is.na(JE_div),ifelse(is.na(last_div),guess_div,last_div),JE_div)
 elo_df18_nonOH$div_avg <- div_reg[elo_df18_nonOH$Div,2]
+elo_df18_nonOH$School <- final_elos_nonOH$School[match(row.names(elo_df18_nonOH),row.names(final_elos_nonOH))]
+elo_df18_nonOH$Begin <- final_elos_nonOH$Current[match(row.names(elo_df18_nonOH),row.names(final_elos_nonOH))]
+elo_df18_nonOH$Current <- ifelse(is.na(elo_df18_nonOH$Begin),elo_df18_nonOH$div_avg,elo_df18_nonOH$Begin)
+
 elo_df18_nonOH[,c('sched_avg','hist_avg','Player_adj')] <- NA
 
 elo_df18_nonOH['398','Current'] <- elo_df18['398','Current']
@@ -221,7 +222,7 @@ elo_df18_nonOH['9057','Current'] <- elo_df18['9057','Current']
 elo_df18_full <- rbind(elo_df18[which(!is.na(elo_df18$Reg)),],elo_df18_nonOH)
 model_elos <- elo_df18_full[order(elo_df18_full$Reg),]
 model_elos$TeamID <- row.names(model_elos)
-bracket <- read.csv('data sets/Playoffs Bracket.csv',stringsAsFactors=F)
+
 
 spred_adj <- 18
 std_dev <- 0
@@ -399,14 +400,16 @@ proc.time() - begin
 
 
 ###pre-season 2018
-tm_list <- paste0('2018_1_',row.names(elo_df18_full)[which(!is.na(elo_df18_full$Reg))])
-tm_list_HT <- paste0('2018_1_',OHSAA_df$HyTek[match(row.names(elo_df18_full)[which(!is.na(elo_df18_full$Reg))],OHSAA_df$OHSAA.ID)])
-tm_list_no_wk <- paste0('2018_',OHSAA_df$HyTek[match(row.names(elo_df18_full)[which(!is.na(elo_df18_full$Reg))],OHSAA_df$OHSAA.ID)])
-
+spread_adj <- 18
 master_tms_id <- paste0(final_df$Season,'_',final_df$Week,'_',OHSAA_df$OHSAA.ID[match(final_df$Tm_Code,OHSAA_df$HyTek)])
 master_opp_id <- paste0(final_df$Season,'_',final_df$Week,'_',OHSAA_df$OHSAA.ID[match(final_df$Opp_Code,OHSAA_df$HyTek)])
 master_tms <- paste0(final_df$Season,'_',final_df$Week,'_',final_df$Tm_Code)
 master_opp <- paste0(final_df$Season,'_',final_df$Opp_Code)
+
+tm_list <- paste0('2018_1_',row.names(elo_df18_full)[which(!is.na(elo_df18_full$Reg))])
+tm_list_HT <- paste0('2018_1_',OHSAA_df$HyTek[match(row.names(elo_df18_full)[which(!is.na(elo_df18_full$Reg))],OHSAA_df$OHSAA.ID)])
+tm_list_no_wk <- paste0('2018_',OHSAA_df$HyTek[match(row.names(elo_df18_full)[which(!is.na(elo_df18_full$Reg))],OHSAA_df$OHSAA.ID)])
+
 
 SWAER <- (elo_df18_full[which(!is.na(elo_df18_full$Reg)),'Current']-mean(elo_df18_full[which(!is.na(elo_df18_full$Reg)),'Current']))/spread_adj
 div_avg <- aggregate(Current~Div,elo_df18_full,mean)
@@ -417,25 +420,11 @@ SZN_Rank <- rank(-SWAER[which(!is.na(elo_df18_full$Reg))],ties.method='first')
 SZN_DivRank <- unlist(lapply(1:7, function(x) rank(-SWAER[which(elo_df18_full$Div==x & !is.na(elo_df18_full$Reg))],ties.method='first')))
 SZN_DivRank <- SZN_DivRank[match(1:715,unlist(lapply(1:7, function(x) which(elo_df18_full$Div==x & !is.na(elo_df18_full$Reg)))))]
 
-rankings <- read.csv('C:/Users/Owner/Desktop/SWAER/output/hist rankings.csv',stringsAsFactors=F)
-hist_rank18 <- data.frame(Tm_ID=row.names(elo_df18_full)[which(!is.na(elo_df18_full$Reg))],Season=2018,Week=0,Div=elo_df18_full$Div[which(!is.na(elo_df18_full$Reg))],Reg=elo_df18_full$Reg[which(!is.na(elo_df18_full$Reg))],DivRank=SZN_DivRank,OvrRank=SZN_Rank,iSWAER=iSWAER,SWAER=SWAER)
-rankings <- rbind(rankings,hist_rank18)
-write.csv(rankings,'C:/Users/Owner/Desktop/SWAER/output/hist rankings.csv',row.names=F)
-
-records <- read.csv('C:/Users/Owner/Desktop/SWAER/output/rec rankings.csv',stringsAsFactors=F)
-hist_rec18 <- data.frame(Week=0,Tm_ID=row.names(elo_df18_full)[which(!is.na(elo_df18_full$Reg))],Season=2018)
-hist_rec18[,c('W','L','T','C_W','C_L','C_T')] <- 0
-hist_rec18$Conf <- OHSAA_df$ConfSub.2018[match(hist_rec18$Tm_ID,OHSAA_df$OHSAA.ID)]
-records <- rbind(records,hist_rec18)
-write.csv(records,'C:/Users/Owner/Desktop/SWAER/output/rec rankings.csv',row.names=F)
-
-
 final_df$Ovr_Rank <- ifelse(is.na(SZN_Rank[match(master_tms,tm_list_HT)]),final_df$Ovr_Rank,SZN_Rank[match(master_tms,tm_list_HT)])
 final_df$Div_Rank <- ifelse(is.na(SZN_DivRank[match(master_tms,tm_list_HT)]),final_df$Div_Rank,SZN_DivRank[match(master_tms,tm_list_HT)])
 final_df$SWAER <- ifelse(is.na(SWAER[match(master_tms,tm_list_HT)]),final_df$SWAER,SWAER[match(master_tms,tm_list_HT)])
 final_df$Opp_Div_Rank <- ifelse(is.na(SZN_DivRank[match(master_opp,tm_list_no_wk)]),final_df$Opp_Div_Rank,SZN_DivRank[match(master_opp,tm_list_no_wk)])
 final_df$Opp_Rank <- ifelse(is.na(SZN_Rank[match(master_opp,tm_list_no_wk)]),final_df$Opp_Rank,SZN_Rank[match(master_opp,tm_list_no_wk)])
-
 
 seeding_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/2018/seeding1.csv',stringsAsFactors=F)
 playoffs_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/2018/playoffs1.csv',stringsAsFactors=F)
@@ -458,15 +447,29 @@ final_df$Champ <- ifelse(is.na(match(master_tms_id,row.names(playoffs_df))),fina
 final_df$Curr_Seed <- ifelse(is.na(match(master_tms_id,row.names(crystal_df))),final_df$Curr_Seed, crystal_df$curr_seed[match(master_tms_id,row.names(crystal_df))])
 final_df$Proj_Seed <- ifelse(is.na(match(master_tms_id,row.names(crystal_df))),final_df$Proj_Seed, crystal_df$proj_seed[match(master_tms_id,row.names(crystal_df))])
 
+final_df$Q_score[is.na(final_df$Q_score)] <- ''
 write.csv(final_df,'C:/Users/Owner/Desktop/SWAER/output/final_df2.csv',row.names=F)
 
 
 
 ###view quick rankings
-elo_df18_full[which(elo_df18_full$Div==1 & !is.na(elo_df18_full$Reg))[match(1:10,SZN_DivRank[which(elo_df18_full$Div==1 & !is.na(elo_df18_full$Reg))])],]
+elo_df18_full[which(elo_df18_full$Div==6 & !is.na(elo_df18_full$Reg))[match(1:10,SZN_DivRank[which(elo_df18_full$Div==6 & !is.na(elo_df18_full$Reg))])],]
 elo_df18_full[which(SZN_DivRank==1),]
 elo_df18_full['666',]
 
 
 
+
+###write 2018 rows into rankings and record files
+rankings <- read.csv('C:/Users/Owner/Desktop/SWAER/output/hist rankings.csv',stringsAsFactors=F)
+hist_rank18 <- data.frame(Tm_ID=row.names(elo_df18_full)[which(!is.na(elo_df18_full$Reg))],Season=2018,Week=0,Div=elo_df18_full$Div[which(!is.na(elo_df18_full$Reg))],Reg=elo_df18_full$Reg[which(!is.na(elo_df18_full$Reg))],DivRank=SZN_DivRank,OvrRank=SZN_Rank,iSWAER=iSWAER,SWAER=SWAER)
+rankings <- rbind(rankings,hist_rank18)
+write.csv(rankings,'C:/Users/Owner/Desktop/SWAER/output/hist rankings.csv',row.names=F)
+
+records <- read.csv('C:/Users/Owner/Desktop/SWAER/output/rec rankings.csv',stringsAsFactors=F)
+hist_rec18 <- data.frame(Week=0,Tm_ID=row.names(elo_df18_full)[which(!is.na(elo_df18_full$Reg))],Season=2018)
+hist_rec18[,c('W','L','T','C_W','C_L','C_T')] <- 0
+hist_rec18$Conf <- OHSAA_df$ConfSub.2018[match(hist_rec18$Tm_ID,OHSAA_df$OHSAA.ID)]
+records <- rbind(records,hist_rec18)
+write.csv(records,'C:/Users/Owner/Desktop/SWAER/output/rec rankings.csv',row.names=F)
 

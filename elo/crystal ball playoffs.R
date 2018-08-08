@@ -42,7 +42,8 @@ OH_teams <- row.names(model_elos)[which(!is.na(model_elos$Reg))]
 ####end season prep
 
 ##start with weekly
-po_yr <- lapply(1:10, function(wkst) {
+po_yr <- lapply(1:11, function(wkst) {
+
 curr_elos <- model_elos
 curr_elos$Begin <- c(model_elos[,paste0(y,' Week ',wkst-1)])
 curr_elos$Current <- curr_elos$Begin
@@ -50,6 +51,7 @@ Div_repl <- aggregate(Begin~Div,curr_elos,FUN=mean,subset= !is.na(Reg))
 
 wk_df <- sim_df[which(sim_df$Week>=wkst),]
 
+if (wkst!=11) {
 wk_df$Tm_elo_pre <- curr_elos[paste0(wk_df$Tm_ID),'Current']
 wk_df$Opp_elo_pre <- curr_elos[paste0(wk_df$Opp_ID),'Current']
 wk_df$Opp_elo_pre <- ifelse(is.na(wk_df$Opp_elo_pre), Div_repl[wk_df$Opp_Div,2], wk_df$Opp_elo_pre)
@@ -59,6 +61,7 @@ wk_df$Win_Prob <- 1/(1+10^(-wk_df$elo_diff/400))
 wk_df$Win <- NA
 wk_df$Over <- NA
 full_pred <- wk_df
+}
 
 if (wkst!=1) {
 played <- sim_df[which(sim_df$Week<wkst),]
@@ -102,3 +105,4 @@ po_yr
 
 crystal_df <- do.call(rbind,all_seedings)
 write.csv(crystal_df,'C:/Users/Owner/Desktop/SWAER/output/crystal.csv',row.names=F)
+

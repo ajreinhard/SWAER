@@ -35,11 +35,11 @@
 </div> 
 
   <script type="text/javascript">
-	games_tbl("https://sites.google.com/site/swaermodel/TmPgs_2016-18.json?revision=2");
-	games_tbl("https://sites.google.com/site/swaermodel/TmPgs_2013-15.json?revision=2");
-	games_tbl("https://sites.google.com/site/swaermodel/TmPgs_2010-12.json?revision=2");
-	games_tbl("https://sites.google.com/site/swaermodel/TmPgs_2007-09.json?revision=2");
-	tm_info("https://sites.google.com/site/swaermodel/Tm_Info.json?revision=2");
+	games_tbl("https://sites.google.com/site/swaermodel/TmPgs_2016-18.json?revision=14");
+	games_tbl("https://sites.google.com/site/swaermodel/TmPgs_2013-15.json?revision=6");
+	games_tbl("https://sites.google.com/site/swaermodel/TmPgs_2010-12.json?revision=6");
+	games_tbl("https://sites.google.com/site/swaermodel/TmPgs_2007-09.json?revision=6");
+	tm_info("https://sites.google.com/site/swaermodel/Tm_Info.json?revision=3");
 
   function tm_info(url) {
     var params = {};  
@@ -61,19 +61,22 @@
 
     html += '</div>';
     html += '<div>';
-    if (responseText[TeamHyTek][0]['Div.2017'] != null) {
+    if (responseText[TeamHyTek][0]['Div.2018'] != null) {
 	    html += 'The ' + responseText[TeamHyTek][0].Mascot + ' are a ';
 	    html += responseText[TeamHyTek][0].Public + ' school with an enrolloment of';
 	    html += responseText[TeamHyTek][0].Enrollment + ' male students.';
-	    html += ' They are in OHSAA Region ' + responseText[TeamHyTek][0]['Reg.2017'] + ' of Division' + responseText[TeamHyTek][0]['Div.2017'] + ' for post-season play.';
-	    html += ' They are a member of ' + responseText[TeamHyTek][0]['ConfSub.2017'] + '.';
+	    html += ' They are in OHSAA Region ' + responseText[TeamHyTek][0]['Reg.2018'] + ' of Division' + responseText[TeamHyTek][0]['Div.2018'] + ' for post-season play.';
+	    html += ' They are a member of ' + responseText[TeamHyTek][0]['ConfSub.2018'] + '.';
 	    html += ' The school is located in ' + responseText[TeamHyTek][0].City + ' which is in ' + responseText[TeamHyTek][0].GenArea + ' Ohio (' + responseText[TeamHyTek][0].County + ' County).';
 	    if (responseText[TeamHyTek][0].StadID != null) {
 		    html += ' Their home field is <a href=http://ohiostadiums.com/stadium.php?id=' + responseText[TeamHyTek][0].StadID + ' target="_blank">' + responseText[TeamHyTek][0].Stadium + '</a>';
 		    html += ' (' + responseText[TeamHyTek][0].Surface + ', Capacity of ' + responseText[TeamHyTek][0].Capacity + ').';
 	   }
 	   html += '</div><br><div>';
-	   html += '<a href=http://www.fantastic50.net/team' + responseText[TeamHyTek][0].Fan50_ID + '.html target="_blank">Drew Pasteur\'s Fantastic 50 Team Page</a>';
+	   html += '<a href=http://www.fantastic50.net/' + responseText[TeamHyTek][0].Fan50_ID + '.html target="_blank">Drew Pasteur\'s Fantastic 50 Team Page</a><br>';
+	   html += '<a href=https://ohiohshelmets.webs.com/' + responseText[TeamHyTek][0].oh_helm + ' target="_blank">Ohio HS Helmets Team Page</a><br>';
+	   html += '<a href=http://yappi.net/docuwiki/doku.php?id=' + responseText[TeamHyTek][0].Yappi + ' target="_blank">All-Time Results on Yappi Football History Wiki</a><br>';
+	   html += '<a href=http://www.maxpreps.com/local/team/schedule.aspx?schoolid=' + responseText[TeamHyTek][0].maxpreps_ugly + '&ssid=c3d47049-daf2-47e3-8a8e-1e4552d8a797 target="_blank">MaxPreps Team Page</a>';
     }
     html +=  '</div><br><hr>';
     document.getElementById('tm-info').innerHTML = html;
@@ -101,30 +104,30 @@
 	html += "<li>Competed in OHSAA Division " + responseText[TeamHyTek][i].Team['Finish.Div'] + ", Region " + responseText[TeamHyTek][i].Team['Finish.Reg'] + "</li>";
 	if (responseText[TeamHyTek][i].Team.Conf != null) {html += "<li>Member of " + responseText[TeamHyTek][i].Team.Conf + "</li>"};
 	html += "<li>Ranked #" + responseText[TeamHyTek][i].Team['Finish.DivRank'] + " in Div " + responseText[TeamHyTek][i].Team['Finish.Div'] + ", #" + responseText[TeamHyTek][i].Team['Finish.OvrRank'] + " Overall</li>";
-	html += "<li>Joe Eitel's <a href=http://www.joeeitel.com/hsfoot/teams.jsp?teamID=" + responseText[TeamHyTek][i].Team['Finish.TeamID'] + "&year=" + responseText[TeamHyTek][i].Team.Season + " target=\"_blank\">Team Page</a> and ";
+	html += "<li>Joe Eitel's <a href=http://www.joeeitel.com/hsfoot/teams.jsp?teamID=" + responseText[TeamHyTek][i].Team['Finish.Tm_ID'] + "&year=" + responseText[TeamHyTek][i].Team.Season + " target=\"_blank\">Team Page</a> and ";
 	html += "<a href=http://www.joeeitel.com/hsfoot/region.jsp?region=" + responseText[TeamHyTek][i].Team['Finish.Reg'] + "&year=" + responseText[TeamHyTek][i].Team.Season + " target=\"_blank\">Harbin Playoff Standings</a></li>";
-	html += "<li>View <a href=https://sites.google.com/site/swaermodel/playoffs?year=" + responseText[TeamHyTek][i].Team.Season + "&div=" + responseText[TeamHyTek][i].Team['Finish.Div'] + ">Playoff Bracket</a></li>";
+	if (responseText[TeamHyTek][i].Team.Season != 2018) {html += "<li>View <a href=https://sites.google.com/site/swaermodel/playoffs?year=" + responseText[TeamHyTek][i].Team.Season + "&div=" + responseText[TeamHyTek][i].Team['Finish.Div'] + ">Playoff Bracket</a></li>"};
 	html += "</ul><div class='tbl-cont' onscroll='ok_then(this);'><table>";
-	html += '<thead><tr><td>Wk</td><td>Date</td><td>Ovr / Div / SWAER</td><td>Opponent</td><td>Result</td><td>Spread</td><td>Win%</td><td>Conf%</td><td>Playoff%</td><td>State%</td></tr></thead>';
+	html += '<thead><tr><td class="fixed freeze_horizontal">Wk</td><td class="fixed freeze_horizontal">Date</td><td class="fixed freeze_horizontal">Opponent</td><td>Result</td><td>Spread</td><td>Win%</td><td>Playoff%</td><td>Curr Seed</td><td>Proj Seed</td><td>Overall#</td><td>Division#</td><td>SWAER</td><td>Conf%</td><td>State%</td></tr></thead>';
     for (var j in responseText[TeamHyTek][i].Games.Opp) {
 	var gms = responseText[TeamHyTek][i].Games;
 	html += '<tr';
 	if (gms.Playoff[j] == 1) {html += ' bgcolor="#FFFF99"'};
-	if (gms.Conf_Matchup[j] != null & gms.Conf_Matchup[j] != "") {html += ' bgcolor="LightGray"'};
+ 	if (gms.Conf_Matchup[j] != null & gms.Conf_Matchup[j] != "") {html += ' bgcolor="LightGray"'};
 	if (gms.Excl_Harbin[j] == 1) {html += ' bgcolor="LightBlue"'};
+	html += ' bgcolor="white"'
 	html += '><td class="fixed freeze_horizontal">' + gms.Week[j] + '</td>';
 	html += '<td class="fixed freeze_horizontal">' + gms.Q_date[j] + '</td>';
-	html += '<td class="fixed freeze_horizontal">' + gms.tm_info[j] + '</td>';
 	if (gms.Opp[j] == "BYE WEEK") {
-		html += '<td class="fixed freeze_horizontal" colspan="2">BYE WEEK</td>';
-		html += '<td></td><td></td>';
+		html += '<td class="fixed freeze_horizontal">BYE WEEK</td>';
+		html += '<td></td><td></td><td></td>';
 	} else {
 	if (gms.Opp_Helm[j] == "#N/A" || gms.Opp_Helm[j] == "") {
 		html += '<td class="fixed freeze_horizontal">';
 	} else {
 		html += '<td class="fixed freeze_horizontal"><img height=25 src="' + gms.Opp_Helm[j] + '"> ';
 	}
-	if (gms.Opp_Div_Rank[j] == null & gms.SWAER[j] != null) {
+	if (gms.Opp_Div_Rank[j] == null) {
 		html += gms.Q_Loc[j] + ' <a href=http://www.joeeitel.com/hsfoot/teams.jsp?teamID=' + gms.Opp_Code[j] + '&year=' + responseText[TeamHyTek][i].Team.Season + '>' + gms.Opp[j] + '</a>';
 		html += '<sup>' + gms.Q_Opp_Div[j] + '</sup></td>';
 	} else {
@@ -132,7 +135,7 @@
 		html += ' <a href=https://sites.google.com/site/swaermodel/teams/' + gms.Opp_Code[j] + '>' + gms.Opp[j] + '</a>';
 		html += '<sup>' + gms.Q_Opp_Div[j] + '</sup><sub>#' + gms.Opp_Div_Rank[j] + '</sub></td>';
 	}
-	html += '<td class="fixed freeze_horizontal"';
+	html += '<td';
 	if (gms.Q_score[j].substring(0,1) == "W") {html += ' style="color:green";'};
 	if (gms.Q_score[j].substring(0,1) == "L") {html += ' style="color:red";'};
 	html += '>' + gms.Q_score[j] + '</td>';
@@ -142,14 +145,23 @@
 	html += '>' + gms.spread[j] + '</td>';
 	html += '<td>' + gms.Q_pred[j] + '</td>';
 	}
-	html += '<td>' + gms.Conf[j] + '</td>';
 	po_mod = '<h3>Probability of...</h3><table>';
 	po_mod += '<tr><td>Making the Playoffs:</td><td>' + gms.In[j] + '</td></tr>'
 	po_mod += '<tr><td>Home Field Adv in Rnd 1:</td><td>' + gms.Home11[j] + '</td></tr>'
 	po_mod += '<tr><td>Advancing to Final Four:</td><td>' + gms.Final4[j] + '</td></tr>'
 	po_mod += '</table>'
+	if (gms.In[j] == 'NA%') {
+	html += '<td colspan="7"><td>';
+	} else {
 	html += '<td><a onclick="open_mod(\'' + po_mod + '\');">' + gms.In[j] + '</a></td>';
+	html += '<td>' + gms.Curr_Seed[j] + '</td>';
+	html += '<td>' + gms.Proj_Seed[j] + '</td>';
+	html += '<td>#' + gms.Ovr_Rank[j] + '</td>';
+	html += '<td>#' + gms.Div_Rank[j] + '</td>';
+	html += '<td>' + Math.round(gms.SWAER[j]*10)/10 + '</td>';
+	html += '<td>' + gms.Conf[j] + '</td>';
 	html += '<td>' + gms.Champ[j] + '</td>';
+	}
 	html += '</tr>';
     }
 	html += "</table></div><br><hr>";
@@ -198,15 +210,17 @@ function ok_then(what_is_this) {
     var translate_x = "translate(" + what_is_this.scrollLeft + "px,0px)";
     var translate_xy = "translate(" + what_is_this.scrollLeft + "px," + what_is_this.scrollTop + "px)";
     
+    
+	
     var all_tbls = document.getElementsByClassName('tbl-cont');
     for (i = 0; i < all_tbls.length; i++) {
       all_tbls[i].scrollLeft = what_is_this.scrollLeft;
     }
-
+    
     var fixed_vertical_elts = document.getElementsByClassName("freeze_vertical");
     var fixed_horizontal_elts = document.getElementsByClassName("fixed freeze_horizontal");
     var fixed_both_elts = document.getElementsByClassName("freeze");
-    
+   
 
     for (i = 0; i < fixed_horizontal_elts.length; i++) {
       fixed_horizontal_elts[i].style.webkitTransform = translate_x;
@@ -240,7 +254,9 @@ table			{border-top: 1px solid grey;
 
   
 td 			{font: menu; padding: 1px; padding-left: 5px; padding-right: 5px; text-align:center;
+			font-size: 2.5vw;
 			border-bottom: 1.5px solid grey;
+			background-color: inherit;
 			}
 
 
@@ -250,13 +266,9 @@ thead td	{background: buttonface; font: menu; border: 1px outset white;
 			 border-left: 1px solid buttonhighlight;
 			 border-right: 1px solid buttonshadow;
 			 border-bottom: 1px solid buttonshadow;
-			 height: 16px; white-space: normal;
+			 height: 16px; font-size: 3vw; white-space: normal;
 			 }
 
-	table tr td:nth-of-type(4) {
-
-		text-align: left;
-	}
 
 .tbl-cont {
   margin: 2vw;
@@ -267,8 +279,19 @@ thead td	{background: buttonface; font: menu; border: 1px outset white;
 
 .fixed.freeze_horizontal {
   position: relative;
+  text-align: center;
+}
+
+.fixed.freeze_horizontal:nth-of-type(3) {
+  position: relative;
   text-align: left;
 }
+
+
+@media screen and (min-width: 850px) {
+td 		{font-size: 16px;}
+thead td	{font-size: 16px;}
+}	
 
 
 

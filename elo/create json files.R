@@ -73,10 +73,10 @@ write(exportJson2, paste0('Tm_Info.json'))
 ##
 ###Start with Brackets DF
 ##
-playoffs_df <- read.csv('output/Playoffs Bracket.csv',stringsAsFactors=F)
-JE_games <- read.csv('output/JoeEitel GameLog.csv',stringsAsFactors=F)
+playoffs_df <- read.csv('data sets/Playoffs Bracket.csv',stringsAsFactors=F)
+JE_games <- read.csv('data sets/JoeEitel GameLog.csv',stringsAsFactors=F)
 JE_games <- JE_games[which(JE_games$Playoff==1),]
-hist_rankings <- read.csv('output/hist rankings.csv',stringsAsFactors=F)
+hist_rankings <- read.csv('C:/Users/Owner/Desktop/SWAER/output/hist rankings.csv',stringsAsFactors=F)
 
 playoffs_df$Round <- playoffs_df$Week - 10
 
@@ -107,14 +107,14 @@ JE_id <- paste0(JE_games$Tm_ID,'_',JE_games$Opp_ID,'_',JE_games$Season,'_',JE_ga
 playoffs_df[,c('Top_Score','Bottom_Score')] <- JE_games[match(po_id,JE_id),c('Tm_score','Opp_score')]
 
 #SWAER Div Rankings
-playoffs_df$Top_DivRank <- hist_rankings$DivRank[match(paste0(playoffs_df$Season,'_',playoffs_df$Week,'_',playoffs_df$FavID),paste0(hist_rankings$Season,'_',hist_rankings$Week+1,'_',hist_rankings$TeamID))]
-playoffs_df$Bottom_DivRank <- hist_rankings$DivRank[match(paste0(playoffs_df$Season,'_',playoffs_df$Week,'_',playoffs_df$DogID),paste0(hist_rankings$Season,'_',hist_rankings$Week+1,'_',hist_rankings$TeamID))]
+playoffs_df$Top_DivRank <- hist_rankings$DivRank[match(paste0(playoffs_df$Season,'_',playoffs_df$Week,'_',playoffs_df$FavID),paste0(hist_rankings$Season,'_',hist_rankings$Week+1,'_',hist_rankings$Tm_ID))]
+playoffs_df$Bottom_DivRank <- hist_rankings$DivRank[match(paste0(playoffs_df$Season,'_',playoffs_df$Week,'_',playoffs_df$DogID),paste0(hist_rankings$Season,'_',hist_rankings$Week+1,'_',hist_rankings$Tm_ID))]
 
 playoffs_df$Bottom_Winner <- ifelse(playoffs_df$Top_Score < playoffs_df$Bottom_Score,'winner','')
 playoffs_df$Top_Winner <- ifelse(playoffs_df$Top_Score < playoffs_df$Bottom_Score,'','winner')
 
 
-playoffs_df$Div <- hist_rankings$Div[match(paste0(playoffs_df$Season,'_',playoffs_df$Week,'_',playoffs_df$FavID),paste0(hist_rankings$Season,'_',hist_rankings$Week+1,'_',hist_rankings$TeamID))]
+playoffs_df$Div <- hist_rankings$Div[match(paste0(playoffs_df$Season,'_',playoffs_df$Week,'_',playoffs_df$FavID),paste0(hist_rankings$Season,'_',hist_rankings$Week+1,'_',hist_rankings$Tm_ID))]
 pull_cols <- c('Fav','Dog',names(playoffs_df)[15:26])
 
 div_list <- c(lapply(2007:2012,function(x) lapply(seq(0,20,4),function(y) y+(1:4))),
@@ -131,7 +131,18 @@ playoffs_df[which(playoffs_df$Reg==reg & playoffs_df$Season==yr & playoffs_df$Ro
 })
 })
 po_finals <- lapply(3:5, function(rnd) {
+if (rnd==3) {
+if (div_reg==1 & (yr==2013 || yr==2014 || yr==2015)) {
 playoffs_df[which(playoffs_df$Div==div_reg & playoffs_df$Season==yr & playoffs_df$Round==rnd),pull_cols]
+} else {
+order_fnl4 <- unlist(playoffs_df[which(playoffs_df$Div==div_reg & playoffs_df$Season==yr & playoffs_df$Round==4),c('FavID','DogID')])[c(1,3,2,4)]
+reg_fnl <- playoffs_df[which(playoffs_df$Div==div_reg & playoffs_df$Season==yr & playoffs_df$Round==3),]
+fnl4 <- ifelse(reg_fnl$Bottom_Winner=='winner',reg_fnl$DogID,reg_fnl$FavID)
+use_order <- match(order_fnl4,fnl4)
+playoffs_df[which(playoffs_df$Div==div_reg & playoffs_df$Season==yr & playoffs_df$Round==3)[use_order],]
+}} else {
+playoffs_df[which(playoffs_df$Div==div_reg & playoffs_df$Season==yr & playoffs_df$Round==rnd),pull_cols]
+}
 })
 full_list <- c(list(po_finals),reg_set)
 names(full_list) <- c('State',c(reg_list[[div_reg]]))
@@ -146,11 +157,13 @@ write(exportJson, paste0('Playoff Brackets.json'))
 
 
 ####create rankings JSON
+setwd('C:/Users/Owner/Desktop/SWAER')
 #also need to pull in rankings and records
-po_df <- read.csv('output/playoffs.csv',stringsAsFactors=F)
-conf_df <- read.csv('output/conf.csv',stringsAsFactors=F)
-crystal <- read.csv('output/crystal.csv',stringsAsFactors=F)
-bracket <- read.csv('output/Playoffs Bracket.csv',stringsAsFactors=F)
+po_df <- rbind(read.csv('output/playoffs.csv',stringsAsFactors=F),read.csv('output/2018/playoffs1.csv',stringsAsFactors=F))
+conf_df <- rbind(read.csv('output/conf.csv',stringsAsFactors=F),read.csv('output/2018/conf1.csv',stringsAsFactors=F))
+crystal <- rbind(read.csv('output/crystal.csv',stringsAsFactors=F),read.csv('output/2018/crystal1.csv',stringsAsFactors=F))
+records <- read.csv('C:/Users/Owner/Desktop/SWAER/output/rec rankings.csv',stringsAsFactors=F)
+rankings <- read.csv('C:/Users/Owner/Desktop/SWAER/output/hist rankings.csv',stringsAsFactors=F)
 
 
 rankings$ID <- paste0(rankings$Tm_ID,'_',rankings$Season,'_',rankings$Week)
@@ -188,6 +201,7 @@ conf_df$ID <- paste0(conf_df$X,'_',conf_df$Season,'_',conf_df$Week-1)
 rankings$ConfChamp <- conf_df$X.1[match(rankings$ID,conf_df$ID)]
 
 #crystal
+rankings$ID <- paste0(rankings$Tm_ID,'_',rankings$Season,'_',ifelse(rankings$Week>=10,10,rankings$Week))
 crystal$ID <- paste0(crystal$TeamID,'_',crystal$Season,'_',crystal$Week)
 rankings$HarbinCurr <- crystal$curr_avg[match(rankings$ID,crystal$ID)]
 rankings$HarbinProj <- crystal$proj_avg[match(rankings$ID,crystal$ID)]
@@ -195,14 +209,14 @@ rankings$SeedCurr <- crystal$curr_seed[match(rankings$ID,crystal$ID)]
 rankings$SeedProj <- crystal$proj_seed[match(rankings$ID,crystal$ID)]
 
 #actual seed
-rankings$ID <- paste0(rankings$Tm_ID,'_',rankings$Season)
-teams_df$ID <- paste0(teams_df$TeamID,'_',teams_df$Yr)
-SeedActual <- teams_df$Seed[match(rankings$ID,teams_df$ID )]
-SeedActual <- as.numeric(as.character(SeedActual))
+#rankings$ID <- paste0(rankings$Tm_ID,'_',rankings$Season)
+#teams_df$ID <- paste0(teams_df$TeamID,'_',teams_df$Yr)
+#SeedActual <- teams_df$Seed[match(rankings$ID,teams_df$ID )]
+#SeedActual <- as.numeric(as.character(SeedActual))
 
-rankings$SeedCurr <- ifelse(rankings$Week>=10,SeedActual,rankings$SeedCurr)
-rankings$SeedProj <- ifelse(rankings$Week>=10,SeedActual,rankings$SeedProj)
-rankings$HarbinCurr[which(rankings$Week==0)] <- 0
+#rankings$SeedCurr <- ifelse(rankings$Week>=10,SeedActual,rankings$SeedCurr)
+#rankings$SeedProj <- ifelse(rankings$Week>=10,SeedActual,rankings$SeedProj)
+#rankings$HarbinCurr[which(rankings$Week==0)] <- 0
 
 #some seeds had tie breakers.. look into later
 #rankings[which(rankings$Week==10 & SeedActual>=9 & rankings$Playoffs==1),]
@@ -250,7 +264,7 @@ rankings[which(rankings$Week==wk & rankings$Season==yr),]
 })
 })
 
-rank_list3 <- lapply(2015:2017, function(yr) {
+rank_list3 <- lapply(2015:2018, function(yr) {
 lapply(0:15, function(wk) {
 rankings[which(rankings$Week==wk & rankings$Season==yr),]
 })
@@ -259,7 +273,7 @@ rankings[which(rankings$Week==wk & rankings$Season==yr),]
 
 names(rank_list1) <- 2007:2010
 names(rank_list2) <- 2011:2014
-names(rank_list3) <- 2015:2017
+names(rank_list3) <- 2015:2018
 exportJson1 <- toJSON(rank_list1)
 exportJson2 <- toJSON(rank_list2)
 exportJson3 <- toJSON(rank_list3)
@@ -274,13 +288,13 @@ library(grDevices)
 lon <- c(467, 365, 401, 365, 365, 401, 401, 365, 415, 401, 365, 365, 365, 365, 365, 381, 365)
 lat <- c(133, 71, 161, 71, 71, 161, 161, 71, 35, 161, 71, 71, 71, 71, 71, 116, 71)
 
-shape_mapping <- rankings[which(rankings$Week=='0'),c('Season','Tm_ID','Team','Div','Reg','ConfMain','Conf','Lon','Lat')]
+head(rankings)
+shape_mapping <- rankings[which(rankings$Week=='0'),c('Season','Tm_ID','Team','Div','Reg','ConfMain','ConfSub','Lon','Lat')]
 
 
 p <- function(..., sep='_') {
     paste(..., sep=sep, collapse=sep)
 }
-
 
 get_shape <- function(x) {
 combo <- paste0(shape_mapping$Season,'_',x)
@@ -289,12 +303,19 @@ rnd_list <- lapply(coord_list, function(j) list(round(((j[[1]]--84.82)/(-80.51--
 chull_list <- lapply(rnd_list, function(j) paste0(j[[1]][chull(j[[1]],j[[2]])],',',j[[2]][chull(j[[1]],j[[2]])]))
 paste_list <- sapply(chull_list, p, sep=' ')
 
-names(paste_list) <- unique(combo)
-return(paste_list)
+x_cen <- sapply(paste_list, function(z) round(mean(as.numeric(sapply(strsplit(unlist(strsplit(z,' ')),','),function(x) x[[1]]))),0))
+y_cen <- sapply(paste_list, function(z) round(mean(as.numeric(sapply(strsplit(unlist(strsplit(z,' ')),','),function(x) x[[2]]))),0))
+
+paste_list2 <- lapply(1:length(unique(combo)), function(x) list(center_x=paste0(x_cen[x]),center_y=paste0(y_cen[x]),shp=paste_list[x]))
+
+names(paste_list2) <- unique(combo)
+return(paste_list2)
 }
 
+shape_mapping$ConfSub <- ifelse(is.na(shape_mapping$ConfSub),shape_mapping$ConfMain,paste0(shape_mapping$ConfMain,' - ',shape_mapping$ConfSub))
+
 shp_reg <- get_shape(shape_mapping$Reg)
-shp_conf <- get_shape(shape_mapping$Conf)
+shp_conf <- get_shape(shape_mapping$ConfSub)
 shp_confmain <- get_shape(shape_mapping$ConfMain)
 all_shp <- c(shp_reg,shp_conf,shp_confmain)
 shp_names <- t(sapply(strsplit(names(all_shp),'_'),function(x) c(x[[1]],x[[2]])))
@@ -304,9 +325,9 @@ shp_yr <- as.numeric(shp_names[,1])
 shp_div <- ceiling(as.numeric(shp_names[,2])/4)
 shp_div[which(shp_yr>=2013 & shp_yr <= 2015)] <- ceiling((as.numeric(shp_names[which(shp_yr>=2013 & shp_yr <= 2015),2])+2)/4)
 shp_div[which(is.na(shp_div))] <- 'CONF'
-table(shp_div)
 
-shp_list <- lapply(2008:2017, function(y) {
+
+shp_list <- lapply(2008:2018, function(y) {
 lapply(c('CONF',rev(rev(sort(unique(shp_div[which(shp_yr==y)])))[c(-1)])), function(d) {
 con_hull <- all_shp[which(shp_div==d & shp_yr==y)]
 names(con_hull) <- shp_grp[which(shp_div==d & shp_yr==y)]
@@ -314,7 +335,7 @@ return(con_hull)
 })
 })
 
-names(shp_list) <- 2008:2017
+names(shp_list) <- 2008:2018
 exportJson <- toJSON(shp_list)
 write(exportJson, paste0('map shapes.json'))
 

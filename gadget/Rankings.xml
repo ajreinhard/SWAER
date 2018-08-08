@@ -127,8 +127,9 @@
     </div>
   </div>
   <br>
-<select id="year_dd" onchange="new_rankings('false')">
-	<option value=2017 selected="selected">2017</option>
+<select id="year_dd" onchange="new_rankings('false')" style="font-size: 25px;">
+	<option value=2018 selected="selected">2018</option>
+	<option value=2017>2017</option>
 	<option value=2016>2016</option>
 	<option value=2015>2015</option>
 	<option value=2014>2014</option>
@@ -140,7 +141,7 @@
 	<option value=2008>2008</option>
 </select>
 <div id="week-pick" onclick="new_rankings('true')">
-  <button class="btn">0</button>
+  <button class="btn active">0</button>
   <button class="btn">1</button>
   <button class="btn">2</button>
   <button class="btn">3</button>
@@ -155,12 +156,12 @@
   <button class="btn">12</button>
   <button class="btn">13</button>
   <button class="btn">14</button>
-  <button class="btn active">15</button>
+  <button class="btn">15</button>
  </div>
   <br>
 <div id="test"></div>
 <h1 id="tbl-heading"><h1>
-<div id="rank-tbl" class="rank-tbl" onscroll="SetRowColors();"></div>
+<div id="rank-tbl" class="rank-tbl"></div>
 <script>
 change_map(8);
 new_rankings('false');
@@ -170,11 +171,11 @@ new_rankings('false');
   function new_rankings(pres_rank) {
 	var yr = document.getElementById("year_dd").value;
 	if (yr <= 2010) {
-		var url = "https://sites.google.com/site/swaermodel/RankList_2007-10.json?revision=2";
+		var url = "https://sites.google.com/site/swaermodel/RankList_2007-10.json?revision=3";
 	} else if(yr <= 2014) {
-		var url = "https://sites.google.com/site/swaermodel/RankList_2011-14.json?revision=2";
+		var url = "https://sites.google.com/site/swaermodel/RankList_2011-14.json?revision=3";
 	} else {
-		var url = "https://sites.google.com/site/swaermodel/RankList_2015-17.json?revision=2";
+		var url = "https://sites.google.com/site/swaermodel/RankList_2015-17.json?revision=3";
 	}
 	var wk = document.getElementsByClassName("btn active")[0].innerHTML;
 	bring_ranks(url,yr,wk,pres_rank);
@@ -189,7 +190,7 @@ new_rankings('false');
   };
 
   function bring_tm_info() {
-    var url = 'https://sites.google.com/site/swaermodel/Tm_Info.json?revision=2'
+    var url = 'https://sites.google.com/site/swaermodel/Tm_Info.json?revision=3'
     var params = {};  
     params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
     gadgets.io.makeRequest(url, quick_resp, params);
@@ -271,7 +272,7 @@ new_rankings('false');
 
 
   function shape_map(div,yr) {
-    var url = 'https://sites.google.com/site/swaermodel/map%20shapes.json?revision=2'
+    var url = 'https://sites.google.com/site/swaermodel/map%20shapes.json?revision=3'
     var params = {};  
     params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
     gadgets.io.makeRequest(url, function(obj) {shape_resp(obj,div,yr);}, params);
@@ -285,9 +286,11 @@ new_rankings('false');
 	var html = '<svg height="500" width="500">'
 
 	for (var j in responseText[yr_sel][div_sel]) {
-		html += '<polygon points= "' + responseText[yr_sel][div_sel][j] + '" style="fill:red;position:absolute;fill-rule:nonzero;" fill-opacity="0.5" onclick="MyFilter(\'' + j + '\',17)" />'
+		html += '<polygon points= "' + responseText[yr_sel][div_sel][j].shp + '" style="fill:red;position:absolute;fill-rule:nonzero;" fill-opacity="0.5" onclick="MyFilter(\'' + j + '\',17)" />'
+		html += '<text x="' + responseText[yr_sel][div_sel][j].center_x + '" y="' + responseText[yr_sel][div_sel][j].center_y + '" style="fill:white;font-size:30px;">' + j +'</text>'
 	}
 	html += '</svg>';
+
 	document.getElementById('region').innerHTML = html;
   };
 
@@ -972,6 +975,10 @@ a.wyandot  {left:151px; top:137px;}
 
 #week-pick {
     width: 100vw; /* Width of the outside container */
+}
+
+button {
+  font-size: 2vw;
 }
 
 .btn {

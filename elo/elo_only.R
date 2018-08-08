@@ -916,7 +916,7 @@ pred_all$tm_info <- paste0('#',pred_all$Ovr_Rank,' / #',pred_all$Div_Rank,' / ',
 pred_all$Q_score <- paste0(ifelse(pred_all$Win==1,'W ','L '),pred_all$Tm_score,'-',pred_all$Opp_score)
 pred_all$Q_date <- paste0(as.numeric(substr(pred_all$Date,6,7)),'/',as.numeric(substr(pred_all$Date,9,10)))
 pred_all$Q_pred <- sprintf('%.1f',round(pred_all$elo_win,3)*100)
-pred_all$spread <- round(pred_all$elo_diff/19.4,1)
+pred_all$spread <- round(pred_all$elo_diff/spread_adj,1)
 
 data.frame(pred_all)
 })
@@ -949,6 +949,20 @@ full_pg <- cbind(both_helmets,tm_hist)
 #write.csv(tables,'output/SZN Table16.csv')
 #write.csv(full_pg,'output/hist Tables.csv')
 
+
+
+###find missing names in final df
+missing_nonOH <- final_df[which(!is.na(final_df$Tm_Code) & is.na(final_df$Opp)),c('Season','Opp_Code')]
+unique(paste0(missing_nonOH$Season,'_',missing_nonOH$Opp_Code))
+
+nonOH_JEid <- sapply(strsplit(nonOH_div$X,'_'),function(x) x[[2]])
+missing_nonOH$row_mat <- match(missing_nonOH$Opp_Code,nonOH_JEid)
+unique(missing_nonOH$Opp_Code[is.na(missing_nonOH$row_mat)])
+
+write.csv(missing_nonOH,'elo/missing_nonOH.csv',row.names=F)
+#########
+
+
 #######
 #move out of above loop because it takes too long
 ####Create csv file to save in google sheets
@@ -973,6 +987,10 @@ pred_all$spread <- round(pred_all$elo_diff/spred_adj,1)
 pred_all$Tm <- HyTek$Best.Name[match(pred_all$Tm_ID,HyTek$OHSAA.ID)]
 pred_all$Opp <- HyTek$Best.Name[match(pred_all$Opp_ID,HyTek$OHSAA.ID)]
 
+##remove anyone whom I did not make a team page for and remove rows with opp = 'BYE'
+pred_all <- pred_all[!is.na(pred_all$Tm),]
+pred_all <- pred_all[pred_all$Opp_ID!=9998,]
+
 pred_all$non_OH_Opp <- paste0(nonOH_div$Best.Name[match(paste0(pred_all$Season,'_',pred_all$Opp_ID),nonOH_div$X)],' (',nonOH_div$ST[match(paste0(pred_all$Season,'_',pred_all$Opp_ID),nonOH_div$X)],')')
 pred_all$Opp <- ifelse(is.na(pred_all$Opp),pred_all$non_OH_Opp,pred_all$Opp)
 
@@ -985,6 +1003,9 @@ nonOH_helm <- nonOH_div$Helm[match(paste0(big_pred_all$Season,'_',big_pred_all$O
 big_pred_all$Opp_Helm <- ifelse(is.na(nonOH_helm),big_pred_all$Opp_Helm,nonOH_helm)
 
 big_pred_all$Q_score[which(big_pred_all$Result=='T')] <- paste0('T ',substr(big_pred_all$Q_score[which(big_pred_all$Result=='T')],3,nchar(big_pred_all$Q_score[which(big_pred_all$Result=='T')])))
+
+
+#big_pred_all[which(big_pred_all$Tm_ID==1354 & big_pred_all$Season==2018),]
 
 #some are byes (all should be)
 #some are names that don't exist for OHSAA tournament anymore
@@ -1044,7 +1065,7 @@ pred_all[,c('Div_Rank','Ovr_Rank','Tm_iSWAER','SWAER')] <- rankings_df[paste0(pr
 pred_all[,c('Opp_Div_Rank','Opp_Rank')] <- rankings_df[paste0(pred_all$Season,'_',pred_all$Week,'_',pred_all$Opp_ID),c('DivRank','OvrRank')]
 pred_all[,c('Home11')] <- seeding_df[paste0(pred_all$Season,'_',pred_all$Week,'_',pred_all$Tm_ID),c('home')]
 pred_all[,c('Conf')] <- conf_df[paste0(pred_all$Season,'_',pred_all$Week,'_',pred_all$Tm_ID),c('X.1')]
-pred_all[,c('Out','Final4','Champ')] <- playoffs_df[paste0(pred_all$Season,'_',pred_all$Week,'_',pred_all$Tm_ID),c('X1','Final4','X6')]
+pred_all[,c('Out','Final4','Champ')] <- playoffs_df[paste0(pred_all$Season,'_',pred_all$Week,'_',pred_all$Tm_ID),c('X0','Final4','X6')]
 pred_all[,c('Curr_Seed','Proj_Seed')] <- crystal_df[paste0(pred_all$Season,'_',pred_all$Week,'_',pred_all$Tm_ID),c('curr_seed','proj_seed')]
 
 
@@ -1072,6 +1093,19 @@ write.csv(final_df,'C:/Users/Owner/Desktop/SWAER/output/final_df.csv',row.names=
 
 
 
+##replace some teams that were not found
+opp_lookup <- paste0(final_df$Season,'_',final_df$Opp_Code)
+missing_nonOH <- read.csv('elo/missing_nonOH.csv',stringsAsFactors=F)
+missing_nonOH$opp_input <- paste0(missing_nonOH$Best.Name,' (',missing_nonOH$ST,')')
+
+final_df$Opp <- ifelse(is.na(match(opp_lookup, missing_nonOH$X)),final_df$Opp,missing_nonOH$opp_input[match(opp_lookup, missing_nonOH$X)])
+final_df$Opp_Helm <- ifelse(is.na(match(opp_lookup, missing_nonOH$X)),final_df$Opp_Helm,missing_nonOH$Helm[match(opp_lookup, missing_nonOH$X)])
+
+###final seed
+crystal_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/crystal.csv',stringsAsFactors=F)
+final_df$Curr_Seed <- ifelse(final_df$Week>10,crystal_df$curr_seed[match(paste0(final_df$Season,'_10_',OHSAA_df$OHSAA.ID[match(final_df$Tm_Code,OHSAA_df$HyTek)]),paste0(crystal_df$Season,'_',crystal_df$Week,'_',crystal_df$TeamID))],final_df$Curr_Seed)
+final_df$Proj_Seed <- ifelse(final_df$Week>10,final_df$Curr_Seed,final_df$Proj_Seed)
+final_df$my_link <- ifelse(is.na(as.numeric(final_df$Opp_Code)),0,1)
 
 
 
