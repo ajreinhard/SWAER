@@ -65,7 +65,7 @@ text(0,17,'Regional Championship:',adj = c(0,0))
 text(0,16,'State Championship:',adj = c(0,0))
 text(0,15,'Conference Title:',adj = c(0,0))
 text(0,13,bquote(bold(.('Power Ranking'))),adj = c(0,0))
-
+text(0,12,'Div Ranking:',adj = c(0,0))
 
 text(11,19,tm_df$In[1],adj = c(1,0))
 text(11,18,tm_df$Home11[1],adj = c(1,0))
