@@ -322,15 +322,31 @@ mxp_df <- read.csv('output/max preps ID.csv',stringsAsFactors=F)
 
 OHSAA_df$oh_helm <- OH_pgs$Helm_ID[match(OHSAA_df$OHSAA.ID,OH_pgs$TeamID)]
 OHSAA_df$maxpreps_ugly <- mxp_df$mxp_ID[match(OHSAA_df$OHSAA.ID,mxp_df$Tm_ID)]
+###
 
 
-z <- files1[2]
+###extract helmets from each page
+setwd('C:/Users/Owner/Desktop/SWAER/helmets')
+OHSAA_df <- read.csv('C:/Users/Owner/Documents/GitHub/SWAER/data sets/OHSAA ALL.csv',stringsAsFactors=F)
+files <- dir('main_page',full.name=T)
+
+all_oh_helm <- lapply(files, function(z) {
 the_tree <- htmlTreeParse(z, useInternal=T)
 helmets <- matrix(xpathSApply(the_tree, '//div[@class="webs-parent webs-parent-2 webs-row"]//img/@src'),nrow=2)
 yr_head <- matrix(sapply(xpathSApply(the_tree, '//div[@class="webs-text "]'),function(y) xmlValue(y, trim=T)),nrow=2)[2,]
-rbind(yr_head,helmets)
+t(rbind(substr(z,11,nchar(z)-4),yr_head,helmets,1:length(yr_head)))
+})
 
+oh_helm_df <- do.call(rbind,all_oh_helm)
+helm_R <- oh_helm_df[which(oh_helm_df[,5]==1),4]
+helm_L <- oh_helm_df[which(oh_helm_df[,5]==1),3]
+tm_helmID <- oh_helm_df[which(oh_helm_df[,5]==1),1]
+tm_OHID <- OHSAA_df$OHSAA.ID[match(tm_helmID,OHSAA_df$oh_helm)]
+full_R <- c(matrix(c(helm_R,paste0(tm_OHID,'_R')),2,byrow=T))
+full_L <- c(matrix(c(helm_L,paste0(tm_OHID,'_L')),2,byrow=T))
+write.table(c(full_R,full_L),'oh_helm_pics.txt',row.names=F,quote=F,col.names=F)
 
+table(substr(helm_R,nchar(helm_R)-4,nchar(helm_R)))
 
 #####
 
