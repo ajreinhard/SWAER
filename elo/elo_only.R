@@ -224,6 +224,70 @@ do_elo(list(K = K, K_mar = K_mar, home_adv_flat = home_adv_flat, home_adv_var = 
 	ST_adj = ST_adj,
 	return_me = return_me))}
 
+#all-district adjustment
+library(reshape)
+
+all_dist <- read.csv('data sets/All District.csv',stringsAsFactors=F)
+
+all_dist$Graduating <- ifelse(all_dist$Year=='sr','Done','Back')
+all_dist$Pos[which(all_dist$Pos=='AP-D')] <- 'WRDB'
+all_dist$Pos[which(all_dist$Pos=='AP')] <- 'WRDB'
+all_dist$Pos[which(all_dist$Pos=='PN')] <- 'KI'
+all_dist$Pos[which(all_dist$Pos=='DL')] <- 'LN'
+all_dist$Pos[which(all_dist$Pos=='LB')] <- 'BK'
+all_dist$Pos[which(all_dist$Pos=='DB')] <- 'WRDB'
+all_dist$Pos[which(all_dist$Pos=='RB')] <- 'BK'
+all_dist$Pos[which(all_dist$Pos=='WR')] <- 'WRDB'
+all_dist$Pos[which(all_dist$Pos=='OL')] <- 'LN'
+all_dist$Pos[which(all_dist$Pos=='QB')] <- 'BK'
+
+all_dist <- all_dist[which(all_dist$Pos!='KI'),]
+all_dist$my_val <- 1
+
+all_dist_cast <- cast(all_dist, TeamID+Season~Graduating+Pos, length, value='my_val')
+pos_names <- names(all_dist_cast)[-c(1:2)]
+all_dist_cast$Yr_ID <- paste0(all_dist_cast$Season+1,'_',all_dist_cast$TeamID)
+
+ratings <- elo_def(return_me='log',pl_adj=F,mod_player_adj=0)[[2]]
+season17 <- ratings[,c('Div','2017 Week 0','2017 Week 15')]
+season17$Yr_ID <- paste0('2017_',row.names(ratings))
+names(season17)[2:3] <- c('Begin','End')
+
+season16 <- ratings[,c('Div','2016 Week 0','2016 Week 15')]
+season16$Yr_ID <- paste0('2016_',row.names(ratings))
+names(season16)[2:3] <- c('Begin','End')
+
+season15 <- ratings[,c('Div','2015 Week 0','2015 Week 15')]
+season15$Yr_ID <- paste0('2015_',row.names(ratings))
+names(season15)[2:3] <- c('Begin','End')
+
+season18 <- ratings[,c('Div','2017 Week 15','2017 Week 15')]
+season18$Yr_ID <- paste0('2018_',row.names(ratings))
+names(season18)[2:3] <- c('Begin','End')
+
+season <- rbind(season15,season16,season17,season18)
+season$Change <- season[,3] - season[,2]
+row.names(season) <- season$Yr_ID
+
+season <- cbind(season,all_dist_cast[match(season$Yr_ID,all_dist_cast$Yr_ID),])
+season[,pos_names] <- ifelse(is.na(season[,pos_names]),0,as.matrix(season[,pos_names]))
+
+div_pos_names <- paste0('Div_',pos_names)
+season[,c(paste0(div_pos_names))] <- season[,pos_names] * season$Div
+season$Season <- sapply(strsplit(row.names(season),'_'),function(x) x[1])
+gap <- aggregate(Change~Season,season,mean)
+season$Change <- season$Change - gap$Change[match(season$Season,gap$Season)]
+
+season18_df <- season[which(season$Season==2018),]
+season <- season[which(season$Change!=0),]
+
+player_adj <- lm(Change ~ ., data=season[,c('Change',pos_names,div_pos_names)])
+summary(player_adj)
+player_adj_pred <- predict(player_adj,season)
+player_adj_pred[is.na(player_adj_pred)] <- 0
+
+elo_def()
+
 #auto_corr_adj = function(elo_d) ifelse(abs(elo_d)<=1000,ifelse(elo_d>0,1,-1) * ((elo_d^2)/400000) - elo_d/500,ifelse(elo_d>0,.97,-.97)),
 #auto_corr_adj = function(elo_d) ifelse(abs(elo_d)<=1000,ifelse(elo_d>0,1,-1) * ((elo_d^2)/200000) - elo_d/400,ifelse(elo_d>0,.97,-.97)),
 #4.85, 20, 40.82 log loss with 420k & 710
@@ -394,68 +458,6 @@ data.frame(adj_K=slope_lin()*275)
 
 elo_def(pl_adj=F,mod_player_adj=0)
 #######
-#all-district adjustment
-library(reshape)
-
-all_dist <- read.csv('data sets/All District.csv',stringsAsFactors=F)
-
-all_dist$Graduating <- ifelse(all_dist$Year=='sr','Done','Back')
-all_dist$Pos[which(all_dist$Pos=='AP-D')] <- 'WRDB'
-all_dist$Pos[which(all_dist$Pos=='AP')] <- 'WRDB'
-all_dist$Pos[which(all_dist$Pos=='PN')] <- 'KI'
-all_dist$Pos[which(all_dist$Pos=='DL')] <- 'LN'
-all_dist$Pos[which(all_dist$Pos=='LB')] <- 'BK'
-all_dist$Pos[which(all_dist$Pos=='DB')] <- 'WRDB'
-all_dist$Pos[which(all_dist$Pos=='RB')] <- 'BK'
-all_dist$Pos[which(all_dist$Pos=='WR')] <- 'WRDB'
-all_dist$Pos[which(all_dist$Pos=='OL')] <- 'LN'
-all_dist$Pos[which(all_dist$Pos=='QB')] <- 'BK'
-
-all_dist <- all_dist[which(all_dist$Pos!='KI'),]
-all_dist$my_val <- 1
-
-all_dist_cast <- cast(all_dist, TeamID+Season~Graduating+Pos, length, value='my_val')
-pos_names <- names(all_dist_cast)[-c(1:2)]
-all_dist_cast$Yr_ID <- paste0(all_dist_cast$Season+1,'_',all_dist_cast$TeamID)
-
-ratings <- elo_def(return_me='log',pl_adj=F,mod_player_adj=0)[[2]]
-season17 <- ratings[,c('Div','2017 Week 0','2017 Week 15')]
-season17$Yr_ID <- paste0('2017_',row.names(ratings))
-names(season17)[2:3] <- c('Begin','End')
-
-season16 <- ratings[,c('Div','2016 Week 0','2016 Week 15')]
-season16$Yr_ID <- paste0('2016_',row.names(ratings))
-names(season16)[2:3] <- c('Begin','End')
-
-season15 <- ratings[,c('Div','2015 Week 0','2015 Week 15')]
-season15$Yr_ID <- paste0('2015_',row.names(ratings))
-names(season15)[2:3] <- c('Begin','End')
-
-season18 <- ratings[,c('Div','2017 Week 15','2017 Week 15')]
-season18$Yr_ID <- paste0('2018_',row.names(ratings))
-names(season18)[2:3] <- c('Begin','End')
-
-season <- rbind(season15,season16,season17,season18)
-season$Change <- season[,3] - season[,2]
-row.names(season) <- season$Yr_ID
-
-season <- cbind(season,all_dist_cast[match(season$Yr_ID,all_dist_cast$Yr_ID),])
-season[,pos_names] <- ifelse(is.na(season[,pos_names]),0,as.matrix(season[,pos_names]))
-
-div_pos_names <- paste0('Div_',pos_names)
-season[,c(paste0(div_pos_names))] <- season[,pos_names] * season$Div
-season$Season <- sapply(strsplit(row.names(season),'_'),function(x) x[1])
-gap <- aggregate(Change~Season,season,mean)
-season$Change <- season$Change - gap$Change[match(season$Season,gap$Season)]
-
-season18_df <- season[which(season$Season==2018),]
-season <- season[which(season$Change!=0),]
-
-player_adj <- lm(Change ~ ., data=season[,c('Change',pos_names,div_pos_names)])
-summary(player_adj)
-player_adj_pred <- predict(player_adj,season)
-player_adj_pred[is.na(player_adj_pred)] <- 0
-
 
 #elo_def()
 #elo_def(pl_adj=F)
@@ -1046,10 +1048,10 @@ big_pred_all$spread[is.na(big_pred_all$spread)] <- ''
 pred_all <- big_pred_all
 
 rankings_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/hist rankings.csv',stringsAsFactors=F)
-seeding_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/seeding.csv',stringsAsFactors=F)
-playoffs_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/playoffs.csv',stringsAsFactors=F)
-conf_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/conf.csv',stringsAsFactors=F)
-crystal_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/crystal.csv',stringsAsFactors=F)
+seeding_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/seeding_all.csv',stringsAsFactors=F)
+playoffs_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/playoffs_all.csv',stringsAsFactors=F)
+conf_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/conf_all.csv',stringsAsFactors=F)
+crystal_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/crystal_all.csv',stringsAsFactors=F)
 
 rankings_df$Week <- rankings_df$Week + 1
 crystal_df$Week <- crystal_df$Week + 1
@@ -1092,7 +1094,6 @@ final_df <- big_pred_all[,c('Tm_Code','Season','Q_date','Ovr_Rank','SWAER','Div_
 write.csv(final_df,'C:/Users/Owner/Desktop/SWAER/output/final_df.csv',row.names=F)
 
 
-
 ##replace some teams that were not found
 opp_lookup <- paste0(final_df$Season,'_',final_df$Opp_Code)
 missing_nonOH <- read.csv('elo/missing_nonOH.csv',stringsAsFactors=F)
@@ -1102,11 +1103,10 @@ final_df$Opp <- ifelse(is.na(match(opp_lookup, missing_nonOH$X)),final_df$Opp,mi
 final_df$Opp_Helm <- ifelse(is.na(match(opp_lookup, missing_nonOH$X)),final_df$Opp_Helm,missing_nonOH$Helm[match(opp_lookup, missing_nonOH$X)])
 
 ###final seed
-crystal_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/crystal.csv',stringsAsFactors=F)
+crystal_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/crystal_all.csv',stringsAsFactors=F)
 final_df$Curr_Seed <- ifelse(final_df$Week>10,crystal_df$curr_seed[match(paste0(final_df$Season,'_10_',OHSAA_df$OHSAA.ID[match(final_df$Tm_Code,OHSAA_df$HyTek)]),paste0(crystal_df$Season,'_',crystal_df$Week,'_',crystal_df$TeamID))],final_df$Curr_Seed)
 final_df$Proj_Seed <- ifelse(final_df$Week>10,final_df$Curr_Seed,final_df$Proj_Seed)
 final_df$my_link <- ifelse(is.na(as.numeric(final_df$Opp_Code)),0,1)
-
 
 
 ####
@@ -1207,6 +1207,25 @@ look_at[order(look_at$elo_diff)[1:10],]
 look_at <- pred_all[which(pred_all$Tm_OH==1 & pred_all$Season>=2007 & pred_all$AJ_Correct==0),]
 
 
+
+####team sim basic
+tm_rows <- which(pred_all$Tm_ID==958 & pred_all$Season==2017 & pred_all$Week<=10)
+tm_sched <- pred_all[tm_rows,]
+tm_sched$Opp_elo.curr <- pred_all$Tm_elo.curr[match(paste0(tm_sched$Opp_ID,'_1_2017'),paste0(pred_all$Tm_ID,'_',pred_all$Week,'_',pred_all$Season))]
+tm_sched$Tm_elo.curr <- pred_all$Tm_elo.curr[match(paste0(tm_sched$Tm_ID,'_1_2017'),paste0(pred_all$Tm_ID,'_',pred_all$Week,'_',pred_all$Season))]
+tm_sched$elo_diff <- tm_sched$Tm_elo.curr-tm_sched$Opp_elo.curr+tm_sched$home_adv
+tm_sched$elo_win <- 1/(1+10^(-tm_sched$elo_diff/400))
+
+tm_sched$Std_dev <- (tm_sched$elo_diff/spred_adj)/qnorm(tm_sched$elo_win)
+tm_sched$spread2 <- ifelse(tm_sched$elo_diff>0,main,-main) * (abs(tm_sched$elo_diff)/spred_adj)^pwr
+
+tm_sim <- sapply(1:10, function(i) {
+game_res <- tm_sched$Std_dev[i] * rnorm(1000) + tm_sched$spread2[i]
+elo_movement <- ifelse(game_res>tm_sched$spread2[i],1,-1) * (abs(game_res-tm_sched$spread2[i])/7) * k_mar * wk_slope[tm_sched$Week[i]] * ifelse(tm_sched$Tm_OH[i]==1 & tm_sched$nonOHSAA[i]==0,1,non_OHSAA_adj)
+elo_movement
+})
+sd(apply(tm_sim,1,sum)/18)
+####
 
 
 

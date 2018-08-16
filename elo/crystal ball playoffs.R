@@ -2,6 +2,7 @@
 
 ####begin season prep
 all_seedings <- lapply(2017:2007,function(y) {
+#y<-2017
 
 Reg_Season <- Reg_Season[which(Reg_Season$Season==y & Reg_Season$Playoff==0),]
 Reg_Season <- Reg_Season[order(Reg_Season$Week),]
@@ -17,7 +18,7 @@ model_elos$Div <- teams_df$Div[match(paste0(y,'_',model_elos$TeamID),teams_df$Yr
 model_elos$Div <- ifelse(is.na(model_elos$Div),Reg_Season$nonOHSAA_div[match(model_elos$TeamID,Reg_Season$Opp_ID)], model_elos$Div)
 
 region <- lapply(1:28, function(x) which(model_elos$Reg==x))
-sim_df <- Reg_Season[match(unique(Reg_Season$Game_ID),Reg_Season$Game_ID),c('Game_ID','Tm_ID','Opp_ID','Week','home_adv','Opp_Div','Conf_Matchup','Tm_OH','WinID')]
+sim_df <- Reg_Season[match(unique(Reg_Season$Game_ID),Reg_Season$Game_ID),c('Game_ID','Tm_ID','Opp_ID','Week','home_adv','Opp_Div','Conf_Matchup','Tm_OH','nonOHSAA','WinID')]
 sim_df <- sim_df[which(sim_df$Week <= 10 & sim_df$Week > 0),]
 if (y >= 2013) {game_cnt <- c(112,56,28,14,7)} else {game_cnt <- c(96,48,24,12,6)}
 if (y < 2013) {pts_adj <- 0.5} else {pts_adj <- 0}
@@ -43,10 +44,11 @@ OH_teams <- row.names(model_elos)[which(!is.na(model_elos$Reg))]
 
 ##start with weekly
 po_yr <- lapply(1:11, function(wkst) {
+#wkst <- 11
 
 curr_elos <- model_elos
-curr_elos$Begin <- c(model_elos[,paste0(y,' Week ',wkst-1)])
-curr_elos$Current <- curr_elos$Begin
+curr_elos$Begin <- c(model_elos[,paste0(y,' Week 0')])
+curr_elos$Current <- c(model_elos[,paste0(y,' Week ',wkst-1)])
 Div_repl <- aggregate(Begin~Div,curr_elos,FUN=mean,subset= !is.na(Reg))
 
 wk_df <- sim_df[which(sim_df$Week>=wkst),]
@@ -75,7 +77,8 @@ full_pred <- rbind(played,full_pred)
 
 tm_win_prob <- ifelse(matrix(full_pred$Tm_ID[match_id],10)==opp_id_mx, 1-matrix(full_pred$Win_Prob[match_id],10), matrix(full_pred$Win_Prob[match_id],10))
 L1_pts <- apply(tm_win_prob * L1_mx,2,sum,na.rm=T)
-L2_pts <- apply(tm_win_prob * matrix(L1_pts[paste0(opp_id_mx)],10),2,sum,na.rm=T)
+tm_adj <- apply(tm_win_prob * (1-tm_win_prob) * matrix(rep((7-curr_elos$Div)/2+3.5+pts_adj,10),nrow=10,byrow=T),2,sum,na.rm=T)
+L2_pts <- apply(tm_win_prob * matrix(L1_pts[paste0(opp_id_mx)],10),2,sum,na.rm=T)-tm_adj
 total_avg <- (L1_pts/games_cnt_L1)+(L2_pts/games_cnt_L2)*10
 
 L1_pts_curr <- apply(tm_win_prob * L1_mx * matrix(full_pred$Over[match_id],10),2,sum,na.rm=T)
@@ -104,5 +107,5 @@ po_yr
 })
 
 crystal_df <- do.call(rbind,all_seedings)
-write.csv(crystal_df,'C:/Users/Owner/Desktop/SWAER/output/crystal.csv',row.names=F)
+write.csv(crystal_df,'C:/Users/Owner/Desktop/SWAER/output/crystal_all.csv',row.names=F)
 

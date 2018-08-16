@@ -13,93 +13,93 @@
   <div id="img-div">
     	<div id="region"></div>
         <div id="county">
-          <a class="adams"href="javascript:{}"  target="_top" onclick="MyFilter('adams',16)"></a>
-          <a class="allen"href="javascript:{}"  target="_top" onclick="MyFilter('allen',16)"></a>
-          <a class="ashland"href="javascript:{}"  target="_top" onclick="MyFilter('ashland',16)"></a>
-          <a class="ashtabula"href="javascript:{}"  target="_top" onclick="MyFilter('ashtabula',16)"></a>
-          <a class="athens"href="javascript:{}"  target="_top" onclick="MyFilter('athens',16)"></a>
-          <a class="auglaize"href="javascript:{}"  target="_top" onclick="MyFilter('auglaize',16)"></a>
-          <a class="belmont"href="javascript:{}"  target="_top" onclick="MyFilter('belmont',16)"></a>
-          <a class="brown"href="javascript:{}"  target="_top" onclick="MyFilter('brown',16)"></a>
-          <a class="butler"href="javascript:{}"  target="_top" onclick="MyFilter('butler',16)"></a>
-          <a class="carroll"href="javascript:{}"  target="_top" onclick="MyFilter('carroll',16)"></a>
-          <a class="champaign"href="javascript:{}"  target="_top" onclick="MyFilter('champaign',16)"></a>
-          <a class="clark"href="javascript:{}"  target="_top" onclick="MyFilter('clark',16)"></a>
-          <a class="clermont"href="javascript:{}"  target="_top" onclick="MyFilter('clermont',16)"></a>
-          <a class="clinton"href="javascript:{}"  target="_top" onclick="MyFilter('clinton',16)"></a>
-          <a class="columbiana"href="javascript:{}"  target="_top" onclick="MyFilter('columbiana',16)"></a>
-          <a class="coshocton"href="javascript:{}"  target="_top" onclick="MyFilter('coshocton',16)"></a>
-          <a class="crawford"href="javascript:{}"  target="_top" onclick="MyFilter('crawford',16)"></a>
-          <a class="cuyahoga"href="javascript:{}"  target="_top" onclick="MyFilter('cuyahoga',16)"></a>
-          <a class="darke"href="javascript:{}"  target="_top" onclick="MyFilter('darke',16)"></a>
-          <a class="defiance"href="javascript:{}"  target="_top" onclick="MyFilter('defiance',16)"></a>
-          <a class="delaware"href="javascript:{}"  target="_top" onclick="MyFilter('delaware',16)"></a>
-          <a class="erie"href="javascript:{}"  target="_top" onclick="MyFilter('erie',16)"></a>
-          <a class="fairfield"href="javascript:{}"  target="_top" onclick="MyFilter('fairfield',16)"></a>
-          <a class="fayette"href="javascript:{}"  target="_top" onclick="MyFilter('fayette',16)"></a>
-          <a class="franklin"href="javascript:{}"  target="_top" onclick="MyFilter('franklin',16)"></a>
-          <a class="fulton"href="javascript:{}"  target="_top" onclick="MyFilter('fulton',16)"></a>
-          <a class="gallia"href="javascript:{}"  target="_top" onclick="MyFilter('gallia',16)"></a>
-          <a class="geauga"href="javascript:{}"  target="_top" onclick="MyFilter('geauga',16)"></a>
-          <a class="greene"href="javascript:{}"  target="_top" onclick="MyFilter('greene',16)"></a>
-          <a class="guernsey"href="javascript:{}"  target="_top" onclick="MyFilter('guernsey',16)"></a>
-          <a class="hamilton"href="javascript:{}"  target="_top" onclick="MyFilter('hamilton',16)"></a>
-          <a class="hancock"href="javascript:{}"  target="_top" onclick="MyFilter('hancock',16)"></a>
-          <a class="hardin"href="javascript:{}"  target="_top" onclick="MyFilter('hardin',16)"></a>
-          <a class="harrison"href="javascript:{}"  target="_top" onclick="MyFilter('harrison',16)"></a>
-          <a class="henry"href="javascript:{}"  target="_top" onclick="MyFilter('henry',16)"></a>
-          <a class="highland"href="javascript:{}"  target="_top" onclick="MyFilter('highland',16)"></a>
-          <a class="hocking"href="javascript:{}"  target="_top" onclick="MyFilter('hocking',16)"></a>
-          <a class="holmes"href="javascript:{}"  target="_top" onclick="MyFilter('holmes',16)"></a>
-          <a class="huron"href="javascript:{}"  target="_top" onclick="MyFilter('huron',16)"></a>
-          <a class="jackson"href="javascript:{}"  target="_top" onclick="MyFilter('jackson',16)"></a>
-          <a class="jefferson"href="javascript:{}"  target="_top" onclick="MyFilter('jefferson',16)"></a>
-          <a class="knox"href="javascript:{}"  target="_top" onclick="MyFilter('knox',16)"></a>
-          <a class="lake"href="javascript:{}"  target="_top" onclick="MyFilter('lake',16)"></a>
-          <a class="lawrence"href="javascript:{}"  target="_top" onclick="MyFilter('lawrence',16)"></a>
-          <a class="licking"href="javascript:{}"  target="_top" onclick="MyFilter('licking',16)"></a>
-          <a class="logan"href="javascript:{}"  target="_top" onclick="MyFilter('logan',16)"></a>
-          <a class="lorain"href="javascript:{}"  target="_top" onclick="MyFilter('lorain',16)"></a>
-          <a class="lucas"href="javascript:{}"  target="_top" onclick="MyFilter('lucas',16)"></a>
-          <a class="madison"href="javascript:{}"  target="_top" onclick="MyFilter('madison',16)"></a>
-          <a class="mahoning"href="javascript:{}"  target="_top" onclick="MyFilter('mahoning',16)"></a>
-          <a class="marion"href="javascript:{}"  target="_top" onclick="MyFilter('marion',16)"></a>
-          <a class="medina"href="javascript:{}"  target="_top" onclick="MyFilter('medina',16)"></a>
-          <a class="meigs"href="javascript:{}"  target="_top" onclick="MyFilter('meigs',16)"></a>
-          <a class="mercer"href="javascript:{}"  target="_top" onclick="MyFilter('mercer',16)"></a>
-          <a class="miami"href="javascript:{}"  target="_top" onclick="MyFilter('miami',16)"></a>
-          <a class="monroe"href="javascript:{}"  target="_top" onclick="MyFilter('monroe',16)"></a>
-          <a class="montgomery"href="javascript:{}"  target="_top" onclick="MyFilter('montgomery',16)"></a>
-          <a class="morgan"href="javascript:{}"  target="_top" onclick="MyFilter('morgan',16)"></a>
-          <a class="morrow"href="javascript:{}"  target="_top" onclick="MyFilter('morrow',16)"></a>
-          <a class="muskingum"href="javascript:{}"  target="_top" onclick="MyFilter('muskingum',16)"></a>
-          <a class="noble"href="javascript:{}"  target="_top" onclick="MyFilter('noble',16)"></a>
-          <a class="ottawa"href="javascript:{}"  target="_top" onclick="MyFilter('ottawa',16)"></a>
-          <a class="paulding"href="javascript:{}"  target="_top" onclick="MyFilter('paulding',16)"></a>
-          <a class="perry"href="javascript:{}"  target="_top" onclick="MyFilter('perry',16)"></a>
-          <a class="pickaway"href="javascript:{}"  target="_top" onclick="MyFilter('pickaway',16)"></a>
-          <a class="pike"href="javascript:{}"  target="_top" onclick="MyFilter('pike',16)"></a>
-          <a class="portage"href="javascript:{}"  target="_top" onclick="MyFilter('portage',16)"></a>
-          <a class="preble"href="javascript:{}"  target="_top" onclick="MyFilter('preble',16)"></a>
-          <a class="putnam"href="javascript:{}"  target="_top" onclick="MyFilter('putnam',16)"></a>
-          <a class="richland"href="javascript:{}"  target="_top" onclick="MyFilter('richland',16)"></a>
-          <a class="ross"href="javascript:{}"  target="_top" onclick="MyFilter('ross',16)"></a>
-          <a class="sandusky"href="javascript:{}"  target="_top" onclick="MyFilter('sandusky',16)"></a>
-          <a class="scioto"href="javascript:{}"  target="_top" onclick="MyFilter('scioto',16)"></a>
-          <a class="seneca"href="javascript:{}"  target="_top" onclick="MyFilter('seneca',16)"></a>
-          <a class="shelby"href="javascript:{}"  target="_top" onclick="MyFilter('shelby',16)"></a>
-          <a class="stark"href="javascript:{}"  target="_top" onclick="MyFilter('stark',16)"></a>
-          <a class="summit"href="javascript:{}"  target="_top" onclick="MyFilter('summit',16)"></a>
-          <a class="trumbull"href="javascript:{}"  target="_top" onclick="MyFilter('trumbull',16)"></a>
-          <a class="tuscarawas"href="javascript:{}"  target="_top" onclick="MyFilter('tuscarawas',16)"></a>
-          <a class="union"href="javascript:{}"  target="_top" onclick="MyFilter('union',16)"></a>
-          <a class="van-wert"href="javascript:{}"  target="_top" onclick="MyFilter('van wert',16)"></a>
-          <a class="vinton"href="javascript:{}"  target="_top" onclick="MyFilter('vinton',16)"></a>
-          <a class="warren"href="javascript:{}"  target="_top" onclick="MyFilter('warren',16)"></a>
-          <a class="washington"href="javascript:{}"  target="_top" onclick="MyFilter('washington',16)"></a>
-          <a class="wayne"href="javascript:{}"  target="_top" onclick="MyFilter('wayne',16)"></a>
-          <a class="williams"href="javascript:{}"  target="_top" onclick="MyFilter('williams',16)"></a>
-          <a class="wood"href="javascript:{}"  target="_top" onclick="MyFilter('wood',16)"></a>
+          <a class="adams"href="javascript:{}"  target="_top" onclick="MyFilter('Adams',16)"></a>
+          <a class="allen"href="javascript:{}"  target="_top" onclick="MyFilter('Allen',16)"></a>
+          <a class="ashland"href="javascript:{}"  target="_top" onclick="MyFilter('Ashland',16)"></a>
+          <a class="ashtabula"href="javascript:{}"  target="_top" onclick="MyFilter('Ashtabula',16)"></a>
+          <a class="athens"href="javascript:{}"  target="_top" onclick="MyFilter('Athens',16)"></a>
+          <a class="auglaize"href="javascript:{}"  target="_top" onclick="MyFilter('Auglaize',16)"></a>
+          <a class="belmont"href="javascript:{}"  target="_top" onclick="MyFilter('Belmont',16)"></a>
+          <a class="brown"href="javascript:{}"  target="_top" onclick="MyFilter('Brown',16)"></a>
+          <a class="butler"href="javascript:{}"  target="_top" onclick="MyFilter('Butler',16)"></a>
+          <a class="carroll"href="javascript:{}"  target="_top" onclick="MyFilter('Carroll',16)"></a>
+          <a class="champaign"href="javascript:{}"  target="_top" onclick="MyFilter('Champaign',16)"></a>
+          <a class="clark"href="javascript:{}"  target="_top" onclick="MyFilter('Clark',16)"></a>
+          <a class="clermont"href="javascript:{}"  target="_top" onclick="MyFilter('Clermont',16)"></a>
+          <a class="clinton"href="javascript:{}"  target="_top" onclick="MyFilter('Clinton',16)"></a>
+          <a class="columbiana"href="javascript:{}"  target="_top" onclick="MyFilter('Columbiana',16)"></a>
+          <a class="coshocton"href="javascript:{}"  target="_top" onclick="MyFilter('Coshocton',16)"></a>
+          <a class="crawford"href="javascript:{}"  target="_top" onclick="MyFilter('Crawford',16)"></a>
+          <a class="cuyahoga"href="javascript:{}"  target="_top" onclick="MyFilter('Cuyahoga',16)"></a>
+          <a class="darke"href="javascript:{}"  target="_top" onclick="MyFilter('Darke',16)"></a>
+          <a class="defiance"href="javascript:{}"  target="_top" onclick="MyFilter('Defiance',16)"></a>
+          <a class="delaware"href="javascript:{}"  target="_top" onclick="MyFilter('Delaware',16)"></a>
+          <a class="erie"href="javascript:{}"  target="_top" onclick="MyFilter('Erie',16)"></a>
+          <a class="fairfield"href="javascript:{}"  target="_top" onclick="MyFilter('Fairfield',16)"></a>
+          <a class="fayette"href="javascript:{}"  target="_top" onclick="MyFilter('Fayette',16)"></a>
+          <a class="franklin"href="javascript:{}"  target="_top" onclick="MyFilter('Franklin',16)"></a>
+          <a class="fulton"href="javascript:{}"  target="_top" onclick="MyFilter('Fulton',16)"></a>
+          <a class="gallia"href="javascript:{}"  target="_top" onclick="MyFilter('Gallia',16)"></a>
+          <a class="geauga"href="javascript:{}"  target="_top" onclick="MyFilter('Geauga',16)"></a>
+          <a class="greene"href="javascript:{}"  target="_top" onclick="MyFilter('Greene',16)"></a>
+          <a class="guernsey"href="javascript:{}"  target="_top" onclick="MyFilter('Guernsey',16)"></a>
+          <a class="hamilton"href="javascript:{}"  target="_top" onclick="MyFilter('Hamilton',16)"></a>
+          <a class="hancock"href="javascript:{}"  target="_top" onclick="MyFilter('Hancock',16)"></a>
+          <a class="hardin"href="javascript:{}"  target="_top" onclick="MyFilter('Hardin',16)"></a>
+          <a class="harrison"href="javascript:{}"  target="_top" onclick="MyFilter('Harrison',16)"></a>
+          <a class="henry"href="javascript:{}"  target="_top" onclick="MyFilter('Henry',16)"></a>
+          <a class="highland"href="javascript:{}"  target="_top" onclick="MyFilter('Highland',16)"></a>
+          <a class="hocking"href="javascript:{}"  target="_top" onclick="MyFilter('Hocking',16)"></a>
+          <a class="holmes"href="javascript:{}"  target="_top" onclick="MyFilter('Holmes',16)"></a>
+          <a class="huron"href="javascript:{}"  target="_top" onclick="MyFilter('Huron',16)"></a>
+          <a class="jackson"href="javascript:{}"  target="_top" onclick="MyFilter('Jackson',16)"></a>
+          <a class="jefferson"href="javascript:{}"  target="_top" onclick="MyFilter('Jefferson',16)"></a>
+          <a class="knox"href="javascript:{}"  target="_top" onclick="MyFilter('Knox',16)"></a>
+          <a class="lake"href="javascript:{}"  target="_top" onclick="MyFilter('Lake',16)"></a>
+          <a class="lawrence"href="javascript:{}"  target="_top" onclick="MyFilter('Lawrence',16)"></a>
+          <a class="licking"href="javascript:{}"  target="_top" onclick="MyFilter('Licking',16)"></a>
+          <a class="logan"href="javascript:{}"  target="_top" onclick="MyFilter('Logan',16)"></a>
+          <a class="lorain"href="javascript:{}"  target="_top" onclick="MyFilter('Lorain',16)"></a>
+          <a class="lucas"href="javascript:{}"  target="_top" onclick="MyFilter('Lucas',16)"></a>
+          <a class="madison"href="javascript:{}"  target="_top" onclick="MyFilter('Madison',16)"></a>
+          <a class="mahoning"href="javascript:{}"  target="_top" onclick="MyFilter('Mahoning',16)"></a>
+          <a class="marion"href="javascript:{}"  target="_top" onclick="MyFilter('Marion',16)"></a>
+          <a class="medina"href="javascript:{}"  target="_top" onclick="MyFilter('Medina',16)"></a>
+          <a class="meigs"href="javascript:{}"  target="_top" onclick="MyFilter('Meigs',16)"></a>
+          <a class="mercer"href="javascript:{}"  target="_top" onclick="MyFilter('Mercer',16)"></a>
+          <a class="miami"href="javascript:{}"  target="_top" onclick="MyFilter('Miami',16)"></a>
+          <a class="monroe"href="javascript:{}"  target="_top" onclick="MyFilter('Monroe',16)"></a>
+          <a class="montgomery"href="javascript:{}"  target="_top" onclick="MyFilter('Montgomery',16)"></a>
+          <a class="morgan"href="javascript:{}"  target="_top" onclick="MyFilter('Morgan',16)"></a>
+          <a class="morrow"href="javascript:{}"  target="_top" onclick="MyFilter('Morrow',16)"></a>
+          <a class="muskingum"href="javascript:{}"  target="_top" onclick="MyFilter('Muskingum',16)"></a>
+          <a class="noble"href="javascript:{}"  target="_top" onclick="MyFilter('Noble',16)"></a>
+          <a class="ottawa"href="javascript:{}"  target="_top" onclick="MyFilter('Ottawa',16)"></a>
+          <a class="paulding"href="javascript:{}"  target="_top" onclick="MyFilter('Paulding',16)"></a>
+          <a class="perry"href="javascript:{}"  target="_top" onclick="MyFilter('Perry',16)"></a>
+          <a class="pickaway"href="javascript:{}"  target="_top" onclick="MyFilter('Pickaway',16)"></a>
+          <a class="pike"href="javascript:{}"  target="_top" onclick="MyFilter('Pike',16)"></a>
+          <a class="portage"href="javascript:{}"  target="_top" onclick="MyFilter('Portage',16)"></a>
+          <a class="preble"href="javascript:{}"  target="_top" onclick="MyFilter('Preble',16)"></a>
+          <a class="putnam"href="javascript:{}"  target="_top" onclick="MyFilter('Putnam',16)"></a>
+          <a class="richland"href="javascript:{}"  target="_top" onclick="MyFilter('Richland',16)"></a>
+          <a class="ross"href="javascript:{}"  target="_top" onclick="MyFilter('Ross',16)"></a>
+          <a class="sandusky"href="javascript:{}"  target="_top" onclick="MyFilter('Sandusky',16)"></a>
+          <a class="scioto"href="javascript:{}"  target="_top" onclick="MyFilter('Scioto',16)"></a>
+          <a class="seneca"href="javascript:{}"  target="_top" onclick="MyFilter('Seneca',16)"></a>
+          <a class="shelby"href="javascript:{}"  target="_top" onclick="MyFilter('Shelby',16)"></a>
+          <a class="stark"href="javascript:{}"  target="_top" onclick="MyFilter('Stark',16)"></a>
+          <a class="summit"href="javascript:{}"  target="_top" onclick="MyFilter('Summit',16)"></a>
+          <a class="trumbull"href="javascript:{}"  target="_top" onclick="MyFilter('Trumbull',16)"></a>
+          <a class="tuscarawas"href="javascript:{}"  target="_top" onclick="MyFilter('Tuscarawas',16)"></a>
+          <a class="union"href="javascript:{}"  target="_top" onclick="MyFilter('Union',16)"></a>
+          <a class="van-wert"href="javascript:{}"  target="_top" onclick="MyFilter('Van Wert',16)"></a>
+          <a class="vinton"href="javascript:{}"  target="_top" onclick="MyFilter('Vinton',16)"></a>
+          <a class="warren"href="javascript:{}"  target="_top" onclick="MyFilter('Warren',16)"></a>
+          <a class="washington"href="javascript:{}"  target="_top" onclick="MyFilter('Washington',16)"></a>
+          <a class="wayne"href="javascript:{}"  target="_top" onclick="MyFilter('Wayne',16)"></a>
+          <a class="williams"href="javascript:{}"  target="_top" onclick="MyFilter('Williams',16)"></a>
+          <a class="wood"href="javascript:{}"  target="_top" onclick="MyFilter('Wood',16)"></a>
           <a class="wyandot"href="javascript:{}"  target="_top" onclick="MyFilter('wyandot',16)"></a>      
      </div>
   </div>
@@ -164,22 +164,33 @@
 <div id="rank-tbl" class="rank-tbl"></div>
 <script>
 change_map(8);
+var curr_week = 1;
 new_rankings('false');
-
 
 
   function new_rankings(pres_rank) {
 	var yr = document.getElementById("year_dd").value;
 	if (yr <= 2010) {
-		var url = "https://sites.google.com/site/swaermodel/RankList_2007-10.json?revision=3";
-	} else if(yr <= 2014) {
-		var url = "https://sites.google.com/site/swaermodel/RankList_2011-14.json?revision=3";
+		var url = "https://sites.google.com/site/swaermodel/RankList_2007-10.json?revision=4";
+	} else if (yr <= 2014) {
+		var url = "https://sites.google.com/site/swaermodel/RankList_2011-14.json?revision=4";
 	} else {
-		var url = "https://sites.google.com/site/swaermodel/RankList_2015-17.json?revision=3";
+		var url = "https://sites.google.com/site/swaermodel/RankList_2015-17.json?revision=4";
 	}
 	var wk = document.getElementsByClassName("btn active")[0].innerHTML;
+	if (yr == 2018) {wk = Number(curr_week)-1;}
+	
 	bring_ranks(url,yr,wk,pres_rank);
 	document.getElementById("tbl-heading").innerText = 'Week ' + wk + ' of ' + yr;
+	
+	var all_wk = document.getElementsByClassName("btn");
+	for (i = curr_week; i < all_wk.length; i++) {
+	      if (yr == 2018) {
+	      all_wk[i].style.display = "none";
+     	      } else if (yr != 2018) {
+	      all_wk[i].style.display = "";
+	      }
+  	}
   };
 
   function bring_ranks(url,yr,wk,pres_rank) {
@@ -220,9 +231,9 @@ new_rankings('false');
 	html += "<td type='Number'>SWAER</td><td type='Number'>iSWAER</td>";
 	html += "<td type='Number'>Proj Seed</td><td type='Number'>Curr Seed</td>"
 	html += "<td type='Number'>Playoffs</td><td type='Number'>State Champ</td>";
-	html += "<td type='Number'>Change in "+ yr +"</td>"
-	html += "<td>Conference</td><td>Conf Main</td><td>Conf W-L</td><td type='Number'>Conf Champ</td>";
-	html += "<td>County</td><td>Region</td>";
+	html += "<td type='Number'>Conf Champ</td>";
+	html += "<td>Conference</td><td>Conf W-L</td><td>Conf Main</td>";
+	html += "<td type='Number'>Change in "+ yr +"</td><td>County</td><td>Region</td>";
 	html += "<td>Lon</td><td>Lat</td><td>Tm_ID</td><td>ConfFull</td>";
 
 	html += "</tr></thead><tbody>";
@@ -234,6 +245,7 @@ new_rankings('false');
 		} else {
 			var i = tm.OvrRank.indexOf(Number(k)+1);
 		}
+		//html += '<tr><td colspan=22>' + tm.Team[i] + '</td></tr>';
 		html += '<tr class="tr_shaded" style="display:' + row_hide[k] + ';">';
 		html += '<td class="fixed freeze_horizontal">' + tm.OvrRank[i] + '</td>';
 		html += '<td class="fixed freeze_horizontal">';
@@ -249,14 +261,14 @@ new_rankings('false');
 		html += '<td>' + tm.SeedCurr[i] + '</td>';
 		html += '<td>' + tm.Playoffs[i] + '</td>';
 		html += '<td>' + tm.State[i] + '</td>';
-		html += '<td>' + tm.Change[i] + '</td>';
+		html += '<td>' + tm.ConfChamp[i] + '</td>';
 		html += '<td><a href="javascript:{}"  target="_top" onclick="MyFilter(\'' + tm.ConfMain[i] + '\',14)">' + tm.ConfMain[i] + '</a>';
 		if (tm.ConfSub[i] != null) {
-			html += '- <a href="javascript:{}"  target="_top" onclick="MyFilter(\'' + tm.ConfMain[i] + ' - ' + tm.ConfSub[i] + '\',21)">' + tm.ConfSub[i] + '</a></td>';
+			html += '- <a href="javascript:{}"  target="_top" onclick="MyFilter(\'' + tm.ConfMain[i] + ' - ' + tm.ConfSub[i] + '\',21)">' + tm.ConfSub[i] + '</a>';
 		}
-		html += '<td>' + tm.ConfR[i] + '</td>';
+		html += '</td><td>' + tm.ConfR[i] + '</td>';
 		html += '<td>' + tm.ConfMain[i] + '</td>';
-		html += '<td>' + tm.ConfChamp[i] + '</td>';
+		html += '<td>' + tm.Change[i] + '</td>';
 		html += '<td>' + tm.County[i] + '</td>';
 		html += '<td>' + tm.Reg[i] + '</td>';
 		html += '<td>' + tm.Lon[i] + '</td>';
@@ -511,7 +523,7 @@ function compareByColumn(nCol, bDescending, sType) {
 	var fTypeCast = String;
 	
 	if (sType == "Number")
-	if (nCol == 9 || nCol == 10 || nCol == 16) {
+	if (nCol == 9 || nCol == 10 || nCol == 11) {
 		fTypeCast = toNumber;
 	} else {
 		fTypeCast = Number;
@@ -581,7 +593,7 @@ function sortColumn(e) {
 
 		// typecast to Boolean
 		// aj added descending as default
-		if (el._descending == null) {
+		if (el._descending == null & (i==5 || i==6 || i==9 || i==10 || i==11 || i==19)) {
 			el._descending = Boolean(el._descending);
 		} else {
 			el._descending = !Boolean(el._descending);

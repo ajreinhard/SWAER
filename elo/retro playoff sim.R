@@ -6,8 +6,8 @@ begin <- proc.time()
 dyn_sim <- function(wkst,yr,sim_df,region,match_id,opp_id_mx,L1_mx,games_cnt_L1,games_cnt_L2,game_cnt,my_auto_fun,OH_teams,model_elos,Conf,bracket,k_mar,wk_slope,non_OHSAA_adj,std_dev) {
 
 curr_elos <- model_elos
-curr_elos$Begin <- c(model_elos[,paste0(yr,' Week ',wkst-1)])
-curr_elos$Current <- curr_elos$Begin
+curr_elos$Begin <- c(model_elos[,paste0(yr,' Week 0')])
+curr_elos$Current <- c(model_elos[,paste0(yr,' Week ',wkst-1)])
 Div_repl <- aggregate(Begin~Div,curr_elos,FUN=mean,subset= !is.na(Reg))
 
 if (wkst!=11) {
@@ -87,8 +87,8 @@ playoffs_df[,c('DogID','DogID2','Dog_elo')] <- curr_elos[match(paste0(playoffs_d
 
 if (wkst >= 11) {
 playoffs_df <- bracket[which(bracket$Week==wkst & bracket$Season==yr),]
-playoffs_df$Fav_elo <- curr_elos[paste0(playoffs_df$FavID),'Begin']
-playoffs_df$Dog_elo <- curr_elos[paste0(playoffs_df$DogID),'Begin']
+playoffs_df$Fav_elo <- curr_elos[paste0(playoffs_df$FavID),'Current']
+playoffs_df$Dog_elo <- curr_elos[paste0(playoffs_df$DogID),'Current']
 playoffs_df$Season <- NULL
 playoffs_df$Week <- NULL
 playoffs_df$Reg <- NULL
@@ -286,7 +286,7 @@ write.csv(conf, 'C:/Users/Owner/Desktop/SWAER/output/conf_all.csv')
 
 
 head(seeding)
-seeding <- read.csv('output/seeding.csv',stringsAsFactors=F)
+seeding <- read.csv('output/seeding_all.csv',stringsAsFactors=F)
 playoff_tms <- unique(c(bracket$FavID[which(bracket$Season==2017)],bracket$DogID[which(bracket$Season==2017)]))
 po_odds <- 1-seeding$miss[which(seeding$Week==1 & seeding$Season==2017)]
 names(po_odds) <- seeding$X[which(seeding$Week==1 & seeding$Season==2017)]

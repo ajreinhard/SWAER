@@ -5,13 +5,15 @@
 dyn_sim <- function(wkst,yr,sim_df,region,match_id,opp_id_mx,L1_mx,games_cnt_L1,games_cnt_L2,game_cnt,my_auto_fun,OH_teams,model_elos,Conf,bracket,k_mar,wk_slope,non_OHSAA_adj,std_dev) {
 
 curr_elos <- model_elos
-Div_repl <- aggregate(Begin~Div,curr_elos,FUN=mean,subset= !is.na(Reg))
+Div_repl <- aggregate(div_avg~Div,curr_elos,FUN=mean,subset= !is.na(Reg))
 
 if (wkst!=11) {
 full_pred <- c()
 for (w in wkst:10) {
 
 wk_df <- sim_df[which(sim_df$Week==w),]
+wk_df$Opp_Div <- ifelse(is.na(wk_df$Opp_Div),curr_elos[paste0(wk_df$Tm_ID),'Div'],wk_df$Opp_Div)
+
 
 wk_df$Tm_elo_pre <- curr_elos[paste0(wk_df$Tm_ID),'Current']
 wk_df$Opp_elo_pre <- curr_elos[paste0(wk_df$Opp_ID),'Current']
@@ -200,7 +202,7 @@ old_id <- paste0(most_recent$tm_yr[match(row.names(elo_df18_nonOH),most_recent$t
 last_div <- nonOH_div$nonOH_div[match(old_id,nonOH_div$X)]
 guess_div <- rep(NA,length(JE_div))
 guess_div[which(row.names(elo_df18_nonOH)=='9916')] <- 6 #KIPP
-guess_div[which(row.names(elo_df18_nonOH)=='9918')] <- 2 #COF
+guess_div[which(row.names(elo_df18_nonOH)=='9918')] <- 7 #COF
 OHSAA_gm <- ifelse(is.na(match(row.names(elo_df18_nonOH),JE_games_all$Tm_ID)),0,1)
 remaining_div_pick <- row.names(elo_df18_nonOH)[which(OHSAA_gm==1 & is.na(last_div) & is.na(JE_div) & is.na(guess_div))]
 unknown_div_opp <- sapply(remaining_div_pick,function(x) JE_games_all$Tm_ID[which(JE_games_all$Opp_ID==x & JE_games_all$Tm_OH==1)])
@@ -243,6 +245,10 @@ JE_games_all <- JE_games_all[-c(which(JE_games_all$Opp_ID=='12650' & JE_games_al
 JE_games_all <- JE_games_all[-c(which(JE_games_all$Opp_ID=='13499' | JE_games_all$Tm_ID=='13499')),]
 JE_games_all <- JE_games_all[-c(which(JE_games_all$Opp_ID=='31999' | JE_games_all$Tm_ID=='31999')),]
 JE_games_all <- JE_games_all[-c(which(JE_games_all$Opp_ID=='21999' | JE_games_all$Tm_ID=='21999')),]
+
+#remove COF Acad from Harbin
+JE_games_all$Excl_Harbin[c(which(JE_games_all$Opp_ID=='9918' | JE_games_all$Tm_ID=='9918'))] <- 1
+
 
 JE_games_all$nonOHSAA_div <- elo_df18_nonOH$Div[match(JE_games_all$Opp_ID,row.names(elo_df18_nonOH))]
 JE_games_all$Opp_Div <- OHSAA_df$Div.2018[match(JE_games_all$Opp_ID,OHSAA_df$OHSAA.ID)]
@@ -340,10 +346,16 @@ write.csv(conf, 'C:/Users/Owner/Desktop/SWAER/output/2018/conf1.csv')
 
 ##start with weekly
 po_yr <- lapply(1:1, function(wkst) {
+
 curr_elos <- model_elos
-Div_repl <- aggregate(Current~Div,curr_elos,FUN=mean,subset= !is.na(Reg))
+#change to div_avg
+Div_repl <- aggregate(div_avg~Div,curr_elos,FUN=mean,subset= !is.na(Reg))
 
 wk_df <- sim_df[which(sim_df$Week>=wkst),]
+
+#exlcluding many second level pts because no opp div for nonOH v nonOH teams
+#looks like I would already edit this into the JE file for prev sims
+wk_df$Opp_Div <- ifelse(is.na(wk_df$Opp_Div),curr_elos[paste0(wk_df$Tm_ID),'Div'],wk_df$Opp_Div)
 
 wk_df$Tm_elo_pre <- curr_elos[paste0(wk_df$Tm_ID),'Current']
 wk_df$Opp_elo_pre <- curr_elos[paste0(wk_df$Opp_ID),'Current']
@@ -364,11 +376,14 @@ played$Over <- 1
 full_pred <- rbind(played,full_pred)
 }
 
+#tm_adj is discounting L2 points that would be gained by beating the team getting the points
 
 tm_win_prob <- ifelse(matrix(full_pred$Tm_ID[match_id],10)==opp_id_mx, 1-matrix(full_pred$Win_Prob[match_id],10), matrix(full_pred$Win_Prob[match_id],10))
 L1_pts <- apply(tm_win_prob * L1_mx,2,sum,na.rm=T)
-L2_pts <- apply(tm_win_prob * matrix(L1_pts[paste0(opp_id_mx)],10),2,sum,na.rm=T)
+tm_adj <- apply(tm_win_prob * (1-tm_win_prob) * matrix(rep((7-curr_elos$Div)/2+3.5+pts_adj,10),nrow=10,byrow=T),2,sum,na.rm=T)
+L2_pts <- apply(tm_win_prob * matrix(L1_pts[paste0(opp_id_mx)],10),2,sum,na.rm=T)-tm_adj
 total_avg <- (L1_pts/games_cnt_L1)+(L2_pts/games_cnt_L2)*10
+
 
 L1_pts_curr <- apply(tm_win_prob * L1_mx * matrix(full_pred$Over[match_id],10),2,sum,na.rm=T)
 L2_pts_curr <- apply(tm_win_prob * matrix(L1_pts_curr[paste0(opp_id_mx)],10) * matrix(full_pred$Over[match_id],10),2,sum,na.rm=T)
@@ -453,11 +468,9 @@ write.csv(final_df,'C:/Users/Owner/Desktop/SWAER/output/final_df2.csv',row.names
 
 
 ###view quick rankings
-elo_df18_full[which(elo_df18_full$Div==6 & !is.na(elo_df18_full$Reg))[match(1:10,SZN_DivRank[which(elo_df18_full$Div==6 & !is.na(elo_df18_full$Reg))])],]
+elo_df18_full[which(elo_df18_full$Div==5 & !is.na(elo_df18_full$Reg))[match(1:10,SZN_DivRank[which(elo_df18_full$Div==5 & !is.na(elo_df18_full$Reg))])],]
 elo_df18_full[which(SZN_DivRank==1),]
 elo_df18_full['666',]
-
-
 
 
 ###write 2018 rows into rankings and record files
@@ -472,4 +485,239 @@ hist_rec18[,c('W','L','T','C_W','C_L','C_T')] <- 0
 hist_rec18$Conf <- OHSAA_df$ConfSub.2018[match(hist_rec18$Tm_ID,OHSAA_df$OHSAA.ID)]
 records <- rbind(records,hist_rec18)
 write.csv(records,'C:/Users/Owner/Desktop/SWAER/output/rec rankings.csv',row.names=F)
+
+
+
+
+
+
+
+
+
+###full bracket crystal ball
+crystal_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/2018/crystal1.csv',stringsAsFactors=F)
+
+curr_elos <- model_elos
+wkst <- 0
+yr <- 2018
+
+seed <- crystal_df$proj_seed[match(paste0(curr_elos$TeamID,'_',wkst,'_',yr),paste0(crystal_df$TeamID,'_',crystal_df$Week,'_',crystal_df$Season))]
+
+#begin playoffs
+if (yr<=2012) {reg_format <- 1:24} else if(yr>=2016) {reg_format <- 1:28} else {reg_format <- 3:26}
+playoffs_df <- expand.grid(Fav=c(1,4,3,2),Reg=reg_format) 
+playoffs_df$Dog <- 9-playoffs_df$Fav
+if (reg_format[1]==3) playoffs_df <- rbind(playoffs_df, data.frame(Fav=rep(c(1,8,4,5,3,6,7,2),2),Reg=c(rep(1,8),rep(2,8)),Dog=rep(c(16,9,13,12,14,11,10,15),2)))
+playoffs_df[,c('FavID','FavID2','Fav_elo')] <- curr_elos[match(paste0(playoffs_df$Reg,'_',playoffs_df$Fav),paste0(curr_elos$Reg,'_',seed)),c('TeamID','School','Current')]
+playoffs_df[,c('DogID','DogID2','Dog_elo')] <- curr_elos[match(paste0(playoffs_df$Reg,'_',playoffs_df$Dog),paste0(curr_elos$Reg,'_',seed)),c('TeamID','School','Current')]
+
+if (wkst >= 11) {
+playoffs_df <- bracket[which(bracket$Week==wkst & bracket$Season==yr),]
+playoffs_df$Fav_elo <- curr_elos[paste0(playoffs_df$FavID),'Begin']
+playoffs_df$Dog_elo <- curr_elos[paste0(playoffs_df$DogID),'Begin']
+playoffs_df$Season <- NULL
+playoffs_df$Week <- NULL
+playoffs_df$Reg <- NULL
+playoffs_df$Fav <- NULL
+playoffs_df$Dog <- NULL
+}
+
+crystal_sim <- sapply(1:100, function(k) {
+all_po_df <- c()
+for (p in max(c(wkst-10),1):5) {
+playoffs_df$elo_diff <- playoffs_df$Fav_elo - playoffs_df$Dog_elo + ifelse(p==1,25,0)
+playoffs_df$Win_Prob <- 1/(1+10^(-playoffs_df$elo_diff/400))
+playoffs_df$spread <- ifelse(playoffs_df$elo_diff>0,main,-main) * (abs(playoffs_df$elo_diff)/spred_adj)^pwr
+playoffs_df$Std_dev <- (playoffs_df$elo_diff/spred_adj)/qnorm(playoffs_df$Win_Prob)
+playoffs_df$Score_pred <- rnorm(nrow(playoffs_df)) * playoffs_df$Std_dev + playoffs_df$spread
+playoffs_df$elo_change <- ifelse(playoffs_df$Score_pred>playoffs_df$spread,1,-1) * (abs(playoffs_df$Score_pred-playoffs_df$spread)/7) * k_mar * wk_slope[p+10]
+
+advance_df <- data.frame(ifelse(matrix(playoffs_df$Score_pred > 0 ,game_cnt[p],5),
+	as.matrix(cbind(playoffs_df[,c('FavID','FavID2','Fav_elo','elo_change')],1)),
+	as.matrix(cbind(playoffs_df[,c('DogID','DogID2','Dog_elo','elo_change')],-1))),
+	stringsAsFactors=F)
+advance_df$elo_rating <- as.numeric(advance_df$X3) + (as.numeric(advance_df$X4) * as.numeric(advance_df$X5))
+
+#re-seeding
+if (p==3) {
+re_seeding <- c(sapply(1:game_cnt[5], function(x) sample(((x-1)*4) + 1:4,4)))
+if (reg_format[1]==3) re_seeding[1:4] <- 1:4
+advance_df <- advance_df[re_seeding,]
+}
+
+playoffs_df[,c('WinID','WinID2','Winner_Rating')] <- advance_df[,c('X1','X2','elo_rating')]
+all_po_df <- c(all_po_df, list(playoffs_df))
+
+if (p!=5) {
+playoffs_df <- cbind(advance_df[seq(1,game_cnt[p],2),c('X1','X2','elo_rating')],advance_df[seq(2,game_cnt[p],2),c('X1','X2','elo_rating')])
+names(playoffs_df) <- c('FavID','FavID2','Fav_elo','DogID','DogID2','Dog_elo')
+}}
+
+if (wkst >= 12) {
+past_gms <- bracket[which(bracket$Week<wkst & bracket$Season==yr),]
+past_gms[,names(all_po_df[[1]])[-c(which(names(all_po_df[[1]]) %in% names(past_gms)))]] <- NA
+past_gms$Season <- NULL
+past_gms$Week <- NULL
+#past_gms$Reg <- NULL
+#past_gms$Fav <- NULL
+#past_gms$Dog <- NULL
+all_po_df <- c(list(past_gms),all_po_df)
+}
+
+if (wkst != 11) for (i in 1:3) all_po_df[[1]][,1] <- NULL
+all_po_df <- do.call(rbind,all_po_df)
+table(factor(as.numeric(c(all_po_df$FavID,all_po_df$DogID,rev(all_po_df$WinID)[game_cnt[5]:1])),OH_teams))
+})
+#end playoff sim
+
+#might not use layout specified above
+crystal_res <- t(apply(crystal_sim,1,function(x) table(factor(x,0:6))))
+crystal_res <- cbind(curr_elos[which(!is.na(curr_elos$Reg)),],crystal_res)
+crystal_res$placement <- NA
+
+champ_order <- unlist(sapply(1:7, function(x) rank(-crystal_res[which(crystal_res$Div==x),'6'],ties.method='random')))
+crystal_res[which(champ_order==1),]
+
+
+####using general sim to backfill
+playoff_res_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/2018/playoffs1.csv',stringsAsFactors=F)
+
+curr_elos <- model_elos
+curr_elos$Seed <- seed
+curr_elos <- curr_elos[which(seed<=8),]
+po_sim <- playoff_res_df[match(paste0(curr_elos$TeamID,'_',wkst+1,'_',yr),paste0(playoff_res_df$X,'_',playoff_res_df$Week,'_',playoff_res_df$Season)),paste0('X',1:6)]
+po_sim <- cbind(curr_elos,po_sim)
+po_sim$reg_quad <- paste0(po_sim$Reg,'_',ifelse(po_sim$Seed>=5,9-po_sim$Seed,po_sim$Seed))
+po_sim <- po_sim[order(po_sim$reg_quad),]
+po_sim <- po_sim[order(po_sim$Reg),]
+
+po_sim$placement <- NA
+
+
+
+for (j in 5:2) po_sim[,paste0('Rnd',j)] <- apply(po_sim[,paste0('X',6:j)],1,sum)
+
+champ_order <- unlist(sapply(1:7, function(x) rank(-po_sim[which(po_sim$Div==x),'X6'],ties.method='random')))
+po_sim$placement[which(champ_order==1)] <- 6
+po_sim$Rnd5[which(po_sim$Reg %in% po_sim$Reg[which(champ_order==1)])] <- 0
+po_sim$Rnd4[which(po_sim$Reg %in% po_sim$Reg[which(champ_order==1)])] <- 0
+
+runner_order <- unlist(sapply(1:7, function(x) rank(-po_sim[which(po_sim$Div==x),'Rnd5'],ties.method='random')))
+po_sim$placement[which(runner_order==1)] <- 5
+po_sim$Rnd4[which(po_sim$Reg %in% po_sim$Reg[which(runner_order==1)])] <- 0
+reg_order <- unlist(sapply(1:28, function(x) rank(-po_sim[which(po_sim$Reg==x),'Rnd4'],ties.method='random')))
+po_sim$placement[which(reg_order==1 & po_sim$Rnd4!=0)] <- 4
+
+po_sim$reg_semi <- paste0(po_sim$Reg,'_',ifelse(is.na(match(po_sim$Seed,c(1,4,5,8))),1,2))
+placed_quads <- aggregate(placement~reg_semi,po_sim,max)
+po_sim$Rnd3[which(po_sim$reg_semi %in% placed_quads[,1])] <- 0
+reg_semi_order <- unlist(sapply(1:28, function(x) rank(-po_sim[which(po_sim$Reg==x),'Rnd3'],ties.method='random')))
+po_sim$placement[which(reg_semi_order==1)] <- 3
+
+reg_quads <- aggregate(placement~reg_quad,po_sim,max)
+po_sim$Rnd2[which(po_sim$reg_quad %in% reg_quads[,1])] <- 0
+reg_quad_order <- unlist(sapply(unique(po_sim$reg_quad), function(x) rank(-po_sim[which(po_sim$reg_quad==x),'Rnd2'],ties.method='random')))
+po_sim$placement[which(reg_quad_order==1 & po_sim$Rnd2!=0)] <- 2
+
+
+####begin bracket creation
+png('C:/Users/Owner/Documents/GitHub/SWAER/bracket1.png',width=800, height=450)
+my_div <- 5
+
+reg_in_champ <- po_sim$Reg[which(po_sim$placement>=5 & po_sim$Div==my_div)]
+reg_out_champ <- po_sim$Reg[which(po_sim$placement==4 & po_sim$Div==my_div)]
+use_mapping <- ifelse(which(names(trav_order(my_div)) %in% c(paste0(reg_in_champ[1],'v',reg_in_champ[2]),paste0(reg_out_champ[1],'v',reg_out_champ[2])))==1,names(trav_order(my_div)[2]),names(trav_order(my_div)[1]))
+reg_side <- strsplit(use_mapping,'v')
+
+####create a full bracket df
+#dev.new(width=800, height=450)
+par(mar=c(0,0,4,0))
+plot(NA,ylim=c(0,48),xlim=c(0,94),main=paste0('OHSAA Division ',as.roman(my_div),' Preseason SWAER "Crystal Ball" Playoff Forecast'),axes=F,cex.main=1.5)
+
+arrows(rep(0,16),seq(1,48,3),rep(10,16),seq(1,48,3),length=0)
+arrows(rep(10,8),seq(2.5,48,6),rep(20,8),seq(2.5,48,6),length=0)
+arrows(rep(20,4),seq(5.5,48,12),rep(30,4),seq(5.5,48,12),length=0)
+arrows(rep(30,2),seq(11,48,24),rep(40,2),seq(11,48,24),length=0)
+arrows(40,30,50,30,length=0)
+
+arrows(rep(94,16),seq(1,48,3),rep(84,16),seq(1,48,3),length=0)
+arrows(rep(84,8),seq(2.5,48,6),rep(74,8),seq(2.5,48,6),length=0)
+arrows(rep(74,4),seq(5.5,48,12),rep(64,4),seq(5.5,48,12),length=0)
+arrows(rep(64,2),seq(11,48,24),rep(54,2),seq(11,48,24),length=0)
+arrows(44,16,54,16,length=0)
+
+arrows(rep(10,8),seq(1,48,6),rep(10,8),seq(4,48,6),length=0)
+arrows(rep(20,4),seq(2.5,48,12),rep(20,4),seq(8.5,48,12),length=0)
+arrows(rep(30,2),seq(5.5,48,24),rep(30,2),seq(17.5,48,24),length=0)
+arrows(40,11,40,35,length=0)
+
+arrows(rep(84,8),seq(1,48,6),rep(84,8),seq(4,48,6),length=0)
+arrows(rep(74,4),seq(2.5,48,12),rep(74,4),seq(8.5,48,12),length=0)
+arrows(rep(64,2),seq(5.5,48,24),rep(64,2),seq(17.5,48,24),length=0)
+arrows(54,11,54,35,length=0)
+
+place_ord <- expand.grid(Seed=c(1,8,4,5,6,3,7,2),Reg=((my_div-1)*4+1):((my_div-1)*4+4))
+place_ord$RegSeed <- paste0(place_ord$Reg,'_',place_ord$Seed)
+place_ord$mat_row <- match(place_ord$RegSeed,paste0(po_sim$Reg,'_',po_sim$Seed))
+place_ord$school <- po_sim$School[place_ord$mat_row]
+place_ord$half <- 1
+place_ord$half[which(place_ord$Reg==reg_side[[1]][1] | place_ord$Reg==reg_side[[1]][2])] <- 2
+place_ord$placement <- po_sim$placement[place_ord$mat_row]
+
+text(rep(1,16),seq(46.2,1,-3),place_ord$school[which(place_ord$half==1)],adj=c(0,0),cex=.5)
+text(rep(11,8),seq(44.7,1,-6),place_ord$school[which(place_ord$half==1 & place_ord$placement>=2)],adj=c(0,0),cex=.5)
+text(rep(21,4),seq(41.7,1,-12),place_ord$school[which(place_ord$half==1 & place_ord$placement>=3)],adj=c(0,0),cex=.5)
+text(rep(31,2),seq(35.2,1,-24),place_ord$school[which(place_ord$half==1 & place_ord$placement>=4)],adj=c(0,0),cex=.5)
+text(41,30.2,place_ord$school[which(place_ord$half==1 & place_ord$placement>=5)],adj=c(0,0),cex=.5)
+
+text(rep(93,16),seq(46.2,1,-3),place_ord$school[which(place_ord$half==2)],adj=c(1,0),cex=.5)
+text(rep(83,8),seq(44.7,1,-6),place_ord$school[which(place_ord$half==2 & place_ord$placement>=2)],adj=c(1,0),cex=.5)
+text(rep(73,4),seq(41.7,1,-12),place_ord$school[which(place_ord$half==2 & place_ord$placement>=3)],adj=c(1,0),cex=.5)
+text(rep(63,2),seq(35.2,1,-24),place_ord$school[which(place_ord$half==2 & place_ord$placement>=4)],adj=c(1,0),cex=.5)
+text(53,16.2,place_ord$school[which(place_ord$half==2 & place_ord$placement>=5)],adj=c(1,0),cex=.5)
+
+arrows(41,24,53,24,length=0)
+text(47,25,place_ord$school[which(place_ord$placement>=6)],cex=.5)
+dev.off()
+
+
+
+
+
+
+po_sim[,c('lon','lat')] <- OHSAA_df[match(row.names(po_sim),OHSAA_df$OHSAA.ID),c('lon','lat')]
+reg_midp <- aggregate(cbind(lon,lat)~Reg,po_sim,mean,subset= placement>=3)
+r_trav_est <- function(r1,r2) sqrt(sum(((reg_midp[r1,2:3]-reg_midp[r2,2:3]) * c(52,69))^2))
+
+trav_order <- function(div) {
+reg1 <- (div-1)*4
+final_v <- c(r_trav_est(reg1+1,reg1+2) + r_trav_est(reg1+3,reg1+4),r_trav_est(reg1+1,reg1+3) + r_trav_est(reg1+2,reg1+4),r_trav_est(reg1+1,reg1+4) + r_trav_est(reg1+2,reg1+3))
+names(final_v) <- c(paste0(reg1+1,'v',reg1+2),paste0(reg1+1,'v',reg1+3),paste0(reg1+1,'v',reg1+4))
+sort(final_v)
+}
+
+
+
+
+
+
+
+
+######harbin "bank" idea
+tm_id <- '1354'
+
+sum(diag(opp_win_mx * div_mx) * tm_win_prob[,tm_id])
+opp_win_mx <- tm_win_prob[,paste0(opp_id_mx[,tm_id])]
+div_mx <- L1_mx[,match(opp_id_mx[,tm_id],names(L1_pts))]
+div_mx <- div_mx/9.7
+diag(opp_win_mx) <- 1 
+tm_win_mx <- matrix(rep(tm_win_prob[,tm_id],10),10,byrow=T)
+diag(div_mx) <- L1_mx[,match(tm_id,names(L1_pts))]/10
+
+full_harbin <- tm_win_mx * opp_win_mx * div_mx
+sum(full_harbin,na.rm=T)
+apply(full_harbin,2,sum,na.rm=T)
+
+
+head(opp_id_mx)
 

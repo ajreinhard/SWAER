@@ -35,11 +35,12 @@
 </div> 
 
   <script type="text/javascript">
-	games_tbl("https://sites.google.com/site/swaermodel/TmPgs_2016-18.json?revision=14");
-	games_tbl("https://sites.google.com/site/swaermodel/TmPgs_2013-15.json?revision=6");
-	games_tbl("https://sites.google.com/site/swaermodel/TmPgs_2010-12.json?revision=6");
-	games_tbl("https://sites.google.com/site/swaermodel/TmPgs_2007-09.json?revision=6");
+	games_tbl("https://sites.google.com/site/swaermodel/TmPgs_2016-18.json?revision=15");
+	games_tbl("https://sites.google.com/site/swaermodel/TmPgs_2013-15.json?revision=7");
+	games_tbl("https://sites.google.com/site/swaermodel/TmPgs_2010-12.json?revision=7");
+	games_tbl("https://sites.google.com/site/swaermodel/TmPgs_2007-09.json?revision=7");
 	tm_info("https://sites.google.com/site/swaermodel/Tm_Info.json?revision=3");
+
 
   function tm_info(url) {
     var params = {};  
@@ -206,6 +207,7 @@ window.onclick = function(event) {
 function ok_then(what_is_this) { 
 
     var i;
+    var col_max = 0;
     var translate_y = "translate(0," + what_is_this.scrollTop + "px)";
     var translate_x = "translate(" + what_is_this.scrollLeft + "px,0px)";
     var translate_xy = "translate(" + what_is_this.scrollLeft + "px," + what_is_this.scrollTop + "px)";
@@ -215,6 +217,11 @@ function ok_then(what_is_this) {
     var all_tbls = document.getElementsByClassName('tbl-cont');
     for (i = 0; i < all_tbls.length; i++) {
       all_tbls[i].scrollLeft = what_is_this.scrollLeft;
+      if (col_max < all_tbls[i].getElementsByTagName("tr")[1].getElementsByTagName("td")[2].clientWidth) {col_max = all_tbls[i].getElementsByTagName("tr")[1].getElementsByTagName("td")[2].clientWidth;}
+    }
+
+    for (i = 0; i < all_tbls.length; i++) {
+      //all_tbls[i].getElementsByTagName("tr")[0].getElementsByTagName("td")[5].style.width = "600px";
     }
     
     var fixed_vertical_elts = document.getElementsByClassName("freeze_vertical");
@@ -236,6 +243,13 @@ function ok_then(what_is_this) {
        fixed_both_elts[i].style.webkitTransform = translate_xy;
        fixed_both_elts[i].style.transform = translate_xy;
     }
+
+    for (i = 0; i < 9; i++) {
+	//some_txt += all_tbls[i].getElementsByTagName("tr")[1].getElementsByTagName("td")[2].clientWidth + '_';
+	}
+
+//document.getElementById('tm-info').innerHTML = col_max;
+//document.getElementById('container').style.offsetWidth
 }
 
 
@@ -250,7 +264,8 @@ table			{border-top: 1px solid grey;
 			 border-right: 1px solid buttonhighlight;
 			 border-bottom: 1px solid grey;	
 			 border-collapse: collapse;
-			 white-space: nowrap;}
+			white-space: nowrap;
+			}
 
   
 td 			{font: menu; padding: 1px; padding-left: 5px; padding-right: 5px; text-align:center;
