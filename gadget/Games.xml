@@ -171,11 +171,11 @@ new_rankings();
   function new_rankings() {
 	var yr = document.getElementById("year_dd").value;
 	if (yr <= 2010) {
-		var url = "https://sites.google.com/site/swaermodel/GameList_2007-10.json";
+		var url = "https://sites.google.com/site/swaermodel/GameList_2007-10.json?revision=3";
 	} else if (yr <= 2014) {
-		var url = "https://sites.google.com/site/swaermodel/GameList_2011-14.json";
+		var url = "https://sites.google.com/site/swaermodel/GameList_2011-14.json?revision=3";
 	} else {
-		var url = "https://sites.google.com/site/swaermodel/GameList_2015-17.json";
+		var url = "https://sites.google.com/site/swaermodel/GameList_2015-17.json?revision=3";
 	}
 	var wk = document.getElementsByClassName("btn active")[0].innerHTML;
 	if (yr == 2018) {wk = Number(curr_week)-1;}
@@ -218,7 +218,7 @@ new_rankings();
 		var tm = responseText[yr][wk];
 		html += '<tr>';
 		html += '<td rowspan=2>' + tm.Q_date[i] + '</td>';
-		html += "<td rowspan=2><img height=50 src='" + tm.Opp_Helm[i]+ "'><img height=50 src='" + tm.Tm_Helm[i]+ "'></td>";
+		html += "<td rowspan=2><img height=50 src='https://github.com/ajreinhard/SWAER/raw/master/helmets/" + tm.Opp_Helm[i]+ ".png'><img height=50 src='https://github.com/ajreinhard/SWAER/raw/master/helmets/" + tm.Tm_Helm[i]+ ".png'></td>";
 		html += '<td colspan=2>#' + tm.Opp_Rank[i];
 		html += " <a href=https://sites.google.com/site/swaermodel/teams/" + tm.Opp_Code[i] + ">" + tm.Opp[i] + "</a>";
 		html += '<sup>' + tm.Q_Opp_Div[i] + '</sup><sub>#' + tm.Opp_Div_Rank[i] + '</sub>';

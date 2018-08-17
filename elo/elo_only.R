@@ -313,16 +313,17 @@ cv_testing(elo_def, 'K', seq(170,190,5),K_mult=T,margin_adj = function(mar, elo_
 pred_all <- elo_def(K_mult=T,margin_adj = function(mar, elo_d) ((abs(mar)+3)^0.8)/(7.5+.006*elo_d) * ifelse(mar>0,-1,1), K=180,return_me='log')[[1]]
 elo_def(K_mult=T,margin_adj = function(mar, elo_d) ((abs(mar)+3)^.9)/(6+0.003*ifelse(mar*elo_d>0,abs(elo_d),-abs(elo_d))), K=70)
 
-(21^.8)/2.4
-
-margin_adj(20,20*20)
-margin_adj(-20,20*-20)
 
 
-3/.002/20
+cv_testing(elo_def, 'hist_fac', seq(.2,.4,.05),reg_fac=0)
+
+
+
+
 
 
 pred_all <- elo_def(K_mult=T,margin_adj = function(mar, elo_d) ((abs(mar)+3)^.9)/(6+0.003*ifelse(mar*elo_d>0,abs(elo_d),-abs(elo_d))), K=70,return_me='log')[[1]]
+
 
 
 
@@ -365,7 +366,6 @@ pred_all$elo_diffsq <- pred_all$elo_diff ^2
 elo_val <- lm(elo_ch ~ elo_diff+elo_diffsq-1, data=pred_all,subset= Season>=2007)
 summary(elo_val)
 1/elo_val$coeff[1]
-
 
 
 
