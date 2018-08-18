@@ -87,10 +87,12 @@ reg_sched <- merge(data.frame(Opp_ID=as.numeric(row.names(elo_df)),Elo=elo_df$Cu
 sched_reg <- aggregate(Elo~Tm_ID,reg_sched,mean,na.rm=T)
 elo_df$sched_avg <- sched_reg$Elo[match(row.names(elo_df),sched_reg$Tm_ID)]
 elo_df$sched_avg <- ifelse(is.na(elo_df$sched_avg),elo_df$Current,elo_df$sched_avg)
+elo_df[,paste0('sched_',yr)] <- elo_df$sched_avg #hist collector
 
 if (yr > (2002+length(elo_parms$look_back)+1)) {
 elo_df$hist_avg <- apply(cbind(elo_df[,c(paste0(yr-(1:length(elo_parms$look_back)),' Week 15'))],NA),1,function(j) sum(unlist(c(elo_parms$look_back,NA)*j),na.rm=T))
 elo_df$hist_avg <- ifelse(is.na(elo_df$hist_avg),elo_df$Current,elo_df$hist_avg)
+elo_df[,paste0('hist_',yr)] <- elo_df$hist_avg #hist collector
 elo_df$Begin <- elo_df$Current * (1-elo_parms$reg_fac-elo_parms$hist_fac-elo_parms$div_fac) + elo_df$sched_avg * (elo_parms$reg_fac) + elo_df$hist_avg * (elo_parms$hist_fac) + elo_df$div_avg * (elo_parms$div_fac)
 } else {
 elo_df$Begin <- elo_df$Current * (1-elo_parms$reg_fac-elo_parms$div_fac) + elo_df$sched_avg * (elo_parms$reg_fac) + elo_df$div_avg * (elo_parms$div_fac)
@@ -99,8 +101,12 @@ elo_df$Begin <- elo_df$Current * (1-elo_parms$reg_fac-elo_parms$div_fac) + elo_d
 if (yr >= 2015 & elo_parms$pl_adj == TRUE) {
 elo_df$Player_adj <- elo_parms$mod_player_adj[match(paste0(yr,'_',row.names(elo_df)),names(elo_parms$mod_player_adj))]
 elo_df$Player_adj[is.na(elo_df$Player_adj)] <- 0
+elo_df[,paste0('pladj_',yr)] <- elo_df$Player_adj #hist collector
 elo_df$Begin <- elo_df$Begin + elo_df$Player_adj
 }
+
+
+
 
 elo_df$Current <- elo_df$Begin
 elo_df[,paste0(yr,' Week 0')] <- elo_df$Begin
@@ -317,16 +323,19 @@ elo_def(K_mult=T,margin_adj = function(mar, elo_d) ((abs(mar)+3)^.9)/(6+0.003*if
 
 cv_testing(elo_def, 'hist_fac', seq(.2,.4,.05),reg_fac=0)
 
+ratings <- elo_def(hist_fac=.35,reg_fac=0,return_me='log',margin_adj = function(mar, elo_d) ifelse(mar>(ifelse(elo_d>0,main,-main) * (abs(elo_d)/23)^pwr),1,-1) * abs(mar-ifelse(elo_d>0,main,-main) * (abs(elo_d)/23)^pwr)/7)[[2]]
+ratings_nor <- elo_def(return_me='log')[[2]]
 
+elo_def(hist_fac=.35,reg_fac=0)
 
+plot((unlist(ratings['958',c(sapply(2007:2017, function(z) paste0(z,' Week ',0:15)))])-1500)/18,type='l')
+lines((unlist(ratings_nor['958',c(sapply(2007:2017, function(z) paste0(z,' Week ',0:15)))])-1500)/18,col='blue')
 
+(ratings['604','2017 Week 0']-ratings_nor['604','2017 Week 0'])/18
 
+21*18+1500
 
 pred_all <- elo_def(K_mult=T,margin_adj = function(mar, elo_d) ((abs(mar)+3)^.9)/(6+0.003*ifelse(mar*elo_d>0,abs(elo_d),-abs(elo_d))), K=70,return_me='log')[[1]]
-
-
-
-
 
 
 1.5-.006 * 400
@@ -357,6 +366,7 @@ pred_all <- elo_def(return_me='log')[[1]]
 elo_val <- lm(Score_diff ~ elo_diff-1, data=pred_all,subset= Season>=2007 & pred_all$Tm_OH==1 & pred_all$nonOHSAA==0)
 summary(elo_val)
 1/elo_val$coeff[1]
+elo_def(hist_fac=.35,reg_fac=0)
 
 head(pred_all)
 ####elo to point spread conversion
@@ -530,9 +540,9 @@ mean(abs(actual_miss[,2]))
 plot(actual_miss,ylim=c(-30,30))
 lines(rep(0,100),col='gold')
 
-main <- 2.4
-pwr <- .81
-margin_adj = function(mar, elo_d) ifelse(mar>(ifelse(elo_d>0,main,-main) * (abs(elo_d)/23)^pwr),1,-1) * abs(mar-ifelse(elo_d>0,main,-main) * (abs(elo_d)/23)^pwr)/7
+main <- 1.7
+pwr <- .84
+margin_adj = function(mar, elo_d) ifelse(mar>(ifelse(elo_d>0,main,-main) * (abs(elo_d)/18)^pwr),1,-1) * abs(mar-ifelse(elo_d>0,main,-main) * (abs(elo_d)/18)^pwr)/7
 pred_all$new_ch <- margin_adj(pred_all$Score_diff,pred_all$elo_diff) * 30 * slope_lin(x=0.08,y=1.25,p=.85)[pred_all$Week]
 new_res <- aggregate(pred_all$new_ch~elo_group,FUN=mean)
 lines(new_res[,2],col='blue')
@@ -797,6 +807,12 @@ ratings2$Player_adj <- NULL
 plot(apply(ratings2,2,mean,na.rm=T),type='l')
 
 mean(ratings[which(!is.na(ratings$Div)),'2017 Week 1'] - ratings[which(!is.na(ratings$Div)),'2017 Week 0'])
+
+names(ratings)
+apply(ratings[which(!is.na(ratings$Div)),paste0('hist_',2008:2017)],2,mean)
+apply(ratings[which(!is.na(ratings$Div)),paste0('sched_',2002:2017)],2,mean)
+apply(ratings[which(!is.na(ratings$Div)),paste0('pladj_',2015:2017)],2,mean)
+
 
 
 

@@ -284,7 +284,6 @@ write.csv(conf, 'C:/Users/Owner/Desktop/SWAER/output/conf_all.csv')
 
 
 
-
 head(seeding)
 seeding <- read.csv('output/seeding_all.csv',stringsAsFactors=F)
 playoff_tms <- unique(c(bracket$FavID[which(bracket$Season==2017)],bracket$DogID[which(bracket$Season==2017)]))

@@ -10,7 +10,7 @@
     <base target="_blank">
   </head>
   <body>
-  <div id="img-div">
+  <div id="img-div" style="display:none;">
     	<div id="region"></div>
         <div id="county">
           <a class="adams"href="javascript:{}"  target="_top" onclick="MyFilter('Adams',16)"></a>
@@ -105,14 +105,14 @@
   </div>
   <br>
   <div>
-    <button onclick="MyFilter('1',3); change_map(1)">Div I</button>
-    <button onclick="MyFilter('2',3); change_map(2)">Div II</button>
-    <button onclick="MyFilter('3',3); change_map(3)">Div III</button>
-    <button onclick="MyFilter('4',3); change_map(4)">Div IV</button>
-    <button onclick="MyFilter('5',3); change_map(5)">Div V</button>
-    <button onclick="MyFilter('6',3); change_map(6)">Div VI</button>
-    <button onclick="MyFilter('7',3); change_map(7)">Div VII</button>
-    <button onclick="MyFilter('',3); change_map(8)">All Div</button>
+    <button onclick="MyFilter('D1',1); change_map(1)">Div I</button>
+    <button onclick="MyFilter('D2',1); change_map(2)">Div II</button>
+    <button onclick="MyFilter('D3',1); change_map(3)">Div III</button>
+    <button onclick="MyFilter('D4',1); change_map(4)">Div IV</button>
+    <button onclick="MyFilter('D5',1); change_map(5)">Div V</button>
+    <button onclick="MyFilter('D6',1); change_map(6)">Div VI</button>
+    <button onclick="MyFilter('D7',1); change_map(7)">Div VII</button>
+    <button onclick="MyFilter('',1); change_map(8)">All Div</button>
   </div>
   <br>
   <div>
@@ -141,8 +141,7 @@
 	<option value=2008>2008</option>
 </select>
 <div id="week-pick" onclick="new_rankings('true')">
-  <button class="btn active">0</button>
-  <button class="btn">1</button>
+  <button class="btn active">1</button>
   <button class="btn">2</button>
   <button class="btn">3</button>
   <button class="btn">4</button>
@@ -178,20 +177,10 @@ new_rankings();
 		var url = "https://sites.google.com/site/swaermodel/GameList_2015-17.json?revision=3";
 	}
 	var wk = document.getElementsByClassName("btn active")[0].innerHTML;
-	if (yr == 2018) {wk = Number(curr_week)-1;}
 	
 	
 	bring_ranks(url,yr,wk);
 	document.getElementById("tbl-heading").innerText = 'Week ' + wk + ' of ' + yr;
-	
-	var all_wk = document.getElementsByClassName("btn");
-	for (i = curr_week; i < all_wk.length; i++) {
-	      if (yr == 2018) {
-	      all_wk[i].style.display = "none";
-     	      } else if (yr != 2018) {
-	      all_wk[i].style.display = "";
-	      }
-  	}
   };
 
   function bring_ranks(url,yr,wk) {
@@ -203,13 +192,16 @@ new_rankings();
   function response(obj,wk_sel,yr_sel) {
     	               
     var yr = yr_sel;
-    var wk = wk_sel;
+    var wk = wk_sel-1;
     var responseText = obj.data;
 
-	var html = "<table id='rank' onclick='sortColumn(event)'>";
+	var html = "<table id='rank'>";
 	html += '<thead><tr>';
 	html += '<td>Date</td>';
+	html += '<td class="filter">Div1</td>';
+	html += '<td class="filter">Div2</td>';
 	html += '<td></td>';
+	html += '<td>SWAER Favorite</td>';
 	html += '<td>Spread</td>';
 	html += '<td>Final</td>';
 	html += '</tr></thead><tbody>';
@@ -218,16 +210,23 @@ new_rankings();
 		var tm = responseText[yr][wk];
 		html += '<tr>';
 		html += '<td rowspan=2>' + tm.Q_date[i] + '</td>';
-		html += "<td rowspan=2><img height=50 src='https://github.com/ajreinhard/SWAER/raw/master/helmets/" + tm.Opp_Helm[i]+ ".png'><img height=50 src='https://github.com/ajreinhard/SWAER/raw/master/helmets/" + tm.Tm_Helm[i]+ ".png'></td>";
-		html += '<td colspan=2>#' + tm.Opp_Rank[i];
-		html += " <a href=https://sites.google.com/site/swaermodel/teams/" + tm.Opp_Code[i] + ">" + tm.Opp[i] + "</a>";
-		html += '<sup>' + tm.Q_Opp_Div[i] + '</sup><sub>#' + tm.Opp_Div_Rank[i] + '</sub>';
-		html += ' @ #' + tm.Ovr_Rank[i];
+		html += '<td class="filter">' + tm.Q_Opp_Div[i] + '</td>';
+		html += '<td class="filter">' + tm.Tm_Div[i] + '</td>';
+		html += "<td rowspan=2><img height=50 src='https://github.com/ajreinhard/SWAER/raw/master/helmets/" + tm.Tm_Helm[i]+ ".png'>";
+		html += "<img height=50 src='https://github.com/ajreinhard/SWAER/raw/master/helmets/" + tm.Opp_Helm[i]+ ".png'></td>";
+		html += '<td colspan=3>#' + tm.Ovr_Rank[i];
 		html += " <a href=https://sites.google.com/site/swaermodel/teams/" + tm.Tm_Code[i] + ">" + tm.Tm[i] + "</a>";
-		html += '<sup>' + tm.Tm_Div[i] + '</sup><sub>#' + tm.Div_Rank[i] + '</sub></td>';
+		html += '<sup>' + tm.Tm_Div[i] + '</sup><sub>#' + tm.Div_Rank[i] + '</sub>';
+		html += ' ' + tm.Q_Loc[i] + ' #' + tm.Opp_Rank[i];
+		html += " <a href=https://sites.google.com/site/swaermodel/teams/" + tm.Opp_Code[i] + ">" + tm.Opp[i] + "</a>";
+		html += '<sup>' + tm.Q_Opp_Div[i] + '</sup><sub>#' + tm.Opp_Div_Rank[i] + '</sub></td>';
 		html += '</tr>';
 		html += '<tr>';
-		html += '<td>' + tm.spread[i] + '</td>';
+		if (tm.spread[i]>=0) {
+		html += '<td style="text-align:right;">' + tm.Tm[i] + ' by</td><td style="text-align:left;">' + tm.spread[i] + '</td>';
+		} else {
+		html += '<td style="text-align:right;">' + tm.Opp[i] + ' by</td><td style="text-align:left;">' + tm.spread[i] * -1 + '</td>';
+		}
 		html += '<td>' + tm.Q_score[i] + '</td>';
 		html += '</tr>';
 	}	
@@ -312,22 +311,23 @@ return(ord_arr);
 
 function MyFilter(on,col) {
   // Declare variables 
-  var table, tr, td, i, j;
+  var table, tr, td1, td2, i, j;
   table = document.getElementById("rank");
   tr = table.getElementsByTagName("tr");
-  j=1;
   
   // Loop through all table rows, and hide those who don't match the search query
-  for (i = 1; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[col];
-    if (td) {
-      if (td.innerHTML === on | on==="") {
+  for (i = 1; i < tr.length; i=i+2) {
+    td1 = tr[i].getElementsByTagName("td")[col];
+    td2 = tr[i].getElementsByTagName("td")[col+1];
+      if (td1.innerHTML === on | td2.innerHTML === on | on==="") {
         tr[i].style.display = "";
+        tr[i+1].style.display = "";
         } else {
         tr[i].style.display = "none";
+        tr[i+1].style.display = "none";
       } 
-     }
   }
+
 gadgets.window.adjustHeight();}
 
 
@@ -652,11 +652,9 @@ thead .arrow		{font-family: webdings; color: black; padding: 0; font-size: 10px;
   overflow-y: visible;
 }
 
-.fixed.freeze_horizontal {
-  position: relative;
-  text-align: left;
-}
-
+.filter {
+        display: none;
+        }
 
 @media screen and (min-width: 850px) {
 td 		{font-size: 16px;}

@@ -53,9 +53,12 @@ write(exportJson3, paste0('C:/Users/Owner/Desktop/SWAER/output/GameList_2015-17.
 
 
 
-
-
-
+##redo
+all_helms <- read.table('data/Fake Helmets.txt',stringsAsFactors=F)
+direction <- sapply(strsplit(all_helms$V1,'_'),function(x) x[[2]])
+tm_id <- sapply(strsplit(all_helms$V1,'_'),function(x) x[[1]])
+need_right <- tm_id[which(direction=='R')]
+need_left <- tm_id[which(direction=='L')]
 
 ####making some flipped over helmets
 tm_id <- sapply(strsplit(dir('helmets'),'_'),function(x) x[[1]])
@@ -70,7 +73,7 @@ write.table(c(paste0(need_left,'_L'),paste0(need_right,'_R')),'Fake Helmets.txt'
 for (j in 1:length(need_left)) {
 png(paste0('helmets/',need_left[j],'_L.png'),bg='transparent',width = 180, height = 138)
 par(mar=c(0,0,0,0))
-plot(NA,xlim=c(180,1),ylim=c(1,138))
+plot(NA,xlim=c(180,1),ylim=c(1,138),axes=F)
 rasterImage(readPNG(paste0('helmets/',need_left[j],'_R.png')),1,1,180,138)
 dev.off()
 }
@@ -78,7 +81,7 @@ dev.off()
 for (j in 1:length(need_right)) {
 png(paste0('helmets/',need_right[j],'_R.png'),bg='transparent',width = 180, height = 138)
 par(mar=c(0,0,0,0))
-plot(NA,xlim=c(180,1),ylim=c(1,138))
+plot(NA,xlim=c(180,1),ylim=c(1,138),axes=F)
 rasterImage(readPNG(paste0('helmets/',need_right[j],'_L.png')),1,1,180,138)
 dev.off()
 }
