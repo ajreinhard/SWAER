@@ -530,10 +530,10 @@ pred_all$GameID <- paste0(pred_all$Season,'_',pred_all$Week,'_',pred_all$Tm_ID)
 #write.csv(pred_all,'output/all_pred.csv',row.names=F)
 #####
 
-
+18*50
 ####attempt to fit the auto-correlation differences grouped by 20's
 elo_change <- pred_all$Tm_elo.new-pred_all$Tm_elo.curr
-elo_group <- cut(pred_all$elo_diff,seq(-1000,1000,20))
+elo_group <- cut(pred_all$elo_diff,seq(-900,900,18))
 actual_miss <- aggregate(elo_change~elo_group,FUN=mean)
 AC_used <- aggregate(pred_all$adj_amount~elo_group,FUN=mean)
 mean(abs(actual_miss[,2]))
@@ -548,6 +548,10 @@ new_res <- aggregate(pred_all$new_ch~elo_group,FUN=mean)
 lines(new_res[,2],col='blue')
 mean(abs(new_res[,2]))
 
+
+adj_approx <- ((1:50-1.7*(1:50)^.84)*(30/7))
+all_miss <- new_res[51:100,2]
+plot((all_miss+adj_approx)/adj_approx)
 
 ####
 
@@ -566,12 +570,20 @@ plot(my_calib,type='l')
 lines(my_calib[,1],my_calib[,1],col='red')
 
 
-
-pred_all$spread_off <- pred_all$Score_diff - pred_all$elo_diff/23
 spread_miss <- aggregate(pred_all$Score_diff~elo_group,FUN=mean)
 plot(1:50,spread_miss[51:100,2])
 lines(1:50,col='red')
 lines(main*(1:50)^(pwr),col='blue')
+
+just_pwr <- (1:50)*(1:50)^pwr
+summary(lm(spread_miss[51:100,2]~just_pwr))
+var_use <- (11.15+(.0297)*1:50)/((1:50)^pwr)
+cnt <- 1:50
+summary(lm(var_use~cnt))
+plot(1:50,var_use)
+
+
+
 
 model <- glm(log(spread_miss[51:100,2])~log(1:50-.5))
 lines(exp(model$coeff[1]) * (1:50-.5) ^ model$coeff[2],col='green')
@@ -640,9 +652,8 @@ options(scipen=999)
 spr_adj <- 18
 elo_group <- cut(pred_all$elo_diff,c(-Inf,seq(-800,800,spr_adj),Inf))
 pred_all$spread <- pred_all$elo_diff/spr_adj
+#pred_all$spread <- main*(pred_all$elo_diff/spr_adj)^pwr
 pred_all$spread_miss <- pred_all$Score_diff - pred_all$spread
-#barplot(table(elo_group))
-
 
 start_grp <- length(levels(elo_group))/2+1
 end_grp <- length(levels(elo_group))
@@ -658,6 +669,8 @@ lines(rep(0,start_grp),1:start_grp,col='red')
 est_center <- c(-Inf,seq(-800,800,spr_adj),Inf)[start_grp:end_grp] + spr_adj/2
 lines((est_center/spr_adj)/qnorm(1/(1+10^(-est_center/400))) * -.84,1:(start_grp-1),col='blue')
 lines((est_center/spr_adj)/qnorm(1/(1+10^(-est_center/400))) * .84,1:(start_grp-1),col='blue')
+
+
 
 adj_amount <- sapply(levels(elo_group)[start_grp:end_grp], function(x) mean(pred_all$adj_amount[which(elo_group==x & pred_all$Season>=2007)],na.rm=T))
 mean_diff <- sapply(bx_p,mean,na.rm=T)

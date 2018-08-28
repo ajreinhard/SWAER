@@ -153,15 +153,16 @@ return(c(po_res,seed[paste0(OH_teams)],conf_res))
 OHSAA_df <- read.csv('data sets/OHSAA ALL.csv',stringsAsFactors=F)
 final_elos <- elo_def(return_me='log')[[2]]
 final_elos_nonOH <- elo_def(return_me='log')[[3]]
-JE_games18 <- read.csv('data sets/JoeEitel GameLog18.csv',stringsAsFactors=F)
-JE_games18_nonOH <- read.csv('data sets/JoeEitel GameLog18 nonOH.csv',stringsAsFactors=F)
-JE_games18$Tm_OH <- 1
-JE_games18_nonOH$Week <- JE_games18_nonOH$Week-1
-JE_games18_nonOH$Tm_OH <- 0
-JE_games18 <- JE_games18[which(JE_games18$Tm_ID!=9057),]
-JE_games18_nonOH <- JE_games18_nonOH[which(JE_games18_nonOH$Tm_ID!=1201),]
-JE_games_all <- rbind(JE_games18,JE_games18_nonOH)
-JE_games_all$nonOHSAA[which(JE_games18$Opp_ID==1201)] <- 0
+JE_games_all <- read.csv('data sets/GameLog18 ALL.csv',stringsAsFactors=F)
+#JE_games18 <- read.csv('data sets/JoeEitel GameLog18.csv',stringsAsFactors=F)
+#JE_games18_nonOH <- read.csv('data sets/JoeEitel GameLog18 nonOH.csv',stringsAsFactors=F)
+#JE_games18$Tm_OH <- 1
+#JE_games18_nonOH$Week <- JE_games18_nonOH$Week-1
+#JE_games18_nonOH$Tm_OH <- 0
+#JE_games18 <- JE_games18[which(JE_games18$Tm_ID!=9057),]
+#JE_games18_nonOH <- JE_games18_nonOH[which(JE_games18_nonOH$Tm_ID!=1201),]
+#JE_games_all <- rbind(JE_games18,JE_games18_nonOH)
+#JE_games_all$nonOHSAA[which(JE_games18$Opp_ID==1201)] <- 0
 
 final_elos$hist_avg <- apply(cbind(final_elos[,c(paste0(2014:2017,' Week 15'))],NA),1,function(j) sum(unlist(c(rep(.25,4),NA)*j),na.rm=T))
 
@@ -580,11 +581,12 @@ crystal_res[which(champ_order==1),]
 
 
 ####using general sim to backfill
-playoff_res_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/2018/playoffs1.csv',stringsAsFactors=F)
 
+playoff_res_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/2018/playoffs1.csv',stringsAsFactors=F)
 curr_elos <- model_elos
 curr_elos$Seed <- seed
 curr_elos <- curr_elos[which(seed<=8),]
+
 po_sim <- playoff_res_df[match(paste0(curr_elos$TeamID,'_',wkst+1,'_',yr),paste0(playoff_res_df$X,'_',playoff_res_df$Week,'_',playoff_res_df$Season)),paste0('X',1:6)]
 po_sim <- cbind(curr_elos,po_sim)
 po_sim$reg_quad <- paste0(po_sim$Reg,'_',ifelse(po_sim$Seed>=5,9-po_sim$Seed,po_sim$Seed))
@@ -592,7 +594,6 @@ po_sim <- po_sim[order(po_sim$reg_quad),]
 po_sim <- po_sim[order(po_sim$Reg),]
 
 po_sim$placement <- NA
-
 
 
 for (j in 5:2) po_sim[,paste0('Rnd',j)] <- apply(po_sim[,paste0('X',6:j)],1,sum)
@@ -679,8 +680,6 @@ text(53,16.2,place_ord$school[which(place_ord$half==2 & place_ord$placement>=5)]
 arrows(41,24,53,24,length=0)
 text(47,25,place_ord$school[which(place_ord$placement>=6)],cex=.5)
 dev.off()
-
-
 
 
 

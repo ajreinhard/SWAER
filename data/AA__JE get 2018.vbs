@@ -2,7 +2,7 @@ dim xHttp: Set xHttp = createobject("Microsoft.XMLHTTP")
 dim bStrm: Set bStrm = createobject("Adodb.Stream")
 
 Set fso = CreateObject("Scripting.FileSystemObject")
-Set fl = fso.OpenTextFile("C:\Users\A097092\Desktop\Extra\HS Football\JoeEitel\nonOH.txt",1)
+Set fl = fso.OpenTextFile("C:\Users\Owner\Desktop\SWAER\output\2018\JE Teams.txt",1)
 
 
 do until fl.atendofstream
@@ -15,7 +15,7 @@ with bStrm
     .type = 1
     .open
     .write xHttp.responseBody
-    .savetofile "C:\Users\A097092\Desktop\Extra\HS Football\JoeEitel\2018nonOH\" & i & ".txt", 2
+    .savetofile "C:\Users\Owner\Desktop\SWAER\output\2018\JE Games\" & i & ".txt", 2
     .close
 end with
 

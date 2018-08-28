@@ -1,11 +1,73 @@
 library(XML)
-setwd('C:/Users/A097092/Desktop/Extra/HS Football')
-
+setwd('C:/Users/Owner/Documents/GitHub/SWAER')
+OHSAA_df <- read.csv('data sets/OHSAA ALL.csv',stringsAsFactors=F)
 
 p <- function(..., sep='_') {
     paste(..., sep=sep, collapse=sep)
 }
 proper=function(x) paste0(toupper(substr(x, 1, 1)), tolower(substring(x, 2)))
+
+
+###pull new team sched on JoeEitel for 2018
+files <- dir('C:/Users/Owner/Desktop/SWAER/output/2018/JE Games',full.name=T) 
+
+JE_sched <- lapply(files, function(z) {
+the_tree <- htmlTreeParse(z, useInternal=T)
+sched <- sapply(xpathSApply(the_tree, '//table/tbody/tr/td'),function(y) xmlValue(y, trim=T))
+opp_ID <- substr(xpathSApply(the_tree, '//table/tbody/tr/td[3]//@href'),18,nchar(xpathSApply(the_tree, '//table/tbody/tr/td[3]//@href'))-10)
+
+if (tail(sched,1)=='# - Ohio playoff game') {sched <- sched[1:(length(sched)-1)]}
+if (tail(sched,1)=='* - game does not count in OHSAA rankings') {sched <- sched[1:(length(sched)-1)]}
+cbind(2018,substr(z,51,nchar(z)-4),opp_ID,t(matrix(sched,7)),1:(length(sched)/7))
+})
+
+JE_sched <- do.call(rbind,JE_sched)
+row.names(JE_sched) <- NULL
+
+#create df with all games from JoeEitel
+JE_games <- data.frame(Season=JE_sched[,1],Week=JE_sched[,11],Tm_ID=JE_sched[,2],Opp_ID=JE_sched[,3],Loc=JE_sched[,5],Result=JE_sched[,8],Notes=JE_sched[,10],stringsAsFactors=F)
+JE_games$Date <- as.Date(paste0(JE_sched[,4],'/',JE_sched[,1]),format='%m/%d/%Y')
+JE_games$Playoff <- ifelse(substr(JE_sched[,6],1,1)=='#',1,0)
+JE_games$Tm_score <- as.numeric(sapply(strsplit(JE_sched[,9],'-'),function(x) x[1]))
+JE_games$Opp_score <- as.numeric(sapply(strsplit(JE_sched[,9],'-'),function(x) x[2]))
+
+JE_games$Score_diff <- JE_games$Tm_score - JE_games$Opp_score
+JE_games$Win <- ifelse(substr(JE_games$Result,1,1)=='W',1,0)
+
+JE_games$Cal_Week <- format(JE_games$Date-1,'%W')
+tm_cal_wk <- paste0(JE_games$Season,'_',JE_games$Cal_Week,'_',JE_games$Tm_ID)
+mult_games_wk <- names(which(table(tm_cal_wk)>1))
+JE_games$Multi_Week <- NA
+JE_games$Multi_Week[matrix(which(tm_cal_wk %in% mult_games_wk),2)[1,]] <- 1
+
+season_begin <- aggregate(Cal_Week~Season,JE_games,FUN=min)
+JE_games$Week <- as.numeric(JE_games$Cal_Week)-as.numeric(season_begin$Cal_Week[match(JE_games$Season,season_begin$Season)])+1
+
+JE_games$Win[JE_games$Result=='T'] <- .5
+JE_games$Excl_Harbin <- ifelse(substr(JE_sched[,8],nchar(JE_sched[,8]),nchar(JE_sched[,8]))=='*',1,0)
+
+JE_games$Excl_Elo <- 0
+JE_games$Excl_Elo[which(JE_games$Notes %in% c('suspended','cancelled','forfeit','double forfeit'))] <- 1
+
+JE_games$Opp_Reg <- substr(JE_sched[,7],regexpr(':',JE_sched[,7])+1,nchar(JE_sched[,7])-1)
+JE_games$nonOHSAA <- ifelse(JE_games$Opp_Reg=='' | JE_games$Opp_Reg==0, 1, 0)
+JE_games$nonOHSAA_div <- ifelse(JE_games$nonOHSAA==1,substr(JE_sched[,7],2,2),NA)
+
+JE_games$Tm_OH <- 0
+JE_games$Tm_OH[!is.na(match(JE_games$Tm_ID,OHSAA_df$OHSAA.ID[which(!is.na(OHSAA_df$Div.2018))]))] <- 1
+JE_games$Week <- JE_games$Week-1
+
+write.csv(JE_games,'data sets/GameLog18 ALL.csv',row.names=F)
+
+JE_games[which(JE_games$Week==0),]
+
+
+
+
+
+
+
+
 
 
 

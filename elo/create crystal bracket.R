@@ -1,12 +1,12 @@
 library(png)
 setwd('C:/Users/Owner/Documents/GitHub/SWAER')
-playoff_res_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/playoffs.csv',stringsAsFactors=F)
-crystal_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/crystal.csv',stringsAsFactors=F)
+playoff_res_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/playoffs_all.csv',stringsAsFactors=F)
+crystal_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/crystal_all.csv',stringsAsFactors=F)
 rank_df <- read.csv('C:/Users/Owner/Desktop/SWAER/output/hist rankings.csv',stringsAsFactors=F)
 OHSAA_df <- read.csv('data sets/OHSAA ALL.csv',stringsAsFactors=F)
 
-yr <- 2009
-wkst <- 11
+yr <- 2010
+wkst <- 1
 
 wk_cryst <- crystal_df[which(crystal_df$Season==yr & crystal_df$Week==wkst-1),]
 wk_cryst <- wk_cryst[which(wk_cryst$proj_seed<=8),]
@@ -61,8 +61,8 @@ sort(final_v)
 
 
 ####begin bracket creation
-png('bracket2017_pre3.png',width=1600, height=900)
-my_div <- 3
+png('bracket2017_pre1.png',width=1600, height=900)
+my_div <- 2
 
 reg_in_champ <- po_sim$Reg[which(po_sim$placement>=5 & po_sim$Div==my_div)]
 reg_out_champ <- po_sim$Reg[which(po_sim$placement==4 & po_sim$Div==my_div)]
@@ -83,7 +83,8 @@ txt_size <- 1.1
 ####create a full bracket df
 #dev.new(width=1600, height=900)
 par(mar=c(0,0,4,0))
-plot(NA,ylim=c(0,48),xlim=c(0,94),main=paste0('OHSAA Division ',as.roman(my_div),' Preseason SWAER "Crystal Ball" Playoff Forecast'),axes=F,cex.main=1.5)
+plot(NA,ylim=c(0,48),xlim=c(0,94),main=paste0(yr,' OHSAA Division ',as.roman(my_div),' SWAER "Crystal Ball" Playoff Forecast'),axes=F,cex.main=2)
+text(47,47,paste0('After Week ',wkst-1),cex=2,font=2)
 
 arrows(rep(0,16),seq(1,48,3),rep(10,16),seq(1,48,3),length=0)
 arrows(rep(10,8),seq(2.5,48,6),rep(20,8),seq(2.5,48,6),length=0)
@@ -111,28 +112,30 @@ text(rep(3,16),seq(46.2,1,-3),place_ord$school[which(place_ord$half==1)],adj=c(0
 text(rep(13,8),seq(44.7,1,-6),place_ord$school[which(place_ord$half==1 & place_ord$placement>=2)],adj=c(0,0),cex=txt_size)
 text(rep(23,4),seq(41.7,1,-12),place_ord$school[which(place_ord$half==1 & place_ord$placement>=3)],adj=c(0,0),cex=txt_size)
 text(rep(33,2),seq(35.2,1,-24),place_ord$school[which(place_ord$half==1 & place_ord$placement>=4)],adj=c(0,0),cex=txt_size)
+text(rep(21,2),seq(35.2,1,-24),paste0('Region ',place_ord$Reg[which(place_ord$half==1 & place_ord$placement>=4)]),c(0,0),cex=txt_size,font=2)
 text(41,30.2,place_ord$school[which(place_ord$half==1 & place_ord$placement>=5)],adj=c(0,0),cex=txt_size)
 
 for (k in 1:16) rasterImage(readPNG(paste0('helmets/',place_ord$Helm[which(place_ord$half==1)],'.png')[k]),0,seq(46.2,0,-3)[k],2.6,seq(48.2,2,-3)[k])
 for (k in 1:8) rasterImage(readPNG(paste0('helmets/',place_ord$Helm[which(place_ord$half==1 & place_ord$placement>=2)],'.png')[k]),10,seq(44.7,0,-6)[k],12.6,seq(46.7,2,-6)[k])
 for (k in 1:4) rasterImage(readPNG(paste0('helmets/',place_ord$Helm[which(place_ord$half==1 & place_ord$placement>=3)],'.png')[k]),20,seq(41.7,0,-12)[k],22.6,seq(43.7,2,-12)[k])
 for (k in 1:2) rasterImage(readPNG(paste0('helmets/',place_ord$Helm[which(place_ord$half==1 & place_ord$placement>=4)],'.png')[k]),30,seq(35.2,0,-24)[k],32.6,seq(37.2,2,-24)[k])
+rasterImage(readPNG(paste0('helmets/',place_ord$Helm[which(place_ord$half==1 & place_ord$placement>=5)],'.png')),38,3,47,9.8)
 
 text(rep(91,16),seq(46.2,1,-3),place_ord$school[which(place_ord$half==2)],adj=c(1,0),cex=txt_size)
 text(rep(81,8),seq(44.7,1,-6),place_ord$school[which(place_ord$half==2 & place_ord$placement>=2)],adj=c(1,0),cex=txt_size)
 text(rep(71,4),seq(41.7,1,-12),place_ord$school[which(place_ord$half==2 & place_ord$placement>=3)],adj=c(1,0),cex=txt_size)
 text(rep(61,2),seq(35.2,1,-24),place_ord$school[which(place_ord$half==2 & place_ord$placement>=4)],adj=c(1,0),cex=txt_size)
+text(rep(73,2),seq(35.2,1,-24),paste0('Region ',place_ord$Reg[which(place_ord$half==2 & place_ord$placement>=4)]),c(1,0),cex=txt_size,font=2)
 text(53,16.2,place_ord$school[which(place_ord$half==2 & place_ord$placement>=5)],adj=c(1,0),cex=txt_size)
 
 for (k in 1:16) rasterImage(readPNG(paste0('helmets/',place_ord$Helm[which(place_ord$half==2)],'.png')[k]),91.4,seq(46.2,0,-3)[k],94,seq(48.2,2,-3)[k])
 for (k in 1:8) rasterImage(readPNG(paste0('helmets/',place_ord$Helm[which(place_ord$half==2 & place_ord$placement>=2)],'.png')[k]),81.4,seq(44.7,0,-6)[k],84,seq(46.7,2,-6)[k])
 for (k in 1:4) rasterImage(readPNG(paste0('helmets/',place_ord$Helm[which(place_ord$half==2 & place_ord$placement>=3)],'.png')[k]),71.4,seq(41.7,0,-12)[k],74,seq(43.7,2,-12)[k])
 for (k in 1:2) rasterImage(readPNG(paste0('helmets/',place_ord$Helm[which(place_ord$half==2 & place_ord$placement>=4)],'.png')[k]),61.4,seq(35.2,0,-24)[k],64,seq(37.2,2,-24)[k])
+rasterImage(readPNG(paste0('helmets/',place_ord$Helm[which(place_ord$half==2 & place_ord$placement>=5)],'.png')),47,3,56,9.8)
 
 arrows(41,24,53,24,length=0)
 text(47,25,place_ord$school[which(place_ord$placement>=6)],cex=txt_size)
 dev.off()
-
-
 
 
